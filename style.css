@@ -85,3 +85,6 @@ details.ans > .answer { margin-top: .4rem; }
 /* Paket 5 (2026-10-16): iki dilli deneme sınavı — İngilizce soru bloğu (K-02) Türkçesinden görsel olarak ayrılır */
 div[lang="en"] { border-left: 3px solid var(--teal); background: var(--soft); padding: .2em 1em .3em; margin: 1.6em 0 .6em; border-radius: 0 6px 6px 0; }
 div[lang="en"]::before { content: "EN"; display: block; font: 600 .7rem/1 var(--sans); letter-spacing: .08em; color: var(--muted); margin: .6em 0 .1em; }
+
+/* Site eşitleme (2026-10-16, Y-1): uzun çıplak URL'ler dar ekranda satır sonunda kırılır */
+a.uri { overflow-wrap: anywhere; }
