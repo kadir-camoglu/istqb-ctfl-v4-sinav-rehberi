@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bölüm 6 — Test Araçları · ISTQB® CTFL® v4.0 Sınav Rehberi</title>
+<meta name="description" content="ISTQB® Sertifikalı Test Uzmanı Temel Seviye (CTFL®) v4.0 sınavı için ücretsiz, bağımsız Türkçe çalışma rehberi: 64 öğrenme hedefinin tamamı, çözümlü örnekler, kısa sorular ve iki dilli tam bir deneme sınavı.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="draft-banner" role="note"><strong>Herkese açık taslak — inceleniyor.</strong> Geri bildirim: <a href="mailto:kadir.camoglu@gmail.com">kadir.camoglu@gmail.com</a></div>
+<header class="topbar"><div class="inner"><a href="index.html">ISTQB® CTFL® v4.0 Sınav Rehberi</a><span class="meta"><span class="ind">Bağımsız · Gayriresmî çalışma rehberi · Herkese açık taslak · 2026-10 · </span><a href="all.html">Tam metin tek sayfada</a></span></div></header>
+<div class="layout">
+<nav class="side"><details id="navd"><summary>İçindekiler</summary><div class="navbody">
+<div class="group">Ön bölüm</div><ul>
+<li><a href="index.html">ISTQB® CTFL® v4.0 Sınav Rehberi: Sıfırdan Sınava Hazır Seviyeye</a>
+</li>
+<li><a href="copyright.html">Telif Hakkı ve Marka Bildirimi</a>
+</li>
+<li><a href="introduction.html">Giriş — Bu Kitap Hakkında</a>
+</li>
+<li><a href="how-to-use.html">Bu Kitap Nasıl Kullanılır</a>
+</li>
+<li><a href="the-exam.html">CTFL® Sınavı Nasıl İşler</a>
+</li>
+<li><a href="objective-map.html">Hedef Haritası</a>
+</li>
+<li><a href="study-roadmap.html">Çalışma Yol Haritası</a>
+</li>
+</ul>
+<div class="group">Bölümler</div><ul>
+<li><a href="chapter-1.html">Bölüm 1 — Yazılım Testinin Temelleri</a>
+</li>
+<li><a href="chapter-2.html">Bölüm 2 — Yazılım Geliştirme Yaşam Döngüsü Boyunca Test</a>
+</li>
+<li><a href="chapter-3.html">Bölüm 3 — Statik Testler</a>
+</li>
+<li><a href="chapter-4.html">Bölüm 4 — Test Analizi ve Tasarımı</a>
+</li>
+<li><a href="chapter-5.html">Bölüm 5 — Test Aktivitelerini Yönetme</a>
+</li>
+<li class="current"><a href="chapter-6.html">Bölüm 6 — Test Araçları</a>
+<ul class="sub"><li><a href="#tool-support-for-testing">6.1 Yazılım Testleri için Araç Desteği</a></li><li><a href="#benefits-and-risks-of-test-automation">6.2 Test Otomasyonunun Faydaları ve Riskleri</a></li><li><a href="#chapter-6-summary">Bölüm 6 özeti</a></li><li><a href="#cumulative-retrieval-4">Birikimli hatırlama</a></li><li><a href="#chapter-exercises-5">Bölüm alıştırmaları</a></li></ul>
+</li>
+</ul>
+<div class="group">Arka bölüm</div><ul>
+<li><a href="rationale.html">Cevaplar ve Gerekçeler</a>
+</li>
+<li><a href="glossary.html">Sözlük</a>
+</li>
+<li><a href="confused-pairs.html">Sık Karıştırılan Kavramlar — Ana Liste</a>
+</li>
+<li><a href="final-revision.html">Son Tekrar Planı</a>
+</li>
+<li><a href="mock-exam-1.html">Deneme Sınavı 1 — 40 Soru, Gerekçeleriyle</a>
+</li>
+<li><a href="further-resources.html">İleri Kaynaklar</a>
+</li>
+</ul>
+</div></details></nav>
+<main>
+<section id="chapter-6-test-tools" class="level1">
+<h1>Bölüm 6 — Test Araçları</h1>
+<p><strong>Öğrenme hedefleri:</strong> 2 · K1 1 / K2 1 / K3 0 · <strong>Bu bölümden sınav sorusu:</strong> 2</p>
+<p><strong>Anahtar kelimeler:</strong> test otomasyonu (test automation)</p>
+<p>Bu, ISTQB® Temel Seviye ders programının en kısa bölümüdür. Sınavda karşılaşacağınız iki soru tamamen iki kısa, tanımlı listeye dayanır: ilki bir test aracını desteklediği test aktivitesiyle eşleştirmenizi ister (K2), ikincisi şıklar arasından test otomasyonunun meşru bir faydasını ya da riskini ayırt etmenizi (K1). İyi haber şu: dikkatli bir okuma ve sondaki alıştırma sorularıyla bu bölüm derli toplu hazırlanabilecek bir bölümdür.</p>
+<section id="tool-support-for-testing" class="level2">
+<h2>6.1 Yazılım Testleri için Araç Desteği</h2>
+<section id="fl-6-1-1" class="level3">
+<h3>Test aracı çeşitleri ve testi nasıl destekledikleri (FL-6.1.1 — K2)</h3>
+<p>Yazılım <strong>test araçları (test tool)</strong>, test sürecini daha verimli, daha hızlı ve daha doğru kılmak amacıyla birçok test aktivitesini destekler ve kolaylaştırır. Ders programı sekiz araç çeşidini neye yardım ettiklerine göre adlandırır, ardından listeyi teste yardımcı olan her türlü aracı kapsayan genel bir maddeyle kapatır. Sekizini kapalı bir küme olarak değil, örnekler olarak sunar. Başka bir deyişle liste, bir araç hakkında nasıl düşüneceğinizi söyler: desteklediği test aktivitesine göre. Genel madde de teste gerçekten yardım eden hiçbir şeyin dışarıda kalmamasını sağlar. Şekil 6.1 adı verilen sekiz çeşidi yan yana, genel maddeyi de altlarında gösteriyor.</p>
+<figure>
+<img src="figures/fig_6_1_tool_categories.png" alt="Şekil 6.1 — Ders programında adı verilen test aracı çeşitleri. İki sütundaki sekiz kutu araç çeşitlerini adlandırır: yönetim araçları; statik test araçları; test tasarımı ve test uygulama araçları; test koşumu ve kapsam araçları; fonksiyonel olmayan test araçları; DevOps araçları; iş birliği araçları; ölçeklenebilirliği ve dağıtım standardizasyonunu destekleyen araçlar, örneğin sanal makineler ve konteynerleştirme araçları. Alttaki bir satır, teste yardımcı her aracın sayıldığını, bir elektronik tablonun bile, ekler." /><figcaption>Şekil 6.1 — Ders programında adı verilen test aracı çeşitleri.</figcaption>
+</figure>
+<p><strong>Yönetim araçları (management tool)</strong>, ekibin YGYD’yi, gereksinimleri, testleri, hataları ve yapılandırmayı yönetmesine yardım ederek test sürecinin verimliliğini artırır. Pratikte bu, gereksinimler, test senaryoları ve hata raporları arasındaki izlenebilirliğin tutulduğu ve test ilerleme raporlarının çıktığı yerdir.</p>
+<p><strong>Statik test araçları (static testing tool)</strong>, test uzmanının gözden geçirme ve statik analiz yapmasına yardım eder. İki aktivite de test nesnesini çalıştırmaz. Örneğin bir araç gözden geçiricilerin bir gereksinim belgesi üzerindeki yorumlarını kaydetmesine ve izlemesine yardım edebilir; bir başkası ise kaynak kodu kodlama standartlarının ihlalleri için tarar.</p>
+<p><strong>Test tasarımı ve test uygulama araçları (test design and test implementation tools)</strong>, test senaryolarının, test verisinin ve test prosedürlerinin üretilmesini kolaylaştırır. Örneğin bir araç, bir veri modelinden, bir kişinin elle hazırlaması günler sürecek büyük bir geçerli ve geçersiz girdi kaydı kümesi üretebilir.</p>
+<p><strong>Test koşumu ve kapsam araçları (test execution and coverage tools)</strong>, otomatik koşumları ve kapsam ölçümünü mümkün kılar. İkisi pratikte çoğu zaman birlikte gider; çünkü testleri koşan aynı otomatik koşum, kodun hangi komutlarını ya da dallarını çalıştırdığını da raporlayabilir.</p>
+<p><strong>Fonksiyonel olmayan test araçları (non-functional testing tool)</strong>, elle yapılması zor ya da imkânsız testleri koşmayı mümkün kılar. Tipik örnek, aynı anda bağlı 10.000 sanal kullanıcıyla yapılan bir yük testidir. Hiçbir ekip bu yükü elle üretemez; ama bir araç onu üretebilir ve altında yanıt sürelerini ölçebilir.</p>
+<p><strong>DevOps araçları (DevOps tool)</strong>, DevOps teslimat hattını, iş akışı takibini, otomatik derleme süreçlerini ve sürekli entegrasyon ile sürekli teslimatı (CI/CD) destekler. Testle bağları şudur: kod her değiştiğinde otomatik testler bu hattın içinde koşar; bu da Bölüm 2’de gördüğünüz uygulamalardan biridir.</p>
+<p><strong>İş birliği araçları (collaboration tool)</strong> iletişimi kolaylaştırır. Bu, bir ekipteki farklı rollerin, örneğin soruları, kararları ve test sonuçlarını gecikmeden paylaşması gereken iş analistlerinin, geliştiricilerin ve test uzmanlarının gündelik alışverişini de kapsar.</p>
+<p>Ölçeklenebilirliği ve dağıtım standardizasyonunu destekleyen araçlar arasında <strong>sanal makineler (virtual machine)</strong> ve <strong>konteynerleştirme araçları (containerization tool)</strong> vardır. Ekibin istendiğinde standart test ortamları oluşturmasını sağlarlar. Böylece aynı ortam her test koşumu için yeniden kurulabilir ya da birkaç özdeş kopya paralel çalışabilir.</p>
+<p>Son olarak ders programı teste yardımcı her türlü aracı ekler. Kendi örneği bir elektronik tablodur: test bağlamında, test senaryolarını izlemek ya da test verisi hazırlamak için kullanılan bir elektronik tablo bir test aracıdır. Başka bir deyişle, bir yazılımı test aracı yapan, fiyatı, lisansı ya da adı değil, kullanıldığı amaçtır.</p>
+<p><strong>Tablo 6.1 — Test aracı çeşitleri ve neyi destekledikleri</strong></p>
+<div class="table-wrap">
+<table>
+<colgroup>
+<col style="width: 28%" />
+<col style="width: 72%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Araç çeşidi</th>
+<th>Neyi destekler</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Yönetim araçları</td>
+<td>YGYD’yi, gereksinimleri, testleri, hataları ve yapılandırmayı yönetmek; izlenebilirlik ve ilerleme raporlaması</td>
+</tr>
+<tr class="even">
+<td>Statik test araçları</td>
+<td>Test nesnesini çalıştırmadan gözden geçirmeler ve statik analiz</td>
+</tr>
+<tr class="odd">
+<td>Test tasarımı ve test uygulama araçları</td>
+<td>Üretim: test senaryoları, test verisi ve test prosedürleri</td>
+</tr>
+<tr class="even">
+<td>Test koşumu ve kapsam araçları</td>
+<td>Otomatik testleri koşmak ve kapsamı ölçmek</td>
+</tr>
+<tr class="odd">
+<td>Fonksiyonel olmayan test araçları</td>
+<td>Yük testi gibi elle yapılması zor ya da imkânsız fonksiyonel olmayan testler</td>
+</tr>
+<tr class="even">
+<td>DevOps araçları</td>
+<td>İçinde otomatik testlerin koştuğu teslimat hattı, iş akışı takibi, otomatik derlemeler ve CI/CD</td>
+</tr>
+<tr class="odd">
+<td>İş birliği araçları</td>
+<td>Ekip içinde ve ekipler arasında iletişim</td>
+</tr>
+<tr class="even">
+<td>Ölçeklenebilirliği ve dağıtım standardizasyonunu destekleyen araçlar</td>
+<td>Sanal makineler ve konteynerler gibi, istendiğinde standart ortamlar</td>
+</tr>
+<tr class="odd">
+<td>Teste yardımcı her türlü araç</td>
+<td>Bağlamda teste yardım eden her şey, bir elektronik tablo bile</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><em>Uygulamada.</em> Orta büyüklükte çevik bir ürün ekibinin günlük araç takımı bu listeyle eşleşir. Ekip, gereksinimler ile test senaryoları arasında çift yönlü izlenebilirliği tutmak ve hata raporlarını kaydetmek için test yönetimine genişletilmiş Jira gibi bir iş takip aracı kullanır. Her commit’te çalışan SonarQube bir statik analiz aracıdır. Regresyon grubunu koşan Selenium ya da Playwright bir test koşumu aracıdır; testlerin Java kodunun ve dallarının ne kadarını çalıştırdığını ölçen JaCoCo ise bir kapsam aracıdır. Canlıya geçişten önce sisteme yük bindiren JMeter fonksiyonel olmayan bir test aracı, akışı baştan sona otomatikleştiren Jenkins de bir DevOps aracıdır.</p>
+<p><em>Sınav odağı.</em> Bu hedefin K2 sorusu araç çeşitlerini destekledikleri test aktiviteleriyle ilişkilendirmenizi ister ve üç biçimden birini alabilir. Bir aracı ya da bir özelliğini tarif edip hangi aktiviteyi ya da kategoriyi desteklediğini sorabilir; örneğin “Hangi çeşit araç gereksinimleri yönetir, hataları izler ve ilerlemeyi raporlar?” sorusunun cevabı yönetim aracıdır. Bir açıklamalar listesi ile bir kategoriler listesi verip eşleştirmenizi isteyebilir. Soruyu tersine de çevirebilir: tek bir aktivite adı verip onu hangi kategorilerin desteklediğini sorabilir. Bu biçimde birden fazla kategori doğru olabilir, çünkü birkaç araç çeşidi işinin parçası olarak test koşar. Genel maddeyi de aklınızda tutun: ders programı elektronik tablolar için “test etme bağlamında kullanılan bir test aracıdır” der; bu yüzden yalnızca özel ya da lisanslı yazılımın sayıldığını iddia eden bir şık yanlıştır.</p>
+<p>Dikkat edilecek şey, bir aracı komşu bir kategoriye taşıyan çeldiricidir. Örneğin bir statik analiz aracı fonksiyonel olmayan bir test aracı, bir kapsam aracı da bir test yönetimi aracı olarak sunulabilir; çünkü iki çift de birbiriyle ilgiliymiş gibi durur. Aracı ne kadar teknik göründüğüne göre eşleştirmeyin. Hangi test aktivitesini desteklediğini ve neyin üzerinde çalıştığını sorun, sonra Tablo 6.1’de o aktiviteyi adlandıran kategoriyi seçin.</p>
+<p><strong>Hemen Pekiştir</strong></p>
+<p><em>HP 6.1.1-a.</em> Her gece yapılan test koşumundan önce bir ekip aynı konteyner imajından test ortamının birkaç özdeş, izole kopyasını başlatıyor ve koşum bitince bunları kaldırıyor. Bunu hangi çeşit test aracı destekler?</p>
+<div class="mc">
+<ul>
+<li>(a) Yönetim araçları</li>
+<li>(b) İş birliği araçları</li>
+<li>(c) Ölçeklenebilirliği ve dağıtım standardizasyonunu destekleyen araçlar</li>
+<li>(d) Statik test araçları</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (c). Sanal makineler ve konteynerleştirme araçları, ders programının ölçeklenebilirliği ve dağıtım standardizasyonunu destekleyen araçlara verdiği örneklerdir; istendiğinde standart test ortamları oluştururlar. Yönetim araçları testleri, hataları ve izlenebilirliği yönetir; iş birliği araçları iletişimi destekler; statik test araçları gözden geçirmeleri ve statik analizi destekler. Dolayısıyla hiçbiri ortamları sağlamaz.</p>
+</div></details>
+<p><em>HP 6.1.1-b.</em> ISTQB® ders programına göre araç kullanımıyla ilgili aşağıdaki ifadelerden hangisi doğrudur?</p>
+<div class="mc">
+<ul>
+<li>(a) Sıradan bir elektronik tablo bile testte, örneğin test senaryolarını ya da test verisini izlemek için kullanıldığında bir test aracı sayılır</li>
+<li>(b) Yalnızca lisanslı ticari otomasyon yazılımları test aracı olarak sınıflandırılabilir</li>
+<li>(c) Kod derleyicileri ve hata ayıklama araçları test yönetimi araçlarının ana omurgasını oluşturur</li>
+<li>(d) Kodu çalıştırmadan tarayan statik analiz araçları fonksiyonel olmayan test araçlarıdır</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (a). Ders programı araç çeşitleri listesini teste yardımcı her türlü araçla kapatır ve elektronik tablonun test bağlamında bir test aracı olduğunu söyler. (b) şıkkı bununla çelişir, çünkü önemli olan aracın lisansı değil, kullanıldığı amaçtır. (c) şıkkı geliştirme araçlarını test yönetimi araçlarıyla karıştırır; (d) şıkkı ise bir statik test aracını yanlış kategoriye koyar.</p>
+</div></details>
+<p><em>HP 6.1.1-c.</em> Bir araç, kodu çalıştırmadan ekibin kaynak kodunu kodlama standartlarına göre kontrol ediyor ve her ihlali raporluyor. Bu hangi çeşit test aracıdır?</p>
+<div class="mc">
+<ul>
+<li>(a) Test koşumu ve kapsam araçları</li>
+<li>(b) Fonksiyonel olmayan test araçları</li>
+<li>(c) DevOps araçları</li>
+<li>(d) Statik test araçları</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (d). Kodu çalıştırmadan kodlama standartlarına göre kontrol etmek statik analizdir; bunu statik test araçları destekler. Test koşumu ve kapsam araçları test koşar ve kapsamı ölçer; fonksiyonel olmayan test araçları yük testi gibi elle yapılması zor testleri gerçekleştirir; DevOps araçları ise böyle bir kontrolün başlatılabileceği teslimat hattını yürütür.</p>
+</div></details>
+</section>
+</section>
+<section id="benefits-and-risks-of-test-automation" class="level2">
+<h2>6.2 Test Otomasyonunun Faydaları ve Riskleri</h2>
+<section id="fl-6-2-1" class="level3">
+<h3>Test otomasyonunun faydaları ve riskleri (FL-6.2.1 — K1)</h3>
+<p>Bu bölümün tek anahtar kelimesi olan <strong>test otomasyonu (test automation)</strong>, adının düşündürdüğünden daha geniştir. ISTQB® sözlüğü onu, test yönetimi, test tasarımı, test koşumu ve sonuç kontrolü gibi test aktivitelerini gerçekleştirmek ya da desteklemek için yazılım kullanılması olarak tanımlar. Başka bir deyişle test otomasyonu otomatik test koşmaktan fazlasını kapsar; testleri yönetmek ya da tasarlamak için bir araç kullanmak da sayılır.</p>
+<p>Ders programı bu konuyu önemli bir uyarıyla açar: yalnızca bir araç edinmek başarıyı güvence altına almaz. Her yeni araç, gerçek ve kalıcı fayda vermeye başlamadan önce bir efor ister. Başka bir deyişle aracın kullanıma alınması, ekibin eğitilmesi ve test betiklerinin bakımının yapılması gerekir.</p>
+<p>Ders programı test otomasyonunun altı potansiyel faydasını sayar:</p>
+<ul>
+<li>Regresyon testlerini koşmak, aynı test verisini yeniden girmek, beklenen sonuçları gerçekleşen sonuçlarla karşılaştırmak ve kodu kodlama standartlarına göre kontrol etmek gibi tekrarlayan manuel işler azalır; böylece zaman kazanılır.</li>
+<li>Tutarlılık ve tekrarlanabilirlik arttığı için basit insan hataları önlenir. Örneğin testler gereksinimlerden tutarlı biçimde türetilir, test verisi sistematik olarak oluşturulur ve bir araç testleri aynı sırayla, aynı sıklıkta koşar.</li>
+<li>Değerlendirme, örneğin kapsam değerlendirmesi, daha nesnel hâle gelir; araç, insanların belirlemesi için fazla karmaşık ölçüler de sağlayabilir.</li>
+<li>Test hakkındaki bilgilere erişmek kolaylaşır; bu da test yönetimini ve test raporlamasını test ilerlemesine, arıza oranlarına ve test koşum süresine dair istatistiklerle, grafiklerle ve toplu verilerle destekler.</li>
+<li>Test koşum süreleri kısalır; bu da hataların daha erken tespit edilmesi, geri bildirimin daha hızlı gelmesi ve ürünün pazara daha hızlı çıkması demektir.</li>
+<li>Test uzmanlarına yeni, daha derin ve daha etkili testler tasarlamak için daha fazla zaman kalır.</li>
+</ul>
+<p>Ders programı analiz edilmesi ve azaltılması gereken sekiz potansiyel risk de sayar:</p>
+<ul>
+<li>Aracın fonksiyonalitesi ve kullanım kolaylığı dahil, faydalarına dair beklentiler gerçekçi olmayabilir.</li>
+<li>Aracı kullanıma alma, test betiklerinin bakımı ve var olan manuel test sürecinin değiştirilmesi için gereken zaman, maliyet ve efor yanlış tahmin edilebilir.</li>
+<li>Manuel testin daha uygun olduğu yerde bir test aracı kullanılabilir.</li>
+<li>Ekip araca fazla güvenebilir, örneğin insanın eleştirel düşünmesine olan ihtiyacı yok sayarak.</li>
+<li>Ekip, faaliyetine son verebilecek, ürünü sonlandırabilecek, başka bir şirket tarafından satın alınabilecek ya da sorulara, yükseltmelere ve hata düzeltmelerine zayıf destek verebilecek araç satıcısına bağlı kalır.</li>
+<li>Açık kaynaklı yazılım terk edilebilir, böylece başka güncelleme gelmez; ya da geliştikçe iç bileşenlerinin oldukça sık güncellenmesi gerekebilir.</li>
+<li>Otomasyon aracı geliştirme platformuyla uyumlu olmayabilir.</li>
+<li>Seçilen araç, geçerli düzenleyici gereksinimlere ya da emniyet standartlarına uymadığı için uygunsuz olabilir.</li>
+</ul>
+<p><em>Uygulamada.</em> Bir test ekibi, her sürümde 400 test senaryoluk, iki günlük manuel regresyon yükünü ortadan kaldırmak için büyük bir otomasyon projesine başlıyor. Başta her şey yolunda gidiyor; testler otomatik koşuyor, yeşil raporlar geliyor. Ama altıncı aya gelindiğinde yazılımın kullanıcı arayüzündeki geniş bir yeniden tasarım 180 otomatik test senaryosunu bozuyor. Ekip planlamasında otomasyon kodunun düzenli bakım eforunu göz ardı ettiği için, test uzmanları artık zamanlarını yeni özellikleri test etmek yerine betik onarmaya harcamak zorunda kalıyor. Sonuçta otomasyon ekibi hızlandıracağına yavaşlatıyor. Bu, ders programındaki test betiklerinin bakımı için gereken eforun hatalı tahmin edilmesi riskidir.</p>
+<p><em>Sınav odağı.</em> Bu hedefin soruları K1 hatırlama sorularıdır: fayda olan şıkkı ya da risk olan şıkkı seçersiniz. Yanlış şıklar üç biçimden birini alabilir. Birincisi bir faydayı garantiye dönüştürerek abartır ya da gerçek bir riski inkâr eder; “manuel test ihtiyacını ortadan kaldırır” ya da “otomatik betikler bir kez yazıldıktan sonra bakım gerektirmez” gibi. İkincisi listelenen bir maddenin sözcüklerini korur, ama yönünü tersine çevirir ya da kapsamını genişletir; örneğin “test uzmanlarına yeni testler tasarlamak için daha az zaman” ya da “test nesnesindeki bütün hataları önler”. Üçüncüsü soru risk isterken gerçek bir faydayı, fayda isterken gerçek bir riski sunar.</p>
+<p>Bir şıkkın olumlu gelip gelmediğini sormayın. Ders programının onu fayda olarak mı, risk olarak mı saydığını, yoksa hiç saymadığını sorun; sonra ifadesinin listelenen maddeyle uyuştuğunu kontrol edin. Tablo 6.2 her gerçek faydayı ve ana riskleri, karşılaşabileceğiniz çeldirici biçimleriyle yan yana koyuyor.</p>
+<p><strong>Tablo 6.2 — Test otomasyonunun gerçek faydaları ve riskleri ile çeldirici biçimleri</strong></p>
+<div class="table-wrap">
+<table>
+<colgroup>
+<col style="width: 37%" />
+<col style="width: 30%" />
+<col style="width: 32%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Ders programı ne diyor</th>
+<th>Sınavdaki çeldirici biçimi</th>
+<th>Çeldirici neden tutmaz</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Fayda: tekrarlayan manuel işi azaltarak zaman kazanmak</td>
+<td>“Otomasyon manuel test ihtiyacını ortadan kaldırır.”</td>
+<td>Manuel testin daha uygun olduğu yerde araç kullanmak listelenmiş bir risktir.</td>
+</tr>
+<tr class="even">
+<td>Fayda: tutarlılık ve tekrarlanabilirlik sayesinde daha az basit insan hatası</td>
+<td>“Otomasyon insanın eleştirel düşünmesine olan ihtiyacı ortadan kaldırır.”</td>
+<td>İnsanın eleştirel düşünmesini yok saymak araca fazla güvenme riskidir.</td>
+</tr>
+<tr class="odd">
+<td>Fayda: kapsam gibi daha nesnel değerlendirme</td>
+<td>“Otomasyon yazılımın hatasız olduğunu güvence altına alır.”</td>
+<td>Test hataların varlığını gösterir, yokluğunu değil (Bölüm 1).</td>
+</tr>
+<tr class="even">
+<td>Fayda: yönetim ve raporlama için test bilgisine daha kolay erişim</td>
+<td>“Ne zaman sürüme çıkılacağına aracın gösterge paneli karar verir.”</td>
+<td>Bilgi insanların kararlarını destekler; onların yerini almaz.</td>
+</tr>
+<tr class="odd">
+<td>Fayda: daha kısa koşum süreleri, hataların daha erken tespiti, daha hızlı geri bildirim</td>
+<td>“Otomatik testler her zaman insan test uzmanlarından daha çok hata bulur.”</td>
+<td>Fayda hızdır, güvence altına alınmış daha yüksek bir hata sayısı değil.</td>
+</tr>
+<tr class="even">
+<td>Fayda: test uzmanlarına yeni, daha derin testler tasarlamak için daha fazla zaman</td>
+<td>“Testler otomatikleştirildikten sonra test uzmanlarına gerek kalmaz.”</td>
+<td>Zaman test uzmanlarından alınmaz, onlar için açılır.</td>
+</tr>
+<tr class="odd">
+<td>Risk: bir aracı benimsemenin, betiklerini çalışır tutmanın ve manuel süreci yeniden düzenlemenin zaman, para ve efor maliyetini küçümsemek</td>
+<td>“Otomatik betikler bir kez yazıldıktan sonra bakım gerektirmez.”</td>
+<td>Betik bakımı, ekiplerin çoğu zaman küçümsediği sürekli bir maliyettir.</td>
+</tr>
+<tr class="even">
+<td>Açılış uyarısı: yalnızca bir araç edinmek başarıyı güvence altına almaz</td>
+<td>“Tanınmış bir ticari araç otomasyon risklerini ortadan kaldırır.”</td>
+<td>Satıcıya bağımlılık başlı başına listelenmiş bir risktir.</td>
+</tr>
+<tr class="odd">
+<td>Risk: açık kaynaklı bir araç terk edilebilir ya da sık güncelleme gerektirebilir</td>
+<td>“Açık kaynaklı bir aracın satıcısı olmadığı için bağımlılık riski yoktur.”</td>
+<td>Bağımlılık açık kaynak projesine ve onun geliştiricilerine kayar.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Hemen Pekiştir</strong></p>
+<p><em>HP 6.2.1-a.</em> Aşağıdakilerden hangisi test otomasyonunun potansiyel bir faydasıdır?</p>
+<div class="mc">
+<ul>
+<li>(a) Kullanıcı arayüzü değiştiğinde bakım gerektirmeden çalışmaya devam eden test betikleri</li>
+<li>(b) Yükseltmeler ve hata düzeltmeleri için araç satıcısına daha az bağımlılık</li>
+<li>(c) Sürüm kararlarının insanlar yerine, gösterge paneline dayanarak araç tarafından alınması</li>
+<li>(d) Test ilerlemesine ve arıza oranlarına dair istatistikler gibi test hakkındaki bilgilere daha kolay erişim</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (d). Ders programı, test ilerlemesine, arıza oranlarına ve koşum süresine dair istatistikler, grafikler ve toplu veriler gibi test hakkındaki bilgilere daha kolay erişimi bir fayda olarak sayar. (a) şıkkı, ders programının risk olarak adlandırdığı betik bakım eforunu inkâr eder; (b) şıkkı ise araç satıcısına bağımlılık riskini tersine çevirir. (c) şıkkı, insanların kararlarını destekleyen bilgiyi kararın kendisine dönüştürür; bu da araca fazla güvenme riskidir.</p>
+</div></details>
+<p><em>HP 6.2.1-b.</em> Ders programına göre aşağıdakilerden hangisi test otomasyonunun bir riskidir?</p>
+<div class="mc">
+<ul>
+<li>(a) İnsanın sezgisel ve eleştirel düşünme ihtiyacını yok sayarak araca ve onun otomatik yeşil raporlarına fazla güvenmek</li>
+<li>(b) Kapsam oranlarını gözle yapılandan çok daha nesnel değerlendirmek</li>
+<li>(c) Tekdüze, tekrarlayan manuel veri girişi adımlarında ekibe ciddi zaman kazandırmak</li>
+<li>(d) Test uzmanlarını rutin yükten kurtararak daha yaratıcı test senaryoları tasarlamalarını sağlamak</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (a). Bir araca fazla güvenmek, örneğin insanın eleştirel düşünmesine olan ihtiyacı yok saymak, ders programının saydığı bir risktir. Araç yalnızca kendisi için yazılmış adımları koşar ve sonuçları bir insan gibi değerlendiremez. (b), (c) ve (d) faydalardır.</p>
+</div></details>
+<p><em>HP 6.2.1-c.</em> “Dünyaca tanınan, güçlü ve pahalı ticari bir test otomasyonu aracını satın alıp kurmak, bir projedeki bütün otomasyon risklerini ve süreç darboğazlarını tamamen ortadan kaldırır.” Bu iddia için ne doğrudur?</p>
+<div class="mc">
+<ul>
+<li>(a) Kesinlikle doğrudur, çünkü ticari kurumsal yazılımlar doğası gereği projeleri her riskten yalıtır</li>
+<li>(b) Yanlıştır; yalnızca bir araç edinmek başarıyı güvence altına almaz ve her yeni araç kullanıma alma, bakım ve eğitim için efor gerektirir</li>
+<li>(c) Doğrudur; riskler yalnızca ücretsiz açık kaynak kütüphaneler kullanıldığında ortaya çıkar</li>
+<li>(d) Yanlıştır, çünkü ticari olarak satılan hiçbir test aracının dinamik kodda hata bulma yeteneği yoktur</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (b). Ders programı 6.2 kesimini şu uyarıyla açar: yalnızca bir araç edinmek başarıyı güvence altına almaz; her yeni araç, gerçek ve kalıcı fayda vermeye başlamadan önce kullanıma alma, bakım ve eğitim için efor ister.</p>
+</div></details>
+</section>
+</section>
+<section id="chapter-6-summary" class="level2">
+<h2>Bölüm 6 özeti</h2>
+<div class="table-wrap">
+<table>
+<colgroup>
+<col style="width: 16%" />
+<col style="width: 83%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Öğrenme hedefi</th>
+<th>Tek cümlelik özet</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>6.1.1 (K2)</td>
+<td>Ders programı sekiz araç çeşidi ve bir genel madde sayar: yönetim araçları testi koordine eder, test koşumu ve kapsam araçları test koşar ve kapsamı ölçer; testte kullanılan bir elektronik tablo bile bir test aracıdır.</td>
+</tr>
+<tr class="even">
+<td>6.2.1 (K1)</td>
+<td>Potansiyel faydalar arasında zaman kazancı, daha az basit insan hatası, daha nesnel değerlendirme, test bilgisine daha kolay erişim, daha hızlı geri bildirim ve test uzmanlarına daha iyi testler tasarlamak için daha fazla zaman vardır. Potansiyel riskler arasında gerçekçi olmayan beklentiler, hatalı efor tahminleri, araca fazla güvenme, araç satıcısına bağımlılık ve terk edilebilecek açık kaynaklı yazılım vardır.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<section id="sık-karıştırılan-kritik-kavram-çiftleri-5" class="level3">
+<h3>Sık karıştırılan kritik kavram çiftleri</h3>
+<div class="table-wrap">
+<table>
+<colgroup>
+<col style="width: 14%" />
+<col style="width: 35%" />
+<col style="width: 14%" />
+<col style="width: 35%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Bu kavram</th>
+<th>şudur</th>
+<th>şu kavram değildir</th>
+<th>o da şudur</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Test koşumu aracı</td>
+<td>otomatik testleri koşar ve sonuçlarını kaydeder</td>
+<td>Test yönetimi aracı</td>
+<td>gereksinimleri, testleri ve hata raporlarını saklar, aralarındaki izlenebilirliği tutar</td>
+</tr>
+<tr class="even">
+<td>Fayda: basit insan hatalarını önlemek</td>
+<td>aynı adımlar her seferinde aynı biçimde koşar; böylece yazım hatası ya da atlanan adım gibi dikkatsizlikler olmaz</td>
+<td>Risk: araca fazla güvenmek</td>
+<td>insanın eleştirel düşünmesi olmadan aracın sonuçlarına güvenmek; böylece betiklerin kontrol etmediği sorunlar fark edilmez</td>
+</tr>
+<tr class="odd">
+<td>Edinme</td>
+<td>bir test aracını satın almak ya da indirmek</td>
+<td>Başarı</td>
+<td>gerçek ve kalıcı fayda; aracın kullanıma alınması, eğitim ve bakım için efor gerektirir</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="sınav-ipuçları-ve-yaygın-tuzaklar-bölüm-6" class="level3">
+<h3>Sınav ipuçları ve yaygın tuzaklar — Bölüm 6</h3>
+<p>Araç sınıflandırma sorularında aracın projedeki amacına ve neyin üzerinde çalıştığına odaklanın. İş ürünlerini saklıyor ve hata raporlarını bağlıyorsa yönetimi seçin; gözden geçirmeleri destekliyor ya da bir iş ürününü çalıştırmadan analiz ediyorsa statiği seçin; test adımlarını koşuyor ve kapsamı ölçüyorsa koşum ve kapsamı seçin. Otomasyon faydası/riski sorularında şıklardaki keskin, abartılı sözcüklere (“tamamen ortadan kaldırır”, “%100 kaliteyi güvence altına alır”, “insana gerek bırakmaz” gibi) karşı çok kuşkucu olun; böyle şıklar neredeyse her zaman yanlıştır. Listelenen bir maddenin tek bir sözcüğünü tersine çeviren şıkkı, risk diye sunulan bir faydayı ve fayda diye sunulan bir riski de arayın.</p>
+<p>Zaman yönetimi açısından bu bölümün soruları saf bilgi ve kavrama sorularıdır; bu yüzden <em>CTFL® Sınavı Nasıl İşler</em> bölümündeki tempo geçerlidir. Burada kazandığınız zamanı gönül rahatlığıyla Bölüm 4 ve 5’in K3 sorularına aktarabilirsiniz.</p>
+</section>
+</section>
+<section id="cumulative-retrieval-4" class="level2">
+<h2>Birikimli hatırlama</h2>
+<p>Önceki bölümleri bu bölümün merceğinden yeniden ziyaret edin:</p>
+<ul>
+<li><strong>R6-a.</strong> Bir yük testi aracının fonksiyonel testi mi, fonksiyonel olmayan testi mi desteklediğini söyleyin (Bölüm 2).</li>
+<li><strong>R6-b.</strong> “Otomasyonun yeşil raporlarına fazla güvenmek”in Bölüm 1’deki ilk prensibi (testin amacı hataların olduğunu göstermektir, hata kalmadığını ispatlamak değil) yankılayıp yankılamadığına karar verin.</li>
+<li><strong>R6-c.</strong> Her yapıda bir güvenlik tarama aracı çalıştırmanın risk azaltma mı, risk kabulü mü, risk transferi mi, yoksa bir acil durum planı mı olduğuna karar verin (Bölüm 5).</li>
+</ul>
+<p>Son bölüm olarak bu küme, bölümleri en geniş biçimde kesen tekrar olabilir.</p>
+<p>Önceki bölümlere geri bakmadan önce her birini hafızanızdan yanıtlamaya çalışın. Örnek cevaplar, Cevaplar ve Gerekçeler bölümünde <em>Birikimli hatırlama — örnek cevaplar</em> başlığı altındadır.</p>
+</section>
+<section id="chapter-exercises-5" class="level2">
+<h2>Bölüm alıştırmaları</h2>
+<p>Cevaplar, gerekçeler ve öğrenme hedefi kaynakları kitabın sonundaki “Cevaplar ve Gerekçeler” bölümündedir.</p>
+<p><em>PB-C6-001.</em> Bir test ekibi müşterilerin iş gereksinimlerini merkezi olarak saklamak, hazırlanan test senaryolarını bu gereksinim öğelerine geri bağlamak, sistem testinde bulunan hataları anında izlemek ve sürümün test koşumu ilerlemesini metrik gösterge panelleriyle üst yönetime raporlamak istiyor. Bu etkinliklerin tümünü en iyi hangi araç çeşidi destekler?</p>
+<div class="mc">
+<ul>
+<li>(a) Test koşumu ve kapsam araçları</li>
+<li>(b) Yönetim araçları</li>
+<li>(c) Statik test araçları</li>
+<li>(d) DevOps araçları</li>
+</ul>
+</div>
+<p><em>PB-C6-002.</em> Bir organizasyonun test sürecine araç desteği ve otomasyon getirmenin olası, meşru faydalarından biri aşağıdakilerden hangisidir?</p>
+<div class="mc">
+<ul>
+<li>(a) Bir kez yazılan otomasyon betiklerinin gelecekte her türlü test kodu bakımı ve güncelleme ihtiyacını tamamen ortadan kaldırması</li>
+<li>(b) Test koşumları ve analizleri sırasında insan uzmanların analitik ve eleştirel düşünmesine artık hiç gerek kalmaması</li>
+<li>(c) Tekrarlayan regresyon testlerinin koşum sürelerinin kısalması; bu da ekibe daha erken hata tespiti ve daha hızlı geri bildirim sağlar</li>
+<li>(d) Seçilen kurumsal test aracının tek başına sektör düzenlemelerine ve katı standartlara tam uyumu yasal olarak güvence altına alması</li>
+</ul>
+</div>
+<p><em>PB-C6-003.</em> Bir geliştirme ekibi bütün projenin kritik regresyon testi stratejisini, tek bir gönüllü geliştiricinin bakımını yaptığı ücretsiz, açık kaynaklı bir otomasyon kütüphanesi üzerine kurmuş. Bu durum en doğrudan hangi test otomasyonu riskine kapı açar?</p>
+<div class="mc">
+<ul>
+<li>(a) Açık kaynaklı kütüphanenin terk edilmesi ve böylece başka güncelleme gelmemesi</li>
+<li>(b) Manuel teste çok daha uygun bir alanda inatla bir otomasyon aracı kullanmak</li>
+<li>(c) Yönetim seviyesinde aracın teknik gücüne dair gerçekçi olmayan beklentilerin oluşması</li>
+<li>(d) Kapsam oranlarının gözle yapılandan çok daha nesnel değerlendirilmesi</li>
+</ul>
+</div>
+<p><em>PB-C6-004.</em> Bir test ekibi, yeni bilet satış platformuna aynı anda giren 5.000 eş zamanlı sanal kullanıcıyı simüle eden ve bu yük altında sunucu yanıt sürelerini ölçen bir araç kullanıyor. Bu hangi çeşit test aracıdır?</p>
+<div class="mc">
+<ul>
+<li>(a) Yönetim araçları</li>
+<li>(b) Test koşumu ve kapsam araçları</li>
+<li>(c) DevOps araçları</li>
+<li>(d) Fonksiyonel olmayan test araçları</li>
+</ul>
+</div>
+</section>
+</section>
+
+<div class="pager"><a href="chapter-5.html"><span class="lbl">Önceki</span>Bölüm 5 — Test Aktivitelerini Yönetme</a><a href="rationale.html" style="text-align:right"><span class="lbl">Sonraki</span>Cevaplar ve Gerekçeler</a></div>
+<footer class="site">© 2026 Kadir Çamoğlu · Kendi içeriğimiz CC BY-NC 4.0 lisanslıdır · ISTQB® ve CTFL®, International Software Testing Qualifications Board'un tescilli markalarıdır; bu rehber ISTQB® ya da Turkish Testing Board ile bağlantılı değildir, onlar tarafından onaylanmamıştır.</footer>
+</main>
+</div>
+<script>if (window.matchMedia('(min-width: 901px)').matches) document.getElementById('navd').open = true;</script>
+<script>(function(){function od(){var h=decodeURIComponent(location.hash.slice(1));if(!h)return;var e=document.getElementById(h);while(e){if(e.tagName==='DETAILS')e.open=true;e=e.parentElement;}}addEventListener('hashchange',od);od();})();</script>
+</body>
+</html>

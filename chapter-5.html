@@ -1,0 +1,1185 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bölüm 5 — Test Aktivitelerini Yönetme · ISTQB® CTFL® v4.0 Sınav Rehberi</title>
+<meta name="description" content="ISTQB® Sertifikalı Test Uzmanı Temel Seviye (CTFL®) v4.0 sınavı için ücretsiz, bağımsız Türkçe çalışma rehberi: 64 öğrenme hedefinin tamamı, çözümlü örnekler, kısa sorular ve iki dilli tam bir deneme sınavı.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="draft-banner" role="note"><strong>Herkese açık taslak — inceleniyor.</strong> Geri bildirim: <a href="mailto:kadir.camoglu@gmail.com">kadir.camoglu@gmail.com</a></div>
+<header class="topbar"><div class="inner"><a href="index.html">ISTQB® CTFL® v4.0 Sınav Rehberi</a><span class="meta"><span class="ind">Bağımsız · Gayriresmî çalışma rehberi · Herkese açık taslak · 2026-10 · </span><a href="all.html">Tam metin tek sayfada</a></span></div></header>
+<div class="layout">
+<nav class="side"><details id="navd"><summary>İçindekiler</summary><div class="navbody">
+<div class="group">Ön bölüm</div><ul>
+<li><a href="index.html">ISTQB® CTFL® v4.0 Sınav Rehberi: Sıfırdan Sınava Hazır Seviyeye</a>
+</li>
+<li><a href="copyright.html">Telif Hakkı ve Marka Bildirimi</a>
+</li>
+<li><a href="introduction.html">Giriş — Bu Kitap Hakkında</a>
+</li>
+<li><a href="how-to-use.html">Bu Kitap Nasıl Kullanılır</a>
+</li>
+<li><a href="the-exam.html">CTFL® Sınavı Nasıl İşler</a>
+</li>
+<li><a href="objective-map.html">Hedef Haritası</a>
+</li>
+<li><a href="study-roadmap.html">Çalışma Yol Haritası</a>
+</li>
+</ul>
+<div class="group">Bölümler</div><ul>
+<li><a href="chapter-1.html">Bölüm 1 — Yazılım Testinin Temelleri</a>
+</li>
+<li><a href="chapter-2.html">Bölüm 2 — Yazılım Geliştirme Yaşam Döngüsü Boyunca Test</a>
+</li>
+<li><a href="chapter-3.html">Bölüm 3 — Statik Testler</a>
+</li>
+<li><a href="chapter-4.html">Bölüm 4 — Test Analizi ve Tasarımı</a>
+</li>
+<li class="current"><a href="chapter-5.html">Bölüm 5 — Test Aktivitelerini Yönetme</a>
+<ul class="sub"><li><a href="#test-planning">5.1 Test Planlama</a></li><li><a href="#risk-management">5.2 Risk Yönetimi</a></li><li><a href="#test-monitoring-test-control-and-test-completion">5.3 Test Gözetimi, Test Kontrol ve Test Tamamlama</a></li><li><a href="#configuration-management-fl-5.4.1-k2">5.4 Yapılandırma Yönetimi (FL-5.4.1 — K2)</a></li><li><a href="#defect-management">5.5 Hata Yönetimi</a></li><li><a href="#chapter-5-summary">Bölüm 5 özeti</a></li><li><a href="#cumulative-retrieval-3">Birikimli hatırlama</a></li><li><a href="#chapter-exercises-4">Bölüm alıştırmaları</a></li><li><a href="#independent-exercise-solutions-1">Bağımsız alıştırma çözümleri</a></li></ul>
+</li>
+<li><a href="chapter-6.html">Bölüm 6 — Test Araçları</a>
+</li>
+</ul>
+<div class="group">Arka bölüm</div><ul>
+<li><a href="rationale.html">Cevaplar ve Gerekçeler</a>
+</li>
+<li><a href="glossary.html">Sözlük</a>
+</li>
+<li><a href="confused-pairs.html">Sık Karıştırılan Kavramlar — Ana Liste</a>
+</li>
+<li><a href="final-revision.html">Son Tekrar Planı</a>
+</li>
+<li><a href="mock-exam-1.html">Deneme Sınavı 1 — 40 Soru, Gerekçeleriyle</a>
+</li>
+<li><a href="further-resources.html">İleri Kaynaklar</a>
+</li>
+</ul>
+</div></details></nav>
+<main>
+<section id="chapter-5-managing-the-test-activities" class="level1">
+<h1>Bölüm 5 — Test Aktivitelerini Yönetme</h1>
+<p><strong>Öğrenme hedefleri:</strong> 16 · K1 4 / K2 9 / K3 3 · <strong>Bu bölümden sınav sorusu:</strong> 9</p>
+<p><strong>Anahtar kelimeler:</strong> hata yönetimi (defect management), hata raporu (defect report), giriş kriterleri (entry criteria), çıkış kriterleri (exit criteria), ürün riski (product risk), proje riski (project risk), risk (risk), risk analizi (risk analysis), risk değerlendirmesi (risk assessment), risk kontrolü (risk control), risk belirleme (risk identification), risk seviyesi (risk level), risk yönetimi (risk management), risk azaltma (risk mitigation), risk gözetimi (risk monitoring), risk bazlı test (risk-based testing), test yaklaşımı (test approach), test tamamlama raporu (test completion report), test kontrolü (test control), test gözetimi (test monitoring), test planı (test plan), test planlama (test planning), test ilerleme raporu (test progress report), test piramidi (test pyramid), test stratejisi (test strategy), test çeyrekleri (testing quadrants)</p>
+<p>Bu bölüm, Bölüm 4 ile birlikte sınavın en ağır iki bölümünden biridir. Test etmeyi bir yönetim, strateji ve kaynak planlama disiplini olarak ele alır. Üç K3 sorusu prosedüreldir ve her biri pratikle öğrenebileceğiniz açık bir kalıba dayanır: tahminleme için bir formül, önceliklendirme için bağımlılık kontrolü adımları, hata raporu için de yapısal bir kontrol listesi. Buradaki örnekleri kâğıt üzerinde çözmek, ardından bölüm sonundaki alıştırmaları yapmak sizi bu üç sorunun hepsine iyi hazırlar.</p>
+<section id="test-planning" class="level2">
+<h2>5.1 Test Planlama</h2>
+<section id="fl-5-1-1" class="level3">
+<h3>Bir test planının amacı ve içeriği (FL-5.1.1 — K2)</h3>
+<p>Bir <strong>test planı (test plan)</strong>; projenin test hedeflerini, kullanacağı kaynakları (insanlar, araçlar, ortam), izleyeceği süreçleri, bütçeyi, kısıtları ve takvimi ortaya koyan resmî bir belgedir. Planlama sırasında alınan kararları kayda geçirir ve paydaşlara iletir. Ders programı plana dört amaç yükler: test hedeflerine ulaşmanın araçlarını ve takvimini ortaya koyar; aktivitelerin üzerinde uzlaşılmış kriterleri karşılayacağını teyit etmeye yardımcı olur; ekibi ve diğer paydaşları bilgilendirir; test etmenin test politikasına ve stratejisine uyup uymadığını, uymuyorsa neden ayrıldığını gösterir. Bir <strong>test stratejisi (test strategy)</strong>, test etmenin genel olarak nasıl yapıldığını genellikle organizasyon seviyesinde anlatır; test planı ise onu tek bir test projesine uygular. Planı hazırlamak ekibi; riskler, takvimler, insanlar, araçlar, maliyetler ve eforla ilgili gelecekteki zorluklarla, harekete geçmek için hâlâ zaman varken yüzleşmeye de zorlar.</p>
+<p>ISTQB®’ye göre tipik bir test planı şu ana bileşenleri içerir: testin bağlamı (kapsam, hedefler ve testlerin dayanacağı test esası belgeleri); varsayımlar ve kısıtlar (planlarken doğru kabul edilenler, örneğin “test ortamı 3. sprintte hazır olacak”, ve projenin kısıtları); paydaşlar ve roller (kimin hangi sorumluluğu üstlendiği, ekibin eğitim ve işe alım ihtiyaçları); iletişim ve raporlama (durum raporlarının ne sıklıkla, hangi şablonlarla ve kime gideceği); risk kaydı (ortaya çıkabilecek ürün ve proje risklerinin analizi); <strong>test yaklaşımı (test approach)</strong> (test seviyeleri ve test çeşitleri, test teknikleri, test çıktıları, giriş ve çıkış kriterleri, testin bağımsızlığı, toplanacak metrikler, test verisi ve test ortamı gereksinimleri, test politikasından ve test stratejisinden sapmalar); bütçe ve takvim (kilometre taşları ve maliyet kırılımları).</p>
+<p>Çevik projelerde planlama katmanlıdır: sürüm planlaması geniş stratejik çerçeveyi çizer, döngü (sprint) planlaması ise her döngü için ayrıntılı test görevlerini ekler. Test planı başta bir kez yazılıp rafa kaldırılan ağır bir nesne değildir; süreç ilerledikçe sürekli güncellenen, yaşayan bir belgedir.</p>
+<p><em>Sınav odağı.</em> Yaygın bir kalıp size dört iş ürünü verir ve hangisinin test planı içeriği olduğunu ya da olmadığını sorar. Giriş ve çıkış kriterleri, riskler ve test yaklaşımı plana aittir. Daha sonraki koşum aşamalarında üretilen çıktıları sayan şıklara dikkat edin: test kayıtları, hata istatistiği dökümleri ya da test tamamlama raporları hiçbir zaman test planının içinde yer almaz; bunlar sürecin sonunda çıkan çıktılardır. Planın ana görevi kaliteyi tek başına güvence altına almak değil, stratejiyi kayda geçirmek ve iletmektir.</p>
+<p><strong>Hemen Pekiştir</strong></p>
+<p><em>HP 5.1.1-a.</em> Aşağıdakilerden hangisi bir test planının amaçlarından biridir?</p>
+<div class="mc">
+<ul>
+<li>(a) Her test senaryosunun ayrıntılı adımlarını kaydetmek</li>
+<li>(b) Önceki sürümde bulunan hataları listelemek</li>
+<li>(c) Test sırasında bulunan hatalara geliştirici atamak</li>
+<li>(d) Test etmenin mevcut test politikasına ve test stratejisine uyacağını göstermek ya da bunlardan neden sapacağını açıklamak</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (d). Ders programı bunu test planının amaçları arasında sayar. Ayrıntılı test adımları (a) daha sonra, test uyarlama sırasında üretilir; hata listeleri (b) ve hata atamaları (c) plana değil, hata yönetimine aittir.</p>
+</div></details>
+<p><em>HP 5.1.1-b.</em> Bir test planının ana amacı nedir?</p>
+<div class="mc">
+<ul>
+<li>(a) Kaliteyi tek başına güvence altına almak</li>
+<li>(b) Seçilen test yaklaşımını kayda geçirmek ve bütün paydaşlara iletmek</li>
+<li>(c) Organizasyonun test stratejisinin yerini almak</li>
+<li>(d) Test koşumunun sonuçlarını kaydetmek</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (b). Plan kararları belgeler ve iletir; kaliteyi tek başına güvence altına almaz, test stratejisinin yerini almaz, onu uygular; koşum sonuçları ise daha sonra kaydedilir.</p>
+</div></details>
+<p><em>HP 5.1.1-c.</em> Döngüsel bir yaşam döngüsü kullanan bir ekipte, sürüm planlaması ve döngü planlama ilerledikçe test planı nasıl ele alınmalıdır?</p>
+<div class="mc">
+<ul>
+<li>(a) Projenin başında bir kez yazılır, sonra sabit bir referans olarak değiştirilmeden tutulur</li>
+<li>(b) Yalnızca sürümün sonunda, bütün test sonuçları belli olduğunda yazılır</li>
+<li>(c) Planlama seviyeleri kapsamı, riskleri ve test yaklaşımını netleştirdikçe güncellenir</li>
+<li>(d) Yerini tamamlanma tanımı alır, bu yüzden test planlamaya gerek kalmaz</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (c). Test planı yaşayan bir belgedir. Sürüm planlaması her döngü için test yaklaşımının ve test planının temelini kurar; her planlama seviyesi ayrıntı ekledikçe plan netleşir.</p>
+</div></details>
+</section>
+<section id="fl-5-1-2" class="level3">
+<h3>Test uzmanının döngü ve sürüm planlamasına katkıları (FL-5.1.2 — K1)</h3>
+<p>Çevik ve döngüsel modellerde test uzmanları iki planlama katmanına da etkin olarak katkı verir. <strong>Sürüm planlamasında (release planning)</strong> test uzmanları test edilebilir kullanıcı hikayelerini ve kabul kriterlerini yazmaya katılır, proje ve kalite riski analizlerinde yer alır, kullanıcı hikayelerine ait test eforunu tahmin eder, test yaklaşımını belirler ve sürümün testini planlar. <strong>Döngü planlamada (iteration planning)</strong> test uzmanları seçilen kullanıcı hikayelerinin ayrıntılı risk analizine katılır, test edilebilirliklerini belirler, onları test görevlerine böler, bu görevler için eforu tahmin eder ve test edilecek fonksiyonel ve fonksiyonel olmayan yönleri belirler.</p>
+<p>Tablo 5.1 iki planlama seviyesini yan yana koyuyor; böylece hangi katkının hangi seviyeye ait olduğunu görebilirsiniz.</p>
+<p><strong>Tablo 5.1 — Test uzmanının sürüm ve döngü planlamasına katkıları</strong></p>
+<div class="table-wrap">
+<table>
+<colgroup>
+<col style="width: 17%" />
+<col style="width: 20%" />
+<col style="width: 62%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Planlama seviyesi</th>
+<th>Öngördüğü</th>
+<th>Tipik test uzmanı katkıları</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Sürüm planlaması</td>
+<td>Ürünün piyasaya sürülmesi ve ürün iş listesi</td>
+<td>Test edilebilir kullanıcı hikayeleri ve kabul kriterleri yazmak; proje ve kalite riski analizleri; kullanıcı hikayeleri için test eforunu tahmin etmek; test yaklaşımını belirlemek; sürüm için testi planlamak</td>
+</tr>
+<tr class="even">
+<td>Döngü planlama</td>
+<td>Tek bir döngünün sonu ve döngü iş listesi</td>
+<td>Kullanıcı hikayelerinin ayrıntılı risk analizi; test edilebilirliklerini belirlemek; hikayeleri görevlere, özellikle test görevlerine bölmek; bütün test görevleri için test eforunu tahmin etmek; fonksiyonel ve fonksiyonel olmayan yönleri belirlemek ve iyileştirmek</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><em>Sınav odağı.</em> Bu hedef doğrudan bir hatırlama sorusudur. Yanlış şıklar test uzmanının yetkisi dışındaki yönetim görevleri olabilir (örneğin “canlıya geçiş tarihine tek başına karar vermek” ya da “geliştiricileri görevlere atamak”). Test uzmanı eforu belirtir ve analiz yapar, ama idari tarih atamaları yapmaz.</p>
+<p><strong>Hemen Pekiştir</strong></p>
+<p><em>HP 5.1.2-a.</em> Hangi test uzmanı katkısı sürüm planlamasına değil, döngü planlamaya aittir?</p>
+<div class="mc">
+<ul>
+<li>(a) Sürüm için test yaklaşımını belirlemek</li>
+<li>(b) Ürün iş listesi için test edilebilir kullanıcı hikayeleri ve kabul kriterleri yazmak</li>
+<li>(c) Seçilen kullanıcı hikayelerini test görevlerine bölmek ve her görev için eforu tahmin etmek</li>
+<li>(d) Sürüm için testi planlamak</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (c). Hikayeleri görevlere, özellikle test görevlerine bölmek ve bunların eforunu tahmin etmek döngü planlamaya ait bir katkıdır. (a), (b) ve (d) sürüm planlamasına ait katkılardır.</p>
+</div></details>
+<p><em>HP 5.1.2-b.</em> Aşağıdakilerden hangisi bir test uzmanının planlama katkılarından biri DEĞİLDİR?</p>
+<div class="mc">
+<ul>
+<li>(a) Kalite risklerini analiz etmek</li>
+<li>(b) Test eforunu tahmin etmek</li>
+<li>(c) Canlıya geçiş tarihini tek başına duyurmak</li>
+<li>(d) Hikayeleri test görevlerine bölmek</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (c). Sürüm tarihini duyurmak bir yönetim kararıdır; test uzmanı bu karara bilgi sağlar, ama tek başına vermez.</p>
+</div></details>
+<p><em>HP 5.1.2-c.</em> Bir test uzmanı yeni bir mobil bankacılık uygulamasının sürüm planlamasına katılıyor. Aşağıdakilerden hangisi bu planlama seviyesinde tipik bir test uzmanı katkısıdır?</p>
+<div class="mc">
+<ul>
+<li>(a) Canlıya geçiş tarihini belirleyip müşterilere duyurmak</li>
+<li>(b) Sürüm iş listesindeki kullanıcı hikayelerine geliştirici atamak</li>
+<li>(c) Sürüm için üretim sunucularını yapılandırmak</li>
+<li>(d) Test edilebilir kullanıcı hikayelerini ve kabul kriterlerini yazmaya yardım etmek</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (d). Sürüm planlamasında test uzmanları test edilebilir kullanıcı hikayelerini ve kabul kriterlerini yazmaya yardım eder, risk analizine katılır, test eforunu tahmin eder ve sürüm için testi planlar. Diğer şıklar test uzmanı katkısı değil, yönetim ya da operasyon görevleridir.</p>
+</div></details>
+</section>
+<section id="fl-5-1-3" class="level3">
+<h3>Giriş kriterlerini ve çıkış kriterlerini yönetme (FL-5.1.3 — K2)</h3>
+<p><strong>Giriş kriterleri (entry criteria)</strong>, belirli bir test aktivitesine resmî olarak başlamak için karşılanması gereken ön koşulları tanımlar. Giriş kriterleri karşılanmazsa aktivite büyük olasılıkla daha zor, daha uzun, daha maliyetli ve daha riskli geçer; çünkü ekip hata bulmak yerine ortamı kurmak ya da eksik verinin peşine düşmek gibi hazırlık sorunlarıyla zaman kaybeder. Giriş kriterleri üç temel alanı kapsar: kaynakların hazır olması (ortam, araçlar, insanlar, veri, bütçe), iş ürünlerinin hazır olması (test esası, yazılmış test senaryoları) ve test nesnesinin başlangıçtaki kalite seviyesi (örneğin kodun bir duman testini geçmesi). <strong>Çıkış kriterleri (exit criteria)</strong>, bir test aktivitesini tamamlanmış ilan etmek için nelere ulaşılması gerektiğini tanımlar. Ulaşılan kapsam, çözülmemiş hata sayısı, hata yoğunluğu ve başarısız test senaryosu sayısı gibi bütünlük ölçülerini; planlanan testlerin koşulup koşulmadığı, statik testin yapılıp yapılmadığı, bulunan her hatanın kayda geçirilip geçirilmediği ve bütün regresyon testlerinin otomatikleştirilip otomatikleştirilmediği gibi evet/hayır kriterlerini içerir. Her test seviyesinin kendi giriş ve çıkış kriterleri olmalıdır ve bunlar test hedeflerine göre değişir.</p>
+<p>Şekil 5.1 iki kriter kümesini bir test aktivitesinin iki yanındaki kapılar olarak gösteriyor. Giriş kapısı “Başlamaya hazır mıyız?” diye sorar. Çıkış kapısı ise “Bitirmeye hazır mıyız?” diye.</p>
+<figure>
+<img src="figures/fig_5_1_entry_exit_gates.png" alt="Şekil 5.1 — Bir test aktivitesinin iki yanında iki kapı olarak giriş kriterleri ve çıkış kriterleri. “Giriş kriterleri: Başlamaya hazır mıyız?” etiketli bir karar baklavası “Evet” ile “Test etme” etiketli kutuya götürür; “Hayır” kolunda “hazırlığı tamamla, bekle” yazar. Test etme kutusu “Çıkış kriterleri: Bitirmeye hazır mıyız?” etiketli ikinci baklavaya götürür; bu baklavanın “Evet” kolu “bitti”ye gider, “Hayır” kolunda ise “teste devam; erken bitirme ancak paydaşlar kalan riski kabul ederse” yazar." /><figcaption>Şekil 5.1 — Bir test aktivitesinin iki yanında iki kapı olarak giriş kriterleri ve çıkış kriterleri.</figcaption>
+</figure>
+<p>Sınav için iki özel kural önemlidir. Birincisi, zamanın ya da bütçenin bitmesi de testin sona ermesini zorlayabilir. Bu ancak paydaşlar, çıkış kriterleri karşılanmadan canlıya geçmenin kalan risklerini bilinçli olarak kabul edip onaylarsa meşrudur. İkincisi, çevik terminolojide bu kapıların adı değişir: çevik ekiplerde kullanıcı hikayeleri için giriş kriterlerinin rolünü <strong>hazır olma tanımı (Definition of Ready, DoR)</strong> üstlenir; ders programındaki adı “Hazır Tanımı”dır. Çıkış kriterlerinin rolünü ise <strong>tamamlanma tanımı (Definition of Done, DoD)</strong> üstlenir; ders programı bunu “Tamamlandı Tanımı” diye adlandırır.</p>
+<p><em>Sınav odağı.</em> Size pratik bir durum verilir ve bunun hangi kriter olduğu sorulur. Ayrım sözcüklerdedir: “ortamın hazır olması, duman testinin geçmesi, verinin yüklenmiş olması” testin başlangıcına işaret eder, yani bir giriş kriteridir (DoR); “kapsama ulaşıldı, sınırın üstünde açık hata yok, planlanan bütün test senaryoları koşuldu” testin sonuna işaret eder, yani bir çıkış kriteridir (DoD).</p>
+<p><strong>Hemen Pekiştir</strong></p>
+<p><em>HP 5.1.3-a.</em> Aşağıdakilerden hangisi sistem testi için bir çıkış kriteri değil, bir giriş kriteridir?</p>
+<div class="mc">
+<ul>
+<li>(a) Planlanan sistem testleri koşulmuştur</li>
+<li>(b) Hata yoğunluğu üzerinde uzlaşılan sınırın altındadır</li>
+<li>(c) Test ortamı, test verisi ve test uzmanları hazırdır</li>
+<li>(d) Bulunan bütün hatalar raporlanmıştır</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (c). Kaynakların hazır olması tipik bir giriş kriteridir. (a), (b) ve (d) testi bitirmek için nelere ulaşılması gerektiğini anlatır; dolayısıyla çıkış kriterleridir.</p>
+</div></details>
+<p><em>HP 5.1.3-b.</em> Zamanın ya da bütçenin bitmesiyle teste son verilebilir mi?</p>
+<div class="mc">
+<ul>
+<li>(a) Hayır; test ancak bütün çıkış kriterleri karşılandığında durabilir</li>
+<li>(b) Hayır; çıkış kriterleri hiçbir zaman gevşetilemez</li>
+<li>(c) Evet, her durumda; kalan risk hiçbir zaman raporlanmaz</li>
+<li>(d) Evet; paydaşlar daha fazla test yapmadan canlıya geçmenin riskini gözden geçirip kabul ederse</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (d). Çıkış kriterleri karşılanmadan durmak ancak kalan riskin bilinçli olarak kabul edilmesi ve raporlanmasıyla meşrudur.</p>
+</div></details>
+<p><em>HP 5.1.3-c.</em> Çevik bir ekip, bir kullanıcı hikayesinin ancak kabul testleri geçtiğinde, otomatik regresyon testleri geçtiğinde ve yüksek önem derecesinde açık hata kalmadığında bitmiş sayılacağı konusunda uzlaşıyor. Bu uzlaşmanın adı nedir ve hangi klasik kavrama karşılık gelir?</p>
+<div class="mc">
+<ul>
+<li>(a) Tamamlanma tanımı; çıkış kriterleri</li>
+<li>(b) Hazır olma tanımı; giriş kriterleri</li>
+<li>(c) Hazır olma tanımı; çıkış kriterleri</li>
+<li>(d) Tamamlanma tanımı; giriş kriterleri</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (a). Bir hikayeyi bitmiş saymanın koşulları ekibin tamamlanma tanımıdır; bu da çıkış kriterlerinin çevik adıdır. Hazır olma tanımı ise bir hikayenin üzerinde çalışmaya başlanmadan önce karşılaması gereken giriş kriterlerini tutar.</p>
+</div></details>
+</section>
+<section id="fl-5-1-4" class="level3">
+<h3>Tahminleme teknikleri (FL-5.1.4 — K3)</h3>
+<p><strong>Kritik bir kural.</strong> Bir test eforu tahmini kesin bir söz ya da mutlak bir taahhüt değildir. Tahminler her zaman varsayımlara dayanır ve doğaları gereği bir hata payı taşır. Büyük bir test işini tek blok hâlinde tahmin etmeye çalışmak büyük sapmalar üretir; bu yüzden işi önce küçük görevlere bölmek (iş kırılımı) ve en sonda bu küçük parçaların tahminlerini toplamak doğruluğu önemli ölçüde artırır.</p>
+<p>Ders programı dört <strong>tahminleme (estimation)</strong> tekniği anlatır. <strong>Oranlara dayalı tahminleme (estimation based on ratios)</strong> ve <strong>dışdeğerleme (extrapolation)</strong> metriğe dayalıdır ve sınav bunlarla hesap yapmanızı isteyebilir; <strong>Wideband Delphi</strong> ve <strong>üç noktalı tahminleme (three-point estimation)</strong> uzmana dayalıdır ve üç noktalı tahminlemenin de uygulanacak bir formülü vardır. Oranlara dayalı tahminleme, organizasyonun geçmiş verilerinden standart bir oran çıkarır; en yaygını geliştirme eforu ile test eforu arasındaki dengedir. Geçmiş projelerde her üç günlük kodlama için bir gün test gerekmişse, geliştirmesi 450 gün sürecek yeni bir proje için 450 / 3 = 150 test günü tahmin edilir. Dışdeğerleme, projenin erken döngülerinden ölçümler alır ve kalan eforu bu canlı veriden yansıtır; son döngülerin ortalama eforunu kullanan çevik bir ekip bunun açık bir örneğidir. Wideband Delphi uzmana dayalı, döngüsel bir tekniktir: uzmanlar birbirinden bağımsız tahmin yapar, uçta kalan tahminler tartışılır ve grup fikir birliğine varana kadar her uzman yeniden ve tek başına tahmin yapar. <strong>Poker planlama tekniği (planning poker)</strong>, Wideband Delphi’nin çevik ekiplerde yaygın kullanılan bir varyantıdır; kartlar efor büyüklüğünü temsil eden sayılar taşır. Üç noktalı tahminlemede uzmanlar üç değer verir: a, iyimser tahmin; m, en olası tahmin; b, kötümser tahmin. Bunlar şu formüllerle son efora ve sapmaya dönüştürülür: son tahmin E = (a + 4m + b) / 6, standart sapma SD = (b − a) / 6.</p>
+<section id="çözümlü-örnek-yeni-bir-raporlama-modülü-için-test-eforu" class="level4">
+<h4>Çözümlü örnek — yeni bir raporlama modülü için test eforu</h4>
+<p>Kısım 1 (oran ve dışdeğerleme). Bir test ekibinin geçmiş verileri, test eforunun geliştirme süresinin tam üçte biri olduğunu gösteriyor. Yeni bir modülün kodlaması için 480 kişi-saat bütçelenmiş. Oranlara dayalı yaklaşımla test eforu tahmini 480 / 3 = 160 kişi-saattir. Proje başlıyor ve gerçek süreyi ölçmek için sistemin birbirine benzeyen 12 raporundan ilk 3’ü test ediliyor; ilk 3 rapor tam 42 kişi-saat sürüyor. Buradan dışdeğerleme yapalım: rapor başına gerçek tüketim 42 / 3 = 14 kişi-saattir; toplam 12 rapor olduğuna göre canlı son tahmin 14 × 12 = 168 kişi-saate güncellenir. Canlı veri, kâğıt üzerindeki oran tahminini gerçeğe yaklaştırmıştır.</p>
+<p>Kısım 2 (üç noktalı hesap). Bilinmeyen yeni bir API entegrasyonu için ekip şu değerlerde uzlaşıyor: iyimser (a) = 12 saat; en olası (m) = 18 saat; kötümser (b) = 36 saat.</p>
+<p>E = (12 + 4 × 18 + 36) / 6 = 120 / 6 = 20 saat. SD = (36 − 12) / 6 = 4 saat.</p>
+<p>Ekip bu test tahminini yönetime 20 ± 4 saat olarak raporlar: iş büyük olasılıkla 16 ile 24 saat arasında bitecektir.</p>
+<p><em>Sınav odağı.</em> K3 hesabında hata yapmamak için, formülün istediği gibi en olası değer m’yi 4 ile ağırlıklandırın. Çekici bir yanlış şık, düz aritmetik ortalamayla, (a + m + b) / 3 ile hesaplanmış olandır; yukarıdaki örnekte bu hata 20 yerine 22 verirdi. Kalan efor ile toplam efor sorularında hangisinin gerçekten sorulduğuna dikkat edin.</p>
+</section>
+<section id="bağımsız-alıştırma-5.a" class="level4">
+<h4>Bağımsız alıştırma 5.A</h4>
+<p>Bir veri taşıma projesinin testi için uzmanlar şu üç noktalı efor değerlerini veriyor: iyimser (a) = 4 kişi-gün, en olası (m) = 10 kişi-gün, kötümser (b) = 22 kişi-gün. Son tahmini (E) ve standart sapmayı (SD) hesaplayın. (Çözüm bu bölümün sonunda.)</p>
+<p><em>Hemen Pekiştir.</em> Alıştırma, çözümlü örnek ve 5.A’dır; tek soru formülü pekiştirir.</p>
+<p><em>HP 5.1.4.</em> Üç noktalı tahminlemede hangi yaygın dikkatsizlik yanlış bir cevaba yol açar?</p>
+<div class="mc">
+<ul>
+<li>(a) E = (a + 4m + b) / 6 formülünü kullanmak</li>
+<li>(b) SD = (b − a) / 6 formülünü kullanmak</li>
+<li>(c) En olası değer m’yi 4 ile ağırlıklandırmak</li>
+<li>(d) Basit aritmetik ortalamayı, (a + m + b) / 3’ü kullanmak</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (d). En olası değer 4 ile ağırlıklandırılmalıdır; düz ortalama çekici bir yanlış cevaptır.</p>
+</div></details>
+</section>
+</section>
+<section id="fl-5-1-5" class="level3">
+<h3>Test senaryosu önceliklendirme (FL-5.1.5 — K3)</h3>
+<p>Yazılmış test senaryoları ve prosedürleri hazır olduğunda, bunların çizelgede hangi sırayla koşulacağına karar verilmelidir. Ders programı üç önceliklendirme stratejisi tanımlar. <strong>Riske dayalı önceliklendirme (risk-based prioritization)</strong>, en önemli riskleri kapsayan test senaryolarını önce koşar. <strong>Kapsama dayalı önceliklendirme (coverage-based prioritization)</strong>, en yüksek kapsama ulaşan senaryoları önce koşar; <strong>ek kapsam önceliklendirmesi (additional coverage prioritization)</strong> varyantında ise sıradaki senaryo, henüz ulaşılmamış kapsamı en çok artıran senaryodur. <strong>Gereksinime dayalı önceliklendirme (requirements-based prioritization)</strong>, test senaryolarını izlendikleri gereksinimlerin paydaşlarca belirlenmiş önceliklerine göre sıralar.</p>
+<p><strong>İki kısıt ideal sırayı değiştirebilir.</strong> Hangi strateji seçilirse seçilsin, test senaryolarının ya da test edilen özelliklerin bağımlılıkları varsa ideal sıra işlemeyebilir. Yüksek öncelikli bir B testi ancak düşük öncelikli bir A testi ihtiyaç duyduğu veriyi oluşturduktan sonra koşulabiliyorsa, A’nın kendi önceliği ne kadar düşük olursa olsun A, B’den önce koşulmalıdır. Sıra, kaynakların uygunluğunu da hesaba katmalıdır: test araçları, test ortamları ya da kişiler yalnızca belirli bir zaman aralığında kullanılabilir olabilir. Şekil 5.2, strateji seçiminden son koşum sırasına kadar bu adımları özetliyor.</p>
+<figure>
+<img src="figures/fig_5_2_prioritization_flow.png" alt="Şekil 5.2 — Önceliklendirme stratejisinden son koşum sırasına. Beş adımlı bir akış: riske, kapsama ya da gereksinime dayalı bir strateji seçilir; testler bu stratejiye göre sıralanır; ön koşul testleri öne alınır, çünkü bağımlılıklar önceliğin önüne geçer; insanların, araçların, ortamların ve verinin uygunluğu kontrol edilir; sonra son koşum sırası çıkarılır." /><figcaption>Şekil 5.2 — Önceliklendirme stratejisinden son koşum sırasına.</figcaption>
+</figure>
+<section id="çözümlü-örnek-iade-modülü-testlerini-sıralamak" class="level4">
+<h4>Çözümlü örnek — iade modülü testlerini sıralamak</h4>
+<p>Bir e-ticaret sistemindeki beş test senaryosu, paydaşların belirlediği iş gereksinimi önceliklerine izleniyor (1 = en yüksek iş önceliği, 4 = en düşük):</p>
+<div class="table-wrap">
+<table>
+<thead>
+<tr class="header">
+<th>Test kimliği</th>
+<th>Gereksinim</th>
+<th>Gereksinim önceliği</th>
+<th>Teknik bağımlılık</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>T1</td>
+<td>R4 — hediye kartına iade</td>
+<td>3</td>
+<td>önce T3’ün başarıyla koşulması gerekir</td>
+</tr>
+<tr class="even">
+<td>T2</td>
+<td>R1 — kredi kartına iade</td>
+<td>1</td>
+<td>yok (bağımsız)</td>
+</tr>
+<tr class="odd">
+<td>T3</td>
+<td>R2 — iade talebi oluşturma</td>
+<td>2</td>
+<td>yok (bağımsız)</td>
+</tr>
+<tr class="even">
+<td>T4</td>
+<td>R5 — iade finans raporunu dışa aktarma</td>
+<td>4</td>
+<td>yok (bağımsız)</td>
+</tr>
+<tr class="odd">
+<td>T5</td>
+<td>R1 — kredi kartına kısmi iade</td>
+<td>1</td>
+<td>önce T3’ün başarıyla koşulması gerekir</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Görev: gereksinime dayalı önceliklendirmeye ve teknik bağımlılık kısıtlarına uyarak doğru son koşum sırasını çıkarın.</p>
+<p>Adım 1, yalnızca iş önceliğine göre sıralayın. Önce öncelik 1 gelir: T2 ve T5. Sonra öncelik 2, T3; sonra öncelik 3, T1; en sonda da öncelik 4, T4. Saf sıralama: T2, T5, T3, T1, T4.</p>
+<p>Adım 2, teknik bağımlılık filtrelerini uygulayın. T5 de T1 de sistemde önce bir iade talebinin açılmış olmasını, yani T3’ün tamamlanmasını gerektirir. Bu, iş önceliği T5’inkinden düşük olsa bile T3’ü çizelgede T5’in ve T1’in soluna (önüne) zorlar.</p>
+<p>Adım 3, koşum sırasını kesinleştirin: T2, T3, T5, T1, T4. T2 ve T5 aynı öncelik 1’i paylaşır, ama yalnızca T2 hemen koşulabilir; T5 T3’ü beklemek zorundadır. Bu yüzden T2 ilk sırada kalır ve T3 yalnızca gerektiği kadar, yani T5’in hemen önüne çekilir; T2’nin önüne geçmez. T5 ve T1 T3’ü izler, T4 de en düşük öncelikle en sondaki yerini alır.</p>
+<p><em>Sınav odağı.</em> K3 senaryo sorularında sizden bu son koşum sırası istenir. Çekici bir yanlış şık bağımlılıkları yok sayar ve senaryoları iş önceliği sütununa göre olduğu gibi dizer. Teknik kısıtları bozmayan ve ön koşul senaryosunu, ona ihtiyaç duyan senaryonun yalnızca hemen önüne, daha ileriye değil, taşıyan şıkka odaklanın.</p>
+</section>
+<section id="bağımsız-alıştırma-5.b" class="level4">
+<h4>Bağımsız alıştırma 5.B</h4>
+<p>Elinizde dört test senaryosu var. Ürün riski analizi, her birinin kapsadığı alana bir risk seviyesi veriyor (olasılık × etki; yüksek olan daha risklidir): A, 16; B, 8; C, 20; D, 3. Teknik analiz, C’nin ancak B koşulup tamamlandıktan sonra koşulabileceğini ortaya koymuş. Başka kısıt yok. Riske dayalı önceliklendirmeye ve bağımlılık kısıtına uyarak bu dört testi sıralayın. (Çözüm bu bölümün sonunda.)</p>
+<p><em>Hemen Pekiştir.</em> Alıştırma, çözümlü örnek ve 5.B’dir.</p>
+<p><em>HP 5.1.5.</em> T7 test senaryosunun önceliği en yüksektir, ama T7 ancak düşük öncelikli T2 test senaryosu T7’nin ihtiyaç duyduğu müşteri hesabını oluşturduktan sonra koşulabilir. Koşum çizelgesi ne yapmalıdır?</p>
+<div class="mc">
+<ul>
+<li>(a) T7’yi önce koşmalıdır, çünkü sırayı her zaman öncelik belirler</li>
+<li>(b) T2’yi çizelgeden çıkarmalıdır, çünkü önceliği düşüktür</li>
+<li>(c) T2’yi T7’den önce koşmalıdır, çünkü bağımlılık öncelik sırasının önüne geçer</li>
+<li>(d) Zaman kazanmak için T7’yi ve T2’yi aynı anda koşmalıdır</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (c). Yüksek öncelikli bir test senaryosu kendisinden daha düşük öncelikli bir senaryoya bağımlıysa, önce o düşük öncelikli senaryo koşulmalıdır.</p>
+</div></details>
+</section>
+</section>
+<section id="fl-5-1-6" class="level3">
+<h3>Test piramidi (FL-5.1.6 — K1)</h3>
+<p><strong>Test piramidi (test pyramid)</strong>, testlerin ayrıntı düzeyinde nasıl farklılaştığını gösteren bir modeldir. Her test hedefi farklı bir otomasyon seviyesi gerektirdiği için ekibin otomasyonu planlamasına ve test eforunu paylaştırmasına yardımcı olur. Piramitte yukarı çıktıkça ayrıntı düzeyi kabalaşır, izolasyon azalır (yani sistemin diğer parçalarına bağımlılık artar) ve koşum süresi uzar. En alt katmanda küçük, izole ve hızlı testler bulunur; her biri küçük bir fonksiyonalite parçasını kontrol eder, bu yüzden makul kapsam için çoğunlukla pek çok teste ihtiyaç duyulur. En üstteki katmanda ise karmaşık, yüksek seviyeli, uçtan uca testler bulunur; bunlar daha yavaştır ve her biri büyük bir fonksiyonalite parçasını kontrol eder, bu yüzden genellikle yalnızca birkaç tanesi gerekir. Katmanların sayısı ve adları değişebilir: Cohn’un özgün modeli birim, servis ve kullanıcı arayüzü (UI) testlerini kullanır; yaygın başka bir sürüm ise birim (bileşen), entegrasyon (bileşen entegrasyonu) ve uçtan uca testleri kullanır. Şekil 5.3 üç katmanlı bir sürümü gösteriyor.</p>
+<figure>
+<img src="figures/fig_5_3_test_pyramid.png" alt="Şekil 5.3 — Test piramidi. Tabanda çok sayıda küçük ve hızlı birim ya da bileşen testi, ortada orta sayıda ve orta hızda servis, API ya da entegrasyon testi, tepede ise birkaç geniş ve yavaş arayüz ya da uçtan uca test yer alır. Piramidin yanındaki bir ok, tepeye doğru daha az, tabana doğru daha çok test olduğunu gösterir." /><figcaption>Şekil 5.3 — Test piramidi.</figcaption>
+</figure>
+<p><em>Sınav odağı.</em> Bu hedefin soruları K1’dir ve katmanların özelliklerini yoklar: ayrıntı düzeyi, izolasyon, koşum süresi ve her katmanın kaç teste ihtiyaç duyduğu. Dikkat edilecek şey, bir özelliği tersine çeviren şıktır; örneğin “üst katman testleri, her biri daha çok fonksiyonalite kapsadığı için daha hızlıdır”. Bazı uygulayıcılar ters dönmüş piramide “dondurma külahı” der; terim yararlı bir arka plan bilgisidir, ama bir ders programı kavramı değildir.</p>
+<p><strong>Hemen Pekiştir</strong></p>
+<p><em>HP 5.1.6-a.</em> Test piramidinde çok sayıdaki hızlı ve izole test hangi katmandadır?</p>
+<div class="mc">
+<ul>
+<li>(a) Alt katman (birim / bileşen)</li>
+<li>(b) Üst katman (arayüz / uçtan uca)</li>
+<li>(c) Yalnızca orta katman (servis / API)</li>
+<li>(d) Hiçbir katman; testler eşit dağılır</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (a). Taban çok sayıda küçük, hızlı ve izole test barındırır.</p>
+</div></details>
+<p><em>HP 5.1.6-b.</em> Test piramidi ekibi neyde destekler?</p>
+<div class="mc">
+<ul>
+<li>(a) Her test seviyesinde hangi test tekniğinin uygulanacağını seçmekte</li>
+<li>(b) Bir test grubundaki test senaryolarının koşum sırasına karar vermekte</li>
+<li>(c) Her test seviyesi için çıkış kriterlerini belirlemekte</li>
+<li>(d) Test otomasyonunda ve test eforunun paylaştırılmasında</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (d). Testler ayrıntı düzeyinde farklılaştığı için piramit ekiplerin otomasyonu planlamasına ve test eforunu paylaştırmasına yardım eder. Teknik atamaz (a), test senaryolarını sıralamaz (b), çıkış kriteri de belirlemez (c).</p>
+</div></details>
+<p><em>HP 5.1.6-c.</em> Test piramidinin üst katmanındaki testler hakkında hangi ifade doğrudur?</p>
+<div class="mc">
+<ul>
+<li>(a) Küçük ve izoledirler, bu yüzden makul bir kapsama ulaşmak için çok sayıda gerekir</li>
+<li>(b) Her biri daha çok fonksiyonalite kapsadığı için alt katmanlardaki testlerden daha hızlı koşarlar</li>
+<li>(c) Büyük fonksiyonalite parçalarını kontrol eder ve yavaş koşarlar, bu yüzden genellikle yalnızca birkaç tanesi gerekir</li>
+<li>(d) Piramitteki en yüksek test izolasyonuna sahiptirler</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (c). Katman yükseldikçe ayrıntı düzeyi ve izolasyon azalır, koşum süresi uzar. Tepedeki her uçtan uca test büyük bir fonksiyonalite parçasını kontrol eder; bu yüzden o seviyede genellikle birkaç test makul bir kapsam sağlar.</p>
+</div></details>
+</section>
+<section id="fl-5-1-7" class="level3">
+<h3>Test çeyrekleri (FL-5.1.7 — K2)</h3>
+<p><strong>Test çeyrekleri (testing quadrants)</strong> modeli, çevik yazılım geliştirmede test seviyelerini uygun test çeşitleri, aktiviteler, teknikler ve iş ürünleriyle eşleştiren iki eksenli bir sınıflandırmadır. Test yönetiminin, uygun her test çeşidinin ve seviyesinin YGYD’de yer aldığını kontrol etmesini sağlar ve bazı test çeşitlerinin bazı seviyelere daha iyi uyduğunu ortaya koyar. Geliştiricilere, test uzmanlarına ve iş temsilcilerine test çeşitlerini anlatmanın ve birbirinden ayırmanın ortak bir yolunu da verir. Yatay eksen, bir testin ekibi mi desteklediğini (geliştirmeye yol gösteren testler) yoksa ürünü mü eleştirdiğini (ürünü değerlendiren testler) ölçer. Dikey eksen, testin odağının işe dönük mü (teknik olmayan paydaşların dilinde) yoksa teknolojiye dönük mü (kodun ve mimarinin teknik dilinde) olduğunu sınıflandırır; ders programı bu iki yönü “iş odaklı” ve “teknoloji odaklı” diye adlandırır. Ortaya çıkan dört çeyrek şunlardır: Q1, teknolojiye dönük ve ekibi destekleyen (bileşen testleri ve bileşen entegrasyon testleri; otomatiktir ve CI sürecine dahil edilir); Q2, işe dönük ve ekibi destekleyen (fonksiyonel testler, örnekler, kullanıcı hikayesi testleri, kullanıcı deneyimi (UX) prototipleri, API testleri ve simülasyonlar; bunlar kabul kriterlerine bakar; manuel de otomatik de olabilir); Q3, işe dönük ve ürünü eleştiren (keşif testi, kullanılabilirlik testi ve kullanıcı kabul testi; kullanıcı odaklıdır ve çoğu zaman manueldir); Q4, teknolojiye dönük ve ürünü eleştiren (duman testleri ve kullanılabilirlik dışındaki fonksiyonel olmayan testler, örneğin performans, yük ve güvenlik testi; bunlar çoğu zaman otomatiktir).</p>
+<p>Şekil 5.4 dört çeyreği iki eksen üzerine, her birinde ders programının saydığı tipik testlerle birlikte yerleştiriyor.</p>
+<figure>
+<img src="figures/fig_5_4_testing_quadrants.png" alt="Şekil 5.4 — İki eksen üzerinde test çeyrekleri: işe dönük ya da teknolojiye dönük; ekibi destekleyen ya da ürünü eleştiren. Q1 (teknolojiye dönük, ekibi destekler) CI’da otomatik koşan bileşen ve bileşen entegrasyon testlerini barındırır. Q2 (işe dönük, ekibi destekler) manuel ya da otomatik olabilen fonksiyonel testleri, örnekleri, kullanıcı hikayesi testlerini, UX prototiplerini, API testini ve simülasyonları barındırır. Q3 (işe dönük, ürünü eleştirir) kullanıcı odaklı ve çoğu zaman manuel olan keşif testini, kullanılabilirlik testini ve kullanıcı kabul testini barındırır. Q4 (teknolojiye dönük, ürünü eleştirir) çoğu zaman otomatik olan duman testlerini ve kullanılabilirlik testleri dışındaki fonksiyonel olmayan testleri barındırır." /><figcaption>Şekil 5.4 — İki eksen üzerinde test çeyrekleri: işe dönük ya da teknolojiye dönük; ekibi destekleyen ya da ürünü eleştiren.</figcaption>
+</figure>
+<p><em>Sınav odağı.</em> Size belirli bir test aktivitesi verilir (örneğin sızma testi ya da kullanılabilirlik testi) ve hangi çeyreğe ait olduğu sorulur. İkisi de işe dönük olan Q2 ile Q3 arasındaki ince çizgi kolayca bulanıklaşır. Şu soruyu sorun: Bu çalışma neyin ve nasıl yapılacağını tanımlamaya mı yardım ediyor, yoksa bitmiş yazılımı mı değerlendiriyor? Tanımlıyorsa Q2’dir; bitmiş işi inceliyor ya da deneyimliyorsa Q3’tür.</p>
+<p><strong>Hemen Pekiştir</strong></p>
+<p><em>HP 5.1.7-a.</em> Her commit’te CI hattında koşan otomatik bileşen testleri hangi çeyreğe aittir?</p>
+<div class="mc">
+<ul>
+<li>(a) Q1 (teknolojiye dönük ve ekibi destekleyen)</li>
+<li>(b) Q2 (işe dönük ve ekibi destekleyen)</li>
+<li>(c) Q3 (işe dönük ve ürünü eleştiren)</li>
+<li>(d) Q4 (teknolojiye dönük ve ürünü eleştiren)</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (a). Bileşen testleri teknolojiye dönüktür ve ekibin günlük geliştirmesini destekler; bu yüzden Q1’e aittir.</p>
+</div></details>
+<p><em>HP 5.1.7-b.</em> Keşif testi, kullanılabilirlik testi ve kullanıcı kabul testi (KKT) hangi çeyreğe aittir?</p>
+<div class="mc">
+<ul>
+<li>(a) Q1 (teknolojiye dönük ve ekibi destekleyen)</li>
+<li>(b) Q2 (işe dönük ve ekibi destekleyen)</li>
+<li>(c) Q3 (işe dönük ve ürünü eleştiren)</li>
+<li>(d) Q4 (teknolojiye dönük ve ürünü eleştiren)</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (c). Bitmiş ürünü değerlendiren işe dönük testler (çoğunlukla manuel) Q3’tür.</p>
+</div></details>
+<p><em>HP 5.1.7-c.</em> Q2 ve Q3’ün ikisi de işe dönüktür. Aralarındaki ana fark nedir?</p>
+<div class="mc">
+<ul>
+<li>(a) Q2 testleri teknolojiye dönük, Q3 testleri ise işe dönüktür</li>
+<li>(b) Q2 testleri geliştirmeye yol göstererek ekibi destekler, Q3 testleri ise bitmiş ürünü eleştirir</li>
+<li>(c) Q2 testleri her zaman manuel, Q3 testleri ise her zaman otomatiktir</li>
+<li>(d) Q2 testlerini yalnızca geliştiriciler, Q3 testlerini ise yalnızca iş temsilcileri koşar</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (b). Örnekler ve kullanıcı hikayesi testleri gibi Q2 testleri kabul kriterlerini kontrol eder ve geliştirmeye yol gösterir. Keşif testi ve kullanıcı kabul testi gibi Q3 testleri ürünü kullanıcı beklentilerine karşı ölçer. Q2 testleri manuel ya da otomatik olabilir, Q3 testleri ise çoğu zaman manueldir; dolayısıyla (c) gerçekleri tersine çevirir ve mutlaklaştırır.</p>
+</div></details>
+</section>
+</section>
+<section id="risk-management" class="level2">
+<h2>5.2 Risk Yönetimi</h2>
+<p><strong>Risk yönetiminin (risk management)</strong> iki ana aktivitesi vardır. <strong>Risk analizi (risk analysis)</strong>, <strong>risk belirleme (risk identification)</strong> ve <strong>risk değerlendirmesinden (risk assessment)</strong> oluşur; <strong>risk kontrolü (risk control)</strong> ise <strong>risk azaltma (risk mitigation)</strong> ve <strong>risk gözetiminden (risk monitoring)</strong> oluşur. <strong>Risk bazlı test (risk-based testing)</strong>, test aktivitelerini risk analizinin ve risk kontrolünün sonuçlarına göre seçen, sıralayan ve yürüten yaklaşımdır.</p>
+<section id="fl-5-2-1" class="level3">
+<h3>Risk, olasılık, etki ve risk seviyesi (FL-5.2.1 — K1)</h3>
+<p>Bir <strong>risk (risk)</strong>, olabilecek bir şeydir (bir olay, tehlike, tehdit ya da durum) ve olursa projeye ya da ürüne zarar verir. Her risk iki faktörle nitelenir. <strong>Risk olasılığı (risk likelihood)</strong>, riskin gerçekleşme ihtimalidir; 0’dan büyük ve 1’den küçüktür. Gerçekleşeceği kesin olan bir şey artık risk değil, bir sorundur; imkânsız bir şey de risk olamaz. <strong>Risk etkisi (risk impact)</strong>, risk gerçekleşirse projenin bütçesine, takvimine ya da ürünün kalitesine vereceği zararın büyüklüğüdür. <strong>Risk seviyesi (risk level)</strong> riskin bir ölçüsüdür; olasılık ve etkiden belirlenir. Nicel bir yaklaşımda risk seviyesi olasılık çarpı etki olarak hesaplanır; nitel bir yaklaşımda bir <strong>risk matrisinden (risk matrix)</strong> okunur (örneğin olasılık ve etki ayrı ayrı düşük, orta ya da yüksek diye derecelendirilip bir ızgarada birleştirilir); ikisinin karması da mümkündür. Risk seviyesi, bir alanın ne kadar test eforu alacağına karar veren ana girdidir.</p>
+<p><em>Sınav odağı.</em> Bu K1 hedefi bir hatırlama maddesidir: risk seviyesi olasılık ve etkinin birlikte kullanılmasından, hesapla ya da bir risk matrisinden çıkar; hiçbir zaman yalnızca birinden çıkmaz. Olasılık kesin olarak 0 ile 1 arasındadır; bu yüzden kesin bir olay risk değil, sorundur. Bir riski yalnızca etkiye ya da yalnızca olasılığa göre sıralayan şıkka dikkat edin.</p>
+<p><strong>Hemen Pekiştir</strong></p>
+<p><em>HP 5.2.1-a.</em> Risk seviyesini ne belirler?</p>
+<div class="mc">
+<ul>
+<li>(a) Yalnızca olasılık</li>
+<li>(b) Yalnızca etki</li>
+<li>(c) Hesapla ya da bir risk matrisinde, olasılık ve etki birlikte</li>
+<li>(d) O alan için planlanan test senaryosu sayısı</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (c). Risk seviyesi olasılık ve etkiden belirlenir: nicel bir yaklaşımda bunların çarpımı olarak hesaplanır, nitel bir yaklaşımda bir risk matrisinden okunur.</p>
+</div></details>
+<p><em>HP 5.2.1-b.</em> Risk olasılığı için hangisi doğrudur?</p>
+<div class="mc">
+<ul>
+<li>(a) 0 ile 1 arasındadır; ne kesinlik ne de imkânsızlık risk sayılır</li>
+<li>(b) Her zaman tam olarak 1’dir</li>
+<li>(c) Negatif bir değer alabilir</li>
+<li>(d) Etki ile aynı şeydir</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (a). Olasılık 0 &lt; p &lt; 1 aralığındadır; uç durumlar (kesin/imkânsız) risk değildir.</p>
+</div></details>
+<p><em>HP 5.2.1-c.</em> Bir risk çalıştayında bir iş analisti şöyle diyor: “Gece çalışan faiz toplu işi başarısız olursa, ertesi sabah yaklaşık 40.000 müşteri hesabı yanlış bakiye gösterir.” Bu ifade hangi risk özelliğini anlatır?</p>
+<div class="mc">
+<ul>
+<li>(a) Risk olasılığı</li>
+<li>(b) Risk etkisi</li>
+<li>(c) Risk seviyesi</li>
+<li>(d) Risk azaltma</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (b). İfade, risk gerçekleşirse ortaya çıkacak sonuçları anlatır; bu da risk etkisidir. Arızanın ne kadar olası olduğu hakkında hiçbir şey söylemez; risk seviyesi ise olasılık ve etkiyi birlikte gerektirir.</p>
+</div></details>
+</section>
+<section id="fl-5-2-2" class="level3">
+<h3>Proje riskleri ve ürün riskleri (FL-5.2.2 — K2)</h3>
+<p>Ders programı riskleri etkiledikleri alana göre iki aileye ayırır ve hangisinin hangisi olduğunu ayırt etmenizi ister. <strong>Proje riskleri (project risk)</strong> projenin nasıl yönetildiği ve kontrol edildiğiyle ilgilidir; gerçekleştiklerinde projenin takvimini, bütçesini ya da kapsamını, dolayısıyla hedeflerine ulaşma yeteneğini etkiler. Ders programı onları gruplar: organizasyonel sorunlar (iş ürünü teslimatlarında gecikmeler, hatalı tahminler, maliyet kesintileri), insan kaynaklı sorunlar (yetersiz beceri, çatışmalar, iletişim sorunları, personel eksikliği), teknik sorunlar (kapsamın kontrolsüz büyümesi, zayıf araç desteği) ve tedarikçi sorunları (üçüncü bir tarafın teslim edememesi ya da destek veren şirketin iflas etmesi). <strong>Ürün riskleri (product risk)</strong> ürünün kalite karakteristikleriyle (örneğin ISO 25010 kalite modelindekilerle), yani yazılımın kullanıcıların ihtiyaçlarını karşılayamama ihtimaliyle ilgilidir. Örneğin: eksik ya da yanlış fonksiyonalite, hatalı hesaplamalar, çalışma zamanı çökmeleri, zayıf mimari, yavaş algoritmalar, ağır yanıt süreleri, kötü bir kullanıcı deneyimi ve güvenlik açıkları. Ürün riskleri gerçekleştiğinde sonuçlar arasında kullanıcı memnuniyetsizliği; gelir, güven ya da itibar kaybı; üçüncü taraflara verilen zarar; yüksek bakım maliyetleri ve aşırı yüklenen bir yardım masası; cezai yaptırımlar; aşırı durumlarda da fiziksel hasar, yaralanmalar, hatta ölüm olabilir.</p>
+<p>Şekil 5.5 iki aileyi, ders programının her biri için verdiği örneklerle yan yana koyuyor.</p>
+<figure>
+<img src="figures/fig_5_5_project_vs_product_risk.png" alt="Şekil 5.5 — Proje riski ve ürün riski. “Risk” etiketli bir kutu iki kola ayrılır: takvimi, bütçeyi ve kapsamı etkileyen “Proje riski” ve ürün kalitesini etkileyen “Ürün riski”. Proje riski örnekleri şöyle gruplanır: organizasyonel (gecikmeler, hatalı tahminler), insan (yetersiz beceri, personel eksikliği), teknik (kapsam artışı, zayıf araç desteği) ve tedarikçi (üçüncü tarafın teslim edememesi). Ürün riski kutusunun yanında şunlar listelenir: eksik ya da yanlış fonksiyonalite, hatalı hesaplamalar ve çalışma zamanı hataları ile birlikte zayıf mimari ve verimsiz algoritmalar, yetersiz yanıt süresi, kötü kullanıcı deneyimi ve güvenlik açıkları." /><figcaption>Şekil 5.5 — Proje riski ve ürün riski.</figcaption>
+</figure>
+<p><em>Sınav odağı.</em> Bir senaryodaki riski sınıflandırmak için şunu sorun: Bu tehlike gerçekleşirse zarar gören projenin yönetimsel takvimi ve bütçesi mi, yoksa kullanıcının elindeki yazılımın kalitesi mi? Etki takvim ve ekibin işi üzerindeyse (örneğin “test ortamı zamanında teslim edilmeyebilir” ya da “otomasyon mühendisi sürümün ortasında istifa edebilir”) bu bir proje riskidir; etki kullanıcının elindeki yazılımın kalitesi üzerindeyse bir ürün riskidir.</p>
+<p><strong>Hemen Pekiştir</strong></p>
+<p><em>HP 5.2.2-a.</em> “Bir mobil bankacılık projesinde vadeli mevduat faizini hesaplayan karmaşık kural fonksiyonu, belirli yuvarlama işlemlerinde bankanın aleyhine yanlış finansal sonuçlar üretebilir.” Bu hangi risk sınıfıdır?</p>
+<div class="mc">
+<ul>
+<li>(a) Proje riski</li>
+<li>(b) Ürün riski</li>
+<li>(c) Tedarikçi sözleşmesi riski</li>
+<li>(d) Organizasyonel yönetim riski</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (b). Risk, yazılımın hesaplamalarının doğruluğuyla, yani ürünün bir kalite karakteristiğiyle ilgilidir; bu yüzden bir ürün riskidir.</p>
+</div></details>
+<p><em>HP 5.2.2-b.</em> “Ödeme alanı bilgisine sahip tek otomasyon mimarının sürümün ortasında istifa etmesi” hangi risk sınıfıdır?</p>
+<div class="mc">
+<ul>
+<li>(a) Proje riski</li>
+<li>(b) Ürün riski</li>
+<li>(c) Güvenlik açığı riski</li>
+<li>(d) Hesaplama riski</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (a). Ana etki ekibin teslim etme yeteneği (takvim/kaynak) üzerindedir; bu yüzden bir proje riskidir.</p>
+</div></details>
+<p><em>HP 5.2.2-c.</em> Bir proje riskini bir ürün riskinden en iyi hangi soru ayırır?</p>
+<div class="mc">
+<ul>
+<li>(a) Riskin olasılığı yarının üstünde mi, altında mı?</li>
+<li>(b) Riski bir test uzmanı mı, bir geliştirici mi belirledi?</li>
+<li>(c) Riski azaltmak ne kadara mal olur?</li>
+<li>(d) Risk gerçekleşirse projenin takvimini, bütçesini ya da kapsamını mı, yoksa ürünün kalitesini mi etkiler?</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (d). Proje riskleri projenin hedeflerine ulaşma yeteneğini takvimi, bütçesi ya da kapsamı yoluyla etkiler. Ürün riskleri ise ürünün kalite karakteristikleriyle bağlantılıdır. Olasılık, azaltma maliyeti ve riski bildiren kişi riskin sınıfını belirlemez.</p>
+</div></details>
+</section>
+<section id="fl-5-2-3" class="level3">
+<h3>Risk bazlı test ve risk kontrolü (FL-5.2.3, FL-5.2.4 — K2)</h3>
+<p><span id="fl-5-2-4"></span>Ürün riski analizi iki adımdan oluşur: risk belirleme ve risk değerlendirmesi. Belirleme, kapsamlı bir risk listesi oluşturur; değerlendirme ise riskleri kategorilere ayırır, olasılığı, etkiyi ve risk seviyesini belirler, onları önceliklendirir ve ele alma yolları önerir. Riskler beyin fırtınası, çalıştaylar, görüşmeler ve neden-sonuç diyagramları gibi tekniklerle belirlenebilir.</p>
+<p>Ürün riski analizinin sonuçları şu amaçlarla kullanılır: test kapsamını belirlemek; test seviyelerini belirlemek ve test çeşitlerini önermek; test tekniklerini ve hedeflenen kapsamı belirlemek; her görev için test eforunu tahmin etmek; kritik hatalar olabildiğince erken bulunsun diye testi önceliklendirmek; testin dışındaki aktivitelerin de riski azaltıp azaltamayacağına karar vermek. Risk bazlı test, sınırlı kaynakları eşit dağıtmak yerine test aktivitelerini seçmek, önceliklendirmek ve yönetmek için bu sonuçları kullanır.</p>
+<p>Bir riski test yoluyla azaltmak için ekip, örneğin daha yüksek riskli alanlara daha tecrübeli test uzmanları, daha fazla bağımsızlık, daha erken gözden geçirmeler ve statik analiz, daha güçlü teknikler ve kapsam seviyeleri, uygun test çeşitleri, daha fazla dinamik test ve regresyon testi verebilir. Risk kontrolünün de iki parçası vardır: risk azaltma ve risk gözetimi. Risk azaltma, risk seviyesini düşürmek için değerlendirme sırasında önerilen aksiyonları uygular. Risk gözetimi bu aksiyonların işe yarayıp yaramadığını kontrol eder, değerlendirmeyi iyileştirmek için bilgi toplar ve ortaya çıkan yeni riskleri belirler. Bir risk analiz edildikten sonra olası yanıtlar şunlardır: test yoluyla risk azaltma, kabul, transfer ve bir acil durum planı. <strong>Risk kabulü (risk acceptance)</strong>, riski bilinçli olarak üstlenmek demektir; bu genellikle paydaşlar uzlaştıktan sonra olur. <strong>Risk transferi (risk transfer)</strong>, sonuçları üçüncü bir tarafa, örneğin bir sigorta ya da sözleşme yoluyla aktarır. Bir <strong>acil durum planı (contingency plan)</strong>, risk gerçekleşirse alınacak aksiyonları hazırlar.</p>
+<p>Şekil 5.6 bu parçaların nasıl birbirine oturduğunu gösteriyor. Risk analizi yanıt seçeneklerini besler; risk gözetimi de bunların her birini izler.</p>
+<figure>
+<img src="figures/fig_5_6_risk_control.png" alt="Şekil 5.6 — Risk analizi ve risk kontrolü. “Risk analizi” başlığı altında risk belirleme, olasılığı, etkiyi ve seviyeyi belirleyen risk değerlendirmesine götürür. “Risk kontrolü” başlığı altında değerlendirme dört riske yanıtı besler: test yoluyla risk azaltma, risk kabulü, risk transferi ve acil durum planı. Dört yanıtın hepsi risk gözetimine bağlanır; risk gözetimi aksiyonların işe yaradığını denetler, değerlendirmeyi iyileştirir ve yeni riskleri fark eder." /><figcaption>Şekil 5.6 — Risk analizi ve risk kontrolü.</figcaption>
+</figure>
+<p><em>Sınav odağı.</em> Size pratik bir ürün riski kontrolü hamlesi verilir ve bunun hangi yanıt türü olduğu sorulur. “Sözleşmeye cezai şart koyarak sorumluluğu dışarıdaki bir organizasyona kaydırmak” transferdir; “kritik olmayan alanlardaki hatalarla canlıya geçişi paydaş kararıyla onaylamak” kabuldür; “o alana ek test senaryoları yazmak ve tecrübeli test uzmanları eklemek” azaltmadır. Bir riski azaltmak için ek, bağımsız test yaptırmak da, işi dışarıdan bir firma yapsa bile, azaltmadır.</p>
+<p><strong>Hemen Pekiştir</strong></p>
+<p><em>HP 5.2.3-a.</em> Ürün riski analizi testin bütünlüğünü ve kapsamını nasıl biçimlendirir?</p>
+<div class="mc">
+<ul>
+<li>(a) Test eforunu bütün alanlara eşit dağıtır</li>
+<li>(b) Eforu yalnızca kod satırı sayısına göre dağıtır</li>
+<li>(c) Her alan için aynı kapsam hedefini koyar</li>
+<li>(d) Daha yüksek riskli alanlara daha sıkı teknikler ve daha fazla test verir; böylece efor riskle orantılı olur</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (d). Risk bazlı testte efor risk seviyesiyle orantılı olarak dağıtılır.</p>
+</div></details>
+<p><em>HP 5.2.3-b.</em> Ürün riski analizi hangi iki aktiviteden oluşur?</p>
+<div class="mc">
+<ul>
+<li>(a) Risk belirleme ve risk değerlendirmesi</li>
+<li>(b) Risk azaltma ve risk gözetimi</li>
+<li>(c) Risk kabulü ve risk transferi</li>
+<li>(d) Test gözetimi ve test kontrolü</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (a). Risk analizi, belirleme artı değerlendirmedir. Azaltma ve gözetim risk kontrolünü oluşturur; bu da yanlış bir şıkkın yerine koyabileceği kardeş aktivitedir.</p>
+</div></details>
+<p><em>HP 5.2.4-a.</em> Yeni ödeme geçidinde olası bir güvenlik ihlalinin finansal sonuçlarını sınırlamak için bir şirket bir siber sigorta poliçesi alıyor ve geçit tedarikçisiyle sözleşmesine bir tazminat maddesi ekliyor; böylece bir ihlal olursa kayıpları sigortacı ve tedarikçi üstlenecek. Bu hangi risk kontrolü yanıtıdır?</p>
+<div class="mc">
+<ul>
+<li>(a) Azaltma</li>
+<li>(b) Transfer</li>
+<li>(c) Kabul</li>
+<li>(d) Acil durum planlaması</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (b). Bir riskin sonuçlarını sigorta ya da sözleşme yoluyla üçüncü bir tarafa aktarmak risk transferidir. Burada hiçbir şey test yoluyla olasılığı ya da etkiyi düşürmüyor, bu yüzden azaltma değildir. Risk öylece üstlenilmiyor, bu yüzden kabul değildir. Hiçbir yedek aksiyon hazırlanmıyor, bu yüzden acil durum planı da değildir.</p>
+</div></details>
+<p><em>HP 5.2.4-b.</em> Kalan düşük bir riski açık bir paydaş kararıyla bilinçli olarak üstlenmek ve raporlamak hangi yanıttır?</p>
+<div class="mc">
+<ul>
+<li>(a) Transfer</li>
+<li>(b) Azaltma</li>
+<li>(c) Kabul</li>
+<li>(d) Acil durum planı</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (c). Kalan riski bilinçli olarak üstlenmek kabuldür.</p>
+</div></details>
+</section>
+</section>
+<section id="test-monitoring-test-control-and-test-completion" class="level2">
+<h2>5.3 Test Gözetimi, Test Kontrol ve Test Tamamlama</h2>
+<section id="fl-5-3-1" class="level3">
+<h3>Test gözetimi ve test kontrolü için metrikler (FL-5.3.1 — K1)</h3>
+<p><strong>Test gözetimi (test monitoring)</strong>, test sürecinin gerçek ilerleme verilerini, metriklerini ve durumunu sürekli olarak toplama, izleme ve plandaki hedeflerle karşılaştırma aktivitesidir. <strong>Test kontrolü (test control)</strong>, gözetim sırasında toplanan metrikler plandan bir sapma gösterdiğinde (örneğin testler takvimin gerisinde kaldığında) süreci yeniden rayına oturtmak için düzeltici kararlar alma ve yönetim direktifleri verme işidir; bu kararların temelini gözetim sırasında toplanan metrikler oluşturur (örneğin bir risk soruna dönüştüğünde testleri yeniden önceliklendirmek, yeniden çalışmadan sonra bir test öğesinin giriş ya da çıkış kriterlerini karşılayıp karşılamadığını yeniden değerlendirmek, test ortamı geç teslim edildiğinde takvimi ayarlamak ya da gereken yere kaynak eklemek). Test tamamlama, bir test seviyesi, bir döngü ya da bir sürüm kapandığında, biten test aktivitelerinden bilgi toplar; alınan dersleri, test çalışma ürünlerini ve diğer yararlı malzemeyi bir araya getirir. Ders programı gözetim sırasında toplanabilecek metriklerin ana ailelerini gruplar: proje ilerleme metrikleri (görev tamamlama oranları, bütçe ve kaynak tüketim oranları); test ilerleme metrikleri (planlanan ve gerçekten koşulan test senaryosu sayıları, geçti/kaldı oranları); ürün kalitesi metrikleri (arızaya kadar geçen ortalama süre gibi sistem güvenilirliği, elverişlilik ve yanıt süreleri); hata metrikleri (bulunan ve düzeltilen hatalar, modül başına hata yoğunluğu, hata tespit yüzdesi); kapsam metrikleri (test edilen gereksinimlerin oranı, beyaz kutu kod kapsamı yüzdeleri); risk metrikleri (örneğin kalan risk seviyesi); maliyet metrikleri (testin maliyeti, organizasyonun kalite maliyeti).</p>
+<p><em>Sınav odağı.</em> Bu K1 hedefi, bir metriğin hangi aileye ait olduğunu tanımanızı ister: proje ilerlemesi, test ilerlemesi, ürün kalitesi, hata, kapsam, risk ya da maliyet. Uzun rakam listelerini değil aileleri öğrenin ve bir ölçüyü yanlış aileye koyan şıkka dikkat edin.</p>
+<p><strong>Hemen Pekiştir</strong></p>
+<p><em>HP 5.3.1-a.</em> Aşağıdakilerden hangisi bir test ilerleme metriğidir?</p>
+<div class="mc">
+<ul>
+<li>(a) Koşulan test senaryosu sayısı ve geçti/kaldı oranları</li>
+<li>(b) Ürün iş listesindeki kullanıcı hikayesi sayısı</li>
+<li>(c) Her modülün hata yoğunluğu</li>
+<li>(d) Sistemin üretim ortamındaki elverişliliği</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (a). Koşulan testler ve geçti/kaldı oranları test ilerleme metrikleridir. Hata yoğunluğu (c) bir hata metriği, elverişlilik (d) bir ürün kalitesi metriğidir; iş listesinin büyüklüğü (b) ise bir test metriği değildir.</p>
+</div></details>
+<p><em>HP 5.3.1-b.</em> Hata yoğunluğu verisini toplamak, sonra bu veriye dayanarak testi uzatmaya karar vermek sırasıyla nedir?</p>
+<div class="mc">
+<ul>
+<li>(a) İkisi de test kontrolüdür</li>
+<li>(b) Toplamak test gözetimidir; uzatma kararı test kontrolüdür</li>
+<li>(c) Toplamak test kontrolüdür; uzatma kararı test gözetimidir</li>
+<li>(d) İkisi de test gözetimidir</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (b). Veri toplamak gözetimdir; bu veriden düzeltici bir karar almak kontroldür.</p>
+</div></details>
+<p><em>HP 5.3.1-c.</em> Bir test yöneticisi her test döngüsünün sonunda kalan risk seviyesini raporluyor. Bu hangi metrik ailesine aittir ve paydaşların esas olarak neye karar vermesine yardım eder?</p>
+<div class="mc">
+<ul>
+<li>(a) Hata metrikleri; en çok hatayı hangi geliştiricinin ortaya çıkardığına</li>
+<li>(b) Kapsam metrikleri; hangi kod satırlarının çalıştırıldığına</li>
+<li>(c) Risk metrikleri; kalan riskin sürüm için kabul edilebilir olup olmadığına</li>
+<li>(d) Maliyet metrikleri; organizasyonun kaliteye ne kadar harcadığına</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (c). Kalan risk seviyesi bir risk metriğidir. Paydaşlara ne kadar ürün riski kaldığını söyler; bu da sürüme çıkma ya da teste devam etme kararını destekler.</p>
+</div></details>
+</section>
+<section id="fl-5-3-2" class="level3">
+<h3>Test raporları: ilerleme ve tamamlama (FL-5.3.2, FL-5.3.3 — K2)</h3>
+<p><span id="fl-5-3-3"></span>Test yönetiminde üretilen iki rapor esas olarak yayımlandıkları zaman ve hizmet ettikleri amaç bakımından ayrılır. Bir <strong>test ilerleme raporu (test progress report)</strong>, test aktiviteleri hâlâ sürerken düzenli aralıklarla (örneğin her cuma ya da her sprintin sonunda) test kontrolünü desteklemek için yayımlanır. Tipik içeriği; ilgili test periyodunun metrikleri, plana göre mevcut durum, test ekibini yavaşlatan mevcut engeller ve uygulanan geçici çözümler, yeni ortaya çıkan kalite riskleri ve bir sonraki periyot için planlanan test aktiviteleridir.</p>
+<p>Bir <strong>test tamamlama raporu (test completion report)</strong>, bir projenin, bir test seviyesinin ya da bir test çeşidinin kapanışında (örneğin bir test seviyesinin, bir test döngüsünün ya da bir döngünün sonunda), ideal olarak çıkış kriterleri karşılandıktan sonra yazılır. Test ilerleme raporlarından ve diğer verilerden yararlanır. Tipik içeriği şunlardır: bir test özeti; testin ve ürün kalitesinin özgün test planına (test hedeflerine ve çıkış kriterlerine) göre değerlendirmesi; takvim, süre ve efor farkları gibi plandan sapmalar; karşılaşılan test engelleri ve geçici çözümleri; ilerleme raporlarına dayalı test metrikleri; azaltılmamış riskler ve düzeltilmemiş hatalar; testle ilgili alınan dersler.</p>
+<p>Farklı hedef kitleler farklı bilgilere ihtiyaç duyar; hedef kitle raporlamanın ne kadar resmî ve ne sıklıkta olacağını da belirler. Aynı ekipteki meslektaşlara yapılan raporlama çoğu zaman sık ve gayri resmîdir; tamamlama raporlaması ise belirli bir şablonu izler ve bir kez yapılır.</p>
+<p>Testin durumunu iletmek (FL-5.3.3) için şu seçeneklerden biri ya da birkaçı kullanılabilir: ekip üyeleriyle ve diğer paydaşlarla sözlü iletişim; gösterge panelleri (CI/CD panoları, görev panoları, <strong>burn-down tabloları (burn-down chart)</strong> gibi); e-posta ve sohbet gibi elektronik kanallar; çevrim içi dokümantasyon; resmî test raporları. En iyi seçim test yönetiminin kaygılarına, organizasyonun test stratejisine, düzenleyici standartlara ve kendi kendini yöneten ekiplerde ekibin kendisine bağlıdır. Her zaman yüz yüze konuşamayan dağıtık ekiplere daha resmî bir iletişim uyabilir; içerik de her paydaş grubunun ihtiyacına göre uyarlanmalıdır.</p>
+<p><em>Sınav odağı.</em> Yanlış şıklar bu iki raporun içerik öğelerinin yerini değiştirebilir. “Testi şu anda kesintiye uğratan engeller ve gelecek haftanın koşum çizelgesi”, test sürerken konuşulur; bu yüzden ilerleme raporuna aittir. “Alınan dersler, özgün test planına göre değerlendirme ve kapanış özeti” ise iş tamamlandığında yazılır; bu yüzden tamamlama raporunun öğeleridir.</p>
+<p><strong>Hemen Pekiştir</strong></p>
+<p><em>HP 5.3.2-a.</em> Bir test yöneticisi, bir sistem testi aşaması tamamen kapandıktan sonra “ekiplerin süreç boyunca aldığı dersleri, düzeltilmemiş hataların listesini ve azaltılmamış ürün risklerinin özetini” içeren bir belge hazırlıyor. Bu hangi belgedir?</p>
+<div class="mc">
+<ul>
+<li>(a) Bir test ilerleme raporu</li>
+<li>(b) Bir test tamamlama raporu</li>
+<li>(c) Bir test planı giriş kriterleri listesi</li>
+<li>(d) Bir yapılandırma yönetimi temel çizgi belgesi</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (b). Test seviyesi tamamlandığında hazırlanan alınan dersler, düzeltilmemiş hatalar ve azaltılmamış riskler test tamamlama raporunda yer alır.</p>
+</div></details>
+<p><em>HP 5.3.2-b.</em> “Şu anda testi engelleyen sorunlar ve kullanılan geçici çözümler” hangi rapora aittir?</p>
+<div class="mc">
+<ul>
+<li>(a) Bir test ilerleme raporu</li>
+<li>(b) Bir test tamamlama raporu</li>
+<li>(c) Bir test planı</li>
+<li>(d) Bir yapılandırma temel çizgisi</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (a). Mevcut engeller ve geçici çözümler, test sürerken yayımlanan ilerleme raporunda yer alır.</p>
+</div></details>
+<p><em>HP 5.3.3.</em> Test durumu paydaşlara nasıl iletilmelidir?</p>
+<div class="mc">
+<ul>
+<li>(a) Herkes için aynı, tek bir standart raporla</li>
+<li>(b) Gösterge panelleri, burn-down tabloları, sözlü bilgilendirme ya da resmî raporlar gibi seçeneklerden hedef kitleye ve bağlama uyanları seçerek</li>
+<li>(c) Her zaman yalnızca resmî, yazılı bir belgeyle</li>
+<li>(d) Her zaman yalnızca sözlü olarak</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (b). Ders programı test durumunu iletmek için birkaç seçenek sayar ve seçimin hedef kitleye, organizasyonun test stratejisine, düzenleyici standartlara ve ekibe bağlı olduğunu söyler; herkes için tek bir biçim (a) ya da tek bir kanal (c, d) bunu yok sayar.</p>
+</div></details>
+</section>
+</section>
+<section id="configuration-management-fl-5.4.1-k2" class="level2">
+<h2>5.4 Yapılandırma Yönetimi (FL-5.4.1 — K2)</h2>
+<p><span id="fl-5-4-1"></span><strong>Yapılandırma yönetimi (configuration management, YY)</strong>, bir projenin bütün mühendislik ve test öğelerini (kod blokları, gereksinim belgeleri, analizler, test senaryoları, otomasyon betikleri, test verisi, ortam mimarileri) tanımlanabilir, sürüm kontrolü altında, değişiklikleri izlenen ve diğer <strong>yapılandırma öğeleriyle (configuration item)</strong> bağlantılı tutan disiplindir; böylece izlenebilirlik bütün test süreci boyunca korunur. Teste üç temel güvence verir. Benzersiz tanımlama: test edilen yazılım nesnesinin (yapı sürümünün) ve bütün test belgelerinin tam sürüm kimliği her an açıkça bilinir. Çift yönlü ilişki: bir test senaryosunun hangi sürümünün yazılımın tam olarak hangi yapı sürümüne karşı koşulduğu açıkça eşlenir. Yeniden üretilebilirlik: tanımlanan bütün dokümantasyon ve yazılım öğelerine test çalışma ürünlerinde açık biçimde atıf yapılır; böylece önceki test sonuçları, aynı kod sürümüne, test verisi kümesine ve ortam yapılandırmasına dönülerek, aylar sonra bile yeniden üretilebilir. Test için onaylanan bir öğe sürümü yapılandırma yönetiminde bir <strong>temel çizgi (baseline)</strong> kimliği kazanır. Temel çizgi oluşturulduktan sonra o belge ya da kod yalnızca resmî bir değişiklik kontrolü süreciyle güncellenebilir; bu da test sonuçlarının kararlılığını ve yorumlanabilirliğini korur. Sürekli entegrasyonu, sürekli teslimatı ve sürekli dağıtımı desteklemek için otomatik yapılandırma yönetimi normalde DevOps teslimat hattının bir parçasıdır.</p>
+<p><em>Uygulamada.</em> Üretimdeki kritik bir arıza bir geliştiriciye atandığında, geliştirici hata raporunu “benim makinemde çalışıyor; arıza yeniden üretilemedi” diyerek kapatabilir. Yapılandırma yönetimi tam bu noktada devreye girer ve kayıtlarla gösterir: test uzmanı arızayı 7.3.1 yapısında, v2 veri kümesiyle yakalamıştır; geliştirici ise düzeltmek için yanlışlıkla 7.3.2 kod sürümünü incelemiştir. Bu kayıtlar olmasaydı anlaşmazlık günlerce sürebilirdi.</p>
+<p><em>Sınav odağı.</em> Bu hedef, yapılandırma yönetiminin testi nasıl desteklediğini sorar: test nesnesini ve test çalışma ürünlerini tanımlar ve sürüm kontrolü altına alır, onlara açık biçimde atıf yapar; böylece test sonuçları yeniden üretilebilir. Yapılandırma yönetimine başka bir disiplinin işini veren şıklara dikkat edin: hata bulmak ya da düzeltmek, hangi hatanın önce düzeltileceğine karar vermek ya da test senaryosu yazmak gibi.</p>
+<p><strong>Hemen Pekiştir</strong></p>
+<p><em>HP 5.4.1-a.</em> Yapılandırma yönetimi testi nasıl destekler?</p>
+<div class="mc">
+<ul>
+<li>(a) Önceki test sonuçları yeniden üretilebilsin diye test çalışma ürünlerini ve test nesnesini tanımlayıp sürümlendirerek</li>
+<li>(b) Hataları kendisi bulup düzelterek</li>
+<li>(c) Test senaryolarını otomatik olarak yazarak</li>
+<li>(d) Hangi hataların önce düzeltileceğine karar vererek</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (a). YY tanımlama, sürümlendirme ve yeniden üretilebilirlik sağlar; hata bulmaz.</p>
+</div></details>
+<p><em>HP 5.4.1-b.</em> Test için onaylanmış ve artık yalnızca resmî değişiklik kontrolüyle değişebilen bir yapılandırma öğesi neye dönüşür?</p>
+<div class="mc">
+<ul>
+<li>(a) Bir hata raporuna</li>
+<li>(b) Bir çıkış kriterine</li>
+<li>(c) Bir test ilerleme raporuna</li>
+<li>(d) Bir temel çizgiye</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (d). Onaylanan öğe bir temel çizgidir; sonuçların yorumlanabilirliğini korur.</p>
+</div></details>
+<p><em>HP 5.4.1-c.</em> Bir geliştirici bir hata raporunu “yeniden üretilemiyor” diyerek kapatıyor. Yapılandırma yönetimi meseleyi çözmeye nasıl yardım eder?</p>
+<div class="mc">
+<ul>
+<li>(a) Yapı tanımlanınca hatayı otomatik olarak düzeltir</li>
+<li>(b) Anlaşmazlık bir daha çıkmasın diye başarısız test senaryosunu kaldırır</li>
+<li>(c) Düzeltmeden sonra onaylama testine olan ihtiyacı ortadan kaldırır</li>
+<li>(d) Başarısız testin hangi yapı, test verisi ve ortam sürümlerini kullandığını gösterir; böylece aynı temel çizgiye dönülüp test yeniden koşulabilir</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (d). YY her yapılandırma öğesini tanımlanmış ve sürümlendirilmiş tutar ve önceki test sonuçlarını yeniden üretmek için önceki bir temel çizgiye dönmeye izin verir. Test uzmanının koşumu ile geliştiricinin kontrolü arasındaki herhangi bir sürüm uyuşmazlığı böylece görünür hâle gelir.</p>
+</div></details>
+</section>
+<section id="defect-management" class="level2">
+<h2>5.5 Hata Yönetimi</h2>
+<section id="fl-5-5-1" class="level3">
+<h3>Profesyonel bir hata raporu hazırlamak (FL-5.5.1 — K3)</h3>
+<p><strong>Hata yönetimi (defect management)</strong>, raporlanan her anomaliyi keşfedildiği andan kapatılmasına kadar ele alır: anomali kayda geçirilir, analiz edilip sınıflandırılır, bir yanıta karar verilir (örneğin düzeltmek ya da olduğu gibi bırakmak) ve rapor kapatılır. Anomaliler YGYD’nin hangi aşamasında bulunursa bulunsun raporlanabilir; statik testte, özellikle statik analizde bulunan hataların da benzer biçimde ele alınması en iyisidir. Anomaliler genellikle bir hata yönetimi aracına kaydedilir. Raporlanan her anomalinin gerçek bir hata çıkması gerekmez; inceleme, onun örneğin hatalı test verisinden kaynaklanan bir <strong>yanlış pozitif sonuç (false-positive result)</strong> ya da bir <strong>değişiklik talebi (change request)</strong> olduğunu gösterebilir. Bir <strong>hata raporunun (defect report)</strong> üç tipik hedefi vardır: hatayı ele almaktan ve çözmekten sorumlu olanlara onu çözmeye yetecek bilgiyi vermek, iş ürününün kalitesini takip etmeye yarayan bir araç sunmak ve geliştirme ile test sürecini iyileştirmek için fikir vermek. ISTQB® v4.0’a göre resmî bir hata raporu tipik olarak şu yapısal bileşenleri içerir: benzersiz bir tanımlayıcı ve kısa bir başlık; gözlem tarihi, raporu veren organizasyon, yazar ve rolü; tam yapı dahil test nesnesi ve ortam; hatanın bağlamı, örneğin ilgili test senaryosu, aktivite, yaşam döngüsü aşaması, teknik, kontrol listesi ya da veri; ilgili kayıtlar, dökümler, ekran görüntüleri ya da kayıtlarla birlikte yeniden üretme adımları; birbirinden ayrı beklenen ve gerçekleşen sonuçlar; önem derecesi ve düzeltme önceliği; durum; referanslar. Bu alanlar birlikte, başka bir uzmana sorunu tahmine dayanmadan yeniden üretmeye, incelemeye, çözmeye ve izlemeye yetecek bilgiyi verir.</p>
+<p><strong>Önem derecesi ve öncelik.</strong> <strong>Önem derecesi (severity)</strong>, hatanın paydaşların çıkarları ya da gereksinimler üzerindeki etkisinin derecesidir; bir çökme, silinen bir veritabanı ya da resmî bir seyahat belgesindeki yanlış bir ad yüksek önem derecesindedir. <strong>Öncelik (priority)</strong>, hatanın ne kadar acil düzeltilmesi gerektiğidir; sürüm takvimi gibi iş ihtiyaçlarına bağlıdır. İkisi ayrı alanlar olarak kaydedilir ve birbirinden bağımsız değişebilir; bu yüzden dört kombinasyonun hepsi görülebilir. Yüksek önem derecesi, yüksek öncelik: canlıya geçişe iki gün kala ana ödeme ekranının 500 hatasıyla çökmesi. Yüksek önem derecesi, düşük öncelik: gelecek ay sistemden kaldırılacak eski bir raporda bir sistem çökmesi. Düşük önem derecesi, yüksek öncelik: genel müdür küresel bir ticaret fuarına katılmadan bir gün önce ana sayfa logosundaki yanlış renk tonu. Düşük önem derecesi, düşük öncelik: yönetim panelinin altındaki bir bilgi kutusunda bir yazım hatası.</p>
+<p>Tablo 5.2 aynı dört örneği bir ızgaraya yerleştiriyor; böylece her kombinasyonun mümkün olduğunu tek bakışta görebilirsiniz.</p>
+<p><strong>Tablo 5.2 — Önem derecesi ve öncelik birbirinden bağımsızdır: her kombinasyonda bir örnek</strong></p>
+<div class="table-wrap">
+<table>
+<colgroup>
+<col style="width: 21%" />
+<col style="width: 39%" />
+<col style="width: 39%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Önem derecesi / öncelik</th>
+<th>Yüksek öncelik (yakında düzeltilmeli)</th>
+<th>Düşük öncelik (düzeltme bekleyebilir)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Yüksek önem derecesi</strong> (büyük etki)</td>
+<td>Canlıya geçişe iki gün kala ana ödeme ekranı 500 hatasıyla çöküyor</td>
+<td>Gelecek ay sistemden kaldırılacak eski bir raporda çökme</td>
+</tr>
+<tr class="even">
+<td><strong>Düşük önem derecesi</strong> (küçük etki)</td>
+<td>Genel müdür küresel bir ticaret fuarına katılmadan bir gün önce ana sayfa logosundaki yanlış renk tonu</td>
+<td>Yönetim panelinin altındaki bir bilgi kutusunda yazım hatası</td>
+</tr>
+</tbody>
+</table>
+</div>
+<section id="çözümlü-örnek-zayıf-bir-rapora-karşı-profesyonel-bir-rapor" class="level4">
+<h4>Çözümlü örnek — zayıf bir rapora karşı profesyonel bir rapor</h4>
+<p>Bir havayolu biletleme projesinde bir test uzmanı, bir çocuk yolcu için biniş kartı PDF’i indirildiğinde belgenin çocuğun adı yerine refakat eden yetişkinin adını bastığını buluyor. (Ortam: Hazırlık (staging), sürüm 2.8.0, İşletim Sistemi Y 14.5 üzerinde Tarayıcı X 128.0. Tarayıcı X ve İşletim Sistemi Y burada ürün adlarının yerini tutuyor; gerçek bir rapor gerçek adları ve sürümleri yazar.)</p>
+<p>Zayıf bir hata raporu: “Çocuk biniş kartı indirme tamamen bozuk. Rezalet, hemen düzeltin!!!” (Bu raporda sürüm numarası, ortam bilgisi, yeniden üretme adımları ve beklenen ile gerçekleşen sonucun ayrımı yok; duygusal, spekülatif bir yorum.)</p>
+<p>Doğru, profesyonel bir hata raporu:</p>
+<div class="table-wrap">
+<table>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 80%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Alan</th>
+<th>Profesyonel içerik</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Hata kimliği / Başlık</td>
+<td>DEF-2114 — Çocuk yolcunun biniş kartı PDF’i refakat eden yetişkinin adını basıyor</td>
+</tr>
+<tr class="even">
+<td>Tarih / Yazar</td>
+<td>2026-05-14 · R. Deniz (Kıdemli Sistem Test Uzmanı)</td>
+</tr>
+<tr class="odd">
+<td>Yazılım sürümü / Ortam</td>
+<td>Check-in Web Platformu v2.8.0 · Hazırlık (staging) · İşletim Sistemi Y 14.5 üzerinde Tarayıcı X 128.0</td>
+</tr>
+<tr class="even">
+<td>Test bağlamı</td>
+<td>TC-BP-04 (Biniş Kartı İndirme), sistem testi (test koşumu)</td>
+</tr>
+<tr class="odd">
+<td>Yeniden üretme adımları</td>
+<td>1. 1 yetişkin + 1 çocuk yolculu bir PNR rezervasyonu oluşturun (test verisi kümesi: PNR_FAM_02). 2. İki yolcu için de koltuk seçerek çevrim içi check-in’i tamamlayın. 3. Onay ekranında çocuk yolcu profilini seçin. 4. “Biniş Kartını PDF Olarak İndir”e tıklayın.</td>
+</tr>
+<tr class="even">
+<td>Beklenen sonuç</td>
+<td>Üretilen PDF, ad alanında rezervasyondaki çocuğun kendi adını ve soyadını gösterir.</td>
+</tr>
+<tr class="odd">
+<td>Gerçekleşen sonuç</td>
+<td>Üretilen PDF ad alanında refakat eden yetişkinin adını gösteriyor; koltuk numarası ise veritabanından doğru olarak çocuğunki. (Hatalı PDF ve ekran görüntüsü ekte.)</td>
+</tr>
+<tr class="even">
+<td>Durum</td>
+<td>Yeni</td>
+</tr>
+<tr class="odd">
+<td>Önem derecesi / Öncelik</td>
+<td>Önem derecesi: Yüksek (resmî bir seyahat belgesindeki yanlış yolcu kimliği hukuki bir kriz yaratır). Öncelik: Yüksek (canlıya geçişe tam iki hafta var).</td>
+</tr>
+<tr class="even">
+<td>Referanslar</td>
+<td>Gereksinim: REQ-BP-007 · Başarısız test senaryosu: TC-BP-04</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><em>Sınav odağı.</em> K3 hata raporu sorularında size dağınık ya da eksik bir rapor verilir ve içinde neyin “yanlış ya da eksik” olduğu, ya da dört şıktan hangisinin “en kaliteli hata raporu” olduğu sorulur. Her zaman üç şeyi kontrol edin: temiz, numaralı yeniden üretme adımları var mı? Beklenen sonuç ve gerçekleşen sonuç, somut verilerle iki ayrı başlık olarak yazılmış mı? Üslup suçlayıcı değil, nesnel mi? Bu üç ölçütü karşılayan şık doğru cevaptır.</p>
+</section>
+<section id="bağımsız-alıştırma-5.c" class="level4">
+<h4>Bağımsız alıştırma 5.C</h4>
+<p>Bir meslektaşınız şu hata raporunu giriyor: “Arama çubuğu üretimde bazen çok yavaş. Sorunun kesinlikle veritabanı sorgularından geldiğinden eminim, birinin acilen buna bakması gerekiyor; sistem sonuçları çok daha hızlı döndürmeli.” Sorunu yeniden üretiyor ve şu olguları not ediyorsunuz:</p>
+<ul>
+<li>Sistem: Kütüphane Kataloğu web uygulaması v3.4.1, üretim ortamı, İşletim Sistemi Y 14.5 üzerinde Tarayıcı X 128.0; tarih 2026-06-03.</li>
+<li>Şube filtresi “Tüm şubeler” iken “tarih” anahtar kelimesiyle yapılan arama, sonuçları 5 denemenin 5’inde 18 ile 22 saniye arasında gösterdi.</li>
+<li>Filtre tek bir şubeye ayarlandığında aynı arama, sonuçları 5 denemenin 5’inde 2 saniyenin altında gösterdi.</li>
+<li>Gereksinim REQ-SRCH-03: arama sonuçları 3 saniye içinde gösterilir. Bunun için sizin test senaryonuz TC-SRCH-11.</li>
+<li>Arama sayfası, kütüphane üyeleri için kataloğun ana giriş noktasıdır.</li>
+</ul>
+<p>Bu olguları kullanarak eksiksiz hata raporunu çözümlü örnekteki alan düzeniyle yazın (başlık, tarih ve yazar, sürüm ve ortam, test bağlamı, yeniden üretme adımları, beklenen sonuç, gerçekleşen sonuç, durum, önem derecesi ve öncelik, referanslar). Ardından meslektaşınızın metninin hangi kısımlarını dışarıda bıraktığınızı ve nedenini söyleyin. (Çözüm bu bölümün sonunda.)</p>
+<p><em>Hemen Pekiştir.</em> Alıştırma, çözümlü örnek ve 5.C’dir.</p>
+<p><em>HP 5.5.1.</em> Önem derecesi ile öncelik arasındaki fark nedir?</p>
+<div class="mc">
+<ul>
+<li>(a) Önem derecesi “hatanın paydaşlar ya da gereksinimler üzerindeki etkisi ne kadar büyük?” sorusunu, öncelik “ne kadar acil düzeltilmeli?” sorusunu yanıtlar</li>
+<li>(b) İkisi de düzeltme aciliyetini ölçer</li>
+<li>(c) İkisi de paydaşlar üzerindeki etkiyi ölçer</li>
+<li>(d) Önem derecesi aciliyeti, öncelik etkiyi ölçer</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (a). Önem derecesi etkinin derecesidir; öncelik düzeltmenin aciliyetidir. Ayrı alanlardır (düşük önem derecesiyle yüksek öncelik mümkündür).</p>
+</div></details>
+</section>
+</section>
+</section>
+<section id="chapter-5-summary" class="level2">
+<h2>Bölüm 5 özeti</h2>
+<div class="table-wrap">
+<table>
+<colgroup>
+<col style="width: 16%" />
+<col style="width: 83%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Öğrenme hedefi</th>
+<th>Tek cümlelik özet</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>5.1.1 (K2)</td>
+<td>Test planı test hedeflerine ulaşmanın araçlarını ve takvimini belgeler, paydaşlarla iletişimi sağlar, test politikasına ve test stratejisine uyumu (ya da onlardan sapmayı) gösterir; yaşayan bir belgedir.</td>
+</tr>
+<tr class="even">
+<td>5.1.2 (K1)</td>
+<td>Çevik ekiplerde test uzmanı sürüm planlamasında test edilebilir kriterlere katkı verir, döngü planlamada hikayeleri test görevlerine böler.</td>
+</tr>
+<tr class="odd">
+<td>5.1.3 (K2)</td>
+<td>Giriş kriterleri (çevik ekiplerde DoR) bir aktiviteye başlamanın ön koşullarını, çıkış kriterleri (DoD) onu bitirmek için nelere ulaşılması gerektiğini tanımlar.</td>
+</tr>
+<tr class="even">
+<td>5.1.4 (K3)</td>
+<td>Dört tahminleme tekniği: oranlara dayalı ve dışdeğerleme (metriğe dayalı), Wideband Delphi ve üç noktalı (uzmana dayalı); üç noktalıda E = (a + 4m + b)/6, SD = (b − a)/6.</td>
+</tr>
+<tr class="odd">
+<td>5.1.5 (K3)</td>
+<td>Önceliklendirme stratejisi ne olursa olsun (risk, kapsam, gereksinim), test senaryoları arasındaki bağımlılıklar ve kaynakların uygunluğu ideal sırayı değiştirebilir; düşük öncelikli bir ön koşul önce koşulur.</td>
+</tr>
+<tr class="even">
+<td>5.1.6 (K1)</td>
+<td>Test piramidi tabana çok sayıda küçük, izole, hızlı testi, tepeye az sayıda yavaş uçtan uca testi koyar; katmanların sayısı ve adları değişebilir.</td>
+</tr>
+<tr class="odd">
+<td>5.1.7 (K2)</td>
+<td>Test çeyrekleri şöyle eşler: Q1 otomatik bileşen ve bileşen entegrasyon testleri, Q2 kabul kriterlerini kontrol eden fonksiyonel testler ve örnekler, Q3 manuel keşif, kullanılabilirlik ve kullanıcı kabul testi, Q4 duman testleri ve kullanılabilirlik dışındaki fonksiyonel olmayan testler.</td>
+</tr>
+<tr class="even">
+<td>5.2.1 (K1)</td>
+<td>Risk seviyesi olasılık ve etkiden belirlenir; hesaplanır (nicel) ya da bir risk matrisinden okunur (nitel).</td>
+</tr>
+<tr class="odd">
+<td>5.2.2 (K2)</td>
+<td>Bir proje riski projenin takvimini, bütçesini ya da kapsamını etkiler; bir ürün riski ürünün kalite karakteristikleriyle ilgilidir.</td>
+</tr>
+<tr class="even">
+<td>5.2.3 / 5.2.4 (K2)</td>
+<td>Ürün riski analizi belirleme artı değerlendirmedir; risk kontrolü azaltma artı gözetimdir; yanıt seçenekleri arasında kabul, transfer ve acil durum planları da vardır.</td>
+</tr>
+<tr class="odd">
+<td>5.3.1 (K1)</td>
+<td>Test gözetimi metrik verisi toplar; test kontrolü, test plandan saptığında bu veriyi kontrol direktifleri vermek için kullanır.</td>
+</tr>
+<tr class="even">
+<td>5.3.2 / 5.3.3 (K2)</td>
+<td>İlerleme raporu test sürerken test kontrolünü destekler; tamamlama raporu iş tamamlandığında testi plana göre değerlendirir; durum gösterge panelleri, burn-down tabloları, sözlü bilgilendirme ve resmî raporlar gibi seçeneklerle iletilir.</td>
+</tr>
+<tr class="odd">
+<td>5.4.1 (K2)</td>
+<td>Yapılandırma yönetimi bütün yapılandırma öğelerini tanımlar, sürüm kontrolü altına alır ve ilişkilendirir; böylece önceki test sonuçları önceki bir temel çizgiye dönülerek yeniden üretilebilir.</td>
+</tr>
+<tr class="even">
+<td>5.5.1 (K3)</td>
+<td>Bir hata raporu adımları ve somut beklenen/gerçekleşen sonuçları içermeli, önem derecesini (etki) ve önceliği (aciliyet) ayrı alanlar olarak sunmalıdır.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<section id="sık-karıştırılan-kritik-kavram-çiftleri-4" class="level3">
+<h3>Sık karıştırılan kritik kavram çiftleri</h3>
+<div class="table-wrap">
+<table>
+<colgroup>
+<col style="width: 14%" />
+<col style="width: 35%" />
+<col style="width: 14%" />
+<col style="width: 35%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Bu kavram</th>
+<th>şudur</th>
+<th>şu kavram değildir</th>
+<th>o da şudur</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Giriş kriterleri (DoR)</td>
+<td>test koşumlarına düzgün başlamak için hazır olma koşulları</td>
+<td>Çıkış kriterleri (DoD)</td>
+<td>bir testi tamamlanmış ilan edip durdurmak için başarı eşikleri</td>
+</tr>
+<tr class="even">
+<td>Proje riski</td>
+<td>projenin takvimini, bütçesini ya da kapsamını etkiler: istifalar, geç teslimatlar, maliyet kesintileri</td>
+<td>Ürün riski</td>
+<td>ürünün kalite karakteristiklerini tehdit eder: yanlış hesaplama, güvenlik açığı, yavaş yanıt, kötü kullanıcı deneyimi</td>
+</tr>
+<tr class="odd">
+<td>Önem derecesi</td>
+<td>hatanın paydaşların çıkarları ya da gereksinimler üzerindeki etkisinin derecesi</td>
+<td>Öncelik</td>
+<td>iş ihtiyaçları ve takvim göz önüne alındığında hatanın ne kadar acil düzeltilmesi gerektiği</td>
+</tr>
+<tr class="even">
+<td>Test gözetimi</td>
+<td>testin plana göre nerede durduğunu göstermek için metrik verisi toplamak</td>
+<td>Test kontrolü</td>
+<td>bir sapmada takvimi ya da kapsamı düzeltmek için yönetim direktifleri vermek</td>
+</tr>
+<tr class="odd">
+<td>İlerleme raporu</td>
+<td>test sürerken yayımlanan anlık durum raporu</td>
+<td>Tamamlama raporu</td>
+<td>aşama kapandığında yayımlanan son özet, kalan riskler ve alınan dersler</td>
+</tr>
+<tr class="even">
+<td>Risk değerlendirmesi</td>
+<td>belirlenen riskleri kategorilere ayırmak; olasılığı, etkiyi, seviyeyi, önceliği ve olası ele alma yollarını belirlemek</td>
+<td>Risk kontrolü</td>
+<td>değerlendirilen ürün risklerini azaltmak ve aksiyonların işe yarayıp yaramadığını, yeni risklerin çıkıp çıkmadığını gözetmek</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="sınav-ipuçları-ve-yaygın-tuzaklar-bölüm-5" class="level3">
+<h3>Sınav ipuçları ve yaygın tuzaklar — Bölüm 5</h3>
+<p>K3 tahminleme sorularında, kâğıt üzerinde sayıları çarpmaya başlamadan önce üç noktalı formülleri açıkça yazın (E = (a + 4m + b) / 6 ve SD = (b − a) / 6). Çeldiriciler bilerek, m’yi 4 ile ağırlıklandırmayı unutan düz ortalama sonucundan kurulur. Soru kökünün kalan eforu mu yoksa toplam eforu mu sorduğunu sözcük sözcük kontrol edin. K3 önceliklendirme sorularında şıklara geçmeden önce testleri kâğıt üzerinde riske ya da iş önceliğine göre listeleyin, sonra bağımlılık sütununu inceleyin; ön koşul testini, kendi önceliği ne kadar düşük olursa olsun, ona bağımlı testlerin soluna (önüne) taşıyın. K3 hata raporu sorularında rapor metnindeki öznel sözcüklere dikkat edin (“rezalet”, “bozuk”, “bence bu bir veritabanı hatası” gibi): profesyonel bir rapor spekülasyon ya da geliştiriciyi hedef alan suçlama içermez; yalnızca nesnel adımlar ve somut beklenen ve gerçekleşen sonuçlar içerir.</p>
+<p>İki tuzağı bilmekte yarar var. Birincisi iki raporun içeriklerinin yer değiştirmesidir: alınan dersler biten işe geriye dönük bakar, bu yüzden ders programı onları ilerleme raporunda değil tamamlama raporunda sayar; mevcut engeller ve bir sonraki periyodun planı ise ilerleme raporuna aittir. Tamamlama raporunun da test sırasında karşılaşılan engelleri ve geçici çözümlerini özetlediğini aklınızda tutun. İkincisi önem derecesi ile önceliği eşleştirme tuzaklarıdır: “yüksek önem derecesindeki bir hata her zaman en yüksek öncelikle düzeltilmelidir” ifadesini görürseniz bunun yanlış olduğunu hatırlayın; gelecek ay hurdaya çıkacak bir modüldeki çökmenin önem derecesi yüksek, ama düzeltme önceliği düşüktür.</p>
+</section>
+</section>
+<section id="cumulative-retrieval-3" class="level2">
+<h2>Birikimli hatırlama</h2>
+<p>Önceki bölümleri bu bölümün merceğinden yeniden ziyaret edin:</p>
+<ul>
+<li><strong>R5-a.</strong> “Otomasyon mimarının sürümün ortasında istifa etmesi”nin bir insan hatası mı, bir hata mı, yoksa ikisi de mi olmadığını söyleyin (Bölüm 1).</li>
+<li><strong>R5-b.</strong> En sıkı teknikleri en yüksek riskli modüle atamanın risk bazlı testi mi, yoksa “yazılımı %100 test etmek imkansızdır” sınırını mı yansıttığına karar verin (Bölüm 5 ve 1).</li>
+<li><strong>R5-c.</strong> Sistemin tamamına yönelik bir Q4 performans testinin en doğal olarak hangi test seviyesinde yer aldığını söyleyin (Bölüm 2).</li>
+</ul>
+<p>Önceki bölümlere geri bakmadan önce her birini hafızanızdan yanıtlamaya çalışın. Örnek cevaplar, Cevaplar ve Gerekçeler bölümünde <em>Birikimli hatırlama — örnek cevaplar</em> başlığı altındadır.</p>
+</section>
+<section id="chapter-exercises-4" class="level2">
+<h2>Bölüm alıştırmaları</h2>
+<p>Cevaplar, gerekçeler ve öğrenme hedefi kaynakları kitabın sonundaki “Cevaplar ve Gerekçeler” bölümündedir.</p>
+<p><em>PB-C5-001.</em> Bir test ekibi kritik, yeni bir ödeme entegrasyonu modülü için üç noktalı tahminleme yapıyor. Uzmanlar şu değerleri veriyor: iyimser (a) = 8 kişi-gün, en olası (m) = 14 kişi-gün, kötümser (b) = 32 kişi-gün. Üç noktalı tahminleme kuralları uygulandığında hangi seçenek son tahmini (E) ve standart sapmayı (SD) doğru hesaplar?</p>
+<div class="mc">
+<ul>
+<li>(a) E = 18 kişi-gün, SD = 4 kişi-gün</li>
+<li>(b) E = 16 kişi-gün, SD = 4 kişi-gün</li>
+<li>(c) E = 16 kişi-gün, SD = 8 kişi-gün</li>
+<li>(d) E = 18 kişi-gün, SD = 8 kişi-gün</li>
+</ul>
+</div>
+<p><em>PB-C5-002.</em> Bir test yöneticisinin çizelgeye yerleştireceği dört test senaryosu var. Ürün riski analizi her alana olasılık × etki olarak hesaplanmış bir risk seviyesi veriyor (yüksek olan daha risklidir): T1 risk seviyesi 20 olan bir alanı kapsıyor; T2, 4; T3, 15; T4, 9. T3 ancak T2 ihtiyaç duyduğu çıktı verisini ürettikten sonra koşulabiliyor. Bu bağımlılığa uyarak ve riske dayalı önceliklendirmeyi uygulayarak doğru koşum sırası nedir?</p>
+<div class="mc">
+<ul>
+<li>(a) T1, T3, T4, T2</li>
+<li>(b) T1, T2, T3, T4</li>
+<li>(c) T2, T3, T1, T4</li>
+<li>(d) T3, T1, T4, T2</li>
+</ul>
+</div>
+<p><em>PB-C5-003.</em> Bir projenin resmî test planlama belgesinde şöyle yazıyor: “Geliştirme ekibinin teslim ettiği sürüm adayı bütün duman testlerini geçmiş olmalı ve anonimleştirilmiş gerçek müşteri verisiyle donatılmış izole bir test ortamı tamamen hazır olmalıdır.” Bu madde en iyi hangi kavramı anlatır?</p>
+<div class="mc">
+<ul>
+<li>(a) Sistem testleri için çıkış kriterleri</li>
+<li>(b) Test tamamlama raporunun kapanış kriterleri</li>
+<li>(c) Sürüm için çevik “tamamlanma tanımı” eşiği</li>
+<li>(d) Sistem testleri için giriş kriterleri</li>
+</ul>
+</div>
+<p><em>PB-C5-004.</em> Bir sprint planlama toplantısında kıdemli bir paydaş, test ekibinin “Denetim Kaydı Dışa Aktarma” modülü için “Ödeme Hesaplama Motoru”na göre neden çok daha az test senaryosu planladığını sorguluyor. Test felsefesiyle uyumlu, test yöneticisinin en profesyonel ve meşru gerekçesi nedir?</p>
+<div class="mc">
+<ul>
+<li>(a) Ödeme motorunun ürün riski seviyesi (olasılık ile ticari etkinin dengesi) çok daha yüksektir; risk bazlı teste göre efor ve titizlik riskle orantılanır</li>
+<li>(b) Denetim kaydı modülünde çok daha az kaynak kod satırı vardır; beyaz kutu kurallarına göre daha az kod otomatik olarak daha az test alır</li>
+<li>(c) Test piramidi mimarisine göre ödeme katmanındaki birim testleri her zaman dışa aktarma arayüzü testlerinden fazla olmalıdır</li>
+<li>(d) Projenin bütün resmî çıkış kriterleri (tamamlanma tanımı) yalnızca ödeme motoru modülüne uygulanacak şekilde belirlenmiştir</li>
+</ul>
+</div>
+<p><em>PB-C5-005.</em> Bir test uzmanı şu kaydı giriyor: “DEF-88: Fatura görüntüleme ekranındaki ara toplam parametresi yanlış hesaplanıyor. Hata, dinamik sistem testleri koşulurken 4.1 yapısında bulundu. Önem derecesi: Yüksek.” Geliştiricinin hatayı ek soru sormadan yerelde hızla çözebilmesi için acilen eklenmesi gereken en kritik eksik öğe nedir?</p>
+<div class="mc">
+<ul>
+<li>(a) Hata raporu için benzersiz bir tanımlayıcı</li>
+<li>(b) Açık beklenen ve gerçekleşen sonuçlarla birlikte numaralı, somut yeniden üretme adımları</li>
+<li>(c) Hatanın bulunduğu test nesnesinin sürümü</li>
+<li>(d) Hatanın önem derecesi</li>
+</ul>
+</div>
+<p><em>PB-C5-006.</em> Önceden belirlenen hangi yönetimsel ve stratejik bileşen tipik olarak bir test planı belgesinin içeriğine aittir?</p>
+<div class="mc">
+<ul>
+<li>(a) Her test koşumunun sistemde bıraktığı zaman damgalı anlık dökümler</li>
+<li>(b) Sistem testi sırasında bulunan bütün hataların derinlemesine kök neden analizleri</li>
+<li>(c) İlgili test seviyesi için belirlenen giriş kriterleri ve çıkış kriterleri</li>
+<li>(d) Her test senaryosunun tıklama tıklama ayrıntılı arayüz prosedürleri</li>
+</ul>
+</div>
+<p><em>PB-C5-007.</em> Çevik bir projede her sprintin başında yapılan döngü (sprint) planlama toplantısında bir test uzmanının ekibe yapabileceği en tipik ve meşru profesyonel katkı nedir?</p>
+<div class="mc">
+<ul>
+<li>(a) Müşteri ve iş tarafı adına sürümün canlıya geçiş onay imzasını tek başına vermek</li>
+<li>(b) Dağıtım için üretim sunucularını yapılandırmak</li>
+<li>(c) Geliştiricilerin kodlama standartları belgesini yazmak</li>
+<li>(d) Sprinte seçilen hikayelerin test eforunu tahmin etmek ve test edilebilir yönlerini netleştirmek</li>
+</ul>
+</div>
+<p><em>PB-C5-008.</em> Sürümden önce yapılan bir ürün riski analizi, bir e-ticaret sisteminin ödeme modülünü bütün sistemdeki en yüksek riskli alan olarak gösterdi. Bu modül için ek, titiz test senaryoları yazmak ve ona en tecrübeli test uzmanını atamak hangi risk kontrolü yanıtını temsil eder?</p>
+<div class="mc">
+<ul>
+<li>(a) Azaltma</li>
+<li>(b) Kabul</li>
+<li>(c) Transfer</li>
+<li>(d) Acil durum planlaması</li>
+</ul>
+</div>
+<p><em>PB-C5-009.</em> Bir test yöneticisi, devam eden bir test aşaması boyunca her cuma gününün sonunda haftanın metriklerini, plana göre mevcut durumu, ekibi yavaşlatan engelleri ve gelecek hafta planlanan test adımlarını içeren bir belge yayımlıyor. Bu hangi belgedir?</p>
+<div class="mc">
+<ul>
+<li>(a) Bir test tamamlama raporu</li>
+<li>(b) Bir test ilerleme raporu</li>
+<li>(c) Bir yapılandırma yönetimi temel çizgisi</li>
+<li>(d) Bir test planı risk kaydı</li>
+</ul>
+</div>
+<p><em>PB-C5-010.</em> Bir test ekibi, büyüklüğü ve karmaşıklığı birbirine benzeyen dokuz fiyatlandırma modülünü test etmek zorunda. İlk dört modülün testi sırasıyla 18, 22, 20 ve 24 kişi-saat sürdü. Bu ölçümlerden dışdeğerleme yapıldığında kalan modüller için tahmini test eforu nedir?</p>
+<div class="mc">
+<ul>
+<li>(a) 84 kişi-saat</li>
+<li>(b) 189 kişi-saat</li>
+<li>(c) 105 kişi-saat</li>
+<li>(d) 120 kişi-saat</li>
+</ul>
+</div>
+<p><em>PB-C5-011.</em> Aşağıdakilerden hangisi bir ürün riski değil, bir proje riskidir?</p>
+<div class="mc">
+<ul>
+<li>(a) Bir tren rezervasyon sisteminin ücret motoru grup rezervasyonlarına yanlış indirim uygulayabilir</li>
+<li>(b) Mobil uygulama, ödeme sırasında ağ bağlantısı koptuğunda donabilir</li>
+<li>(c) Hata mesajları kullanıcıların yanlış iade seçeneğini seçmesine yol açacak biçimde ifade edilmiş olabilir</li>
+<li>(d) Koltuk rezervasyonu arayüzünü geliştiren dış tedarikçi onu dört hafta geç teslim edebilir</li>
+</ul>
+</div>
+<p><em>PB-C5-012.</em> Yeni bir projenin başında test uzmanları her test senaryosunun, test betiğinin ve test verisi kümesinin yazıldığı andan itibaren benzersiz biçimde tanımlanmasını ve sürüm kontrolü altında olmasını istiyor; böylece sonraki her test sonucu, kullandığı test çalışma ürünlerinin, yapının ve test ortamının tam sürümlerine izlenebilecek. Ekip, test öğelerinin ve test çalışma ürünlerinin nasıl tanımlanacağına, sürüm kontrolü altına alınacağına ve temel çizgiye bağlanacağına ne zaman karar vermelidir?</p>
+<div class="mc">
+<ul>
+<li>(a) Test planlama sırasında, herhangi bir test çalışma ürünü üretilmeden önce</li>
+<li>(b) Test koşumu sırasında, geliştirmeden ilk yapılar geldiğinde</li>
+<li>(c) Test tamamlama sırasında, test çalışma ürünleri sonraki kullanım için arşivlenirken</li>
+<li>(d) İlk hata raporu “yeniden üretilemiyor” olarak kapatıldıktan sonra</li>
+</ul>
+</div>
+<p><em>PB-C5-013.</em> Bir test uzmanı, çevrim içi bir market sitesinin ödeme adımında geçerli bir kupon kodunun reddedildiğini buluyor. Aşağıdaki hata raporu açıklamalarından hangisi en yararlı ve nesnel olanıdır?</p>
+<div class="mc">
+<ul>
+<li>(a) “Kupon kodları yine bozuk. Belli ki biri ödeme adımını teslim etmeden önce test etmemiş.”</li>
+<li>(b) “Hazırlık ortamında 5.2.1 yapısından beri kupon fonksiyonu ödeme adımında geçerli kodları her zaman kabul etmiyor, örneğin bazı büyük sepetlerde; indirim de toplamdan eksik kalıyor.”</li>
+<li>(c) “5.2.1 yapısı, hazırlık ortamı, İşletim Sistemi Y 14.5 üzerinde Tarayıcı X 128.0: 40,00 tutarındaki bir sepete geçerli SAVE10 kodu girilip Uygula seçildiğinde ‘Kod tanınmadı’ gösteriliyor. Beklenen: yüzde 10 indirim uygulanır ve toplam 36,00 olur. Yeniden üretme adımları ve bir ekran görüntüsü ekte; test senaryosu TC-VCH-03.”</li>
+<li>(d) “Hazırlık ortamında ödeme adımında bir kupon uygulandıktan sonra sayfa bana yavaş geliyor ve indirimli toplam yanlış görünüyor; sebep muhtemelen indirim servisi, bu yüzden önce o kontrol edilmeli.”</li>
+</ul>
+</div>
+</section>
+<section id="independent-exercise-solutions-1" class="level2">
+<h2>Bağımsız alıştırma çözümleri</h2>
+<p><em>5.A.</em> E = (4 + 4 × 10 + 22) / 6 = (4 + 40 + 22) / 6 = 66 / 6 = 11 kişi-gün. SD = (22 − 4) / 6 = 18 / 6 = 3 kişi-gün. Yani 11 ± 3 kişi-gün. (Düz ortalama (4 + 10 + 22) / 3 = 12 yaygın bir yanlış cevaptır.)</p>
+<p><em>5.B.</em> Adım 1, yalnızca risk seviyesine göre sıralayın: C (20), A (16), B (8), D (3). Adım 2, bağımlılığı uygulayın: C’nin B’ye ihtiyacı var, bu yüzden B, C’den önce koşulmalıdır. B’yi yalnızca gerektiği kadar, C’nin hemen önüne çekin. Adım 3, son sıra: B, C, A, D. Kendi risk seviyesi düşük olsa da B artık ilk sırada koşulur, çünkü en yüksek riskli test onsuz başlayamaz; A ve D birbirlerine göre yerlerini korur. (Çekici yanlış cevap C, A, B, D bağımlılığı yok sayar; A, B, C, D ise B’yi doğru biçimde öne alır, ama en yüksek riskli test C’yi A’nın arkasında bekletir.)</p>
+<p><em>5.C.</em> Olgulardan kurulmuş eksiksiz bir rapor:</p>
+<div class="table-wrap">
+<table>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 80%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Alan</th>
+<th>İçerik</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Hata kimliği / Başlık</td>
+<td>DEF-0871 — “Tüm şubeler” filtresiyle katalog araması sonuçları 18–22 saniyede gösteriyor</td>
+</tr>
+<tr class="even">
+<td>Tarih / Yazar</td>
+<td>2026-06-03 · adınız (Test Uzmanı)</td>
+</tr>
+<tr class="odd">
+<td>Yazılım sürümü / Ortam</td>
+<td>Kütüphane Kataloğu v3.4.1 · Üretim · İşletim Sistemi Y 14.5 üzerinde Tarayıcı X 128.0</td>
+</tr>
+<tr class="even">
+<td>Test bağlamı</td>
+<td>TC-SRCH-11 (arama yanıt süresi), test koşumu sırasında yeniden üretildi</td>
+</tr>
+<tr class="odd">
+<td>Yeniden üretme adımları</td>
+<td>1. Katalog arama sayfasını açın. 2. Şube filtresini “Tüm şubeler” yapın. 3. “tarih” anahtar kelimesini girin. 4. Ara’yı seçin ve sonuçlar görünene kadar geçen süreyi ölçün.</td>
+</tr>
+<tr class="even">
+<td>Beklenen sonuç</td>
+<td>Sonuçlar 3 saniye içinde gösterilir (REQ-SRCH-03).</td>
+</tr>
+<tr class="odd">
+<td>Gerçekleşen sonuç</td>
+<td>Sonuçlar 5 denemenin 5’inde 18 ile 22 saniye sonra göründü. Tek şube filtresiyle aynı arama 5 denemenin 5’inde 2 saniyenin altında sürdü.</td>
+</tr>
+<tr class="even">
+<td>Durum</td>
+<td>Yeni</td>
+</tr>
+<tr class="odd">
+<td>Önem derecesi / Öncelik</td>
+<td>Önem derecesi: Orta (arama hâlâ çalışıyor, ama yanıt süresi belirtilen gereksinimi ihlal ediyor). Öncelik: Yüksek (arama sayfası kütüphane üyeleri için ana giriş noktası ve sorun üretimde).</td>
+</tr>
+<tr class="even">
+<td>Referanslar</td>
+<td>Gereksinim: REQ-SRCH-03 · Test senaryosu: TC-SRCH-11</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Meslektaşınızın metninden neyi dışarıda bıraktınız ve neden: “Sorunun kesinlikle veritabanı sorgularından geldiğinden eminim” nedene dair bir tahmindir; nedeni bulmak hatayı analiz eden kişinin işidir. “Birinin acilen buna bakması gerekiyor” bir taleptir; bunu artık öncelik alanı nesnel olarak ifade ediyor. “Bazen çok yavaş” ve “çok daha hızlı” belirsizdir; bu yüzden yerlerini ölçülen süreler ve 3 saniyelik gereksinim alır. Tek şube sonucu raporda kalır, çünkü tetikleyen koşulu daraltan gözlenmiş bir olgudur, bir tahmin değildir.</p>
+</section>
+</section>
+
+<div class="pager"><a href="chapter-4.html"><span class="lbl">Önceki</span>Bölüm 4 — Test Analizi ve Tasarımı</a><a href="chapter-6.html" style="text-align:right"><span class="lbl">Sonraki</span>Bölüm 6 — Test Araçları</a></div>
+<footer class="site">© 2026 Kadir Çamoğlu · Kendi içeriğimiz CC BY-NC 4.0 lisanslıdır · ISTQB® ve CTFL®, International Software Testing Qualifications Board'un tescilli markalarıdır; bu rehber ISTQB® ya da Turkish Testing Board ile bağlantılı değildir, onlar tarafından onaylanmamıştır.</footer>
+</main>
+</div>
+<script>if (window.matchMedia('(min-width: 901px)').matches) document.getElementById('navd').open = true;</script>
+<script>(function(){function od(){var h=decodeURIComponent(location.hash.slice(1));if(!h)return;var e=document.getElementById(h);while(e){if(e.tagName==='DETAILS')e.open=true;e=e.parentElement;}}addEventListener('hashchange',od);od();})();</script>
+</body>
+</html>

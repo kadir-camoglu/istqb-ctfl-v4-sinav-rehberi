@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sık Karıştırılan Kavramlar — Ana Liste · ISTQB® CTFL® v4.0 Sınav Rehberi</title>
+<meta name="description" content="ISTQB® Sertifikalı Test Uzmanı Temel Seviye (CTFL®) v4.0 sınavı için ücretsiz, bağımsız Türkçe çalışma rehberi: 64 öğrenme hedefinin tamamı, çözümlü örnekler, kısa sorular ve iki dilli tam bir deneme sınavı.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="draft-banner" role="note"><strong>Herkese açık taslak — inceleniyor.</strong> Geri bildirim: <a href="mailto:kadir.camoglu@gmail.com">kadir.camoglu@gmail.com</a></div>
+<header class="topbar"><div class="inner"><a href="index.html">ISTQB® CTFL® v4.0 Sınav Rehberi</a><span class="meta"><span class="ind">Bağımsız · Gayriresmî çalışma rehberi · Herkese açık taslak · 2026-10 · </span><a href="all.html">Tam metin tek sayfada</a></span></div></header>
+<div class="layout">
+<nav class="side"><details id="navd"><summary>İçindekiler</summary><div class="navbody">
+<div class="group">Ön bölüm</div><ul>
+<li><a href="index.html">ISTQB® CTFL® v4.0 Sınav Rehberi: Sıfırdan Sınava Hazır Seviyeye</a>
+</li>
+<li><a href="copyright.html">Telif Hakkı ve Marka Bildirimi</a>
+</li>
+<li><a href="introduction.html">Giriş — Bu Kitap Hakkında</a>
+</li>
+<li><a href="how-to-use.html">Bu Kitap Nasıl Kullanılır</a>
+</li>
+<li><a href="the-exam.html">CTFL® Sınavı Nasıl İşler</a>
+</li>
+<li><a href="objective-map.html">Hedef Haritası</a>
+</li>
+<li><a href="study-roadmap.html">Çalışma Yol Haritası</a>
+</li>
+</ul>
+<div class="group">Bölümler</div><ul>
+<li><a href="chapter-1.html">Bölüm 1 — Yazılım Testinin Temelleri</a>
+</li>
+<li><a href="chapter-2.html">Bölüm 2 — Yazılım Geliştirme Yaşam Döngüsü Boyunca Test</a>
+</li>
+<li><a href="chapter-3.html">Bölüm 3 — Statik Testler</a>
+</li>
+<li><a href="chapter-4.html">Bölüm 4 — Test Analizi ve Tasarımı</a>
+</li>
+<li><a href="chapter-5.html">Bölüm 5 — Test Aktivitelerini Yönetme</a>
+</li>
+<li><a href="chapter-6.html">Bölüm 6 — Test Araçları</a>
+</li>
+</ul>
+<div class="group">Arka bölüm</div><ul>
+<li><a href="rationale.html">Cevaplar ve Gerekçeler</a>
+</li>
+<li><a href="glossary.html">Sözlük</a>
+</li>
+<li class="current"><a href="confused-pairs.html">Sık Karıştırılan Kavramlar — Ana Liste</a>
+</li>
+<li><a href="final-revision.html">Son Tekrar Planı</a>
+</li>
+<li><a href="mock-exam-1.html">Deneme Sınavı 1 — 40 Soru, Gerekçeleriyle</a>
+</li>
+<li><a href="further-resources.html">İleri Kaynaklar</a>
+</li>
+</ul>
+</div></details></nav>
+<main>
+<section id="commonly-confused-pairs-master-list" class="level1">
+<h1>Sık Karıştırılan Kavramlar — Ana Liste</h1>
+<p>İyi kurulmuş bir yanlış cevap nadiren rastgeledir. Genellikle doğru cevabın komşusudur: hedefe o kadar yakın duran bir kavramdır ki ikisini tek bir ayrıntı ayırır. Bu liste, her bölümün sonundaki “sık karıştırılan kritik kavram çiftleri” kutularını bölüm bölüm bir araya getiriyor; böylece bütün bu ayrımları tek oturuşta tekrar edebilirsiniz. Kutulardaki her çift bir kez yer alır (iki bölüm kutusunda birden geçen bir çift, onu ilk öğreten bölümün altında listelenir). Hiçbir bölüm kutusunda olmayan dört çift de eklendi: üçü Bölüm 1’de (hataların varlığı ve yokluğu, testler yıpranır ve pestisit paradoksu, test uyarlama ve test koşumu), biri Bölüm 3’te (statik test ve dinamik test).</p>
+<p>Her satırı tek bir cümle gibi okuyun: birinci sütundaki kavram ikinci sütundaki kavram değildir ve üçüncü sütun ikisini ayıran ayrıntıyı verir. Hazır olup olmadığınızı anlamanın iyi bir yolu, üçüncü sütunu kapatıp ayırıcıyı kendi sözcüklerinizle söylemektir. Bunu her satır için yapabiliyorsanız, “çok yakın ama yanlış” şıklara karşı iyi korunuyorsunuz demektir.</p>
+<section id="bölüm-1-yazılım-testinin-temelleri" class="level3">
+<h3>Bölüm 1 — Yazılım Testinin Temelleri</h3>
+<div class="table-wrap">
+<table>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 60%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Bu …</th>
+<th>şu değildir …</th>
+<th>Tek satırlık ayırıcı</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Test etme</td>
+<td>Hata ayıklama</td>
+<td>Test etme arızaları tetikler (dinamik) ya da hataları doğrudan bulur (statik); hata ayıklama bir arızaya yol açan hataları bulur, analiz eder ve ortadan kaldırır (bir geliştirme aktivitesi).</td>
+</tr>
+<tr class="even">
+<td>Test etme (kalite kontrol)</td>
+<td>Kalite güvence (QA)</td>
+<td>Test etme ürüne odaklı ve düzelticidir; kalite güvence sürece odaklı ve önleyicidir.</td>
+</tr>
+<tr class="odd">
+<td>İnsan hatası (error)</td>
+<td>Hata (defect)</td>
+<td>İnsan hatası bir kişinin yanlış eylemidir; hata, bu eylemin bir iş ürününde bıraktığı kusurdur.</td>
+</tr>
+<tr class="even">
+<td>Hata</td>
+<td>Arıza</td>
+<td>Hata statik bir kusurdur; arıza, hata çalıştırıldığında görülen yanlış davranıştır.</td>
+</tr>
+<tr class="odd">
+<td>Doğrulama</td>
+<td>Sağlama</td>
+<td>Doğrulama belirtilmiş gereksinimlere göre kontrol eder; sağlama kullanıcıların gerçek ihtiyaçlarına göre kontrol eder.</td>
+</tr>
+<tr class="even">
+<td>Testin amacı, yazılımda hataların olduğunu göstermektir; yazılımda hata kalmadığını ispatlamak değildir</td>
+<td>Hatasızlık yanılgısı</td>
+<td>Birincisi testin neyi kanıtlayabileceğine dair bir sınırdır; ikincisi doğrulanmış, hataları düzeltilmiş bir sistemi başarılı bir ürün sanma yanlışıdır.</td>
+</tr>
+<tr class="odd">
+<td>Testler yıpranır</td>
+<td>Pestisit paradoksu</td>
+<td>Aynı prensibin v4.0’daki adı ve 2018’deki (v3.1) eski adı; TTB ders programındaki adı “antibiyotik direnci”. Sınavda yalnızca güncel adı bekleyin.</td>
+</tr>
+<tr class="even">
+<td>Test analizi</td>
+<td>Test tasarımı</td>
+<td>Analiz neyin test edileceğine karar verir (test koşulları); tasarım nasıl test edileceğine karar verir (test senaryoları, test verisi gereksinimleri, kapsam öğeleri).</td>
+</tr>
+<tr class="odd">
+<td>Test tasarımı</td>
+<td>Test uyarlama</td>
+<td>Tasarım test senaryolarını ve ihtiyaç duydukları veriyi belirler; uyarlama test çalışma ürünlerini üretir ve ortamı hazırlar.</td>
+</tr>
+<tr class="even">
+<td>Test uyarlama</td>
+<td>Test koşumu</td>
+<td>Uyarlama test prosedürlerini, veriyi ve ortamı kurar; koşum testleri çalıştırır ve sonuçları kaydeder.</td>
+</tr>
+<tr class="odd">
+<td>Test gözetimi</td>
+<td>Test kontrolü</td>
+<td>Gözetim bilgi toplar ve ilerlemeyi planla karşılaştırır; kontrol, ikisi birbirinden uzaklaştığında düzeltici aksiyon alır.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="bölüm-2-yazılım-geliştirme-yaşam-döngüsü-boyunca-test" class="level3">
+<h3>Bölüm 2 — Yazılım Geliştirme Yaşam Döngüsü Boyunca Test</h3>
+<div class="table-wrap">
+<table>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 60%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Bu …</th>
+<th>şu değildir …</th>
+<th>Tek satırlık ayırıcı</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Test seviyesi</td>
+<td>Test çeşidi</td>
+<td>Seviye, yaşam döngüsünün neresinde ve hangi kapsamda test edildiğidir (bileşenden kabule); çeşit, aktivitelerin hangi test hedefine hizmet ettiğidir: neyin kontrol edildiği (fonksiyonel, fonksiyonel olmayan) ya da testlerin nereden türetildiği (kara kutu, beyaz kutu).</td>
+</tr>
+<tr class="even">
+<td>Bileşen entegrasyon testi</td>
+<td>Sistem entegrasyon testi</td>
+<td>Sistemin içindeki bileşenler arasındaki arayüzler; diğer sistemlerle ve harici hizmetlerle olan arayüzler.</td>
+</tr>
+<tr class="odd">
+<td>Onaylama testi</td>
+<td>Regresyon testi</td>
+<td>“Asıl hata düzeltildi mi?” ile “Değişiklik daha önce çalışan bir şeyi bozdu mu?”</td>
+</tr>
+<tr class="even">
+<td>TDD</td>
+<td>ATDD</td>
+<td>Geliştiricinin birim testleri kodu bileşen seviyesinde yönlendirir; kabul kriterleri testleri hikaye seviyesinde yönlendirir.</td>
+</tr>
+<tr class="odd">
+<td>ATDD</td>
+<td>BDD</td>
+<td>ATDD testleri kabul kriterlerinden türetir; BDD istenen davranışı doğal dilde Given/When/Then senaryolarıyla ifade eder.</td>
+</tr>
+<tr class="even">
+<td>Onaylama testi</td>
+<td>Doğrulama</td>
+<td>Onaylama testi belirli bir hatanın düzeltildiğini kontrol eder; doğrulama bir iş ürününün belirtilmiş gereksinimlerini karşıladığını kontrol eder.</td>
+</tr>
+<tr class="odd">
+<td>Bakım testi</td>
+<td>Sürdürülebilirlik testi</td>
+<td>Kullanımdaki bir sistemde yapılan değişiklikleri test etmek; sistemin ne kadar kolay değiştirilebileceğine dair fonksiyonel olmayan bir test.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="bölüm-3-statik-testler" class="level3">
+<h3>Bölüm 3 — Statik Testler</h3>
+<div class="table-wrap">
+<table>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 60%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Bu …</th>
+<th>şu değildir …</th>
+<th>Tek satırlık ayırıcı</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Statik test</td>
+<td>Dinamik test</td>
+<td>Statik test iş ürünlerini çalıştırmadan inceler ve hataları doğrudan bulur; dinamik test ise yazılımı çalıştırır ve arızalara yol açar.</td>
+</tr>
+<tr class="even">
+<td>Gözden geçirme</td>
+<td>Statik analiz</td>
+<td>İş ürününü insanlar inceler; kodu ya da modelleri araçlar inceler.</td>
+</tr>
+<tr class="odd">
+<td>Gözden geçirme lideri</td>
+<td>Moderatör</td>
+<td>Gözden geçirme lideri gözden geçirmenin genel sorumluluğunu üstlenir (kim, ne zaman, nerede); moderatör toplantıların etkili yürümesini sağlar (arabuluculuk, zaman yönetimi, güvenli bir ortam).</td>
+</tr>
+<tr class="even">
+<td>Anomali</td>
+<td>Hata</td>
+<td>Bireysel gözden geçirmede kayda geçirilen, beklentiden sapan bir durum; iş ürünündeki bir kusur, anomali iletişim ve analizde analiz edildiğinde teyit edilir.</td>
+</tr>
+<tr class="odd">
+<td>Üzerinden geçme</td>
+<td>Teknik gözden geçirme</td>
+<td>Yazarın öncülüğünde, çoğu zaman gözden geçiricileri eğitmek ve bilgi paylaşmak için; bir moderatörün öncülüğünde, uzlaşma ve teknik karar arayan teknik açıdan nitelikli gözden geçiricilerle.</td>
+</tr>
+<tr class="even">
+<td>Teknik gözden geçirme</td>
+<td>Teftiş</td>
+<td>Resmî bir teknik gözden geçirme; metrik toplayan ve yazarın gözden geçirme lideri ya da katip olmasına izin vermeyen en resmî çeşit.</td>
+</tr>
+<tr class="odd">
+<td>Planlama (gözden geçirme süreci)</td>
+<td>Gözden geçirme başlangıcı</td>
+<td>Planlama kapsamı, amacı ve çıkış kriterlerini tanımlar; başlangıç herkesin ve her şeyin başlamaya hazır olmasını sağlar.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="bölüm-4-test-analizi-ve-tasarımı" class="level3">
+<h3>Bölüm 4 — Test Analizi ve Tasarımı</h3>
+<div class="table-wrap">
+<table>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 60%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Bu …</th>
+<th>şu değildir …</th>
+<th>Tek satırlık ayırıcı</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Denklik paylarına ayırma</td>
+<td>Sınır değer analizi</td>
+<td>Her paydan bir değer; sıralı payların kenarları.</td>
+</tr>
+<tr class="even">
+<td>2 değerli SDA</td>
+<td>3 değerli SDA</td>
+<td>Her sınır değer artı komşu paydaki en yakın komşusu; geçersiz payların sınırları dahil her sınır değer artı iki komşusu.</td>
+</tr>
+<tr class="odd">
+<td>Koşul sayısı</td>
+<td>Sütun sayısı</td>
+<td>n mantıksal (doğru/yanlış) koşul, tam bir sınırlı giriş karar tablosunda 2^n sütun verir; çok değerli koşullarda değer sayıları çarpılır.</td>
+</tr>
+<tr class="even">
+<td>Tam karar tablosu</td>
+<td>İndirgenmiş karar tablosu</td>
+<td>Koşulların her kombinasyonu; bir koşulun sonucu etkilemediği yerlerde birleştirilmiş sütunlar (tire ile gösterilir).</td>
+</tr>
+<tr class="odd">
+<td>Karar tablosu testi</td>
+<td>Durum geçişi testi</td>
+<td>Koşul kombinasyonları; mevcut duruma ve olaya bağlı davranış.</td>
+</tr>
+<tr class="even">
+<td>Tüm durumlar kapsamı</td>
+<td>Geçerli geçişler kapsamı</td>
+<td>Her durumu en az bir kez çalıştırmak; her geçerli geçişi en az bir kez çalıştırmak. Tam geçerli geçişler kapsamı, tam tüm durumlar kapsamını garanti eder.</td>
+</tr>
+<tr class="odd">
+<td>Komut kapsama yüzdesi</td>
+<td>Dal kapsamı</td>
+<td>Her çalıştırılabilir komut; her dal. %100 dal kapsamı %100 komut kapsama yüzdesini garanti eder, tersi doğru değildir.</td>
+</tr>
+<tr class="even">
+<td>Hata tahminleme</td>
+<td>Keşif testi</td>
+<td>Öngörülen insan hatalarını, hataları ve arızaları hedefleyen testler; öğrenirken aynı anda tasarlanan, koşulan ve değerlendirilen testler.</td>
+</tr>
+<tr class="odd">
+<td>Senaryo odaklı kabul kriterleri</td>
+<td>Kural odaklı kabul kriterleri</td>
+<td>Somut Given/When/Then örnekleri; doğrulanabilir kuralların listesi.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="bölüm-5-test-aktivitelerini-yönetme" class="level3">
+<h3>Bölüm 5 — Test Aktivitelerini Yönetme</h3>
+<div class="table-wrap">
+<table>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 60%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Bu …</th>
+<th>şu değildir …</th>
+<th>Tek satırlık ayırıcı</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Giriş kriterleri (hazır olma tanımı)</td>
+<td>Çıkış kriterleri (tamamlanma tanımı)</td>
+<td>Bir aktiviteye başlamanın ön koşulları; onu tamamlanmış ilan etmenin koşulları.</td>
+</tr>
+<tr class="even">
+<td>Proje riski</td>
+<td>Ürün riski</td>
+<td>Projenin takvimini, bütçesini, insanlarını ya da araçlarını tehdit eder; ürünün kalite karakteristiklerini tehdit eder.</td>
+</tr>
+<tr class="odd">
+<td>Önem derecesi</td>
+<td>Öncelik</td>
+<td>Paydaşların çıkarları ya da gereksinimler üzerindeki etkinin derecesi; düzeltmenin aciliyeti. İkisi birbirinden bağımsız değişebilir.</td>
+</tr>
+<tr class="even">
+<td>Test ilerleme raporu</td>
+<td>Test tamamlama raporu</td>
+<td>Test sürerken düzenli olarak, test kontrolünü desteklemek için yayımlanır; bir proje, test seviyesi ya da test çeşidi tamamlandığında, testi planla karşılaştırarak değerlendirmek ve alınan dersleri kaydetmek için hazırlanır.</td>
+</tr>
+<tr class="odd">
+<td>Risk değerlendirmesi</td>
+<td>Risk kontrolü</td>
+<td>Risk seviyesini belirlemek için olasılığı ve etkiyi değerlendirmek; riske karşılık vermek (azaltma, kabul etme, devretme, acil durum planları) ve onu gözetmek.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="bölüm-6-test-araçları" class="level3">
+<h3>Bölüm 6 — Test Araçları</h3>
+<div class="table-wrap">
+<table>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 60%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Bu …</th>
+<th>şu değildir …</th>
+<th>Tek satırlık ayırıcı</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Test koşumu aracı</td>
+<td>Test yönetimi aracı</td>
+<td>Otomatik testleri koşar; test sürecini, test çalışma ürünlerini ve izlenebilirliği yönetir.</td>
+</tr>
+<tr class="even">
+<td>Otomasyonun faydası (tutarlılık)</td>
+<td>Otomasyonun riski (araca fazla güvenmek)</td>
+<td>Tekrarlanan adımlar her seferinde aynı biçimde koşar; araca, insanın eleştirel düşünmesini ihmal edecek kadar güvenmek.</td>
+</tr>
+<tr class="odd">
+<td>Edinme (bir aracı satın almak)</td>
+<td>Başarı (araçtan kalıcı fayda görmek)</td>
+<td>Satın almak ve kurmak; aracın karşılığını vermesini sağlayan eğitim, süreç değişiklikleri ve sürekli betik bakımı.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Bir satır hâlâ belirsiz geliyorsa, geldiği bölüm kutusuna dönün ve çevresindeki kesimi yeniden okuyun. Üçüncü sütunu kelimesi kelimesine ezberlemeye çalışmayın. Adını koyduğu tek ayrıntıyı öğrenin ve o ayrıntıyı soru kökünde arayın.</p>
+</section>
+</section>
+
+<div class="pager"><a href="glossary.html"><span class="lbl">Önceki</span>Sözlük</a><a href="final-revision.html" style="text-align:right"><span class="lbl">Sonraki</span>Son Tekrar Planı</a></div>
+<footer class="site">© 2026 Kadir Çamoğlu · Kendi içeriğimiz CC BY-NC 4.0 lisanslıdır · ISTQB® ve CTFL®, International Software Testing Qualifications Board'un tescilli markalarıdır; bu rehber ISTQB® ya da Turkish Testing Board ile bağlantılı değildir, onlar tarafından onaylanmamıştır.</footer>
+</main>
+</div>
+<script>if (window.matchMedia('(min-width: 901px)').matches) document.getElementById('navd').open = true;</script>
+<script>(function(){function od(){var h=decodeURIComponent(location.hash.slice(1));if(!h)return;var e=document.getElementById(h);while(e){if(e.tagName==='DETAILS')e.open=true;e=e.parentElement;}}addEventListener('hashchange',od);od();})();</script>
+</body>
+</html>

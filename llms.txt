@@ -1,0 +1,28 @@
+# ISTQB® CTFL® v4.0 Sınav Rehberi: Sıfırdan Sınava Hazır Seviyeye
+
+> ISTQB® CTFL® v4.0 sınavı için ücretsiz, bağımsız Türkçe çalışma rehberi (ders programı v4.0.1).
+
+- [Tam metin tek sayfada](all.html)
+- [Markdown kaynağı](book.md)
+
+## Sayfalar
+
+- [ISTQB® CTFL® v4.0 Sınav Rehberi: Sıfırdan Sınava Hazır Seviyeye](index.html)
+- [Telif Hakkı ve Marka Bildirimi](copyright.html)
+- [Giriş — Bu Kitap Hakkında](introduction.html)
+- [Bu Kitap Nasıl Kullanılır](how-to-use.html)
+- [CTFL® Sınavı Nasıl İşler](the-exam.html)
+- [Hedef Haritası](objective-map.html)
+- [Çalışma Yol Haritası](study-roadmap.html)
+- [Bölüm 1 — Yazılım Testinin Temelleri](chapter-1.html)
+- [Bölüm 2 — Yazılım Geliştirme Yaşam Döngüsü Boyunca Test](chapter-2.html)
+- [Bölüm 3 — Statik Testler](chapter-3.html)
+- [Bölüm 4 — Test Analizi ve Tasarımı](chapter-4.html)
+- [Bölüm 5 — Test Aktivitelerini Yönetme](chapter-5.html)
+- [Bölüm 6 — Test Araçları](chapter-6.html)
+- [Cevaplar ve Gerekçeler](rationale.html)
+- [Sözlük](glossary.html)
+- [Sık Karıştırılan Kavramlar — Ana Liste](confused-pairs.html)
+- [Son Tekrar Planı](final-revision.html)
+- [Deneme Sınavı 1 — 40 Soru, Gerekçeleriyle](mock-exam-1.html)
+- [İleri Kaynaklar](further-resources.html)

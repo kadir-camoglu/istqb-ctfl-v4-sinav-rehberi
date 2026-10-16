@@ -1,0 +1,1524 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bölüm 4 — Test Analizi ve Tasarımı · ISTQB® CTFL® v4.0 Sınav Rehberi</title>
+<meta name="description" content="ISTQB® Sertifikalı Test Uzmanı Temel Seviye (CTFL®) v4.0 sınavı için ücretsiz, bağımsız Türkçe çalışma rehberi: 64 öğrenme hedefinin tamamı, çözümlü örnekler, kısa sorular ve iki dilli tam bir deneme sınavı.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="draft-banner" role="note"><strong>Herkese açık taslak — inceleniyor.</strong> Geri bildirim: <a href="mailto:kadir.camoglu@gmail.com">kadir.camoglu@gmail.com</a></div>
+<header class="topbar"><div class="inner"><a href="index.html">ISTQB® CTFL® v4.0 Sınav Rehberi</a><span class="meta"><span class="ind">Bağımsız · Gayriresmî çalışma rehberi · Herkese açık taslak · 2026-10 · </span><a href="all.html">Tam metin tek sayfada</a></span></div></header>
+<div class="layout">
+<nav class="side"><details id="navd"><summary>İçindekiler</summary><div class="navbody">
+<div class="group">Ön bölüm</div><ul>
+<li><a href="index.html">ISTQB® CTFL® v4.0 Sınav Rehberi: Sıfırdan Sınava Hazır Seviyeye</a>
+</li>
+<li><a href="copyright.html">Telif Hakkı ve Marka Bildirimi</a>
+</li>
+<li><a href="introduction.html">Giriş — Bu Kitap Hakkında</a>
+</li>
+<li><a href="how-to-use.html">Bu Kitap Nasıl Kullanılır</a>
+</li>
+<li><a href="the-exam.html">CTFL® Sınavı Nasıl İşler</a>
+</li>
+<li><a href="objective-map.html">Hedef Haritası</a>
+</li>
+<li><a href="study-roadmap.html">Çalışma Yol Haritası</a>
+</li>
+</ul>
+<div class="group">Bölümler</div><ul>
+<li><a href="chapter-1.html">Bölüm 1 — Yazılım Testinin Temelleri</a>
+</li>
+<li><a href="chapter-2.html">Bölüm 2 — Yazılım Geliştirme Yaşam Döngüsü Boyunca Test</a>
+</li>
+<li><a href="chapter-3.html">Bölüm 3 — Statik Testler</a>
+</li>
+<li class="current"><a href="chapter-4.html">Bölüm 4 — Test Analizi ve Tasarımı</a>
+<ul class="sub"><li><a href="#overview-of-test-techniques-fl-4.1.1-k2">4.1 Test Tekniklerine Genel Bakış (FL-4.1.1 — K2)</a></li><li><a href="#black-box-test-techniques">4.2 Kara Kutu Test Teknikleri</a></li><li><a href="#white-box-test-techniques">4.3 Beyaz Kutu Test Teknikleri</a></li><li><a href="#experience-based-test-techniques">4.4 Tecrübeye Dayalı Test Teknikleri</a></li><li><a href="#collaboration-based-test-approaches">4.5 İş Birliğine Dayalı Test Yaklaşımları</a></li><li><a href="#chapter-4-summary">Bölüm 4 özeti</a></li><li><a href="#cumulative-retrieval-2">Birikimli hatırlama</a></li><li><a href="#chapter-exercises-3">Bölüm alıştırmaları</a></li><li><a href="#independent-exercise-solutions">Bağımsız alıştırma çözümleri</a></li></ul>
+</li>
+<li><a href="chapter-5.html">Bölüm 5 — Test Aktivitelerini Yönetme</a>
+</li>
+<li><a href="chapter-6.html">Bölüm 6 — Test Araçları</a>
+</li>
+</ul>
+<div class="group">Arka bölüm</div><ul>
+<li><a href="rationale.html">Cevaplar ve Gerekçeler</a>
+</li>
+<li><a href="glossary.html">Sözlük</a>
+</li>
+<li><a href="confused-pairs.html">Sık Karıştırılan Kavramlar — Ana Liste</a>
+</li>
+<li><a href="final-revision.html">Son Tekrar Planı</a>
+</li>
+<li><a href="mock-exam-1.html">Deneme Sınavı 1 — 40 Soru, Gerekçeleriyle</a>
+</li>
+<li><a href="further-resources.html">İleri Kaynaklar</a>
+</li>
+</ul>
+</div></details></nav>
+<main>
+<section id="chapter-4-test-analysis-and-design" class="level1">
+<h1>Bölüm 4 — Test Analizi ve Tasarımı</h1>
+<p><strong>Öğrenme hedefleri:</strong> 14 · K1 0 / K2 9 / K3 5 · <strong>Bu bölümden sınav sorusu:</strong> 11</p>
+<p><strong>Anahtar kelimeler:</strong> kabul kriterleri (acceptance criteria), kabul testi güdümlü yazılım geliştirme (acceptance test-driven development), kara kutu test tekniği (black-box test technique), sınır değer analizi (boundary value analysis), dal kapsamı (branch coverage), kontrol listesine dayalı test etme (checklist-based testing), iş birliğine dayalı test yaklaşımı (collaboration-based test approach), kapsam (coverage), kapsam öğesi (coverage item), karar tablosu testi (decision table testing), denklik paylarına ayırma (equivalence partitioning), hata tahminleme (error guessing), tecrübeye dayalı test tekniği (experience-based test technique), keşif testi (exploratory testing), durum geçişi testi (state transition testing), komut kapsama yüzdesi (statement coverage), test tekniği (test technique), beyaz kutu test tekniği (white-box test technique)</p>
+<p>Bu bölüm sınavda en yüksek ağırlığa sahiptir ve sorularından beşi K3 seviyesindedir: sizden teknikleri yalnızca tanımanız değil, uygulamanız da istenir. Güvenilir bir hazırlık yolu aynı zamanda basittir: buradaki her örneği kâğıt kalemle çözün, sonra bağımsız alıştırmaları çözümlere bakmadan kendi başınıza yapın. Formüller ilk bakışta göz korkutucu görünebilir. Ama her teknik küçük ve tekrarlanabilir bir prosedür izler; onu iki üç kez kendiniz uyguladıktan sonra sınav soruları da aynı birkaç kalıbı izler.</p>
+<section id="overview-of-test-techniques-fl-4.1.1-k2" class="level2">
+<h2>4.1 Test Tekniklerine Genel Bakış (FL-4.1.1 — K2)</h2>
+<p><span id="fl-4-1-1"></span>Bir <strong>test tekniği (test technique)</strong>, testleri rastgele uydurmak yerine test esasından test koşullarını, <strong>kapsam öğelerini (coverage item)</strong> ve test senaryolarını türetmenin yapılandırılmış bir yoludur. Teknikler hem test analizini (neyin test edileceği) hem de test tasarımını (nasıl test edileceği) destekler. Ders programı onları üç sınıfta toplar. <strong>Kara kutu test teknikleri (black-box test technique)</strong> (spesifikasyona dayalı), testleri iç yapı bilgisi olmadan belgelenmiş, belirtilmiş davranıştan, gereksinimlerden, hikayelerden ve modellerden türetir; kapsam, denklik payları, sınırlar, tablo sütunları ve geçişler gibi test esası öğelerine göre ölçülür. <strong>Beyaz kutu test teknikleri (white-box test technique)</strong> (yapıya dayalı), testleri sistemin iç yapısından, kodundan ve mimarisinden türetir; kapsam, çalıştırılan komutlar ve dallar gibi yapısal öğelere göre ölçülür. <strong>Tecrübeye dayalı test teknikleri (experience-based test technique)</strong>, testleri test uzmanının uygulama, olası hatalar ve kullanıcılar hakkındaki bilgisinden ve tecrübesinden türetir; etkinlikleri büyük ölçüde test uzmanının becerilerine bağlıdır. Şekil 4.1, üç sınıfı ve bu ders programının her birine yerleştirdiği teknikleri gösteriyor.</p>
+<figure>
+<img src="figures/fig_4_1_technique_classes.png" alt="Şekil 4.1 — Test tekniklerinin üç sınıfı ve her birindeki teknikler. “Test teknikleri” yazan bir kutudan başlayan ağaç üç kutuya ayrılır. Belirtilmiş davranıştan türetilen kara kutu; denklik paylarına ayırma, sınır değer analizi, karar tablosu testi ve durum geçişi testini listeler. İç yapıdan türetilen beyaz kutu; komut testi ve dal testini listeler. Test uzmanının bilgisinden türetilen tecrübeye dayalı sınıf; hata tahminleme, keşif testi ve kontrol listesine dayalı test etmeyi listeler." /><figcaption>Şekil 4.1 — Test tekniklerinin üç sınıfı ve her birindeki teknikler.</figcaption>
+</figure>
+<p>Bu tanımların pratik bir sonucu vardır. Gereken davranış aynı kaldığı sürece kara kutu testleri, uygulama değişse bile çoğu zaman işe yarar kalır, çünkü hiçbir zaman koda bağlanmamışlardır. Beyaz kutu testleri yazılımın nasıl tasarlandığına bağlıdır; bu yüzden tasarım ya da gerçekleştirme var olmadan yazılamazlar ve kod değiştiğinde yeniden ele alınmaları gerekir. Tecrübeye dayalı teknikler sistematik tekniklerin kaçırabileceği hataları bulabilir, ama etkinlikleri büyük ölçüde test uzmanının becerilerine bağlıdır; bu yüzden diğer teknikleri ikame etmez, tamamlar.</p>
+<p>Bu bölümün sürekli kullandığı <strong>kapsam (coverage)</strong> sözcüğü hakkında bir not: kapsam, çalıştırılan kapsam öğelerinin sayısının toplam kapsam öğesi sayısına bölünmesiyle bulunur ve yüzde olarak ifade edilir. Her teknik kendi kapsam öğesini tanımlar: bir denklik payı, bir sınır değer (3 değerli SDA’da onun komşuları da), bir tablo sütunu, bir durum ya da geçiş, bir komut, bir dal.</p>
+<p>Bir senaryo hangi tekniğin uygun olduğunu sorduğunda, test esasının ifadesi genellikle cevaba işaret eder. Sistemin aynı biçimde işlediği değer aralıkları denklik paylarına ayırmaya işaret eder. Sıralı aralıkların kenarlarında değişen davranış sınır değer analizine. Sonuçları koşul kombinasyonlarına bağlı olan durumlar karar tablosu testine. Mevcut duruma ve öncesinde olanlara bağlı davranış durum geçişi testine. Kodun kendi yapısı komut ve dal testine. Geçmiş arızalar ve olası hatalar hakkındaki bilgi hata tahminlemeye. Zayıf spesifikasyonlar ya da ciddi zaman baskısı keşif testine. Ayrıntılı test senaryolarının olmadığı yerde kullanılan, tecrübeyle oluşturulmuş bir test koşulları listesi kontrol listesine dayalı test etmeye. Üzerinde uzlaşılmış kabul kriterleri olan bir kullanıcı hikayesi de ATDD’ye işaret eder. Tablo 4.1 bu işaretleri tekrar için tek yerde topluyor.</p>
+<p><strong>Tablo 4.1 — Test esası size ne veriyor ve hangi teknik uyuyor</strong></p>
+<div class="table-wrap">
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Test esasının size verdiği</th>
+<th>Uyan teknik ya da yaklaşım</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Sistemin aynı biçimde işlediği değer aralıkları</td>
+<td>Denklik paylarına ayırma</td>
+</tr>
+<tr class="even">
+<td>Sıralı aralıkların kenarlarında değişen davranış</td>
+<td>Sınır değer analizi</td>
+</tr>
+<tr class="odd">
+<td>Koşul kombinasyonlarına bağlı sonuçlar</td>
+<td>Karar tablosu testi</td>
+</tr>
+<tr class="even">
+<td>Mevcut duruma ve öncesinde olanlara bağlı davranış</td>
+<td>Durum geçişi testi</td>
+</tr>
+<tr class="odd">
+<td>Kodun kendi yapısı</td>
+<td>Komut testi ve dal testi</td>
+</tr>
+<tr class="even">
+<td>Geçmiş arızalar ve olası hatalar hakkında bilgi</td>
+<td>Hata tahminleme</td>
+</tr>
+<tr class="odd">
+<td>Az ya da yetersiz spesifikasyon veya ciddi zaman baskısı</td>
+<td>Keşif testi</td>
+</tr>
+<tr class="even">
+<td>Ayrıntılı test senaryoları yerine tecrübeyle oluşturulmuş bir koşullar listesi</td>
+<td>Kontrol listesine dayalı test etme</td>
+</tr>
+<tr class="odd">
+<td>Üzerinde uzlaşılmış kabul kriterleri olan bir kullanıcı hikayesi</td>
+<td>ATDD</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><em>Sınav odağı.</em> Bu bir sınıflandırma sorusudur: size testlerin nasıl türetildiğine dair bir açıklama verilir ve sınıfı adlandırmanız istenir. Ayrım basittir. Spesifikasyondan türetmek kara kutudur; koddan ya da yapıdan türetmek beyaz kutudur; test uzmanının bilgisinden türetmek tecrübeye dayalıdır. Yaygın bir tuzak, keşif testini kara kutu olarak sınıflandırmaktır; keşif testi tecrübeye dayalıdır.</p>
+<p><strong>Hemen Pekiştir</strong></p>
+<p><em>HP 4.1.1-a.</em> Bir ekip testleri yalnızca belgelenmiş gereksinimlerden, koda hiç bakmadan türetiyor. Bu hangi teknik sınıfıdır?</p>
+<div class="mc">
+<ul>
+<li>(a) Kara kutu (spesifikasyona dayalı)</li>
+<li>(b) Beyaz kutu (yapıya dayalı)</li>
+<li>(c) Tecrübeye dayalı</li>
+<li>(d) İş birliğine dayalı</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (a). İç yapı bilgisi olmadan belirtilmiş davranıştan türetmek kara kutudur.</p>
+</div></details>
+<p><em>HP 4.1.1-b.</em> Keşif testi hangi sınıfa aittir?</p>
+<div class="mc">
+<ul>
+<li>(a) Kara kutu</li>
+<li>(b) Beyaz kutu</li>
+<li>(c) Tecrübeye dayalı</li>
+<li>(d) İş birliğine dayalı</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (c). Keşif testi tecrübeye dayalı bir tekniktir; yaygın bir tuzak onu kara kutu sanmaktır.</p>
+</div></details>
+<p><em>HP 4.1.1-c.</em> Gereken davranış aynı kaldığında, kod değişse bile hangi testler çoğu zaman işe yarar kalır?</p>
+<div class="mc">
+<ul>
+<li>(a) Beyaz kutu testleri</li>
+<li>(b) Her dalı kapsamak için tasarlanmış testler</li>
+<li>(c) Kara kutu testleri</li>
+<li>(d) Mevcut kontrol akış grafiğinden tasarlanmış testler</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (c). Kara kutu testleri koda bağlı değildir; bu yüzden davranış sabit kalıp kod değiştiğinde işe yarar kalırlar. Beyaz kutu testleri ise yapıya bağlıdır.</p>
+</div></details>
+</section>
+<section id="black-box-test-techniques" class="level2">
+<h2>4.2 Kara Kutu Test Teknikleri</h2>
+<section id="fl-4-2-1" class="level3">
+<h3>Denklik paylarına ayırma (FL-4.2.1 — K3)</h3>
+<p><strong>Fikir.</strong> <strong>Denklik paylarına ayırma (equivalence partitioning, EP)</strong>, test nesnesinin verisini denklik paylarına (denklik sınıflarına) böler: sistemin aynı biçimde işlemesi beklenen değer kümelerine. Sistem bir payın bütün üyelerine gerçekten aynı davranıyorsa her paydan bir değeri test etmek yeterlidir, çünkü herhangi bir üye payı diğer herhangi bir üye kadar iyi çalıştırır.</p>
+<p>Gündelik bir benzetme yardımcı olur. Bin kişilik bir kuruma yemek veren bir catering firması düşünün. Sağlık denetçileri salondan yüzlerce tabak toplayıp laboratuvara göndermez. Aynı kazanda pişen her tabak pilav, sistemin bakış açısından aynı “üretim sürecinden” geçmiştir. Bunun yerine her partiden bir şahit numune alınır. Fırın tavuk kazanından alınan tek bir numune, o kazandan çıkan her porsiyonun durumunu temsil eder. O partiler (kazanlar) denklik paylarıdır; laboratuvar için ayrılan o tek numuneler de test senaryolarımızdır.</p>
+<p>Uygulanacak kurallar şunlardır. Test nesnesine bağlı her veri öğesi pay üretebilir: girdiler, çıktılar, yapılandırma öğeleri, iç değerler, zamanla ilgili değerler, arayüz parametreleri. Geçerli değerler içeren pay bir <strong>geçerli pay (valid partition)</strong>, geçersiz değerler içeren pay bir <strong>geçersiz pay (invalid partition)</strong> olur. Neyin geçerli sayılacağı ekipten ekibe değişebilir; geçersiz paylar kendi testlerini hak eder. Bir pay kümesi sürekli ya da kesikli, sıralı ya da sırasız, sonlu ya da sonsuz olabilir. Paylar örtüşmemeli ve boş olmamalıdır. Tek bir pay kümesi için EP kapsamı, belirlenen her payın en az bir kez çalıştırılmasını gerektirir; kapsam, çalıştırılan payların toplam paylara bölünmesine eşittir. Bir test öğesinin birden fazla pay kümesi varsa en basit kriter <strong>Each Choice kapsamıdır (Her Seçeneği Kapsama; Each Choice coverage)</strong>: her kümedeki her payın en az bir kez çalıştırılmasını ister, ama bütün kombinasyonları istemez. Tek bir veri öğesi için %100 EP kapsamına ulaşmak gereken en az test senaryosu sayısı pay sayısına eşittir.</p>
+<p>Birkaç veri öğesinin her birinin payları olduğunda, tek bir test senaryosu ilke olarak her öğeden bir payı aynı anda kapsayabilir. Uygulamada geçersiz değerler genellikle ayrı ayrı test edilir; böylece bir arıza açıkça tek bir nedene bağlanabilir ve bir hata diğerini maskeleyemez. Sınav soruları birden fazla veri öğesi kullanır. Paylar serbestçe birleştirilebiliyorsa Each Choice kapsamında en az test senaryosu sayısı, herhangi bir kümedeki en büyük pay sayısına eşittir; girdiler arasındaki kısıtlar ya da geçersiz payları teker teker test etmek bu sayıyı artırabilir.</p>
+<section id="çözümlü-örnek-otoparkın-saatlik-ücreti" class="level4">
+<h4>Çözümlü örnek — otoparkın saatlik ücreti</h4>
+<p>Bir otopark toplam park süresine göre ücret alıyor: 1 saate kadar 3 TL; 1 saatten fazla, 4 saate kadar 8 TL; 4 saatten fazla, 24 saate kadar 15 TL. 24 saatten uzun park etmeye izin verilmiyor (bariyer sistemi bunları personele bildiriyor). Girdi, dakika cinsinden park süresi (bir tam sayı, en az 1).</p>
+<p>Görev: payları ve %100 EP kapsamı için en az test senaryosunu türetin.</p>
+<p>Adım 1, davranışın kırıldığı noktaları bulun. Ücret 60. dakikadan sonra, 240. dakikadan sonra ve 1.440. dakikadan sonra değişiyor. 1 dakikanın altındaki değerler bu alan için geçersiz girdi.</p>
+<p>Adım 2, payları listeleyin. Beş pay var: [1’in altı, geçersiz], [1–60], [61–240], [241–1.440], [1.440’ın üstü, personele bildirilir]. Şekil 4.2 bunları, komşu paylar arasındaki kırılma noktalarıyla birlikte bir sayı doğrusu üzerinde gösteriyor.</p>
+<figure>
+<img src="figures/fig_4_2_ep_number_line.png" alt="Şekil 4.2 — Park süresi girdisinin beş denklik payı. Dakika cinsinden park süresini gösteren sayı doğrusu beş paya bölünmüştür: P1, 1’in altı, geçersiz; P2, 1–60, 3 TL; P3, 61–240, 8 TL; P4, 241–1.440, 15 TL; P5, 1.440’ın üstü, personele bildirilir. Kesikli çizgiler 0 ile 1, 60 ile 61, 240 ile 241 ve 1.440 ile 1.441 arasındaki kırılma noktalarını işaretler." /><figcaption>Şekil 4.2 — Park süresi girdisinin beş denklik payı.</figcaption>
+</figure>
+<p>Adım 3, her paydan bir temsilci seçin. Herhangi bir üye işe yarar; aralığın ortasındaki değerleri seçmek yaygın bir alışkanlıktır:</p>
+<div class="table-wrap">
+<table>
+<thead>
+<tr class="header">
+<th>Test senaryosu</th>
+<th>Girdi (dk)</th>
+<th>Pay</th>
+<th>Beklenen sonuç</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>TC1</td>
+<td>0</td>
+<td>P1</td>
+<td>girdi reddedilir</td>
+</tr>
+<tr class="even">
+<td>TC2</td>
+<td>30</td>
+<td>P2</td>
+<td>3 TL</td>
+</tr>
+<tr class="odd">
+<td>TC3</td>
+<td>150</td>
+<td>P3</td>
+<td>8 TL</td>
+</tr>
+<tr class="even">
+<td>TC4</td>
+<td>600</td>
+<td>P4</td>
+<td>15 TL</td>
+</tr>
+<tr class="odd">
+<td>TC5</td>
+<td>2000</td>
+<td>P5</td>
+<td>personele bildirilir</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Cevap: beş pay var, dolayısıyla %100 EP kapsamı için en az beş test senaryosu gerekir. Yalnızca TC2–TC4 koşulsaydı kapsam 3/5 = %60 olurdu.</p>
+<p><em>Sınav odağı.</em> K3 soruları öngörülebilir biçimlerde gelir: kaç pay var, en az kaç test senaryosu gerekir, hangi değer hangi paya ait ve verilen bir test kümesi hangi kapsama ulaşır. Kolay yapılan bir hata geçersiz payları unutmaktır; burada beş yerine üç saymak gibi. İkinci en yaygın hata, sınır komşularını ek paylar olarak eklemektir; sınırlar bu tekniğin değil, bir sonraki tekniğin işidir.</p>
+</section>
+<section id="bağımsız-alıştırma-4.a" class="level4">
+<h4>Bağımsız alıştırma 4.A</h4>
+<p>Bir müze bileti ziyaretçi yaşına göre satıyor (bir tam sayı, 0–120): 0–5 yaş ücretsiz giriyor; 6–17 yaş çocuk tarifesi ödüyor; 18–64 yaş yetişkin tarifesi ödüyor; 65–120 yaş indirimli (yaşlı) tarife ödüyor. 0–120 dışındaki yaşlar reddediliyor. (a) Payları listeleyin. (b) %100 EP kapsamı için en az kaç test senaryosu gerekir? (Çözüm bu bölümün sonunda.)</p>
+<p><em>Hemen Pekiştir.</em> Bu K3 hedefi için asıl alıştırma yukarıdaki çözümlü örnek ve alıştırma 4.A’dır; aşağıdaki tek soru yalnızca temel kuralı sabitler.</p>
+<p><em>HP 4.2.1.</em> Denklik payları hakkında hangi ifade doğrudur?</p>
+<div class="mc">
+<ul>
+<li>(a) İki kural da uyuyorsa bir değer iki paya ait olabilir</li>
+<li>(b) Paylar örtüşmemeli ve boş olmamalıdır; geçersiz paylar da geçerli paylar gibi çalıştırılır</li>
+<li>(c) EP kapsamına yalnızca geçerli paylar sayılır</li>
+<li>(d) Her pay en küçük ve en büyük değerinde test edilmelidir</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (b). Paylar boş olmamalı ve örtüşmemelidir; EP kapsamı geçerli payların yanında geçersiz payları da sayar. (c) şıkkı geçersiz payları unutur, (d) şıkkı ise sınır değer analizini anlatır.</p>
+</div></details>
+</section>
+</section>
+<section id="fl-4-2-2" class="level3">
+<h3>Sınır değer analizi (FL-4.2.2 — K3)</h3>
+<p><strong>Fikir.</strong> Birçok hata aralıkların kenarlarında ortaya çıkar. Bir geliştirici <code>&lt;=</code> yerine <code>&lt;</code> yazdığında aralığın ortasındaki her değer doğru davranır, yalnızca sınır yanlış davranır. <strong>Sınır değer analizi (boundary value analysis, SDA)</strong> bu yüzden EP’yi genişletir ve sıralı payların sınırlarını, yani her payın en küçük ve en büyük değerlerini test eder. SDA yalnızca payların sıralı (sayısal ya da ardışık) olduğu yerde uygulanır; {kırmızı, yeşil, mavi} gibi sırasız bir kümenin test edilecek bir sınırı yoktur.</p>
+<p>Gerçek hayattan bir benzerlik: bir köprünün 10 tonluk ağırlık sınırı varsa, üzerinden 5 tonluk bir kamyon geçirerek pek bir şey öğrenmezsiniz. Bilgi veren testler sınırdadır: 9,9 ton, 10,0 ton, 10,1 ton. Çünkü kuralın ve onu uygulayan kodun yanlış olabileceği yer tam olarak orasıdır.</p>
+<p>İki çeşidi vardır ve sınav ikisini de uygulayabilmenizi bekler. <strong>2 değerli SDA (2-value BVA)</strong> her sınır değer için sınır değerin kendisini ve komşu paydaki en yakın komşusunu test eder. <strong>3 değerli SDA (3-value BVA)</strong> her sınır değer için sınır değeri ve iki komşusunu, yani aynı paydaki komşuyu ve komşu paydaki komşuyu test eder. Bu daha titizdir; örneğin yanlışlıkla <code>&gt;=</code> yerine <code>==</code> olarak yazılmış bir sınır kontrolünü yakalayabilir, 2 değerli SDA ise bunu kaçırabilir.</p>
+<section id="çözümlü-örnek-müzenin-çocukyetişkin-sınırı" class="level4">
+<h4>Çözümlü örnek — müzenin çocuk/yetişkin sınırı</h4>
+<p>Yukarıdaki müze kuralından bir dilim alın: 6–17 yaş çocuk tarifesi, 18–64 yaş yetişkin tarifesi ödüyor. Çocuk ve yetişkin payları arasındaki tek sınıra odaklanın.</p>
+<p>Görev: 2 değerli ve 3 değerli SDA’nın bu sınırda test ettiği değerleri listeleyin.</p>
+<p>Adım 1, sınır çiftini belirleyin. Çocuk payının en büyük değeri 17, yetişkin payının en küçük değeri 18. Dikkat edilecek nokta: iki komşu pay arasında bir değil iki sınır değer vardır, 17 ve 18; her biri kendi payının kenarıdır. Şekil 4.3, her çeşidin bu sınırda hangi değerleri test ettiğini gösteriyor.</p>
+<figure>
+<img src="figures/fig_4_3_bva_boundary.png" alt="Şekil 4.3 — Müzenin çocuk/yetişkin sınırında 2 değerli ve 3 değerli sınır değer analizi. 15’ten 20’ye uzanan sayı doğrusu 17 ile 18 arasındaki kesikli bir çizgiyle bölünür; solda 17’ye kadar çocuk fiyatı, sağda 18’den itibaren yetişkin fiyatı vardır. Daireler 2 değerli kümeyi {17, 18}, kareler 3 değerli kümeyi {16, 17, 18, 19} işaretler." /><figcaption>Şekil 4.3 — Müzenin çocuk/yetişkin sınırında 2 değerli ve 3 değerli sınır değer analizi.</figcaption>
+</figure>
+<p>Adım 2, 2 değerli SDA’yı uygulayın. Her sınır değer ve komşu paydaki en yakın komşusu: 17 için bu komşu 18, 18 için 17. Sonuç: {17, 18}, bu sınır için iki test değeri.</p>
+<p>Adım 3, 3 değerli SDA’yı uygulayın. Her sınır değer ve iki komşusu: 17’den {16, 17, 18}; 18’den {17, 18, 19}. Birleşimleri {16, 17, 18, 19}, dört test değeri.</p>
+<p>“En az test senaryosu sayısı” sorularının gerektirdiği, öğenin tamamı için sayımlar: [0’ın altı, geçersiz] [0–5] [6–17] [18–64] [65–120] [120’nin üstü, geçersiz] paylarıyla müze girdisinin tamamında 2 değerli SDA her payın en küçük ve en büyük değerini, ayrıca her sınırın öbür yanındaki en yakın komşuyu test eder: −1, 0, 5, 6, 17, 18, 64, 65, 120, 121; yani 10 değer. Her değer bir kapsam öğesidir; 10 değerden 7’sini koşmak %70 kapsam verir. 3 değerli SDA’da beş sınırın her biri dört değer katar: −2, −1, 0, 1, 4, 5, 6, 7, 16, 17, 18, 19, 63, 64, 65, 66, 119, 120, 121, 122; yani 20 değer. Geçersiz payların sınır değerlerinin (−1 ve 121) de iki komşusunu aldığına dikkat edin.</p>
+<p><em>Sınav odağı.</em> En sık gelen iki soru şunlardır: “Burada 2 değerli (ya da 3 değerli) SDA hangi değerleri gerektirir?” ve “%100 kapsam için en az kaç test senaryosu gerekir?” Olağan hatalar bir kaymış değerler, komşu payların bir değil iki sınır değer kattığını unutmak ve hangi çeşidin içteki komşuyu içerdiğini karıştırmaktır. Hızlı bir kontrol: iki pay arasındaki tek bir sınırda 2 değerli SDA tam 2 değer, 3 değerli SDA tam 4 değer gerektirir.</p>
+</section>
+<section id="bağımsız-alıştırma-4.b" class="level4">
+<h4>Bağımsız alıştırma 4.B</h4>
+<p>Bir termostat 5°C ile 30°C arasındaki hedef sıcaklıkları (uçlar dahil, tam sayı) kabul ediyor. Aralık dışındaki değerler reddediliyor. (a) 2 değerli SDA hangi değerleri gerektirir, (b) 3 değerli SDA hangi değerleri gerektirir? (Çözüm bu bölümün sonunda.)</p>
+<p><em>Hemen Pekiştir.</em> Alıştırma, yukarıdaki çözümlü örnek ve 4.B’dir; tek soru ayrımı sabitler.</p>
+<p><em>HP 4.2.2.</em> İki pay arasındaki tek bir sınırda 2 değerli ve 3 değerli SDA kaç değer gerektirir?</p>
+<div class="mc">
+<ul>
+<li>(a) 2 değerli 1 değer; 3 değerli 2 değer</li>
+<li>(b) İkisi de 3 değer</li>
+<li>(c) 2 değerli 4 değer; 3 değerli 2 değer</li>
+<li>(d) 2 değerli 2 değer; 3 değerli 4 değer</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (d). Tek bir sınırda 2 değerli SDA tam 2, 3 değerli SDA tam 4 değer gerektirir.</p>
+</div></details>
+</section>
+</section>
+<section id="fl-4-2-3" class="level3">
+<h3>Karar tablosu testi (FL-4.2.3 — K3)</h3>
+<p><strong>Fikir.</strong> Davranış koşulların, yani iş kurallarının kombinasyonlarına bağlı olduğunda EP ve SDA yetmez, çünkü veri öğelerini teker teker ele alırlar. Bir <strong>karar tablosu (decision table)</strong> koşulları üstte satırlar olarak, ortaya çıkan aksiyonları altta satırlar olarak listeler; her sütun da bir kuraldır: koşul değerlerinin benzersiz bir kombinasyonu ve tetiklediği aksiyonlar.</p>
+<p>Uygulanacak işleyiş şöyledir. n bağımsız mantıksal (Boolean) koşulu olan bir <strong>sınırlı giriş karar tablosunda (limited-entry decision table)</strong> tam tablonun 2^n sütunu vardır; her kombinasyon için bir sütun. Bu da tamlığı güvence altına alır. <strong>Genişletilmiş giriş karar tablolarında (extended-entry decision table)</strong> bir koşul aralıklar ya da paylar gibi birkaç değer alabilir; tam tablonun sütun sayısı o zaman değer sayılarının çarpımıdır (dört teslimat bölgesi olan bir koşul ile bir mantıksal koşul 4 × 2 = 8 sütun verir). Gösterim için koşullar D/Y (ya da 1/0) alır; indirgenmiş tablolarda tire, koşulun o kural için önemsiz olduğu anlamına gelir; aksiyonlar X (yap) ya da boş alır; N/A, bir kuralda gerçekleşemeyen bir koşulu işaretler. Tablolar gerçekleşemeyen kombinasyonları içeren sütunlar silinerek sadeleştirilebilir; farklılaşan koşulları sonucu etkilemeyen sütunlar birleştirilerek de küçültülebilir (indirgenebilir). Genel kural şudur: iki sütun tam olarak aynı aksiyonları üretiyor ve yalnızca bir koşulda ayrışıyorsa, o koşul sonucu etkilemiyordur; sütunları birleştirin ve koşulu tireyle işaretleyin. İndirgeme amaçlanan davranışı korur; yalnızca sonucu değiştirmeyen ayrımları kaldırır. İmkansız kombinasyonlar da çıkarılabilir. Kapsam öğesi sütundur. Kapsam, çalıştırılan sütunların toplam sütunlara bölünmesine eşittir; %100 kapsam için en az test senaryosu sayısı gerçekleşebilir sütun sayısına eşittir. Bir yan fayda: tabloyu kurmak spesifikasyondaki boşlukları ve çelişkileri, kimsenin tanımlamadığı kombinasyonları açığa çıkarır.</p>
+<section id="çözümlü-örnek-spor-salonu-üyelik-indirimi" class="level4">
+<h4>Çözümlü örnek — spor salonu üyelik indirimi</h4>
+<p>Bir spor salonu aylık ücrette şu kurallara göre indirim yapıyor: yıllık sözleşmesi olan ve ayda en az 8 kez gelen üyeler %20 indirim alır. Yıllık sözleşmesi olan ve 8 kezden az gelen üyeler %10 indirim alır. Yıllık sözleşmesi olmayan üyeler indirim almaz; ancak kurumsal iş ortağı çalışanıysa geliş sayısından bağımsız olarak her zaman %10 alır. İndirimler toplanmaz; en büyük tek indirim uygulanır.</p>
+<p>Koşullar: K1 yıllık sözleşme (D/Y), K2 ayda en az 8 geliş (D/Y), K3 kurumsal iş ortağı çalışanı (D/Y).</p>
+<p>Görev: tam karar tablosunu kurun, indirgeyin ve her sürüm için en az test senaryosu sayısını söyleyin.</p>
+<p>Adım 1, tablonun boyutunu belirleyin. Üç mantıksal koşul 2^3 = 8 sütun verir.</p>
+<p>Adım 2, tam tabloyu doldurun.</p>
+<div class="table-wrap">
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th>R1</th>
+<th>R2</th>
+<th>R3</th>
+<th>R4</th>
+<th>R5</th>
+<th>R6</th>
+<th>R7</th>
+<th>R8</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>K1 yıllık sözleşme</td>
+<td>D</td>
+<td>D</td>
+<td>D</td>
+<td>D</td>
+<td>Y</td>
+<td>Y</td>
+<td>Y</td>
+<td>Y</td>
+</tr>
+<tr class="even">
+<td>K2 en az 8 geliş</td>
+<td>D</td>
+<td>D</td>
+<td>Y</td>
+<td>Y</td>
+<td>D</td>
+<td>D</td>
+<td>Y</td>
+<td>Y</td>
+</tr>
+<tr class="odd">
+<td>K3 kurumsal iş ortağı</td>
+<td>D</td>
+<td>Y</td>
+<td>D</td>
+<td>Y</td>
+<td>D</td>
+<td>Y</td>
+<td>D</td>
+<td>Y</td>
+</tr>
+<tr class="even">
+<td>A1: %20 indirim</td>
+<td>X</td>
+<td>X</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>A2: %10 indirim</td>
+<td></td>
+<td></td>
+<td>X</td>
+<td>X</td>
+<td>X</td>
+<td></td>
+<td>X</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>A3: indirim yok</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>X</td>
+<td></td>
+<td>X</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>İlginç sütunları okuyun. R1’de üye hem %20’lik yıllık kuralı hem de %10’luk kurumsal kuralı karşılıyor; en büyük tek indirim uygulandığı için sonuç %20. R3’te uygulanabilen iki kural da %10’u gösteriyor. R5 ve R7’de sözleşme yok ama üye kurumsal; bu yüzden geliş sayısından bağımsız olarak %10 uygulanıyor.</p>
+<p>Adım 3, tabloyu indirgeyin. Genel kuralı çift çift uygulayın. R1 ve R2 aynı aksiyonu üretiyor ve yalnızca K3’te ayrışıyor; demek ki orada K3 önemsiz. Aynısı R3 ve R4 için de geçerli. Sözleşmesiz tarafta R5 ve R7 yalnızca K2’de, R6 ve R8 de yalnızca K2’de ayrışıyor. Dört birleştirme dört sütun verir:</p>
+<div class="table-wrap">
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th>M1 (R1+R2)</th>
+<th>M2 (R3+R4)</th>
+<th>M3 (R5+R7)</th>
+<th>M4 (R6+R8)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>K1 yıllık sözleşme</td>
+<td>D</td>
+<td>D</td>
+<td>Y</td>
+<td>Y</td>
+</tr>
+<tr class="even">
+<td>K2 en az 8 geliş</td>
+<td>D</td>
+<td>Y</td>
+<td>–</td>
+<td>–</td>
+</tr>
+<tr class="odd">
+<td>K3 kurumsal iş ortağı</td>
+<td>–</td>
+<td>–</td>
+<td>D</td>
+<td>Y</td>
+</tr>
+<tr class="even">
+<td>A1: %20 indirim</td>
+<td>X</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>A2: %10 indirim</td>
+<td></td>
+<td>X</td>
+<td>X</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>A3: indirim yok</td>
+<td></td>
+<td></td>
+<td></td>
+<td>X</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>İndirgenmiş tablo iş kuralını kolay okunur kılıyor: sözleşme varsa %20 ile %10 arasında geliş sayısı karar veriyor; sözleşme yoksa %10 ile hiç indirim arasında kurumsal işaret karar veriyor.</p>
+<p>Adım 4, cevapları okuyun. Tam tablo: 8 gerçekleşebilir sütun; dolayısıyla tam tablonun %100 kapsamı için en az 8 test senaryosu. İndirgenmiş tablo: 4 sütun; dolayısıyla en az 4 test senaryosu.</p>
+<p><em>Sınav odağı.</em> Dört soru biçimi tekrar eder: tam tablonun kaç sütunu var (sınırlı giriş tablosu için 2^n); bu belirli durumda ne olur (tek bir sütunu okuyun); hangi kural eksik ya da çelişkili; indirgenmiş tablo kaç test senaryosu gerektirir. İki uyarıyı aklınızda tutun. Birincisi, koşul sayısını sütun sayısıyla karıştırmayın. İkincisi, saymaya başlamadan önce sorunun tablonun hangi sürümünü, tam mı indirgenmiş mi, sorduğundan emin olun. Tire “yanlış” değil, “önemsiz” demektir.</p>
+</section>
+<section id="bağımsız-alıştırma-4.c" class="level4">
+<h4>Bağımsız alıştırma 4.C</h4>
+<p>Bir çevrim içi mağaza, sipariş toplamı en az 50 TL ise ya da müşteri Plus üyesiyse ücretsiz kargo veriyor; ama yurt dışı adreslere hiçbir zaman vermiyor, bunlar her zaman kargo ücreti ödüyor. Koşullar: toplam en az 50 TL (D/Y), Plus üyesi (D/Y), yurt içi adres (D/Y). (a) Tam karar tablosunu kurun ve her sütunun aksiyonunu doldurun. (b) Tabloyu indirgeyin; tam tablonun ve indirgenmiş tablonun %100 kapsamı için en az test senaryosu sayısını söyleyin. (c) İndirgenmiş tablonun her sütunu için girdi değerleri ve beklenen sonuçla birlikte somut bir test senaryosu yazın. (Çözüm bu bölümün sonunda.)</p>
+<p><em>Hemen Pekiştir.</em> Alıştırma, çözümlü örnek ve 4.C’dir.</p>
+<p><em>HP 4.2.3.</em> 4 bağımsız mantıksal koşulu olan bir kuralın tam karar tablosunda kaç sütun vardır?</p>
+<div class="mc">
+<ul>
+<li>(a) 4</li>
+<li>(b) 8</li>
+<li>(c) 16</li>
+<li>(d) 32</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (c). Tam tablonun 2^n sütunu vardır; 2^4 = 16. (Koşul sayısını sütun sayısıyla karıştırmayın.)</p>
+</div></details>
+</section>
+</section>
+<section id="fl-4-2-4" class="level3">
+<h3>Durum geçişi testi (FL-4.2.4 — K3)</h3>
+<p><strong>Fikir.</strong> Bazı sistemler aynı olaya durumlarına, yani öncesinde olanlara göre farklı yanıt verir. Bir müzik uygulamasında “oynat” düğmesine basmak, şarkı duraklatılmışsa, zaten çalıyorsa ya da hiç yüklenmemişse farklı şeyler yapar. Bunu bir <strong>durum diyagramı (state diagram)</strong> modeller: düğümler durumlar, oklar <strong>geçişlerdir (transition)</strong>, her ok da tetikleyen <strong>olayla (event)</strong> etiketlenir. Etiketin tam söz dizimi “olay [koruma koşulu] / aksiyon” biçimindedir: geçişin gerçekleşmesi için bir <strong>koruma koşulunun (guard condition)</strong> doğru olması gerekir; aksiyon da sistemin geçiş sırasında yaptığı şeydir. İkisi de yoksa ya da test uzmanı için önemli değilse yazılmaz. <strong>Durum tablosunda (state table)</strong> sütunlar olaylardır (varsa koruma koşullarıyla birlikte); her geçerli hücre hedef durumu ve varsa aksiyonu taşır. Eşdeğer durum tablosu, diyagramın göstermediği geçersiz çiftler de dahil olmak üzere her durum-olay çiftini listeler. Tablo biçiminin önemli olmasının nedeni tam olarak budur: neyin olmaması gerektiğini sistematik biçimde yalnızca tablo gösterir.</p>
+<p>Uygulanacak kapsam kriterleri şunlardır. <strong>Tüm durumlar kapsamı (all states coverage)</strong>, her durumun en az bir kez çalıştırılması demektir; kapsam, çalıştırılan durumların toplam durumlara bölünmesine eşittir. Daha zayıf kriterdir ve birçok geçiş test edilmeden karşılanabilir. <strong>Geçerli geçişler kapsamı (valid transitions coverage)</strong> (<strong>0-anahtar kapsamı</strong>, 0-switch coverage, olarak da adlandırılır), her geçerli geçişin en az bir kez çalıştırılması demektir; kapsam, çalıştırılan geçerli geçişlerin toplam geçerli geçişlere bölünmesine eşittir. En yaygın kullanılan kriterdir. %100 geçerli geçişler kapsamına ulaşmak tüm durumlar kapsamını da güvence altına alır, ama tersi geçerli değildir. <strong>Tüm geçişler kapsamı (all transitions coverage)</strong>, her geçerli geçişi çalıştırır ve durum tablosunda gösterilen her geçersiz geçişi dener. Uygun olduğu yerde bir test senaryosuna yalnızca bir geçersiz geçiş denemesi koyun; böylece önceki bir hatanın sonrakini gizlediği <strong>kusur maskelenmesinden (defect masking)</strong> kaçınırsınız. Tam tüm geçişler kapsamı hem tam geçerli geçişler kapsamını hem de tam tüm durumlar kapsamını güvence altına alır; görev açısından ve emniyet açısından kritik yazılımlar için asgari düzey olmalıdır.</p>
+<section id="çözümlü-örnek-kütüphanede-kitap-ödünç-verme" class="level4">
+<h4>Çözümlü örnek — kütüphanede kitap ödünç verme</h4>
+<p>Bir kütüphane sistemi bir kitabın her kopyasını şu durumlarda izliyor: Rafta, Ödünçte, Ayrıldı, Koleksiyondan çıkarıldı. Olaylar ve geçerli geçişler şunlar: ödünç ver (Rafta’dan Ödünçte’ye), iade et (Ödünçte’den Rafta’ya), ayırt (Rafta’dan Ayrıldı’ya), teslim al (Ayrıldı’dan Ödünçte’ye), iptal et (Ayrıldı’dan Rafta’ya), çıkar (Rafta’dan Koleksiyondan çıkarıldı’ya). Her kopya Rafta durumunda başlıyor; Koleksiyondan çıkarıldı durumundan çıkan hiçbir geçiş yok. Şekil 4.4 bu durumları ve geçişleri bir diyagram olarak gösteriyor.</p>
+<figure>
+<img src="figures/fig_4_4_state_transition.png" alt="Şekil 4.4 — Bir kütüphane kitabının durumları ve altı geçerli geçişi. Dört durum gösterilir: Rafta, Ödünçte, Ayrıldı ve Koleksiyondan çıkarıldı. Oklar; Rafta’dan Ödünçte’ye ödünç ver, Ödünçte’den Rafta’ya iade et, Rafta’dan Ayrıldı’ya ayırt, Ayrıldı’dan Ödünçte’ye teslim al, Ayrıldı’dan Rafta’ya iptal et ve Rafta’dan Koleksiyondan çıkarıldı’ya çıkar geçişlerini gösterir." /><figcaption>Şekil 4.4 — Bir kütüphane kitabının durumları ve altı geçerli geçişi.</figcaption>
+</figure>
+<p>Eşdeğer durum tablosunda satırlar durumlar, sütunlar olaylardır; “geçersiz” işaretli her hücre geçersiz bir durum-olay çiftidir:</p>
+<div class="table-wrap">
+<table>
+<thead>
+<tr class="header">
+<th>Durum / Olay</th>
+<th>ödünç ver</th>
+<th>iade et</th>
+<th>ayırt</th>
+<th>teslim al</th>
+<th>iptal et</th>
+<th>çıkar</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Rafta</td>
+<td>Ödünçte</td>
+<td>geçersiz</td>
+<td>Ayrıldı</td>
+<td>geçersiz</td>
+<td>geçersiz</td>
+<td>Koleksiyondan çıkarıldı</td>
+</tr>
+<tr class="even">
+<td>Ödünçte</td>
+<td>geçersiz</td>
+<td>Rafta</td>
+<td>geçersiz</td>
+<td>geçersiz</td>
+<td>geçersiz</td>
+<td>geçersiz</td>
+</tr>
+<tr class="odd">
+<td>Ayrıldı</td>
+<td>geçersiz</td>
+<td>geçersiz</td>
+<td>geçersiz</td>
+<td>Ödünçte</td>
+<td>Rafta</td>
+<td>geçersiz</td>
+</tr>
+<tr class="even">
+<td>Koleksiyondan çıkarıldı</td>
+<td>geçersiz</td>
+<td>geçersiz</td>
+<td>geçersiz</td>
+<td>geçersiz</td>
+<td>geçersiz</td>
+<td>geçersiz</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Görev: (a) tüm durumlar kapsamı için en az kaç test senaryosu gerekir? (b) %100 geçerli geçişler kapsamı için kaç geçiş çalıştırılmalıdır? (c) Durum tablosunun ortaya çıkardığı bir geçersiz geçiş verin.</p>
+<p>Adım (a), tüm durumlar. Tek bir dizi birkaç durumu çalıştırabilir. ödünç ver, iade et, ayırt, teslim al, iade et, çıkar dizisi Rafta’dan Ödünçte’ye, Rafta’ya, Ayrıldı’ya, Ödünçte’ye, Rafta’ya ve Koleksiyondan çıkarıldı’ya ilerler: dört durumun hepsi tek bir test senaryosunda. En az sayı 1’dir.</p>
+<p>Adım (b), geçerli geçişler. Okları sayın: 6 geçerli geçiş var ve %100 geçerli geçişler kapsamı altısının da çalıştırılmasını gerektirir. Bir test senaryosu Rafta’da başladığı ve Koleksiyondan çıkarıldı’dan hiçbir şey çıkmadığı için çıkar en sona gelmelidir. ödünç ver, iade et, ayırt, iptal et, ayırt, teslim al, iade et, çıkar şeklindeki tek dizi altısını da çalıştırır; dolayısıyla tek bir test senaryosu yeter. (a)’daki dizi yalnızca iptal et geçişini kaçırmıştı.</p>
+<p>Adım (c), bir geçersiz geçiş. Tabloda 4 durum çarpı 6 olay = 24 hücre var; bunlardan yalnızca 6’sı geçerli. Gerçekçi bir geçersiz çift: kopya zaten Ödünçte iken ödünç ver olayı, yani ikinci bir kişinin aynı kopyayı almaya çalışması. Sistem bunu reddetmelidir; bunun için bir test de diyagramdan değil, tablodan kendiliğinden çıkar.</p>
+<p><em>Sınav odağı.</em> Tekrarlanan sorular şunlardır: bu olay dizisi geçerli mi; farklı kapsam kriterleri burada neyi gerektirir; hangi geçiş geçersiz; verilen bir diziler kümesi hangi kapsama ulaşır. İki bilgiyi aklınızda tutun. Tüm durumlar kapsamı, geçerli geçişler kapsamına göre daha zayıf bir kriterdir ve ilişki tek yönlüdür: tam geçerli geçişler kapsamı tüm durumlar kapsamını güvence altına alır, tersi değil. Geçersiz geçişleri de diyagram değil, tablo ortaya çıkarır.</p>
+</section>
+<section id="bağımsız-alıştırma-4.d" class="level4">
+<h4>Bağımsız alıştırma 4.D</h4>
+<p>Bir belge iş akışının durumları Taslak, Gönderildi, Onaylandı; olayları şunlar: gönder (Taslak’tan Gönderildi’ye), onayla (Gönderildi’den Onaylandı’ya), reddet (Gönderildi’den Taslak’a). Her belge Taslak’ta başlıyor; Onaylandı durumundan çıkan hiçbir geçiş yok. (a) Durum tablosunu kurun; geçerli ve geçersiz durum-olay çiftlerini sayın. (b) %100 tüm durumlar kapsamı ve %100 geçerli geçişler kapsamı için mümkün olduğunca az test senaryosu türetin ve her birini durumlar boyunca bir yol olarak yazın. (c) Bir geçersiz geçiş için bir test senaryosu yazın: başlangıç durumu, olay ve beklenen sonuç. (Çözüm bu bölümün sonunda.)</p>
+<p><em>Hemen Pekiştir.</em> Alıştırma, çözümlü örnek ve 4.D’dir.</p>
+<p><em>HP 4.2.4.</em> Durum geçişi kapsam kriterleri hakkında hangi ifade doğrudur?</p>
+<div class="mc">
+<ul>
+<li>(a) Tüm durumlar kapsamı geçerli geçişler kapsamını güvence altına alır</li>
+<li>(b) %100 geçerli geçişler kapsamı tüm durumlar kapsamını güvence altına alır; tersi güvence altında değildir</li>
+<li>(c) Tüm durumlar, geçerli geçişlerden daha güçlü bir kriterdir</li>
+<li>(d) Geçersiz geçişleri diyagram ortaya çıkarır</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (b). Geçerli geçişler kapsamı tüm durumlar kapsamını içerir (tek yönlü); tüm durumlar kapsamı daha zayıftır ve geçersiz geçişleri ortaya çıkaran tablodur.</p>
+</div></details>
+</section>
+</section>
+</section>
+<section id="white-box-test-techniques" class="level2">
+<h2>4.3 Beyaz Kutu Test Teknikleri</h2>
+<p>Beyaz kutu teknikleri testleri kodun yapısından türetir. Temel seviyede bunlardan ikisini uygulamanız değil, açıklamanız gerekir; ikisi de kodun çalıştırılabilir komutları ve karar mantığı üzerinden tanımlanır.</p>
+<section id="fl-4-3-1" class="level3">
+<h3>Komut testi (FL-4.3.1 — K2)</h3>
+<p><strong>Komut testi (statement testing)</strong> kodun <strong>çalıştırılabilir komutlarını (executable statement)</strong> çalıştırır. <strong>Komut kapsama yüzdesi (statement coverage)</strong>, testlerin çalıştırdığı komutların toplam çalıştırılabilir komutlara bölünmesine eşittir. %100 komut kapsama yüzdesine ulaşmak, her çalıştırılabilir komutun en az bir kez çalıştığı anlamına gelir; bu da her komuta başarısız olma fırsatı verir. Ancak bir komutu çalıştırmak her zaman hatasını ortaya çıkarmaz: yalnızca payda sıfır olduğunda başarısız olan bir sıfıra bölme gibi veriye bağlı bir hata, komut çalışmış olsa bile gizli kalabilir. Komut testi bütün karar mantığını da denetlemez: yalnızca kodu atlayan bir karar sonucu, her komut çalışsa bile test edilmeden kalabilir.</p>
+<p><em>Sınav odağı.</em> Olağan soru, komut kapsama yüzdesinin neyi ölçtüğünü ya da %100’e ulaşmanın neyi güvence altına alıp neyi almadığını sorar. Komut kapsama yüzdesi, testlerin çalıştırdığı komutların oranıdır ve %100, her komutun en az bir kez çalıştığı anlamına gelir. Tuzak, bundan bütün mantığın test edildiği sonucunu çıkarmaktır; yalnızca kodu atlayan bir karar sonucu, her komut çalışsa bile hiç çalıştırılmamış olabilir. Bir şık seçmeden önce, şıkkın komutları çalıştırmaktan mı yoksa karar sonuçlarını almaktan mı söz ettiğini kontrol edin; bu ayrım onu dal kapsamından ayırır.</p>
+<p><strong>Hemen Pekiştir</strong></p>
+<p><em>HP 4.3.1-a.</em> %100 komut kapsama yüzdesine ulaşmak neyi güvence altına alır?</p>
+<div class="mc">
+<ul>
+<li>(a) Her karar sonucunun alındığını</li>
+<li>(b) Her çalıştırılabilir komutun en az bir kez çalıştığını</li>
+<li>(c) Kodun hiç hata içermediğini</li>
+<li>(d) %100 dal kapsamını</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (b). Komut kapsama yüzdesi her komutun çalıştığını gösterir; karar sonuçlarını ya da hatasızlığı güvence altına almaz.</p>
+</div></details>
+<p><em>HP 4.3.1-b.</em> %100 komut kapsama yüzdesine rağmen ne test edilmeden kalabilir?</p>
+<div class="mc">
+<ul>
+<li>(a) Bir if’in doğru dalının içindeki bir komut</li>
+<li>(b) Fonksiyonun ilk komutu</li>
+<li>(c) Her çağrıda çalışan bir komut</li>
+<li>(d) Yalnızca kodu atlayan bir karar sonucu (örneğin else’i olmayan bir if’in yanlış dalı)</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (d). Kodu atlayan bir karar sonucu, bütün komutlar çalışsa bile hiç çalıştırılmamış olabilir.</p>
+</div></details>
+<p><em>HP 4.3.1-c.</em> Bir test grubu, bir fiyatlandırma fonksiyonunda %100 komut kapsama yüzdesine ulaşıyor. Daha sonra fonksiyon yanlış bir toplam döndürüyor, ama yalnızca girilen miktar negatif olduğunda. Bunu en iyi hangi ifade açıklar?</p>
+<div class="mc">
+<ul>
+<li>(a) Kapsam aracı çalıştırılan komutları yanlış saymış olmalı</li>
+<li>(b) Komut kapsama yüzdesi hangi komutların çalıştığını ölçer; bir hatayı ortaya çıkaran veriyle çalışıp çalışmadıklarını değil</li>
+<li>(c) %100 komut kapsama yüzdesi bütün karar sonuçlarının alındığını güvence altına alır; bu yüzden hata spesifikasyonda olmalı</li>
+<li>(d) Komut kapsama yüzdesi gereksinimlere göre ölçülür; bu yüzden negatif miktarlar kapsam dışıydı</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (b). Komut kapsama yüzdesi, testlerin çalıştırdığı çalıştırılabilir komutların oranıdır; dolayısıyla %100 yalnızca her komutun en az bir kez çalıştığını gösterir. Yalnızca belirli verilerle ortaya çıkan bir hata yine de tespit edilmeden kalabilir. Bir ölçüm hatasına işaret eden bir şey yok (a); komut kapsama yüzdesi karar sonuçlarını güvence altına almaz (c); gereksinimleri değil komutları sayar (d).</p>
+</div></details>
+</section>
+<section id="fl-4-3-2" class="level3">
+<h3>Dal testi (FL-4.3.2 — K2)</h3>
+<p>Bir <strong>kontrol akış grafiğinde (control flow graph)</strong> <strong>dal (branch)</strong>, kontrolün bir düğümden diğerine geçmesidir. Koşulsuz (düz akan kod) ya da koşullu olabilir. <strong>Koşullu dal (conditional branch)</strong> bir karar sonucudur: bir if’in doğru ve yanlış çıkışları, bir switch’in durumları ya da bir döngünün girilmesi veya girilmemesi gibi. <strong>Dal testi (branch testing)</strong> dalları çalıştırır; <strong>dal kapsamı (branch coverage)</strong>, çalıştırılan dalların toplam dallara bölünmesine eşittir. %100 dal kapsamına ulaşmak, koşulsuz ve koşullu her dalın en az bir kez çalıştırıldığı, özellikle de her karar sonucunun alındığı anlamına gelir. Yine de bazı hatalar ancak kod içinde belirli bir yol çalıştığında ortaya çıkar.</p>
+<p>İki ölçü arasındaki ilişki sürekli sorulur; bu yüzden onu küçük bir kod parçasında görmek yardımcı olur. else’i olmayan küçük bir if düşünün:</p>
+<pre><code>if (premium) applyDiscount();
+ship();</code></pre>
+<p>Şekil 4.5 bu kodun kontrol akışını gösteriyor. Doğru dal <code>applyDiscount()</code> ve ardından <code>ship()</code> çalıştırır; yanlış dal ise indirimi atlayıp doğrudan <code>ship()</code>e gider.</p>
+<figure>
+<img src="figures/fig_4_5_branch_control_flow.png" alt="Şekil 4.5 — else’i olmayan bir if’in kontrol akışı. “premium?” etiketli karar baklavasının iki çıkışı vardır. Doğru dal applyDiscount()’a, ardından ship()’e götürür. Yanlış dal applyDiscount()’u atlayıp doğrudan ship()’e gider." /><figcaption>Şekil 4.5 — else’i olmayan bir if’in kontrol akışı.</figcaption>
+</figure>
+<p><code>premium = true</code> ile tek bir test iki komutu da çalıştırır, yani %100 komut kapsama yüzdesi verir; ama indirimin atlandığı yanlış dal hiç çalışmaz. %100 dal kapsamı için <code>premium = false</code> ile ikinci bir test gerekir. Bu küçük örnek genel kuralı taşır: %100 dal kapsamı %100 komut kapsama yüzdesini güvence altına alır, ama tersi geçerli değildir. Dal kapsamı daha güçlü ölçüdür. Şekil 4.6 bu tek yönlü ilişkiyi gösteriyor.</p>
+<figure>
+<img src="figures/fig_4_6_subsumption.png" alt="Şekil 4.6 — Kapsama ilişkisi: %100 dal kapsamı %100 komut kapsama yüzdesini içerir. “%100 dal kapsamı” etiketli büyük bir kutu, “%100 komut kapsama yüzdesi” etiketli daha küçük bir kutuyu içerir: %100 dal kapsamına ulaşan bir test grubunun çalıştırdıkları bütün komutları kapsar. Alttaki not şöyledir: %100 dal kapsamı ⇒ %100 komut kapsama yüzdesi; tersi geçerli değil." /><figcaption>Şekil 4.6 — Kapsama ilişkisi: %100 dal kapsamı %100 komut kapsama yüzdesini içerir.</figcaption>
+</figure>
+<p><em>Sınav odağı.</em> Bu hedefe ait sorular iki kapsam ölçüsü arasındaki ilişki etrafında döner. Her şey kapsama kuralına dayanır: %100 dal kapsamı %100 komut kapsama yüzdesini güvence altına alır, ama tersi geçerli değildir. Ters iddiaya dikkat edin; komut kapsama yüzdesini dal kapsamını güvence altına alıyormuş gibi sunmak standart yanlış şıktır. Bir cevaba karar vermeden önce “dal komutu içerir” kuralını yazın ve her şıkkı bu tek yöne karşı sınayın.</p>
+<p><strong>Hemen Pekiştir</strong></p>
+<p><em>HP 4.3.2-a.</em> Kapsama (içerme) kuralı nedir?</p>
+<div class="mc">
+<ul>
+<li>(a) %100 komut kapsama yüzdesi %100 dal kapsamını güvence altına alır</li>
+<li>(b) İkisi birbirini her zaman güvence altına alır</li>
+<li>(c) %100 dal kapsamı %100 komut kapsama yüzdesini güvence altına alır, ama tersi geçerli değildir</li>
+<li>(d) İkisi birbiriyle ilgisizdir</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (c). Dal kapsamı komut kapsama yüzdesini de güvence altına alır; ilişki yalnızca tek yönlüdür.</p>
+</div></details>
+<p><em>HP 4.3.2-b.</em> else’i olmayan bir if için tek bir <code>premium = true</code> testi hangi kapsama ulaşır, hangisine ulaşmaz?</p>
+<div class="mc">
+<ul>
+<li>(a) %100 dal kapsamına ulaşır, %100 komut kapsama yüzdesine ulaşmaz</li>
+<li>(b) %100 komut kapsama yüzdesine ulaşır, %100 dal kapsamına ulaşmaz</li>
+<li>(c) İkisine de ulaşır</li>
+<li>(d) Hiçbirine ulaşmaz</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (b). Doğru daldaki tek test bütün komutları çalıştırır ama yanlış dalı atlar; bu yüzden dal kapsamı eksik kalır.</p>
+</div></details>
+<p><em>HP 4.3.2-c.</em> Dal testinde aşağıdakilerden hangisi bir daldır?</p>
+<div class="mc">
+<ul>
+<li>(a) Bir kararın içindeki tek bir çalıştırılabilir komut</li>
+<li>(b) Kodun girişinden çıkışına kadar eksiksiz bir yol</li>
+<li>(c) Kontrol akış grafiğindeki iki düğüm arasında, koşulsuz ya da bir karar sonucu olarak gerçekleşen bir kontrol aktarımı</li>
+<li>(d) Bileşik bir kararın içindeki tek bir mantıksal alt koşul</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (c). Dal, iki düğüm arasındaki bir kontrol aktarımıdır; koşulsuz (düz akan kod) ya da koşullu (bir karar sonucu) olabilir. Komut, komut testinin kapsam öğesidir; tam yollar ve alt koşullar ise Temel Seviye ders programının dışındaki daha titiz tekniklere aittir.</p>
+</div></details>
+</section>
+<section id="fl-4-3-3" class="level3">
+<h3>Beyaz kutu testinin değeri (FL-4.3.3 — K2)</h3>
+<p>Beyaz kutu testinin birkaç ayrı değeri vardır. Gerçekte var olan gerçekleştirmeyi test eder: spesifikasyona dayalı teknikler yalnızca spesifikasyonun söz ettiğini test edebilir; kod ise çoğu zaman spesifikasyonun hiç anlatmadığı davranışlar içerir; ek dallar, hata işleme ve optimizasyonlar gibi. Beyaz kutu testi bu davranışa ulaşır. Kapsam ölçümü, kodun ne kadar kapsamlı çalıştırıldığı hakkında nesnel geri bildirim verir. Bu, testlerin kendisi kara kutu olduğunda bile işe yarar: kara kutu testlerinin ulaştığı yapısal kapsamı ölçmek onların kör noktalarını ortaya çıkarır ve ek testler yazmaya değecek yerleri gösterir. Beyaz kutu düşüncesi statik testte de işe yarar: teknikler kodun üzerinden elle adım adım geçerken (kuru çalıştırma) uygulanabilir; henüz çalışmaya hazır olmayan kodu, sözde kodu ve bir kontrol akış grafiğiyle modellenen diğer üst seviye mantığı gözden geçirmeye uygundur. Bir de dürüst bir sınırlama: bir gereksinim hiç gerçekleştirilmemişse, beyaz kutu testi ortaya çıkan eksiklik hatasını tespit edemeyebilir, çünkü hiç yazılmamış kodun kapsanacak komutu ya da dalı yoktur; spesifikasyona dayalı test bu tür boşlukları ortaya çıkarmaya daha uygundur.</p>
+<p><em>Sınav odağı.</em> Üç soru tekrar eder: komut kapsama yüzdesini ve dal kapsamını tanımlayın; tek yönlü içermeyi söyleyin (dal komutu içerir, tersi değil); değeri sınırlamayla eşleyin: beyaz kutu belirtilmemiş koda ulaşır, ama hiç gerçekleştirilmemiş işlevselliği tespit edemeyebilir; kara kutu testi onu ortaya çıkarmaya daha uygundur. Küçük sayısal durumlarda yukarıdaki else’siz if çoğuna cevap verir.</p>
+<p><strong>Hemen Pekiştir</strong></p>
+<p><em>HP 4.3.3-a.</em> Beyaz kutu testinin kaçırma olasılığı en yüksek olan nedir?</p>
+<div class="mc">
+<ul>
+<li>(a) Spesifikasyonun söz etmediği ek dallar</li>
+<li>(b) Hata işleme kodu</li>
+<li>(c) Optimizasyon kodu</li>
+<li>(d) Eksik (hiç yazılmamış) işlevsellik</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (d). Hiç yazılmamış kodun kapsanacak komutu ya da dalı yoktur; bu yüzden beyaz kutu testi eksikliği tespit edemeyebilir. Kara kutu (spesifikasyona dayalı) test onu ortaya çıkarmaya daha uygundur. (a), (b) ve (c) şıkları var olan koddur ve beyaz kutu testi onlara ulaşır.</p>
+</div></details>
+<p><em>HP 4.3.3-b.</em> Kara kutu testleri koşulurken yapısal kapsamı ölçmek ne sağlar?</p>
+<div class="mc">
+<ul>
+<li>(a) Kara kutu testlerinin kör noktalarını ortaya çıkarır ve ek testlerin nerede gerektiğini gösterir</li>
+<li>(b) Eksik gereksinimleri kanıtlar</li>
+<li>(c) Kodun hatasız olduğunu güvence altına alır</li>
+<li>(d) Dal kapsamını gereksiz kılar</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (a). Kapsam ölçümü, mevcut testlerin neyi atladığı hakkında nesnel geri bildirim verir.</p>
+</div></details>
+<p><em>HP 4.3.3-c.</em> Eski bir faturalama modülünün spesifikasyonu güncel değil ve eksik. Beyaz kutu testi ekibin modüldeki hataları bulmasına neden yine de yardımcı olabilir?</p>
+<div class="mc">
+<ul>
+<li>(a) Çünkü beyaz kutu testi modülün hiç gerçekleştirmediği gereksinimleri tespit eder</li>
+<li>(b) Çünkü beyaz kutu testi modülün kara kutu testini gereksiz kılar</li>
+<li>(c) Çünkü %100 dal kapsamı modüldeki her yolun test edildiğini güvence altına alır</li>
+<li>(d) Çünkü beyaz kutu testi, spesifikasyon ne derse desin, gerçekleştirmenin tamamını dikkate alır</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (d). Beyaz kutu teknikleri var olan koddan çalışır; bu yüzden spesifikasyon belirsiz, güncel değil ya da eksik olsa bile yardımcı olurlar. Eksiklik hatalarını tespit edemeyebilirler (a); kara kutu testini ikame etmezler, tamamlarlar (b); dal kapsamı da her yolun test edildiğini güvence altına almaz (c).</p>
+</div></details>
+</section>
+</section>
+<section id="experience-based-test-techniques" class="level2">
+<h2>4.4 Tecrübeye Dayalı Test Teknikleri</h2>
+<section id="fl-4-4-1" class="level3">
+<h3>Hata tahminleme (FL-4.4.1 — K2)</h3>
+<p><strong>Hata tahminleme (error guessing)</strong>, insan hatalarının, hataların ve arızaların nerede olası olduğunu test uzmanının üç şey hakkındaki bilgisine dayanarak öngörür: uygulamanın geçmişte nasıl çalıştığı, geliştiricilerin yapmaya yatkın olduğu insan hataları ve bunlardan doğan hatalar, benzer başka uygulamalarda görülen arıza çeşitleri. Ders programı insan hatalarının, hataların ve arızaların ilişkili olabileceği alanları da adlandırır; bunlar üzerinde çalışılacak pratik bir liste sunar: girdi (doğru girdinin kabul edilmemesi, parametrelerin yanlış ya da eksik olması), çıktı (yanlış biçim, yanlış sonuç), mantık (eksik durumlar, yanlış operatör), hesaplama (yanlış işlenen, yanlış hesap), arayüzler (parametre uyuşmazlığı, uyumsuz tipler) ve veri (yanlış ilk değer atama, yanlış tip). Hata tahminlemeyi yapılandırılmış biçimde yürütmenin bir yolu <strong>kusur ortaya çıkarmaya yönelik saldırıdır (fault attack)</strong>: test uzmanı, tecrübeye, hata ve arıza verilerine ya da yazılımın neden başarısız olduğuna dair genel bilgiye dayanarak olası insan hatalarının, hataların ve arızaların bir listesini oluşturur ya da edinir; sonra her birini bilerek kışkırtmaya çalışan testler tasarlar.</p>
+<p><em>Uygulamada.</em> Bir test uzmanına yeni bir indirim kodu alanı veriliyor. Hiçbir spesifikasyon okumadan boş bir kod, sonunda boşluk olan bir kod, geçerli bir kodun küçük harfli biçimi, süresi dolmuş bir kod ve 500 karakterlik bir dize deniyor. Bunların hiçbiri bir belgeden gelmedi; hepsi, girdi işlemenin nerede bozulduğunu yıllarca izlemekten geldi.</p>
+<p><em>Sınav odağı.</em> Bir soru hata tahminlemenin neye dayandığını ya da kusur ortaya çıkarmaya yönelik saldırının ne olduğunu sorabilir. Hata tahminleme olası insan hatalarını, hataları ve arızaları üç kaynaktan öngörür: uygulamanın daha önce nasıl başarısız olduğu, geliştiricilerinin yapmaya yatkın olduğu insan hataları ve benzer uygulamalarda görülen arızalar. Onu keşif testinden ayrı tutun: hata tahminleme testleri öngörülen hatalara yöneltir; keşif testi ise ürünü öğrenirken testleri tasarlar ve koşar. Cevap vermeden önce senaryodaki test uzmanının bilinen arıza kalıplarından yararlanıp yararlanmadığını sorun; yararlanıyorsa cevap hata tahminlemedir.</p>
+<p><strong>Hemen Pekiştir</strong></p>
+<p><em>HP 4.4.1-a.</em> Hata tahminleme neye dayanır?</p>
+<div class="mc">
+<ul>
+<li>(a) Kodun iç yapısına</li>
+<li>(b) Üzerinde uzlaşılmış kabul kriterlerine</li>
+<li>(c) Hiçbir ön bilgi olmadan seçilen rastgele girdilere</li>
+<li>(d) Geçmiş arızalar, geliştiricilerin tipik insan hataları ve benzer uygulamalardaki arızalar hakkındaki bilgiye</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (d). Hata tahminleme bilinen ve olası arıza kalıplarından yararlanır.</p>
+</div></details>
+<p><em>HP 4.4.1-b.</em> Kusur ortaya çıkarmaya yönelik saldırı nedir?</p>
+<div class="mc">
+<ul>
+<li>(a) Öngörülen hata çeşitlerinin bir listesini oluşturup her birini bilerek kışkırtacak testler tasarlamak</li>
+<li>(b) Sistemi yük altında çökertmeye çalışmak</li>
+<li>(c) Kodu satır satır gözden geçirmek</li>
+<li>(d) Testleri kabul kriterlerinden türetmek</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (a). Kusur ortaya çıkarmaya yönelik saldırı, hata tahminlemeyi yapılandırılmış biçimde yürütmenin bir yoludur.</p>
+</div></details>
+<p><em>HP 4.4.1-c.</em> Melis yeni bir rezervasyon ekranını, her sonraki girdiyi ekranın bir öncekiyle ne yaptığına bakarak seçerek test ediyor. Deniz, ekibin geliştiricilerinin tarih işlemede yapmaya yatkın olduğu insan hatalarını listeliyor ve her birini kışkırtacak bir test tasarlıyor. Hangi ifade teknikleri doğru belirler?</p>
+<div class="mc">
+<ul>
+<li>(a) İkisi de hata tahminleme uyguluyor, çünkü hiçbiri bir spesifikasyondan çalışmıyor</li>
+<li>(b) Melis keşif testi uyguluyor; Deniz hata tahminlemeyi kusur ortaya çıkarmaya yönelik saldırı biçiminde uyguluyor</li>
+<li>(c) Melis hata tahminleme uyguluyor; Deniz kontrol listesine dayalı test etme uyguluyor</li>
+<li>(d) İkisi de keşif testi uyguluyor, çünkü ikisi de tecrübelerine dayanıyor</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (b). Melis ekranı öğrenirken testleri tasarlıyor, koşuyor ve değerlendiriyor; bu keşif testidir. Deniz testlerini bir listedeki öngörülen insan hatalarına yöneltiyor; bu, hata tahminlemeyi uygulamanın bir yolu olan kusur ortaya çıkarmaya yönelik saldırıdır. İkisi arasında karar veren, spesifikasyonun yokluğu değil, işleyiştir.</p>
+</div></details>
+</section>
+<section id="fl-4-4-2" class="level3">
+<h3>Keşif testi (FL-4.4.2 — K2)</h3>
+<p><strong>Keşif testinde (exploratory testing)</strong> testler, test uzmanı test nesnesini öğrendiği sırada aynı anda tasarlanır, koşulur ve değerlendirilir; her sonuç bir sonraki teste yön verir. En çok spesifikasyonların az ya da yetersiz olduğu durumlarda, ciddi zaman baskısı olduğunda ya da daha resmî teknikleri tamamlamak için işe yarar. Keşif testi denklik paylarına ayırma gibi başka test tekniklerini de içine alabilir. Test hedefleri üst seviye test koşulları olarak ele alınabilir; kapsam öğeleri de test oturumu sırasında belirlenip çalıştırılır. Etkinliği büyük ölçüde test uzmanının tecrübesine, alan bilgisine ve merak ile analitik düşünme gibi becerilerine bağlıdır. Keşif testine yapı kazandırmak için ekipler onu bazen <strong>oturum bazlı test (session-based testing)</strong> olarak yürütür: oturumun hedeflerini belirten bir <strong>test başlatma belgesinin (test charter)</strong> yön verdiği, süresi sınırlı bir oturum ve ardından ilgili paydaşlarla bir bilgilendirme görüşmesi. Test uzmanı izlediği adımları ve yaptığı keşifleri kayda geçirmek için oturum formlarını kullanabilir.</p>
+<p><em>Sınav odağı.</em> Senaryo soruları bir çalışma biçimini anlatıp keşif testini tanımanızı ister ya da en çok ne zaman işe yaradığını sorar. Tanımlayıcı özellik eş zamanlılıktır: testler aynı anda tasarlanır, koşulur ve değerlendirilir; her sonuç bir sonrakine yön verir. En çok spesifikasyonlar zayıf ya da zaman kısa olduğunda işe yarar. Oturum bazlı testin rolüne dikkat edin: kullanıldığında, süresi sınırlı oturum ve test başlatma belgesi keşif çalışmasını yapılandırır; ayrı bir teknik değildir. Bir şık seçmeden önce test ederken öğrenme işaretini arayın, çünkü önceden hazırlanmış, betiklenmiş testleri koşmak hiçbir zaman keşif testi değildir.</p>
+<p><strong>Hemen Pekiştir</strong></p>
+<p><em>HP 4.4.2-a.</em> Keşif testinin tanımlayıcı özelliği nedir?</p>
+<div class="mc">
+<ul>
+<li>(a) Önceden hazırlanmış, betiklenmiş testleri koşmak</li>
+<li>(b) Testleri kod yapısından türetmek</li>
+<li>(c) Testlerin aynı anda tasarlanması, koşulması ve değerlendirilmesi; her sonucun bir sonrakine yön vermesi</li>
+<li>(d) Testleri kodlamadan önce kabul kriterlerinden türetmek</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (c). Öğrenme, tasarlama, koşma ve değerlendirmenin eş zamanlı olması keşif testinin özüdür.</p>
+</div></details>
+<p><em>HP 4.4.2-b.</em> Keşif testi en çok ne zaman işe yarar?</p>
+<div class="mc">
+<ul>
+<li>(a) Spesifikasyonlar zayıf ya da yetersiz olduğunda veya zaman kısa olduğunda</li>
+<li>(b) Spesifikasyonlar eksiksiz olduğunda ve bol zaman olduğunda</li>
+<li>(c) Yalnızca regresyon koşumlarında</li>
+<li>(d) Yalnızca birim testinde</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (a). Keşif testi en çok spesifikasyonlar az ya da yetersiz olduğunda veya ciddi zaman baskısı olduğunda işe yarar.</p>
+</div></details>
+<p><em>HP 4.4.2-c.</em> Oturum bazlı keşif testinde test başlatma belgesinin amacı nedir?</p>
+<div class="mc">
+<ul>
+<li>(a) Oturumdaki her test için ayrıntılı test adımlarını ve beklenen sonuçları listeler</li>
+<li>(b) Test uzmanının oturum sırasında izlediği adımları ve yaptığı keşifleri kayda geçirir</li>
+<li>(c) Süresi sınırlı oturum boyunca test uzmanına yön veren test hedeflerini belirtir</li>
+<li>(d) Oturumun koşulduğu test seviyesinin çıkış kriterlerini tanımlar</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (c). Test başlatma belgesi oturuma yön veren test hedeflerini içerir. Adımları ve keşifleri kayda geçirmek test oturumu formunun işidir (b); beklenen sonuçlarıyla ayrıntılı adımlar betiklenmiş testi anlatır (a); çıkış kriterleri de test planlamaya aittir (d).</p>
+</div></details>
+</section>
+<section id="fl-4-4-3" class="level3">
+<h3>Kontrol listesine dayalı test etme (FL-4.4.3 — K2)</h3>
+<p><strong>Kontrol listesine dayalı test etmede (checklist-based testing)</strong> test uzmanı, bir <strong>kontrol listesinden (checklist)</strong> alınan test koşullarını kapsamak için testler tasarlar, uyarlar ve koşar. Bu liste tecrübeden, kullanıcı için neyin önemli olduğuna dair bilgiden ya da yazılımın neden ve nasıl başarısız olduğuna dair kavrayıştan oluşturulur. Ders programı böyle bir listeye nelerin girebileceği konusunda işe yarar kısıtlar koyar. Maddeler otomatik olarak kontrol edilebilecek şeyler olmamalı, giriş ya da çıkış kriteri olarak daha uygun düşecek maddeler olmamalı ve çok genel olmamalıdır. Başka bir deyişle iyi bir kontrol listesi, gerçekten düşünen bir insana ihtiyaç duyan ve üzerine harekete geçilebilecek kadar somut yazılmış koşulları barındırır. Kontrol listeleri zaman içinde güncellenir: hata analizinden yeni maddeler eklenir; geliştiriciler o hataları yapmayı bıraktıkça eski maddeler daha az etkili hale gelir. Bu, bir listeye uygulanmış “testler yıpranır” prensibidir. Ama güncellemek yalnızca eklemek demek değildir: sürekli büyüyen bir kontrol listesinin kullanımı zorlaşır; bu yüzden ders programı listenin çok uzamasına izin vermemeyi önerir. Ayrıntılı test senaryolarının yokluğunda kontrol listeleri yol gösterir ve bir ölçüde tutarlılık sağlar. Maddeler üst seviyedeyse iki test uzmanı onları genellikle biraz farklı biçimlerde test eder; bu değişkenlik daha geniş kapsam sağlayabilir, ama tekrarlanabilirliği azaltır.</p>
+<p>Üç tecrübeye dayalı teknik de artık göz önünde olduğuna göre Tablo 4.2 onları yan yana koyuyor. İlk okunacak sütun, testleri neyin yönlendirdiğini adlandıran sütundur, çünkü bir senaryonun ele verdiği ayrıntı odur.</p>
+<p><strong>Tablo 4.2 — Hata tahminleme, keşif testi ve kontrol listesine dayalı test etmenin karşılaştırması</strong></p>
+<div class="table-wrap">
+<table>
+<colgroup>
+<col style="width: 16%" />
+<col style="width: 22%" />
+<col style="width: 30%" />
+<col style="width: 30%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Teknik</th>
+<th>Testleri ne yönlendirir</th>
+<th>En çok ne zaman işe yarar</th>
+<th>Nelere dikkat edilmeli</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Hata tahminleme</td>
+<td>Öngörülen insan hataları, hatalar ve arızalar</td>
+<td>Test uzmanı bu ya da benzer uygulamaların nasıl başarısız olduğunu bildiğinde</td>
+<td>Test uzmanının bilgisine ve tecrübesine bağlıdır</td>
+</tr>
+<tr class="even">
+<td>Keşif testi</td>
+<td>Test uzmanının test ederken öğrendikleri</td>
+<td>Spesifikasyonlar az ya da yetersiz olduğunda veya zaman kısa olduğunda</td>
+<td>Becerilere bağlıdır; oturumlar ve test başlatma belgeleri yapı kazandırır</td>
+</tr>
+<tr class="odd">
+<td>Kontrol listesine dayalı test etme</td>
+<td>Bir kontrol listesindeki test koşulları</td>
+<td>Ayrıntılı test senaryoları olmadığında ve bir ölçüde tutarlılık gerektiğinde</td>
+<td>Üst seviye maddeler: daha fazla değişkenlik, olası daha geniş kapsam, daha az tekrarlanabilirlik; maddeler düzenli güncelleme ister</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><em>Sınav odağı.</em> Olağan soru, iyi bir kontrol listesine nelerin girdiğini ya da kontrol listesine dayalı test etmenin neyi neye karşı takas ettiğini sorar. Kontrol listesi gerçekten düşünen bir insana ihtiyaç duyan koşulları barındırır: maddeler otomatikleştirilebilir kontroller, giriş ya da çıkış kriterleri olmamalı, çok genel de olmamalıdır. Sonra takasa dikkat edin: kontrol listeleri yol gösterir ve bir ölçüde tutarlılık sağlar; üst seviye maddeler ise test uzmanları arasında değişkenlik doğurur, bu da daha geniş kapsam ama daha az tekrarlanabilirlik verebilir. Bir cevaba karar vermeden önce şıkkın bu takasın iki yarısına da uyup uymadığını kontrol edin.</p>
+<p><strong>Hemen Pekiştir</strong></p>
+<p><em>HP 4.4.3-a.</em> Aşağıdakilerden hangisi iyi bir kontrol listesi maddesi olmaya en az uygundur?</p>
+<div class="mc">
+<ul>
+<li>(a) Bir aracın her yapıda zaten otomatik olarak doğruladığı bir kontrol</li>
+<li>(b) Kullanıcı kayıt akışı yarıda bırakıldığında sistemin davranışı</li>
+<li>(c) Hata mesajlarının kullanıcının girdisini düzeltmesine yardımcı olup olmadığı</li>
+<li>(d) Alanların harici uygulamalardan yapıştırılan metni işleyip işlemediği</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (a). Otomatik olarak kontrol edilebilen bir şey kontrol listesine girmez; liste, düşünen bir insana ihtiyaç duyan koşullar içindir.</p>
+</div></details>
+<p><em>HP 4.4.3-b.</em> İki test uzmanı aynı üst seviye kontrol listesinden çalışıyor. En olası etki nedir?</p>
+<div class="mc">
+<ul>
+<li>(a) Tam tekrarlanabilirlik, çünkü her test uzmanı aynı maddeleri aynı biçimde izler</li>
+<li>(b) Test uzmanları arasında daha fazla değişkenlik; bu daha geniş kapsam ama daha az tekrarlanabilirlik verebilir</li>
+<li>(c) Daha az kapsam, çünkü iki test uzmanı da tam olarak aynı adımları tekrarlar</li>
+<li>(d) Kontrol listesinden otomatik olarak ayrıntılı test senaryoları üretilir</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (b). Üst seviye maddeleri her test uzmanı biraz farklı yorumlar; ders programı bunun daha geniş kapsam ama daha az tekrarlanabilirlik verebileceğini belirtir.</p>
+</div></details>
+<p><em>HP 4.4.3-c.</em> Eksik girdi uzunluğu kontrolleriyle ilgili bir kontrol listesi maddesi birkaç sürümdür hiç hata bulmadı, çünkü geliştiriciler artık bunu rutin olarak ele alıyor. Aynı zamanda hata analizi, önem derecesi yüksek yeni bir hata çeşidini ortaya çıkarıyor. Ekip kontrol listesiyle ne yapmalıdır?</p>
+<div class="mc">
+<ul>
+<li>(a) Değiştirmeden tutmalı, çünkü bir kontrol listesini değiştirmek sağladığı tutarlılığı ortadan kaldırır</li>
+<li>(b) Maddelerini, test seviyesinin sonunda kontrol edilsinler diye çıkış kriterlerine dönüştürmeli</li>
+<li>(c) Yeni hata çeşidini eklemeli ve bütün eski maddeleri tutmalı, çünkü daha uzun bir kontrol listesi her zaman daha fazla kapsam verir</li>
+<li>(d) Listeyi hata analizine göre güncellemeli, daha az etkili hale gelen maddeleri gözden geçirmeli ve listenin çok uzamasına izin vermemeli</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (d). Geliştiriciler aynı insan hatalarından kaçınmayı öğrendikçe maddeler etkisini yitirir; önem derecesi yüksek yeni hatalar da yeni maddeler gerektirir; bu yüzden kontrol listesi hata analizine göre düzenli olarak güncellenir. Ders programı bir kontrol listesinin çok uzamasına karşı da uyarır (c); çıkış kriteri olarak daha uygun maddeler ise listeye hiç girmemelidir (b).</p>
+</div></details>
+</section>
+</section>
+<section id="collaboration-based-test-approaches" class="level2">
+<h2>4.5 İş Birliğine Dayalı Test Yaklaşımları</h2>
+<p>Yukarıdaki teknikler hata bulmaya odaklanır. <strong>İş birliğine dayalı test yaklaşımları (collaboration-based test approach)</strong> ise geliştirmeden önce ve geliştirme sırasında iş birliği ve ortak anlayış yoluyla hatalardan kaçınmaya da odaklanır.</p>
+<section id="fl-4-5-1" class="level3">
+<h3>İş birliğiyle kullanıcı hikayesi yazma (FL-4.5.1 — K2)</h3>
+<p>Bir <strong>kullanıcı hikayesi (user story)</strong>, bir gereksinimi kullanıcının bakış açısından ifade eder; tipik biçimi şudur: “Bir [rol] olarak, [iş değeri] için [hedef] istiyorum.” İyi bir hikayenin <strong>3 C</strong>’si vardır: Kart (Card; hikayeyi taşıyan ortam, bir dizin kartı ya da elektronik bir panodaki bir kayıt gibi kısa bir işaret), Konuşma (Conversation; yazılımın nasıl kullanılacağını açıklar, sözlü ya da belgeli olabilir) ve Onay (Confirmation; kabul kriterleri). Hikayeler iş birliğiyle, iş, geliştirme ve test bakış açıları bir arada yazılır; örneğin beyin fırtınası ve zihin haritası gibi iş birliği uygulamalarıyla desteklenen olgunlaştırma çalıştaylarında. İş birliğinin amacı, belirsizliklerin, eksik durumların ve test edilebilirlik sorunlarının daha tek satır kod yazılmadan ortaya çıkmasıdır. Hikayeler için yaygın kullanılan bir kalite kriterleri kümesi <strong>INVEST</strong>’tir: Bağımsız (Independent), Müzakere edilebilir (Negotiable), Değerli (Valuable), Tahmin edilebilir (Estimable), Küçük (Small), Test edilebilir (Testable). Bir paydaş bir hikayeyi nasıl kontrol edeceğini söyleyemiyorsa, nedeni genellikle üç şeyden biridir: hikaye hâlâ belirsizdir, paydaşın önemsediği bir faydayı yakalamıyordur ya da paydaşın testleri çıkarmak için yardıma ihtiyacı vardır. Şekil 4.7 bir hikayenin 3 C’sini bir arada gösteriyor.</p>
+<figure>
+<img src="figures/fig_4_7_three_cs.png" alt="Şekil 4.7 — Bir kullanıcı hikayesinin 3 C’si. Bir üçgen üç kutuyu birbirine bağlar: hikayeyi taşıyan ortam olan Kart (Card); yazılımın nasıl kullanılacağını sözlü ya da belgeli olarak anlatan Konuşma (Conversation); ve kabul kriterleri olan Onay (Confirmation)." /><figcaption>Şekil 4.7 — Bir kullanıcı hikayesinin 3 C’si.</figcaption>
+</figure>
+<p><em>Sınav odağı.</em> Bu hedefe ait sorular 3 C’yi ya da INVEST’i sorar. Bir kullanıcı hikayesi kısa bir kart, bir konuşma ve kabul kriterleri biçiminde bir onaydır; hikaye, belirsizlikler kod var olmadan ortaya çıksın diye iş birliğiyle yazılır. INVEST için test edilemeyen bir hikayenin neye işaret edebileceğini hatırlayın: belirsiz olabilir, değerli bir şeyi yansıtmıyor olabilir ya da test uzmanının yardıma ihtiyacı olabilir. Cevap vermeden önce her şıkkı kendi C’siyle (kart, konuşma ya da onay) eşleyin ve hiçbirine uymayan şıkkı eleyin.</p>
+<p><strong>Hemen Pekiştir</strong></p>
+<p><em>HP 4.5.1-a.</em> Bir kullanıcı hikayesinin “Onay” C’si neye karşılık gelir?</p>
+<div class="mc">
+<ul>
+<li>(a) Gerçekleştirmenin kabul edilmek için karşılaması gereken, üzerinde uzlaşılmış kabul kriterlerine</li>
+<li>(b) Gereksinimin kısa işaretine (kart)</li>
+<li>(c) Ayrıntıların yaşadığı konuşmaya</li>
+<li>(d) Geliştiricinin yazdığı birim testine</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (a). Onay kabul kriterleridir; Kart kısa işaret, Konuşma da ayrıntıların tartışılmasıdır.</p>
+</div></details>
+<p><em>HP 4.5.1-b.</em> Bir test uzmanı yeni bir kullanıcı hikayesinin nasıl test edilebileceğini göremediğini söylüyor. Bu neye işaret edebilir?</p>
+<div class="mc">
+<ul>
+<li>(a) Hikayenin test edilebilmesi için önce tahminlenmesi gerektiğine</li>
+<li>(b) Hikayenin önce Given/When/Then biçiminde yeniden yazılması gerektiğine</li>
+<li>(c) Test edilebilirliğin ancak hikaye gerçekleştirildikten sonra kontrol edilebileceğine</li>
+<li>(d) Hikayenin yeterince net olmayabileceğine, değerli bir şeyi yansıtmıyor olabileceğine ya da test uzmanının test etmek için yardıma ihtiyacı olabileceğine</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (d). Ders programı, bir paydaş bir hikayeyi nasıl test edeceğini bilmediğinde bu üç olasılığı adlandırır. (a) ve (b) şıkları test edilebilirliğin ön koşulları değildir; (c) şıkkı da test edilebilirlik sorunlarını kod yazılmadan ortaya çıkarmayı amaçlayan iş birliğiyle hikaye yazmanın amacıyla çelişir.</p>
+</div></details>
+<p><em>HP 4.5.1-c.</em> Kullanıcı hikayelerinin iş temsilcileri, geliştiriciler ve test uzmanları tarafından iş birliğiyle yazılmasının ana nedeni nedir?</p>
+<div class="mc">
+<ul>
+<li>(a) Test uzmanının hikayeyi yazılı kabul kriterleri olmadan onaylayabilmesi</li>
+<li>(b) Her hikayeyi konuşmaya artık gerek kalmayacak kadar ayrıntılı hale getirmek</li>
+<li>(c) Ekibe iş, geliştirme ve test bakış açılarından neyin teslim edilmesi gerektiğine dair ortak bir vizyon kazandırmak</li>
+<li>(d) Geliştiricilerin hikayeyi iş temsilcilerini dahil etmeden tahminleyebilmesi</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (c). İş birliği üç bakış açısını bir araya getirir; böylece ekip neyin teslim edileceğine dair tek bir görüşü paylaşır ve belirsizlikler kod yazılmadan ortaya çıkar. (a), (b) ve (d) şıklarının her biri iş birliğini kullanmak yerine onun bir parçasını ortadan kaldırır.</p>
+</div></details>
+</section>
+<section id="fl-4-5-2" class="level3">
+<h3>Kabul kriterleri (FL-4.5.2 — K2)</h3>
+<p><strong>Kabul kriterleri (acceptance criteria)</strong>, bir kullanıcı hikayesinin gerçekleştirilmesinin kabul edilmek için karşılaması gereken koşullardır; 3 C’deki Onay’dır. Hikayenin kapsamını tanımlar, ortak anlayış oluşturur ve hikayenin kabul testleri için hem pozitif hem negatif senaryoları içeren test esası işlevi görür. Yazmanın iki yaygın yolu vardır. Senaryo odaklı kriterler, <strong>Given/When/Then</strong> biçiminde somut örneklerdir: Given (verildiğinde) bir ön koşul, When (olduğunda) bir olay, Then (o zaman) beklenen bir sonuç. Kural odaklı kriterler ise doğrulanabilir kuralların ya da girdi-çıktı eşlemelerinin madde işaretli bir listesidir; örneğin “rezervasyon en fazla 90 gün önceden yapılabilir” ya da “başlangıçtan en az 48 saat önce iptal: tam iade”. Kriterlerin çoğu iki biçimde de yazılabilir. Kriterler iyi tanımlanmış ve belirsizlikten uzak olduğu sürece ekip özel başka bir biçim de kullanabilir. Kabul kriterleri paydaşların uzlaşmaya varmasına da yardımcı olur ve doğru planlama ile tahminlemeyi mümkün kılar. Genellikle Konuşma’dan çıkarlar ve testlerin çalıştırması gereken test koşulları olarak görülebilirler. Önemli olan, her kriterin doğrulanabilir, yani doğru ya da yanlış olarak kontrol edilebilir olmasıdır. “Sayfa hızlı yüklenmeli” bir kriter değildir; “sayfa 2 saniye içinde yüklenir” bir kriterdir.</p>
+<p><em>Sınav odağı.</em> Bir soru bir kriter gösterip iyi biçimlendirilmiş olup olmadığını sorabilir ya da yazım biçimini adlandırmanızı isteyebilir. Kabul kriterleri doğrulanabilir olmalıdır ve iki yaygın biçimde gelir: Given/When/Then ile senaryo odaklı ve kontrol edilebilir kurallar listesi olarak kural odaklı. Kriter gibi sunulan doğrulanamaz bir ifadeye dikkat edin: “sayfa hızlı yüklenmeli” doğru ya da yanlış olarak kontrol edilemez, “sayfa 2 saniye içinde yüklenir” ise edilebilir. Bir şık seçmeden önce sorudaki kritere doğru-yanlış sınamasını uygulayın, biçimini ancak ondan sonra sınıflandırın.</p>
+<p><strong>Hemen Pekiştir</strong></p>
+<p><em>HP 4.5.2-a.</em> Aşağıdakilerden hangisi doğrulanabilir bir kabul kriteridir?</p>
+<div class="mc">
+<ul>
+<li>(a) Arama kullanıcı dostu olmalı</li>
+<li>(b) Arama günlük iş için yeterince hızlı olmalı</li>
+<li>(c) Arama hataları zarif biçimde ele almalı</li>
+<li>(d) Arama, 100.000 ürünlük bir katalog için sonuçları 3 saniye içinde döndürür</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (d). Yalnızca (d) doğru ya da yanlış olarak kontrol edilebilir; diğerleri ölçülemeyen ifadelerdir.</p>
+</div></details>
+<p><em>HP 4.5.2-b.</em> Bir ekip “Başlangıçtan en az 48 saat önce yapılan iptal tam iade sağlar” kriterini koruyor ve altına şu örneği ekliyor: “Given 72 saat sonra başlayan bir rezervasyon, When misafir iptal eder, Then tutarın tamamı iade edilir.” Ekip ne eklemiştir?</p>
+<div class="mc">
+<ul>
+<li>(a) Kural odaklı kriteri örnekleyen senaryo odaklı bir örnek</li>
+<li>(b) Keşif testi için bir test başlatma belgesi</li>
+<li>(c) Kriterin yerini alan bir bileşen testi</li>
+<li>(d) Kullanıcı hikayesinin kapsamında bir değişiklik</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (a). Kriter bir kuraldır; örnek onun bir durumunu Given/When/Then biçiminde, yani senaryo odaklı biçimde gösterir. Tek bir örnek kuralın tamamını taşımaz, çünkü içinde 48 saatlik sınırı işaretleyen hiçbir şey yoktur; kuralın yerinde durmasının ve kapsamın değişmemesinin (d) nedeni budur. Ortada ne bir test başlatma belgesi (b) ne de bir bileşen testi (c) vardır.</p>
+</div></details>
+<p><em>HP 4.5.2-c.</em> Bir ekip kabul kriterlerini Given/When/Then senaryoları ya da madde işaretli kurallar listesi yerine, numaralandırılmış beklenen sonuçlarla açıklanmış ekran taslakları olarak belgeliyor. Hangi ifade doğrudur?</p>
+<div class="mc">
+<ul>
+<li>(a) Buna izin verilmez, çünkü yalnızca senaryo odaklı ve kural odaklı biçimler geçerlidir</li>
+<li>(b) Kabul kriterleri iyi tanımlanmış ve belirsizlikten uzak olduğu sürece kabul edilebilir</li>
+<li>(c) Yalnızca fonksiyonel olmayan kabul kriterleri için kabul edilebilir</li>
+<li>(d) Yalnızca kriterler test etmeden önce Given/When/Then biçiminde yeniden yazılırsa kabul edilebilir</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (b). Senaryo odaklı ve kural odaklı en yaygın iki biçimdir, ama kriterler iyi tanımlanmış ve belirsizlikten uzak olduğu sürece ekip özel bir biçim kullanabilir. Önemli olan her kriterin kontrol edilebilmesidir, onu hangi gösterimin taşıdığı değil.</p>
+</div></details>
+</section>
+<section id="fl-4-5-3" class="level3">
+<h3>Kabul testi güdümlü yazılım geliştirme (FL-4.5.3 — K3)</h3>
+<p><strong>Fikir.</strong> <strong>Kabul testi güdümlü yazılım geliştirme (acceptance test-driven development, ATDD)</strong> önce-test yaklaşımıdır: test senaryoları, uygulamanın ilgili parçası gerçekleştirilmeden önce bir kullanıcı hikayesinin kabul kriterlerinden türetilir. Amaç iki yönlüdür. Testler geliştirmeyi tam olarak üzerinde uzlaşılan davranışa yönlendirir; geçtiklerinde de ekibe gerçekleştirmenin kabul kriterlerini karşıladığına dair güven verir. Şekil 4.8, kullanıcı hikayesinden geçen testlere uzanan akışı gösteriyor.</p>
+<figure>
+<img src="figures/fig_4_8_atdd_flow.png" alt="Şekil 4.8 — Kullanıcı hikayesinden geçen testlere ATDD akışı. Altı kutu oklarla bağlanır: kullanıcı hikayesi; analiz çalıştayı; kabul kriterleri üzerinde uzlaşılır; test senaryoları yazılır, önce pozitif, sonra negatif, sonra fonksiyonel olmayan; geliştiriciler gerçekleştirme sırasında destek kodunu yazarak testleri otomatikleştirebilir; otomatik testler çalıştırılabilir gereksinim işlevi görür, testler geçince hikaye kriterlerini karşılar." /><figcaption>Şekil 4.8 — Kullanıcı hikayesinden geçen testlere ATDD akışı.</figcaption>
+</figure>
+<p>Akışın üç adımı vardır. İş temsilcilerinin, geliştiricilerin ve test uzmanlarının bir arada olduğu bir analiz çalıştayı (specification workshop) hikayeyi analiz eder, boşlukları ve belirsizlikleri giderir ve kabul kriterleri üzerinde uzlaşır. Test senaryoları kabul kriterlerinden, ekibin bütünü ya da test uzmanı tarafından tek başına oluşturulur: tipik olarak önce pozitif yol, sonra negatif durumlar, gerektiğinde de fonksiyonel olmayan yönler. Bölüm 4.2–4.4’teki teknikler uygulanabilir. Test senaryoları hikayenin ötesine geçmemeli, iki test senaryosu da aynı özellikleri anlatmamalıdır. Testler bütün paydaşların anladığı bir dilde, çoğu zaman Given/When/Then ile yazılır ve kriterlerin içerdiği her ayrı kuralı kapsamalıdır. Test senaryoları elle koşulabilir ya da otomatikleştirilebilir. Bir <strong>test otomasyonu çerçevesinin (test automation framework)</strong> desteklediği bir biçimde kayda geçirildiklerinde geliştiriciler, özelliği gerçekleştirirken destek kodunu yazarak onları otomatikleştirir. Kabul testleri o zaman çalıştırılabilir gereksinimlere dönüşür: gerçekleştirmeye yön verir, kod da onları geçirmek için yazılır. Kriterleri somutlaştırırlar, ama gereksinim etrafındaki konuşmanın yerini tutmazlar.</p>
+<section id="çözümlü-örnek-toplantı-odası-rezervasyonu-hikayesi" class="level4">
+<h4>Çözümlü örnek — toplantı odası rezervasyonu hikayesi</h4>
+<p>Hikaye: Bir çalışan olarak, resepsiyonu aramadan oda ayırtabilmek için çevrim içi toplantı odası rezervasyonu yapmak istiyorum. Kabul kriterleri (kural odaklı): (1) Bir rezervasyon için oda, tarih, başlangıç saati ve 30, 60 ya da 90 dakikalık bir süre gerekir. (2) Rezervasyon yalnızca oda istenen sürenin tamamı boyunca boşsa onaylanır. (3) Rezervasyonlar en fazla 30 gün önceden yapılabilir. (4) Onaylanan bir rezervasyon çalışana bir takvim daveti gönderir.</p>
+<p>Görev: kriterlerden bir ATDD test kümesi türetin.</p>
+<p>Adım 1, pozitif testler. Önce mutlu yol gelir; doğal olduğu yerde kriterler birleştirilir. Sonra yine geçmesi gereken bir kuralın kenarı:</p>
+<ul>
+<li>T1 (KK1 + KK2 + KK4): Given A Odası yarın 10:00–11:00 arasında boş, When çalışan A Odası’nı yarın, 10:00, 60 dakika için ayırtır, Then rezervasyon onaylanır ve çalışana bir takvim daveti gönderilir.</li>
+<li>T2 (KK3, sınır): Given A Odası bugünden 30 gün sonra 14:00–14:30 arasında boş, When çalışan A Odası’nı o tarih, 14:00, 30 dakika için ayırtır, Then rezervasyon onaylanır.</li>
+</ul>
+<p>Adım 2, negatif testler; bir kuralın çiğnenebileceği her yol için bir tane:</p>
+<ul>
+<li>T3 (KK1; zorunlu her alan için bir satırı olan bir senaryo taslağı, scenario outline): Given A Odası yarın 10:00–11:00 arasında boş, When çalışan A Odası, yarın, 10:00, 60 dakika için <code>&lt;alan&gt;</code> boş bırakılmış bir rezervasyon gönderir, Then rezervasyon reddedilir. Satırlar: oda, tarih, başlangıç saati, süre. Bu dört test senaryosudur, çünkü zorunlu her alan ayrı bir kuraldır.</li>
+<li>T4 (KK1): Given A Odası yarın 10:00–11:00 arasında boş, When çalışan A Odası’nı yarın, 10:00, 45 dakika için ayırtır, Then rezervasyon reddedilir.</li>
+<li>T5 (KK2 ve KK4’ün negatif tarafı): Given A Odası yarın 10:30–11:00 arasında zaten ayrılmış, When çalışan A Odası’nı yarın, 10:00, 60 dakika için ayırtır, Then rezervasyon reddedilir ve takvim daveti gönderilmez. Kısmi örtüşmeye dikkat edin; “sürenin tamamı boyunca boş” ifadesinin en keskin okuması budur.</li>
+<li>T6 (KK3): Given A Odası bugünden 31 gün sonra 14:00–14:30 arasında boş, When çalışan A Odası’nı o tarih, 14:00, 30 dakika için ayırtır, Then rezervasyon reddedilir. T2 ve T6, 2 değerli SDA’nın 30 günlük sınır için verdiği iki sınır değerdir.</li>
+</ul>
+<p>Adım 3, fonksiyonel olmayan testler. Kriterler yanıt süresi gibi fonksiyonel olmayan karakteristikler hakkında bir şey söylemiyor; bu yüzden burada fonksiyonel olmayan bir test yazılmaz. Bir tane eklemek testleri hikayenin ötesine taşır; analiz çalıştayı böyle bir kriter üzerinde uzlaşırsa onun testi en sona eklenir.</p>
+<p>Adım 4, kriterlerin kapsamını kontrol edin. Her kriterin hem geçen hem başarısız olan bir tarafı var: KK1 T1 ve T2’de geçiyor, T3 ve T4’te başarısız oluyor; KK2 T1’de geçiyor, T5’te başarısız oluyor; KK3 T2’de geçiyor, T6’da başarısız oluyor; KK4 T1’de davet gönderiyor, T5’te hiç göndermiyor. Hiçbir iki test aynı özelliği anlatmıyor: davetin gönderildiğini yalnızca T1, gönderilmediğini yalnızca T5 kontrol ediyor. Kriterler hata mesajlarını tanımlamıyor; bu yüzden hiçbir Then bir hata mesajı adlandırmıyor. Her ön koşul bir Given içinde duruyor. Dokuz test senaryosunun hepsi gerçekleştirme başlamadan önce var. Ekip onları otomatikleştirirse geliştiriciler hikayeyi gerçekleştirirken destek kodunu yazar ve testler çalıştırılabilir gereksinimlere dönüşür; hepsi geçtiğinde hikaye üzerinde uzlaşılmış kriterlerini karşılar.</p>
+<p><em>Sınav odağı.</em> K3 sorusu kabul kriterleri olan bir hikaye verir ve hangi test senaryosunun doğru türetildiğini, hangi kriterin kapsanmadan kaldığını ya da hangi Given/When/Then’in verilen bir kriterle eşleştiğini sorar. Yöntem mekaniktir: her aday testi bir kriterle eşleyin ve mantığın yönünü kontrol edin; bir kuralı çiğneyen bir test reddi beklemelidir. En cazip yanlış şık, kriterlerin hiç belirtmediği makul bir davranışı test eder; ATDD’de bir test genel bilgiden değil, üzerinde uzlaşılmış kriterlerden türetilebilmelidir.</p>
+</section>
+<section id="bağımsız-alıştırma-4.e" class="level4">
+<h4>Bağımsız alıştırma 4.E</h4>
+<p>Hikaye: Bir müşteri olarak ödeme sırasında bir kupon kullanmak istiyorum. Kabul kriterleri: (1) bir kupon yalnızca süresi dolmamışsa uygulanır; (2) sipariş başına yalnızca bir kupon; (3) indirim hiçbir zaman sipariş toplamını aşmaz: kuponun değeri sipariş toplamından büyükse indirim sipariş toplamına eşit olur ve toplam 0 TL’ye düşer. Kriter (3) için bir Given/When/Then testi yazın. (Çözüm bu bölümün sonunda.)</p>
+<p><em>Hemen Pekiştir.</em> Alıştırma, çözümlü örnek ve 4.E’dir.</p>
+<p><em>HP 4.5.3.</em> ATDD’de bir test senaryosu neyden türetilebilir olmalıdır?</p>
+<div class="mc">
+<ul>
+<li>(a) Üzerinde uzlaşılmış kabul kriterlerinden</li>
+<li>(b) Kriterlerde olmasa bile test uzmanının genel bilgisinden</li>
+<li>(c) Yalnızca kodun iç yapısından</li>
+<li>(d) Yalnızca geçmiş arıza kalıplarından</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (a). Bir ATDD testi kabul kriterlerinden türetilir; “makul” ama kriterlerde olmayan davranış en cazip yanlış şıktır.</p>
+</div></details>
+</section>
+</section>
+</section>
+<section id="chapter-4-summary" class="level2">
+<h2>Bölüm 4 özeti</h2>
+<div class="table-wrap">
+<table>
+<colgroup>
+<col style="width: 18%" />
+<col style="width: 24%" />
+<col style="width: 24%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Teknik</th>
+<th>Kapsam öğesi</th>
+<th>%100 için en az</th>
+<th>Tek cümlelik kimlik</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Denklik paylarına ayırma</td>
+<td>denklik payı</td>
+<td>pay sayısı (geçerli + geçersiz)</td>
+<td>aynı biçimde işlenen her sınıftan bir temsilci</td>
+</tr>
+<tr class="even">
+<td>Sınır değer analizi</td>
+<td>sınır değer (3 değerli: iki komşusuyla birlikte)</td>
+<td>gereken değerleri sayın</td>
+<td>sıralı payların kenarları; her sınırda 2 değer (2 değerli) ya da 4 değer (3 değerli)</td>
+</tr>
+<tr class="odd">
+<td>Karar tablosu</td>
+<td>sütun (kural)</td>
+<td>gerçekleşebilir sütunlar; tam sınırlı giriş tablosu = 2^n; indirgenmiş = kendi sütun sayısı</td>
+<td>koşul kombinasyonlarından aksiyonlara</td>
+</tr>
+<tr class="even">
+<td>Durum geçişi</td>
+<td>durum / geçerli geçiş / tablonun bütün hücreleri</td>
+<td>kritere bağlı; geçerli geçişler tüm durumları içerir</td>
+<td>davranış geçmişe bağlıdır; geçersiz geçişleri tablo ortaya çıkarır</td>
+</tr>
+<tr class="odd">
+<td>Komut testi</td>
+<td>çalıştırılabilir komut</td>
+<td>(yalnızca açıklama)</td>
+<td>her çalıştırılabilir komut çalıştı</td>
+</tr>
+<tr class="even">
+<td>Dal testi</td>
+<td>dal</td>
+<td>(yalnızca açıklama)</td>
+<td>koşulsuz ve koşullu her dal çalıştırıldı; dal komutu içerir</td>
+</tr>
+<tr class="odd">
+<td>Hata tahminleme</td>
+<td>—</td>
+<td>—</td>
+<td>olası hataları tecrübeden öngörmek; kusur ortaya çıkarmaya yönelik saldırılar</td>
+</tr>
+<tr class="even">
+<td>Keşif testi</td>
+<td>oturum sırasında belirlenir</td>
+<td>—</td>
+<td>eş zamanlı öğren-tasarla-koş-değerlendir; bazen oturum bazlı, bir test başlatma belgesiyle</td>
+</tr>
+<tr class="odd">
+<td>Kontrol listesine dayalı</td>
+<td>kontrol listesi maddesi</td>
+<td>—</td>
+<td>tecrübeyle oluşturulmuş koşullar listesi; bir ölçüde tutarlılık, olası daha geniş kapsam, daha az tekrarlanabilirlik</td>
+</tr>
+<tr class="even">
+<td>ATDD</td>
+<td>kabul kriteri</td>
+<td>her kriter kapsanır</td>
+<td>gerçekleştirmeden önce, kabul kriterlerinden testler</td>
+</tr>
+</tbody>
+</table>
+</div>
+<section id="sık-karıştırılan-kritik-kavram-çiftleri-3" class="level3">
+<h3>Sık karıştırılan kritik kavram çiftleri</h3>
+<div class="table-wrap">
+<table>
+<colgroup>
+<col style="width: 14%" />
+<col style="width: 35%" />
+<col style="width: 14%" />
+<col style="width: 35%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Bu kavram</th>
+<th>şudur</th>
+<th>şu kavram değildir</th>
+<th>o da şudur</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Denklik paylarına ayırma</td>
+<td>her paydan bir değer</td>
+<td>Sınır değer analizi</td>
+<td>sıralı payların kenarları; EP’nin payları üzerine kurulur</td>
+</tr>
+<tr class="even">
+<td>2 değerli SDA</td>
+<td>sınır değer + komşu paydaki komşusu</td>
+<td>3 değerli SDA</td>
+<td>sınır değer + iki komşusu</td>
+</tr>
+<tr class="odd">
+<td>Koşul sayısı</td>
+<td>n</td>
+<td>Sütun sayısı</td>
+<td>tam sınırlı giriş tablosunda 2^n</td>
+</tr>
+<tr class="even">
+<td>Tam karar tablosu</td>
+<td>2^n sütun</td>
+<td>İndirgenmiş karar tablosu</td>
+<td>birleştirilmiş sütunlar; tire = önemsiz</td>
+</tr>
+<tr class="odd">
+<td>Tüm durumlar kapsamı</td>
+<td>her durumu çalıştırmak</td>
+<td>Geçerli geçişler kapsamı</td>
+<td>her geçerli oku çalıştırmak; daha güçlü olan</td>
+</tr>
+<tr class="even">
+<td>Komut kapsama yüzdesi</td>
+<td>her çalıştırılabilir komut</td>
+<td>Dal kapsamı</td>
+<td>koşulsuz ve koşullu her dal; dal komutu içerir, tersi değil</td>
+</tr>
+<tr class="odd">
+<td>Keşif testi</td>
+<td>keşfederken tasarlamak</td>
+<td>Hata tahminleme</td>
+<td>öngörülen hataları bilerek yoklamak</td>
+</tr>
+<tr class="even">
+<td>Karar tablosu</td>
+<td>koşul kombinasyonları</td>
+<td>Durum geçişi</td>
+<td>davranış mevcut duruma ve geçmişe bağlıdır</td>
+</tr>
+<tr class="odd">
+<td>Senaryo odaklı kriter</td>
+<td>Given/When/Then örnekleri</td>
+<td>Kural odaklı kriter</td>
+<td>doğrulanabilir kural listeleri</td>
+</tr>
+<tr class="even">
+<td>ATDD</td>
+<td>hikaye seviyesi, kabul kriterlerinden</td>
+<td>TDD</td>
+<td>bileşen seviyesi, geliştiricinin birim testleri</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="sınav-ipuçları-ve-yaygın-tuzaklar-bölüm-4" class="level3">
+<h3>Sınav ipuçları ve yaygın tuzaklar — Bölüm 4</h3>
+<p>Her K3 sorusunda şıklara bakmadan önce prosedürü kâğıt üzerinde yapın. Payları türetin, sınır değerleri listeleyin, sütunları sayın ya da geçişleri izleyin; sonucunuzu şıklarla ancak ondan sonra karşılaştırın. Şıklardan geriye doğru çalışmak daha yavaştır ve çok daha fazla hataya açıktır, çünkü yanlış şıklar sık yapılan dikkatsizliklerden kurulabilir.</p>
+<p>Her tekniğin kendi sayma tuzağı vardır. Denklik paylarına ayırmada, spesifikasyonun tanımladığı payları iki yandaki geçersiz paylar dahil sayın ve her paydan bir temsilci seçin; sınır değerler bir sonraki tekniğin işidir. Sınır değer analizinde, saymadan önce sorunun hangi çeşidi istediğini kontrol edin, çünkü 2 değerli ve 3 değerli farklı kümeler üretir. Karar tablolarında koşul sayısını sütun sayısıyla karıştırmayın: tam sınırlı giriş tablosu 2 üzeri koşul sayısı kadardır. Sınır değer analizinde geçersiz payların sınır değerlerinin de sayıldığını hatırlayın; bu yüzden 3 değerli SDA her sınırda dört değer alır. Durum geçişi testinde geçerli geçişler için diyagramı, geçersizler için tabloyu kullanın ve sorunun durumları mı, geçerli geçişleri mi, yoksa bütün durum-olay kombinasyonlarını mı sorduğunu dikkatle okuyun.</p>
+<p>Beyaz kutu ikilisinde içerme tek yönlüdür: %100 dal kapsamı %100 komut kapsama yüzdesini güvence altına alır, tersi değil. Tecrübeye dayalı teknikleri işleyişlerine göre ayırın. Testleri öngörülen hatalara yöneltmek hata tahminlemedir, koşarken öğrenmek keşif testidir, güncel tutulan koşullardan çalışmak kontrol listesine dayalı test etmedir.</p>
+</section>
+</section>
+<section id="cumulative-retrieval-2" class="level2">
+<h2>Birikimli hatırlama</h2>
+<p>Önceki bölümleri bu bölümün merceğinden yeniden ziyaret edin:</p>
+<ul>
+<li><strong>R4-a.</strong> Yalnızca bir aralığın kenarında yakalanan bir hatanın “hatalar yazılımın belli alanlarında yoğunlaşır” prensibini mi yoksa basit bir sınır davranışını mı gösterdiğine karar verin (Bölüm 1).</li>
+<li><strong>R4-b.</strong> Bir bileşenin dal kapsamı ölçümünün en doğal olarak hangi test seviyesine ait olduğunu söyleyin (Bölüm 2).</li>
+<li><strong>R4-c.</strong> Kabul testlerini kodlamadan önce türetmenin neden hem sola almanın hem de erken test etme prensibinin bir örneği olduğunu açıklayın (Bölüm 2 ve 1).</li>
+</ul>
+<p>Önceki bölümlere geri bakmadan önce her birini hafızanızdan yanıtlamaya çalışın. Örnek cevaplar, Cevaplar ve Gerekçeler bölümünde <em>Birikimli hatırlama — örnek cevaplar</em> başlığı altındadır.</p>
+</section>
+<section id="chapter-exercises-3" class="level2">
+<h2>Bölüm alıştırmaları</h2>
+<p>Cevaplar, gerekçeler ve öğrenme hedefi kaynakları kitabın sonundaki “Cevaplar ve Gerekçeler” bölümündedir.</p>
+<p><em>PB-C4-001.</em> Bir girdi alanı 100 ile 5.000 arasındaki (uçlar dahil, tam sayı) sadakat puanı kullanımlarını kabul ediyor. 100’ün altı M1 mesajıyla, 5.000’in üstü M2 mesajıyla reddediliyor. Denklik paylarına ayırma kullanılarak %100 EP kapsamı için en az kaç test senaryosu gerekir?</p>
+<div class="mc">
+<ul>
+<li>(a) 2</li>
+<li>(b) 3</li>
+<li>(c) 4</li>
+<li>(d) 6</li>
+</ul>
+</div>
+<p><em>PB-C4-002.</em> Aynı alan için (geçerli aralık 100–5.000), hangi değer kümesi 2 değerli sınır değer analizinin gerektirdiği değerleri, fazlası olmadan, tam olarak içerir?</p>
+<div class="mc">
+<ul>
+<li>(a) 99; 100; 5.000; 5.001</li>
+<li>(b) 100; 101; 4.999; 5.000</li>
+<li>(c) 98; 99; 100; 5.000; 5.001; 5.002</li>
+<li>(d) 99; 100; 101; 4.999; 5.000; 5.001</li>
+</ul>
+</div>
+<p><em>PB-C4-003.</em> Bir sinemanın bilet indirimi için tam karar tablosunda iki koşul (öğrenci, hafta içi matine) ve gerçekleşebilir dört sütun, R1–R4, var. Koşulan testler R1, R2, R4’ü ve ardından yeniden R2’yi çalıştırıyor. Testler hangi karar tablosu kapsamına ulaşır?</p>
+<div class="mc">
+<ul>
+<li>(a) %25</li>
+<li>(b) %50</li>
+<li>(c) %75</li>
+<li>(d) %100</li>
+</ul>
+</div>
+<p><em>PB-C4-004.</em> Bir aboneliğin durumları Deneme, Aktif ve İptal edildi; geçerli geçişler şunlar: etkinleştir (Deneme’den Aktif’e), iptal et (Deneme’den İptal edildi’ye), iptal et (Aktif’ten İptal edildi’ye), yenile (Aktif’ten Aktif’e). Her test senaryosu Deneme’de başlıyor. %100 geçerli geçişler kapsamı için en az kaç test senaryosu gerekir?</p>
+<div class="mc">
+<ul>
+<li>(a) 1</li>
+<li>(b) 2</li>
+<li>(c) 3</li>
+<li>(d) 4</li>
+</ul>
+</div>
+<p><em>PB-C4-005.</em> Bir test grubu bir bileşende %100 komut kapsama yüzdesine ulaşıyor. Hangi çıkarım doğrudur?</p>
+<div class="mc">
+<ul>
+<li>(a) Test grubu %100 dal kapsamına da ulaşır</li>
+<li>(b) Bileşendeki her karar sonucu çalıştırılmıştır</li>
+<li>(c) Dal kapsamı hâlâ %100’ün altında olabilir</li>
+<li>(d) Bileşen, çalıştırılan komutlarda hiç hata içermez</li>
+</ul>
+</div>
+<p><em>PB-C4-006.</em> Test tekniğinden kategoriye hangi eşleme doğrudur?</p>
+<div class="mc">
+<ul>
+<li>(a) Kontrol listesine dayalı test etme — tecrübeye dayalı test tekniği</li>
+<li>(b) Dal testi — kara kutu test tekniği</li>
+<li>(c) Denklik paylarına ayırma — tecrübeye dayalı test tekniği</li>
+<li>(d) Hata tahminleme — beyaz kutu test tekniği</li>
+</ul>
+</div>
+<p><em>PB-C4-007.</em> Bir otel rezervasyon formu 1–7 gecelik konaklamaları standart tarifeyle, 8–28 gecelik konaklamaları uzun konaklama tarifesiyle kabul ediyor. 0 gecelik ya da 28 geceden uzun konaklamalar reddediliyor. Denklik paylarına ayırma kullanılarak her payı bir kez kapsamak için en az kaç test senaryosu gerekir?</p>
+<div class="mc">
+<ul>
+<li>(a) 2</li>
+<li>(b) 3</li>
+<li>(c) 4</li>
+<li>(d) 5</li>
+</ul>
+</div>
+<p><em>PB-C4-008.</em> Bir çevrim içi mağaza 0–49,99 arasındaki sepet toplamlarına indirim vermiyor; 50–99,99 arasına %5, 100 ve üstüne %10 indirim veriyor. Her paydan bir temsilci kullanılarak hangi test kümesi her geçerli payı tam olarak bir kez kapsar?</p>
+<div class="mc">
+<ul>
+<li>(a) 49,99; 50; 99,99</li>
+<li>(b) 10; 20; 120</li>
+<li>(c) 25; 75; 150</li>
+<li>(d) 25; 75; 100; 150</li>
+</ul>
+</div>
+<p><em>PB-C4-009.</em> Bir ekran parlaklığı ayarı 10 ile 80 arasındaki tam sayı değerleri kabul ediyor; diğer değerler reddediliyor. Hangi küme gereksiz değer içermeden %100 3 değerli sınır değer analizi kapsamına ulaşır?</p>
+<div class="mc">
+<ul>
+<li>(a) 9; 10; 11; 79; 80; 81</li>
+<li>(b) 8; 9; 10; 11; 79; 80; 81; 82</li>
+<li>(c) 10; 11; 79; 80</li>
+<li>(d) 8; 9; 10; 80; 81; 82</li>
+</ul>
+</div>
+<p><em>PB-C4-010.</em> Bir feribot işletmecisinin fiyatlandırması iki mantıksal koşula bağlı: yolcunun adada yaşayıp yaşamadığı ve geçişin yoğun olmayan saatte olup olmadığı. Taslak karar tablosunda üç kural var: R1 (adalı D, yoğun olmayan saat D), R2 (adalı D, yoğun olmayan saat Y), R3 (adalı Y, yoğun olmayan saat D). Tabloda hangi koşul kombinasyonu eksik?</p>
+<div class="mc">
+<ul>
+<li>(a) Adalı = D, yoğun olmayan saat = D</li>
+<li>(b) Adalı = Y, yoğun olmayan saat = D</li>
+<li>(c) Adalı = D, yoğun olmayan saat = Y</li>
+<li>(d) Adalı = Y, yoğun olmayan saat = Y</li>
+</ul>
+</div>
+<p><em>PB-C4-011.</em> Bir kargo teslimat sisteminin durumları Kaydedildi, Yolda, Teslim edildi ve İade edildi; olayları gönder, teslim et, göndericiye iade et ve yeniden gönder. Durum tablosu her durum-olay kombinasyonunu listeliyor ve bunlardan tam olarak dördü geçerli geçiş. Tüm geçişler kapsamı için toplam kaç durum-olay kombinasyonu değerlendirilmelidir?</p>
+<div class="mc">
+<ul>
+<li>(a) 4</li>
+<li>(b) 8</li>
+<li>(c) 12</li>
+<li>(d) 16</li>
+</ul>
+</div>
+<p><em>PB-C4-012.</em> Bir bileşen 60 çalıştırılabilir komut içeriyor. Mevcut test grubu bunlardan 45’ini çalıştırıyor. Hangi komut kapsama yüzdesine ulaşılır?</p>
+<div class="mc">
+<ul>
+<li>(a) %45</li>
+<li>(b) %60</li>
+<li>(c) %75</li>
+<li>(d) %80</li>
+</ul>
+</div>
+<p><em>PB-C4-013.</em> Bir ekip, bir hesap kayıt akışını test etmek için bir kontrol listesi hazırlıyor. Hangi madde kontrol listesine en az uygundur?</p>
+<div class="mc">
+<ul>
+<li>(a) Zorunlu alanların hepsi aynı biçimde işaretlenmiş mi?</li>
+<li>(b) Onay e-postası kullanıcının seçtiği dili kullanıyor mu?</li>
+<li>(c) Parola kuralı kullanıcı yazmaya başlamadan önce gösteriliyor mu?</li>
+<li>(d) Planlanan bütün kayıt test senaryoları koşuldu mu?</li>
+</ul>
+</div>
+<p><em>PB-C4-014.</em> Yeni bir rapor dışa aktarma özelliğini test etmeden önce bir test uzmanı, şirketin geçen yıl çıkardığı benzer bir ürünün arıza raporlarını inceliyor ve aynı arıza çeşitlerine yönelik testler tasarlıyor. Test uzmanı hangi tekniği, hangi bilgi kaynağına dayanarak uyguluyor?</p>
+<div class="mc">
+<ul>
+<li>(a) Hata tahminleme; benzer başka uygulamalardaki arızalara dair bilgiye dayanarak</li>
+<li>(b) Keşif testi; ürünü koşarken öğrenmeye dayanarak</li>
+<li>(c) Kontrol listesine dayalı test etme; güncel tutulan bir test koşulları listesine dayanarak</li>
+<li>(d) Hata tahminleme; kaynak kodun yapısına dayanarak</li>
+</ul>
+</div>
+<p><em>PB-C4-015.</em> Olgunlaştırma sırasında bir ürün sahibi şöyle diyor: “Kartta yalnızca ‘çoklu para birimi desteği’ yazıyor. Ayrıntılar geliştiriciler ve test uzmanlarıyla konuştuğumuzda ortaya çıkacak.” Planlanan görüşme 3 C’nin hangi öğesini temsil eder?</p>
+<div class="mc">
+<ul>
+<li>(a) Kart</li>
+<li>(b) Konuşma</li>
+<li>(c) Onay</li>
+<li>(d) İş birliği</li>
+</ul>
+</div>
+<p><em>PB-C4-016.</em> Bir kullanıcı hikayesinin kabul kriterleri şöyle yazılmış: “Rezervasyon başlangıcından en az 24 saat önce yapılan iptal tam iade sağlar”, “Bir hesapta aynı anda en fazla üç aktif rezervasyon olabilir”, “Bir indirim kodu sipariş toplamının %50’sinden fazlasını düşüremez.” Bu kabul kriterleri hangi yazım biçimindedir?</p>
+<div class="mc">
+<ul>
+<li>(a) Senaryo odaklı, çünkü her kriter somut bir Given/When/Then örneği anlatıyor</li>
+<li>(b) Yapı odaklı, çünkü kriterler iç kod mimarisinden türetilmiş</li>
+<li>(c) Tecrübeye dayalı, çünkü kriterler test uzmanının geçmiş hata bilgisine dayanıyor</li>
+<li>(d) Kural odaklı, çünkü kriterler doğrulanabilir kurallar ve sayısal sınırlardan oluşan bir liste</li>
+</ul>
+</div>
+<p><em>PB-C4-017.</em> Bir çevrim içi mağaza için bir kullanıcı hikayesinin kabul kriterleri şunlar: (1) Ödeme tamamlandığında, siparişteki her dijital ürün için bir indirme bağlantısı 5 dakika içinde e-postayla gönderilir. (2) Bağlantı gönderildikten sonra 168 saat (7 gün) geçerli kalır; yaşı tam saat olarak ölçülür ve 168 saate kadar (168 dahil) yaşta bir bağlantı indirmeyi başlatır. (3) Süresi dolmuş bir bağlantıyı açmak “Bağlantının süresi doldu” mesajını ve yeni bağlantı isteme seçeneğini gösterir. Bir test uzmanı, negatif bir test senaryosu türetmek için bağlantının yaşına 2 değerli sınır değer analizi uyguluyor. Hangi test senaryosu doğru türetilmiştir?</p>
+<div class="mc">
+<ul>
+<li>(a) Given bir indirme bağlantısı 169 saat önce gönderildi, When müşteri bağlantıyı açar, Then “Bağlantının süresi doldu” mesajı ve yeni bağlantı isteme seçeneği gösterilir</li>
+<li>(b) Given bir indirme bağlantısı 168 saat önce gönderildi, When müşteri bağlantıyı açar, Then indirme başlar</li>
+<li>(c) Given bir indirme bağlantısı 240 saat önce gönderildi, When müşteri bağlantıyı açar, Then “Bağlantının süresi doldu” mesajı ve yeni bağlantı isteme seçeneği gösterilir</li>
+<li>(d) Given bir indirme bağlantısı 169 saat önce gönderildi, When müşteri bağlantıyı açar, Then bir mesaj müşteriden müşteri hizmetleriyle iletişime geçmesini ister</li>
+</ul>
+</div>
+</section>
+<section id="independent-exercise-solutions" class="level2">
+<h2>Bağımsız alıştırma çözümleri</h2>
+<p><em>4.A.</em> (a) Paylar: [0’ın altı, geçersiz], [0–5 ücretsiz], [6–17 çocuk], [18–64 yetişkin], [65–120 yaşlı], [120’nin üstü, geçersiz]; altı pay. (b) Her paya bir tane olmak üzere altı test senaryosu. İki geçersiz uçtan hiçbirini unutmayın.</p>
+<p><em>4.B.</em> İki sınır var: 4 (aralığın altındaki en büyük reddedilen değer) ile 5 arasında ve 30 ile 31 arasında. (a) 2 değerli SDA: 4, 5, 30, 31. (b) 3 değerli SDA bu dört sınır değerin her birini iki komşusuyla birlikte alır: 3, 4, 5, 6, 29, 30, 31, 32; yani her sınırda dört değer.</p>
+<p><em>4.C.</em> (a) Üç mantıksal koşul 2^3 = 8 sütun verir. Adres yurt içiyse ve diğer iki koşuldan en az biri doğruysa kargo ücretsizdir:</p>
+<div class="table-wrap">
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th>R1</th>
+<th>R2</th>
+<th>R3</th>
+<th>R4</th>
+<th>R5</th>
+<th>R6</th>
+<th>R7</th>
+<th>R8</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>K1 toplam en az 50 TL</td>
+<td>D</td>
+<td>D</td>
+<td>D</td>
+<td>D</td>
+<td>Y</td>
+<td>Y</td>
+<td>Y</td>
+<td>Y</td>
+</tr>
+<tr class="even">
+<td>K2 Plus üyesi</td>
+<td>D</td>
+<td>D</td>
+<td>Y</td>
+<td>Y</td>
+<td>D</td>
+<td>D</td>
+<td>Y</td>
+<td>Y</td>
+</tr>
+<tr class="odd">
+<td>K3 yurt içi adres</td>
+<td>D</td>
+<td>Y</td>
+<td>D</td>
+<td>Y</td>
+<td>D</td>
+<td>Y</td>
+<td>D</td>
+<td>Y</td>
+</tr>
+<tr class="even">
+<td>A1: ücretsiz kargo</td>
+<td>X</td>
+<td></td>
+<td>X</td>
+<td></td>
+<td>X</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>A2: kargo ücretini müşteri öder</td>
+<td></td>
+<td>X</td>
+<td></td>
+<td>X</td>
+<td></td>
+<td>X</td>
+<td>X</td>
+<td>X</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>(b) R1 ve R3 aynı aksiyona sahip ve yalnızca K2’de ayrışıyor; bu yüzden birleşirler. R2, R4, R6 ve R8’in hepsinde adres yurt dışı ve aksiyon aynı; dolayısıyla orada K1 ve K2 önemsiz, dördü tek bir sütunda birleşir. R5 ve R7 ayrı kalır, çünkü orada sonucu K2 belirler.</p>
+<div class="table-wrap">
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th>M1 (R1+R3)</th>
+<th>M2 (R5)</th>
+<th>M3 (R7)</th>
+<th>M4 (R2+R4+R6+R8)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>K1 toplam en az 50 TL</td>
+<td>D</td>
+<td>Y</td>
+<td>Y</td>
+<td>–</td>
+</tr>
+<tr class="even">
+<td>K2 Plus üyesi</td>
+<td>–</td>
+<td>D</td>
+<td>Y</td>
+<td>–</td>
+</tr>
+<tr class="odd">
+<td>K3 yurt içi adres</td>
+<td>D</td>
+<td>D</td>
+<td>D</td>
+<td>Y</td>
+</tr>
+<tr class="even">
+<td>A1: ücretsiz kargo</td>
+<td>X</td>
+<td>X</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>A2: kargo ücretini müşteri öder</td>
+<td></td>
+<td></td>
+<td>X</td>
+<td>X</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Tam tablo: 8 sütun; dolayısıyla en az 8 test senaryosu. İndirgenmiş tablo: 4 sütun; dolayısıyla en az 4.</p>
+<p>(c) İndirgenmiş her sütun için bir test:</p>
+<ul>
+<li>M1: toplam 60 TL, Plus üyesi değil, yurt içi adres. Beklenen: ücretsiz kargo. (Üye olmayan biri, toplamın tek başına yettiğini gösterir.)</li>
+<li>M2: toplam 30 TL, Plus üyesi, yurt içi adres. Beklenen: ücretsiz kargo.</li>
+<li>M3: toplam 30 TL, Plus üyesi değil, yurt içi adres. Beklenen: kargo ücretini müşteri öder.</li>
+<li>M4: toplam 80 TL, Plus üyesi, yurt dışı adres. Beklenen: kargo ücretini müşteri öder. (Diğer iki koşul da doğru; bu, yurt dışı adresin onları geçersiz kıldığını gösterir.)</li>
+</ul>
+<p><em>4.D.</em> (a) Üç durum çarpı üç olay 9 hücre verir:</p>
+<div class="table-wrap">
+<table>
+<thead>
+<tr class="header">
+<th>Durum / Olay</th>
+<th>gönder</th>
+<th>onayla</th>
+<th>reddet</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Taslak</td>
+<td>Gönderildi</td>
+<td>geçersiz</td>
+<td>geçersiz</td>
+</tr>
+<tr class="even">
+<td>Gönderildi</td>
+<td>geçersiz</td>
+<td>Onaylandı</td>
+<td>Taslak</td>
+</tr>
+<tr class="odd">
+<td>Onaylandı</td>
+<td>geçersiz</td>
+<td>geçersiz</td>
+<td>geçersiz</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>3 geçerli, 6 geçersiz çift var.</p>
+<p>(b) Tüm durumlar kapsamı: tek bir test senaryosu, Taslak, gönder, Gönderildi, onayla, Onaylandı, üç durumun hepsini çalıştırır. Geçerli geçişler kapsamı: reddet de kapsanmalıdır; Onaylandı’dan çıkış olmadığı için reddet, onayla’dan önce gelmelidir. Tek bir test senaryosu yeter: Taslak, gönder, Gönderildi, reddet, Taslak, gönder, Gönderildi, onayla, Onaylandı. 3 geçerli geçişin hepsini çalıştırır.</p>
+<p>(c) Örnek: başlangıç durumu Onaylandı; olay reddet. Beklenen sonuç: olay kabul edilmez ve belge Onaylandı’da kalır. (Diğer beş geçersiz hücreden herhangi biri de işe yarar. Bir hata diğerini gizleyemesin diye her test senaryosunda bir geçersiz deneme tutun.)</p>
+<p><em>4.E.</em> Örnek: Given toplamı 10 TL olan bir sipariş ve süresi dolmamış, siparişteki tek kupon olan 25 TL değerinde bir kupon, When müşteri ödeme sırasında kuponu uygular, Then uygulanan indirim 10 TL olur ve sipariş toplamı 0 TL olur. (Given, kriter (1) ve (2)’yi dışarıda bırakır; böylece test yalnızca kriter (3)’ü kontrol eder.)</p>
+</section>
+</section>
+
+<div class="pager"><a href="chapter-3.html"><span class="lbl">Önceki</span>Bölüm 3 — Statik Testler</a><a href="chapter-5.html" style="text-align:right"><span class="lbl">Sonraki</span>Bölüm 5 — Test Aktivitelerini Yönetme</a></div>
+<footer class="site">© 2026 Kadir Çamoğlu · Kendi içeriğimiz CC BY-NC 4.0 lisanslıdır · ISTQB® ve CTFL®, International Software Testing Qualifications Board'un tescilli markalarıdır; bu rehber ISTQB® ya da Turkish Testing Board ile bağlantılı değildir, onlar tarafından onaylanmamıştır.</footer>
+</main>
+</div>
+<script>if (window.matchMedia('(min-width: 901px)').matches) document.getElementById('navd').open = true;</script>
+<script>(function(){function od(){var h=decodeURIComponent(location.hash.slice(1));if(!h)return;var e=document.getElementById(h);while(e){if(e.tagName==='DETAILS')e.open=true;e=e.parentElement;}}addEventListener('hashchange',od);od();})();</script>
+</body>
+</html>

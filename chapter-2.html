@@ -1,0 +1,979 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bölüm 2 — Yazılım Geliştirme Yaşam Döngüsü Boyunca Test · ISTQB® CTFL® v4.0 Sınav Rehberi</title>
+<meta name="description" content="ISTQB® Sertifikalı Test Uzmanı Temel Seviye (CTFL®) v4.0 sınavı için ücretsiz, bağımsız Türkçe çalışma rehberi: 64 öğrenme hedefinin tamamı, çözümlü örnekler, kısa sorular ve iki dilli tam bir deneme sınavı.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="draft-banner" role="note"><strong>Herkese açık taslak — inceleniyor.</strong> Geri bildirim: <a href="mailto:kadir.camoglu@gmail.com">kadir.camoglu@gmail.com</a></div>
+<header class="topbar"><div class="inner"><a href="index.html">ISTQB® CTFL® v4.0 Sınav Rehberi</a><span class="meta"><span class="ind">Bağımsız · Gayriresmî çalışma rehberi · Herkese açık taslak · 2026-10 · </span><a href="all.html">Tam metin tek sayfada</a></span></div></header>
+<div class="layout">
+<nav class="side"><details id="navd"><summary>İçindekiler</summary><div class="navbody">
+<div class="group">Ön bölüm</div><ul>
+<li><a href="index.html">ISTQB® CTFL® v4.0 Sınav Rehberi: Sıfırdan Sınava Hazır Seviyeye</a>
+</li>
+<li><a href="copyright.html">Telif Hakkı ve Marka Bildirimi</a>
+</li>
+<li><a href="introduction.html">Giriş — Bu Kitap Hakkında</a>
+</li>
+<li><a href="how-to-use.html">Bu Kitap Nasıl Kullanılır</a>
+</li>
+<li><a href="the-exam.html">CTFL® Sınavı Nasıl İşler</a>
+</li>
+<li><a href="objective-map.html">Hedef Haritası</a>
+</li>
+<li><a href="study-roadmap.html">Çalışma Yol Haritası</a>
+</li>
+</ul>
+<div class="group">Bölümler</div><ul>
+<li><a href="chapter-1.html">Bölüm 1 — Yazılım Testinin Temelleri</a>
+</li>
+<li class="current"><a href="chapter-2.html">Bölüm 2 — Yazılım Geliştirme Yaşam Döngüsü Boyunca Test</a>
+<ul class="sub"><li><a href="#testing-in-the-context-of-a-software-development-lifecycle">2.1 Yazılım Geliştirme Yaşam Döngüsü Bağlamında Test</a></li><li><a href="#test-levels-and-test-types">2.2 Test Seviyeleri ve Test Çeşitleri</a></li><li><a href="#maintenance-testing-fl-2.3.1-k2">2.3 Bakım Testleri (FL-2.3.1 — K2)</a></li><li><a href="#chapter-2-summary">Bölüm 2 özeti</a></li><li><a href="#cumulative-retrieval">Birikimli hatırlama</a></li><li><a href="#chapter-exercises-1">Bölüm alıştırmaları</a></li></ul>
+</li>
+<li><a href="chapter-3.html">Bölüm 3 — Statik Testler</a>
+</li>
+<li><a href="chapter-4.html">Bölüm 4 — Test Analizi ve Tasarımı</a>
+</li>
+<li><a href="chapter-5.html">Bölüm 5 — Test Aktivitelerini Yönetme</a>
+</li>
+<li><a href="chapter-6.html">Bölüm 6 — Test Araçları</a>
+</li>
+</ul>
+<div class="group">Arka bölüm</div><ul>
+<li><a href="rationale.html">Cevaplar ve Gerekçeler</a>
+</li>
+<li><a href="glossary.html">Sözlük</a>
+</li>
+<li><a href="confused-pairs.html">Sık Karıştırılan Kavramlar — Ana Liste</a>
+</li>
+<li><a href="final-revision.html">Son Tekrar Planı</a>
+</li>
+<li><a href="mock-exam-1.html">Deneme Sınavı 1 — 40 Soru, Gerekçeleriyle</a>
+</li>
+<li><a href="further-resources.html">İleri Kaynaklar</a>
+</li>
+</ul>
+</div></details></nav>
+<main>
+<section id="chapter-2-testing-throughout-the-software-development-lifecycle" class="level1">
+<h1>Bölüm 2 — Yazılım Geliştirme Yaşam Döngüsü Boyunca Test</h1>
+<p><strong>Öğrenme hedefleri:</strong> 10 · K1 2 / K2 8 / K3 0 · <strong>Bu bölümden sınav sorusu:</strong> 6</p>
+<p><strong>Anahtar kelimeler:</strong> kabul testi (acceptance testing), kara kutu testi (black-box testing), bileşen entegrasyon testi (component integration testing), bileşen testi (component testing), onaylama testi (confirmation testing), fonksiyonel test (functional testing), entegrasyon testi (integration testing), bakım testi (maintenance testing), fonksiyonel olmayan test (non-functional testing), regresyon testi (regression testing), sola alma (shift left; TTB ders programında: shift-left), sistem entegrasyon testi (system integration testing), sistem testi (system testing), test seviyesi (test level), test nesnesi (test object), test çeşidi (test type), beyaz kutu testi (white-box testing)</p>
+<p>Bu bölüm testi yazılım geliştirmenin merkezine yerleştirir. Buradan gelen altı sınav sorusu genellikle temiz sınıflandırmalara dayanır: bu senaryo hangi test seviyesine ait, hangi test çeşidi uygulanıyor, bu onaylama testi mi regresyon testi mi, hangi bakım tetikleyicisi devrede? Bu bölümdeki ayrımlar netleştiğinde bu soruların çoğu kısa sınıflandırma alıştırmalarına dönüşür.</p>
+<section id="testing-in-the-context-of-a-software-development-lifecycle" class="level2">
+<h2>2.1 Yazılım Geliştirme Yaşam Döngüsü Bağlamında Test</h2>
+<section id="fl-2-1-1" class="level3">
+<h3>Yaşam döngüsü test sürecini nasıl biçimlendirir (FL-2.1.1 — K2)</h3>
+<p>Bir <strong>yazılım geliştirme yaşam döngüsü (YGYD; software development lifecycle, SDLC)</strong> modeli, bir projedeki geliştirme aktivitelerinin birbiriyle nasıl ilişkilendiğini ve her birinin nerede durduğunu tanımlar. Model projenin yol haritasıdır: gereksinimlerin ne zaman netleşeceğini, kodun ne zaman yazılacağını ve testin hangi aşamada devreye gireceğini belirler.</p>
+<p>İki geniş model ailesi vardır. <strong>Sıralı yazılım geliştirme modelleri (sequential development model)</strong>, örneğin <strong>şelale modeli (waterfall model)</strong> ve <strong>V modeli (V model)</strong>, geliştirmeyi birbirini izleyen doğrusal aşamalara böler. <strong>Döngüsel geliştirme modelleri (iterative development model)</strong> (örneğin <strong>spiral model</strong> ve <strong>prototipleme (prototyping)</strong>) ile <strong>artımlı geliştirme modelleri (incremental development model)</strong> (örneğin <strong>Birleşik Süreç (Unified Process)</strong>) ürünü tekrar eden döngülerle ve art arda gelen artımlarla teslim eder; bu işi düzenlemek için <strong>Scrum</strong> gibi çevik (Agile) uygulamalar yaygın olarak kullanılır. Seçilen model test sürecinin zamanlamasını, kapsamını ve işleyişini doğrudan değiştirir. Ders programı, bu seçimin etkilediği beş alanı adlandırır: test aktivitelerinin kapsamı ve zamanlaması, test belgelerinin ne kadar ayrıntılı olacağı, hangi test tekniklerinin ve hangi test yaklaşımının seçileceği, test otomasyonunun ne ölçüde kullanılacağı ve test uzmanının rolü ve sorumlulukları.</p>
+<p>Sıralı modellerde dinamik test görece geç başlar, çünkü önce çalıştırılabilir bir yapının (build) var olması gerekir; ama statik test ve gözden geçirmeler çok daha erken başlayabilir. Dokümantasyon daha resmî ve ayrıntılıdır. Regresyon yükü, sona yakın entegrasyon aşamalarına doğru giderek büyür. Test otomasyonu faydalıdır ama kesin bir bağımlılık değildir; test uzmanları çoğu zaman geliştirme işi devrettikten sonra ayrı test aşamalarında çalışır. Döngüsel ve çevik yaklaşımlarda ise dinamik test çok erken başlar ve her döngüde tekrarlanarak sürekli yürür. Dokümantasyon daha hafiftir ve yalnızca gerektikçe üretilir. Regresyon yükü her döngüyle keskin biçimde artar, çünkü her yeni artım çalışan eski sistemin üzerine eklenir; bu da otomasyonu isteğe bağlı olmaktan çıkarıp kritik hale getirir, zira kısa döngüler regresyonu elle koşmaya yer bırakmaz. Manuel testlerin çoğu, önceden az test analizi ve tasarımı gerektiren tecrübeye dayalı test tekniklerini kullanma eğilimindedir. Test uzmanı, sürecin sürekli bir parçası olarak geliştirme ekibinin içine yerleşmiştir.</p>
+<p><strong>Tablo 2.1 — Sıralı modeller ile döngüsel ve artımlı modeller: teste etkisi</strong></p>
+<div class="table-wrap">
+<table>
+<colgroup>
+<col style="width: 16%" />
+<col style="width: 41%" />
+<col style="width: 41%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Boyut</th>
+<th>Sıralı (şelale, V modeli)</th>
+<th>Döngüsel ve artımlı (ör. spiral, Birleşik Süreç)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Dinamik test</td>
+<td>Görece geç, çalıştırılabilir kod ortaya çıkınca başlar; statik test erken başlayabilir</td>
+<td>Erken başlar ve her döngüde tekrarlanır</td>
+</tr>
+<tr class="even">
+<td>Test dokümantasyonu</td>
+<td>Daha resmî ve ayrıntılı</td>
+<td>Daha hafif, gerektikçe üretilir</td>
+</tr>
+<tr class="odd">
+<td>Test teknikleri ve yaklaşımı</td>
+<td>Test uzmanları test analizini ve tasarımını erken aşamalarda, koşumdan çok önce yapar</td>
+<td>Manuel testlerin çoğu, önceden az test analizi ve tasarımı gerektiren tecrübeye dayalı teknikleri kullanma eğilimindedir</td>
+</tr>
+<tr class="even">
+<td>Regresyon yükü</td>
+<td>Sonraki entegrasyon aşamalarına doğru birikir</td>
+<td>Her yeni artımla büyür</td>
+</tr>
+<tr class="odd">
+<td>Test otomasyonu</td>
+<td>Faydalı, ama kesin bir bağımlılık değil</td>
+<td>Kritik, çünkü kısa döngüler manuel regresyona zaman bırakmaz</td>
+</tr>
+<tr class="even">
+<td>Test uzmanının rolü</td>
+<td>Çoğu zaman geliştirme işi devrettikten sonra ayrı test aşamalarında çalışır</td>
+<td>Baştan sona ekibin içindedir</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>En bilinen sıralı örnek olan V modeli, sol kolundaki her geliştirme aşamasını sağ kolundaki bir test seviyesiyle doğrudan eşler. Döngüsel ve artımlı yaklaşımlar farklı çalışır: her döngü çalışan bir artım teslim ettiği için, o döngü içinde her test seviyesinde hem statik hem dinamik test yapılabilir. Çevik ekiplerde bir döngü çoğu zaman birkaç haftalık bir sprinttir. Şekil 2.1 iki biçimi de gösteriyor: V’nin eşlenmiş kollarını ve döngüsel bir ekibin bir artımı planlayıp geliştirdiği, test ettiği, teslim ettiği ve sonra yeniden başladığı kısa döngüyü.</p>
+<figure>
+<img src="figures/fig_2_1_vmodel_vs_iterative.png" alt="Şekil 2.1 — Sıralı ve döngüsel modellerin karşılaştırması. V modelinde (üstte) sol koldaki her geliştirme aşaması sağ koldaki bir test seviyesiyle eşlenir: gereksinimler kabul testiyle, sistem tasarımı sistem testiyle, mimari tasarım entegrasyon testiyle, ayrıntılı (bileşen) tasarım bileşen testiyle; kodlama V’nin dibindedir. Döngüsel ve artımlı modelde (altta) planla, geliştir, test et, artım döngüsü tekrarlanır ve her döngü kendi test aktivitelerinin tamamını içerir." /><figcaption>Şekil 2.1 — Sıralı ve döngüsel modellerin karşılaştırması.</figcaption>
+</figure>
+<p><em>Uygulamada.</em> Yılda bir sürüm çıkaran geleneksel bir şelale projesinden iki haftalık sprintlerle çalışan çevik bir ekibe geçen bir ekip düşünün. Üçüncü ayda ekip, eski testlerin hepsini elle koşmanın bütün bir sprinti yediğini fark eder. Bu bir süreç hatası değildir; döngüsel modelin doğasıdır. Regresyon riski her artımla birikir; çevik ekiplerin ilk sprintlerden itibaren test otomasyonuna yatırım yapmak zorunda olmasının nedeni budur.</p>
+<p><em>Sınav odağı.</em> Bir soru size bir yaşam döngüsü modeli verip teste doğrudan etkisini sorabilir. Strateji, iki aileyi karşılaştırmaktır: sıralı modellerde dinamik test geç başlar (koda bağlıdır) ve dokümantasyon ağırdır; çevik yaklaşımlarda test sürekli tekrarlanır ve otomasyona dayanır. Cazip bir yanlış şık, sıralı modellerde statik testin de kod yazılana kadar beklemesi gerektiğini iddia eder. Belge gözden geçirmeleri (statik test), yazılım modeli ne olursa olsun taslaklar ortaya çıkar çıkmaz, en erken aşamada başlayabilir.</p>
+<p><strong>Hemen Pekiştir</strong></p>
+<p><em>HP 2.1.1-a.</em> Sıralı bir modelde (örneğin V modelinde) dinamik test aktiviteleri tipik olarak ne zaman başlar?</p>
+<div class="mc">
+<ul>
+<li>(a) İş gereksinimleri yazılmaya başlar başlamaz</li>
+<li>(b) Görece geç, çalıştırılabilir bir yapı ortaya çıkınca</li>
+<li>(c) Yalnızca kullanıcı kabul aşamasına gelindiğinde</li>
+<li>(d) Hiçbir zaman; sıralı modeller dinamik test içermez</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (b). Dinamik test sistemin çalıştırılmasını gerektirir, bu yüzden sıralı bir modelde görece geç başlar. Belgelerin statik testi çok daha erken başlayabilir.</p>
+</div></details>
+<p><em>HP 2.1.1-b.</em> Döngüsel ve çevik yaklaşımlarda regresyon yükü neden her yeni döngüyle büyür?</p>
+<div class="mc">
+<ul>
+<li>(a) Her yeni artım, çalışmaya devam etmesi gereken mevcut davranışın üzerine eklenir</li>
+<li>(b) Dokümantasyon hacmi her döngüde katlanır</li>
+<li>(c) Test seviyeleri ve ortamları her sprintte tamamen değişir</li>
+<li>(d) Otomasyon regresyon testini tamamen gereksiz kılar</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (a). Her sprint eskilerin üzerine yeni özellikler ekler; bu yüzden eski davranışın hâlâ çalıştığını kontrol etme ihtiyacı sürekli büyür.</p>
+</div></details>
+<p><em>HP 2.1.1-c.</em> Çevik bir ekip her iki haftada bir çalışan bir artım teslim ediyor ve gereksinimlerin proje boyunca değişmesini bekliyor. Ekibin manuel testleriyle ilgili hangi ifadenin doğru olması en olasıdır?</p>
+<div class="mc">
+<ul>
+<li>(a) Her özellik için ayrıntılı test prosedürleri, tek satır kod yazılmadan aylar önce yazılır</li>
+<li>(b) Manuel test, projenin sonundaki tek bir sistem testi aşamasına ertelenir</li>
+<li>(c) Manuel test durur, çünkü artık her test teslimat hattında otomatikleştirilmiştir</li>
+<li>(d) Manuel testlerin çoğu, önceden az test analizi ve tasarımı gerektiren tecrübeye dayalı teknikleri kullanır</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (d). Ders programı, çevik projelerin hafif dokümantasyonu ve kapsamlı regresyon otomasyonunu tercih ettiğini, manuel testlerin çoğunun da tecrübeye dayalı teknikleri (Bölüm 4) kullanma eğiliminde olduğunu belirtir. (a) şıkkı önden yapılan ağır tasarımı, (b) şıkkı sıralı bir kalıbı anlatır; (c) şıkkı ise manuel teste hâlâ ihtiyaç olduğunu göz ardı eder.</p>
+</div></details>
+</section>
+<section id="fl-2-1-2" class="level3">
+<h3>Her yaşam döngüsü için iyi test etme uygulamaları (FL-2.1.2 — K1)</h3>
+<p>Hangi geliştirme modeli seçilirse seçilsin, kaliteyi korumak için dört evrensel iyi uygulamanın yerinde olması gerekir. Her yazılım geliştirme aktivitesinin karşılık gelen bir test aktivitesi vardır; böylece hiçbir geliştirme adımı kalite kontrolün dışında kalmaz. Her test seviyesinin kendine özgü ve ayrı test hedefleri vardır; bu ayrım, sürecin işi tekrarlamasını önler ve kapsamı verimli tutar. Belirli bir test seviyesinin test analizi ve tasarımı, karşılık gelen geliştirme aşaması sırasında başlar; bu da “erken test” prensibini doğrudan uygulamaya geçirir. Test uzmanları da iş ürünlerinin gözden geçirilmesine taslak belgeler ortaya çıkar çıkmaz katılır; bu, hataları kodlama başlamadan yakalar ve <strong>sola alma (shift left)</strong> yaklaşımını destekler. Bu yaklaşımın TTB ders programındaki adı İngilizce kalır: “shift-left”. Neden “sol” ve neden “alma” olduğu aşağıda, FL-2.1.5’te açıklanıyor.</p>
+<p><em>Sınav odağı.</em> Bu hedef doğrudan bir liste hatırlama sorusudur. Göreviniz şıklar arasında bu dört evrensel kuralı tanımaktır. Yanlış şıklar mantıklı görünebilir ama evrensel kurallardan biri değildir (örneğin “her projede test senaryolarının yüzde 100’ünü otomatikleştirin”). Her şıkkı resmî dörtlüyle karşılaştırın.</p>
+<p><strong>Hemen Pekiştir</strong></p>
+<p><em>HP 2.1.2-a.</em> Aşağıdakilerden hangisi, seçilen modelden bağımsız olarak geçerli olan dört evrensel iyi test etme uygulamasından biridir?</p>
+<div class="mc">
+<ul>
+<li>(a) Projedeki her test senaryosunu istisnasız otomatikleştirmek</li>
+<li>(b) Her geliştirme aktivitesinin karşısına ona karşılık gelen, ayrı bir test aktivitesi koymak</li>
+<li>(c) Zaman kazanmak için test sürecini yalnızca kullanıcı kabul aşamasında yürütmek</li>
+<li>(d) İşleri hızlandırmak için test dokümantasyonunu tamamen kaldırmak</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (b). Her geliştirme aktivitesi için karşılık gelen bir test aktivitesi, dört iyi uygulamanın ilkidir.</p>
+</div></details>
+<p><em>HP 2.1.2-b.</em> İyi bir uygulama olarak, belirli bir test seviyesinin test analizi ve tasarımı ne zaman başlamalıdır?</p>
+<div class="mc">
+<ul>
+<li>(a) Karşılık gelen geliştirme aşaması başlar başlamaz</li>
+<li>(b) Ancak projedeki bütün kodlama yüzde 100 tamamlandıktan sonra</li>
+<li>(c) Sürüm kararından önceki son birkaç günde</li>
+<li>(d) Ancak üretimde kritik bir arıza raporlandığında</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (a). Analizi ve tasarımı karşılık gelen geliştirme aşamasıyla birlikte başlatmak, hataları erken yakalamanın etkili bir yoludur.</p>
+</div></details>
+<p><em>HP 2.1.2-c.</em> Test yöneticisi Deniz, hangi yaşam döngüsünü izlerse izlesin her projede geçerli olması gereken test etme uygulamalarından oluşan bir kontrol listesi taslağı hazırlıyor. Hangi madde bu kontrol listesine AİT DEĞİLDİR?</p>
+<div class="mc">
+<ul>
+<li>(a) Test uzmanları, kullanıcı hikayeleri ve spesifikasyonlar henüz taslakken onların gözden geçirmelerine katılır</li>
+<li>(b) Bileşen testine ve sistem testine birbirini tekrarlamayan amaçlar verilir</li>
+<li>(c) Kuruluştaki her projeye, bağlamı ne olursa olsun aynı sabit test süreci dayatılır</li>
+<li>(d) Mimari tasarım gibi her geliştirme aktivitesi bir test aktivitesiyle eşleştirilir</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (c). Dört iyi uygulama şunlardır: her geliştirme aktivitesi için karşılık gelen bir test aktivitesi, her test seviyesi için ayrı hedefler, erken test analizi ve tasarımı, test uzmanlarının gözden geçirmelere erken katılımı. Tek bir sabit süreci her yere dayatmak listede yoktur ve yazılım testinin bağlama göre değişiklik gösterdiği prensibiyle çelişir.</p>
+</div></details>
+</section>
+<section id="fl-2-1-3" class="level3">
+<h3>Önce test yaklaşımları: TDD, ATDD ve BDD (FL-2.1.3 — K1)</h3>
+<p>Üç önce-test yaklaşımı, test senaryolarını geliştirmeyi yönlendiren ve kaliteyi en baştan güvenceye alan bir kılavuz olarak kullanır. Ortak felsefeleri şudur: önce test tanımlanır, kod yalnızca o testi geçirmek için yazılır.</p>
+<p><strong>Test güdümlü yazılım geliştirme (test-driven development, TDD)</strong>, geliştiricinin bileşen ya da kod seviyesinde yazdığı teknik test senaryolarıyla yönlendirilir. İş akışı şöyledir: önce başarısız olan bir birim testi yazılır, onu geçiren en basit kod yazılır, testler ve kod yeniden düzenlenir (refactoring) ve döngü tekrarlanır. <strong>Kabul testi güdümlü yazılım geliştirme (acceptance test-driven development, ATDD)</strong>, kabul ya da hikaye seviyesinde, kullanıcı hikayelerinin resmî <strong>kabul kriterleriyle (acceptance criteria)</strong> yönlendirilir. Test senaryoları kodlama başlamadan önce doğrudan kabul kriterlerinden türetilir ve geliştirme onları karşılayacak biçimde şekillenir. <strong>Davranış güdümlü yazılım geliştirme (behavior-driven development, BDD)</strong>, kabul ya da hikaye seviyesinde, sistemin göstermesi gereken ve doğal dille ifade edilen davranışlarla yönlendirilir. Senaryoları genellikle <strong>Given/When/Then</strong> biçimini kullanır; analistler, geliştiriciler, test uzmanları ve iş temsilcileri bu biçimi birlikte okuyup üzerinde uzlaşabilir. Senaryolar daha sonra otomatik olarak çalıştırılabilir testlere dönüştürülmelidir. Üç yaklaşımın hepsinde, gerçekleştirmeden önce oluşturulan testler özellik tamamlandıktan sonra otomatik test grubunda kalabilir; orada sonraki regresyon testlerini destekler ve beklenen davranışı belgeler. Üçü de erken test etme prensibini uygular, sola almayı izler ve döngüsel bir geliştirme modelini destekler.</p>
+<p><strong>Tablo 2.2 — Bir bakışta TDD, ATDD ve BDD</strong></p>
+<div class="table-wrap">
+<table>
+<colgroup>
+<col style="width: 8%" />
+<col style="width: 22%" />
+<col style="width: 22%" />
+<col style="width: 46%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Yaklaşım</th>
+<th>Neyle yönlendirilir</th>
+<th>Tipik seviye</th>
+<th>Soru kökünde nasıl tanınır</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>TDD</td>
+<td>Geliştiricinin yazdığı teknik test senaryoları</td>
+<td>Bileşen (kod)</td>
+<td>Önce başarısız bir birim testi yazılır, sonra onu geçirecek kadar kod, sonra yeniden düzenleme</td>
+</tr>
+<tr class="even">
+<td>ATDD</td>
+<td>Kullanıcı hikayelerinin kabul kriterleri</td>
+<td>Kabul (hikaye)</td>
+<td>Testler, özellik kodlanmadan önce kabul kriterlerinden türetilir</td>
+</tr>
+<tr class="odd">
+<td>BDD</td>
+<td>Doğal dille ifade edilen istenen davranış</td>
+<td>Genellikle hikaye (işe dönük) seviyesi</td>
+<td>Bütün paydaşların okuyup üzerinde uzlaşabileceği Given/When/Then senaryoları</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>BDD’nin kalbindeki Given/When/Then yapısı somut bir örnekle daha kolay kavranır. <em>Given</em> (diyelim ki) kullanıcı oturum açmış ve sepet sayfasına ulaşmıştır, <em>When</em> (eğer) sepetteki bir ürünün yanındaki “adedi artır” düğmesine basarsa, <em>Then</em> (o zaman) sepet toplamı ve ürün sayısı hemen güncellenmelidir. Biçim hep aynıdır: ön koşul (Given), eylem (When), beklenen sonuç (Then).</p>
+<p><em>Sınav odağı.</em> Size kısa bir iş akışı ya da bir geliştiricinin davranışı verilir ve hangi önce-test yaklaşımı olduğu sorulur. İpuçları açıktır: önce yazılan, başarısız olan geliştirici birim testleri TDD’ye; bir hikayenin kabul kriterlerinden türetilen test senaryoları ATDD’ye; “Given/When/Then” ya da “bütün paydaşların anlayabileceği doğal dil” ifadeleri ise doğrudan BDD’ye işaret eder.</p>
+<p><strong>Hemen Pekiştir</strong></p>
+<p><em>HP 2.1.3-a.</em> Bir geliştirici önce başarısız olan küçük bir birim testi kuruyor, sonra onu geçirecek en basit kodu yazıyor ve yapıyı iyileştiriyor. Bu hangi yöntemdir?</p>
+<div class="mc">
+<ul>
+<li>(a) Test güdümlü yazılım geliştirme (TDD)</li>
+<li>(b) Kabul testi güdümlü yazılım geliştirme (ATDD)</li>
+<li>(c) Davranış güdümlü yazılım geliştirme (BDD)</li>
+<li>(d) Keşif testi</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (a). Kod yazılmadan önce birim testleri üzerinden ilerleyen geliştirici seviyesindeki bir döngü, TDD’nin klasik tanımıdır.</p>
+</div></details>
+<p><em>HP 2.1.3-b.</em> Teknik olmayan paydaşların da üzerinde tam olarak uzlaşabileceği, “Given/When/Then” kalıbıyla yazılmış doğal dilli senaryolar hangi yaklaşımın ana özelliğidir?</p>
+<div class="mc">
+<ul>
+<li>(a) TDD</li>
+<li>(b) ATDD</li>
+<li>(c) BDD</li>
+<li>(d) Keşif testi</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (c). Davranışa dayalı senaryoları ortak bir dilde Given/When/Then yapısıyla ifade etmek, BDD’nin ayırt edici özelliğidir.</p>
+</div></details>
+<p><em>HP 2.1.3-c.</em> TDD ile ATDD arasındaki farkı en iyi hangi ifade anlatır?</p>
+<div class="mc">
+<ul>
+<li>(a) TDD testlerini kabul kriterlerinden, ATDD ise geliştiricinin birim testlerinden türetir</li>
+<li>(b) TDD yalnızca sürümden sonra, ATDD yalnızca kodlama başlamadan önce kullanılır</li>
+<li>(c) TDD’de testler kod geçince atılır, ATDD’de ise otomatik test olarak saklanır</li>
+<li>(d) TDD kodlamayı bileşen seviyesinde geliştiricinin yazdığı testlerle yönlendirir, ATDD ise testleri kullanıcı hikayelerinin kabul kriterlerinden türetir</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (d). TDD kod seviyesinde, geliştiricinin koddan önce yazdığı testlerle çalışır. ATDD kabul kriterlerinden yola çıkar; bu da onu işe dönük, hikaye seviyesinde bir yaklaşım yapar. (a) şıkkı ikisinin yerini değiştirir; iki yaklaşımda da testler otomatik test olarak kalabilir.</p>
+</div></details>
+</section>
+<section id="fl-2-1-4" class="level3">
+<h3>DevOps ve test süreci (FL-2.1.4 — K2)</h3>
+<p><strong>DevOps</strong> kültürü, yazılım geliştirmeyi (Dev) ve sistem operasyonlarını (Ops) ortak, sürekli bir teslimat hattı etrafında bir araya getirir. <strong>Sürekli entegrasyona (continuous integration, CI)</strong>, otomatik derlemelere, otomatik test koşumlarına ve <strong>sürekli teslimata (continuous delivery, CD)</strong> dayanır. DevOps test için faydalar getirir; zorluklar da getirir.</p>
+<p>Şekil 2.2 böyle bir hattı, her kod değişikliğinde çalışan ve ekibe hızlı geri bildirimle biten bir döngü olarak gösteriyor.</p>
+<figure>
+<img src="figures/fig_2_2_devops_pipeline.png" alt="Şekil 2.2 — Bir DevOps sürekli entegrasyon hattı. Her kod değişikliği bir otomatik derlemeyi, ardından statik kontrolleri ve otomatik testleri, sonra test ortamına dağıtımı ve otomatik regresyon koşumunu tetikler; sonuçlar ekibe hızlı geri bildirim olarak döner ve döngü her değişiklikte tekrarlanır." /><figcaption>Şekil 2.2 — Bir DevOps sürekli entegrasyon hattı.</figcaption>
+</figure>
+<p>Test açısından ders programı altı fayda sayar. Ekip, kod kalitesi hakkında ve bir değişikliğin mevcut kodu olumsuz etkileyip etkilemediği hakkında hızlı geri bildirim alır. CI sola almayı teşvik eder, çünkü geliştiricileri yüksek kaliteli kodu bileşen testleri ve statik analizle birlikte göndermeye yöneltir. Otomatik CI/CD süreçleri kararlı test ortamları kurmayı kolaylaştırır. Performans verimliliği ve güvenilirlik gibi fonksiyonel olmayan kalite karakteristikleri daha görünür hale gelir. Teslimat hattı boyunca otomasyon, tekrarlayan manuel test ihtiyacını azaltır. Son olarak, otomatik regresyon testlerinin ölçeği ve yelpazesi regresyon riskini en aza indirir. DevOps zorluklar da getirir: biri teslimat hattını tasarlayıp kurmalı, CI/CD araçlarını benimseyip güncel tutmalı ve test otomasyonunun gerektirdiği ek kaynakları bulmalıdır; bunları kurmak ve sürdürmek zor olabilir. Ders programı listesinde yer almayan bir tuzak daha vardır: otomasyonun insan eliyle test ihtiyacını ortadan kaldırdığı inancı.</p>
+<p>Test otomasyonu insan eliyle testi gereksiz kılmaz. Keşif testi, kullanılabilirlik testi ve kullanıcı kabul testi değerlerini ve kritik önemlerini korur, çünkü “bu arayüz mantıklı mı?” ya da “sistem akıcı hissettiriyor mu?” gibi soruları yalnızca bir insan yanıtlayabilir; otomatik kontroller bu soruları sormaz. Bir DevOps hattındaki otomasyon, test uzmanlarını rutin işlerden kurtarır ve onlara tam da bu derin teste odaklanmaları için değerli zaman kazandırır.</p>
+<p><em>Sınav odağı.</em> Bir soru, bir ifadeyi DevOps’un test için faydası ya da riski/maliyeti olarak sınıflandırmanızı isteyebilir. Hızlı otomatik geri bildirim ve kararlı ortamlar faydadır; hattı, CI/CD araçlarını ve test otomasyonunu kurmak ve sürdürmek zorluktur. DevOps’un manuel testi eskittiğini ya da otomasyon grubunun kaliteyi garanti ettiğini iddia eden şıklar yanlıştır; bu tür mutlak ifadeleri eleyin.</p>
+<p><strong>Hemen Pekiştir</strong></p>
+<p><em>HP 2.1.4-a.</em> Aşağıdakilerden hangisi, sürekli entegrasyon hattıyla bir DevOps kültürünü benimsemenin bir riski ya da maliyetidir?</p>
+<div class="mc">
+<ul>
+<li>(a) Her kod değişikliğinden sonra sistemden anında geri bildirim almak</li>
+<li>(b) Dağıtım hattını ve test otomasyonu mimarisini kurmak ve sürdürmek için gereken yüksek mühendislik eforu</li>
+<li>(c) Test ortamlarının çok daha kararlı, yalıtılmış ve yeniden üretilebilir hale gelmesi</li>
+<li>(d) Büyük regresyon otomasyon gruplarının insan eforu olmadan sürekli koşması</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (b). Otomasyon altyapısını ve CI/CD hattını kurmak, güncellemek ve sürdürmek gerçek bir operasyonel maliyet ve efordur. Diğerleri faydadır.</p>
+</div></details>
+<p><em>HP 2.1.4-b.</em> DevOps’u başarıyla uygulayan çevik bir ekipte test aktiviteleriyle ilgili hangi ifade doğrudur?</p>
+<div class="mc">
+<ul>
+<li>(a) Otomasyonun varlığı keşif, tasarım ve kullanılabilirlik testlerini tamamen gereksiz kılar</li>
+<li>(b) Otomasyon raporunda bütün testlerin yeşil görünmesi, üründe hiç hata kalmadığını garanti eder</li>
+<li>(c) İnsan analizi gerektiren keşif, kullanılabilirlik ve kabul testleri kritik değerlerini korur</li>
+<li>(d) Süreci hızlandırmak için bütün manuel test bakış açıları kaldırılmalıdır</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (c). Otomasyon güçlü bir hızlandırıcıdır ama sezgisel ve tecrübeye dayalı testin yerini hiçbir zaman tutmaz; iki yaklaşım birbirini tamamlar.</p>
+</div></details>
+<p><em>HP 2.1.4-c.</em> Bir ekip, her commit’i derleyip test eden bir CI hattı kurdu. Aşağıdakilerden hangisi test için gerçekçi bir faydadır?</p>
+<div class="mc">
+<ul>
+<li>(a) DevOps teslimat hattının tanımlanması ve kurulması gerekir</li>
+<li>(b) CI/CD araçlarının tanıtılması ve ardından bakımının yapılması gerekir</li>
+<li>(c) Geliştiriciler, bir değişikliğin mevcut kodu olumsuz etkileyip etkilemediği konusunda hızlı geri bildirim alır</li>
+<li>(d) Test otomasyonu ek kaynak gerektirir; kurulması ve sürdürülmesi zor olabilir</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (c). Kod kalitesi hakkında, bir değişikliğin mevcut kodu olumsuz etkileyip etkilemediği de dahil, hızlı geri bildirim almak ders programının DevOps için saydığı bir faydadır. (a), (b) ve (d) şıkları ders programının saydığı üç zorluktur; dolayısıyla fayda değil maliyettir.</p>
+</div></details>
+</section>
+<section id="fl-2-1-5" class="level3">
+<h3>Sola alma (FL-2.1.5 — K2)</h3>
+<p>Sola alma, testi YGYD içinde daha erken yapmak demektir; örneğin kod yazılmadan ya da bileşenler entegre edilmeden önce. Yaşam döngüsü genellikle soldan sağa doğru bir zaman çizelgesi olarak çizilir; aktiviteyi bu çizelgenin daha erken olan sol tarafına almak, yaklaşıma adını verir. Ders programı, Bölüm 1’deki erken test etme prensibinin bazen sola alma olarak adlandırıldığını belirtir.</p>
+<p>Sınav için sola almanın ne demek olmadığını net bilmek önemlidir. Projenin geç aşamalarında yapılan sistem ya da kabul testlerinin ihmal edilmesi ya da kaldırılması demek değildir. Geç aşama testleri aynı titizlikle yapılmaya devam eder; yalnızca kaliteye bir test uzmanının gözüyle ilk bakılan an artık projenin sonu değildir.</p>
+<p>Ders programı beş iyi uygulama verir: spesifikasyonları test uzmanının bakış açısıyla gözden geçirmek; test senaryolarını koddan önce yazmak ve gerçekleştirme sırasında kodu bir <strong>test kuluçkasında (test harness)</strong> çalıştırmak (TDD ve ATDD’de olduğu gibi); her gönderimle birlikte otomatik bileşen testleri ve hızlı geri bildirim gelsin diye CI’yi, daha da iyisi CD’yi kullanmak; kaynak kodun statik analizini dinamik testten önce ya da otomatik bir sürecin parçası olarak tamamlamak; ve mümkün olduğunda, performans verimliliği testi gibi fonksiyonel olmayan testleri bileşen testi seviyesinden itibaren yapmak. Şekil 2.3 bu uygulamaları yaşam döngüsü zaman çizelgesine yerleştiriyor ve sonraki test seviyelerinin hâlâ yerinde olduğunu gösteriyor.</p>
+<figure>
+<img src="figures/fig_2_3_shift_left_timeline.png" alt="Şekil 2.3 — Sola alma zaman çizelgesi. Daha erkenden daha geçe uzanan bir yaşam döngüsü çizelgesi: gereksinimler (şartnameleri test uzmanlarıyla gözden geçir), tasarım (testleri erken tasarla, ATDD), kod (TDD, statik analiz, CI/CD ve bileşen seviyesinde fonksiyonel olmayan testler), entegrasyon (entegrasyon testi) ve sonraki seviyeler (sistem ve kabul testi, yine gerekli)." /><figcaption>Şekil 2.3 — Sola alma zaman çizelgesi.</figcaption>
+</figure>
+<p>Sola alma, sürecin başında ek eğitim, efor ya da maliyet gerektirebilir; ama sonrasında efor ve maliyet tasarrufu sağlaması beklenir. İşe yaraması için paydaşların bu kavrama ikna olması ve onu sahiplenmesi gerekir.</p>
+<p><em>Sınav odağı.</em> Senaryo soruları bir ekibin davranışını anlatıp bunun sola almaya örnek olup olmadığını sorabilir. Temel test basittir: aktivite kaliteyi olağan kronolojik akıştan daha erken bir aşamada inceliyorsa (analist kuralı yazarken onu sorgulayan bir test uzmanı, dinamik testten önce koşulan statik analiz) bu sola almadır. Dikkat edilecek tuzak, sola alma uygulanan projelerde geç aşamadaki sistem ya da kabul testlerinin gereksiz diye iptal edildiğini söyleyen şıktır. Sola alma testleri kaldırmaz; sürece erken aşama test aktiviteleri ekler.</p>
+<p><strong>Hemen Pekiştir</strong></p>
+<p><em>HP 2.1.5-a.</em> Aşağıdaki proje uygulamalarından hangisi sola almanın doğrudan bir örneğidir?</p>
+<div class="mc">
+<ul>
+<li>(a) Geliştiricilerin gönderdiği her kod paketinde otomatik olarak tetiklenen statik analiz araçları</li>
+<li>(b) Zaman kısıtları nedeniyle bütün test aktivitelerini yalnızca yazılım canlıya alındıktan sonra yürütmek</li>
+<li>(c) Belge gözden geçirme toplantılarını en sondaki test tamamlama aşamasına ertelemek</li>
+<li>(d) Test uzmanlarını ancak kullanıcı kabul testi aşamasına gelindiğinde sürece dahil etmek</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (a). Her commit’te erkenden devreye giren statik analiz, kaliteyi henüz kodlama aşamasındayken inceler; açık bir sola alma örneğidir.</p>
+</div></details>
+<p><em>HP 2.1.5-b.</em> Sola almanın bir projeye getirdiği en açık ve en dürüst ödünleşim nedir?</p>
+<div class="mc">
+<ul>
+<li>(a) Ek efor ya da planlama gerektirmeyen, tamamen bedava bir kalite artışı</li>
+<li>(b) Proje sonundaki sistem testlerini tamamen kaldırmak ve toplam proje süresini yarıya indirmek</li>
+<li>(c) Yalnızca yüzde 100 test otomasyonuna sahip projelere uygulanabilen bir lüks</li>
+<li>(d) Başta ek efor, eğitim ya da maliyet; bunun sonrasında efor ve maliyet tasarrufu sağlaması beklenir</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (d). Ders programı, sola almanın sürecin başında ek eğitim, efor ya da maliyet gerektirebileceğini, ama sonrasında efor ve maliyet tasarrufu sağlamasının beklendiğini belirtir. (a) şıkkı bu erken maliyeti göz ardı eder, (b) şıkkı sonraki testleri yanlış biçimde kaldırır, (c) şıkkı ise bir ön koşul uydurur.</p>
+</div></details>
+<p><em>HP 2.1.5-c.</em> Çevik bir ekip sola almayı benimsemeye karar veriyor. Ekibin testiyle ilgili hangi ifade doğrudur?</p>
+<div class="mc">
+<ul>
+<li>(a) Hatalar artık daha erken bulunduğu için sistem testi ve kabul testi bırakılır</li>
+<li>(b) Sola alma esas olarak test dokümantasyonunun miktarını azaltmanın bir yoludur</li>
+<li>(c) Yaşam döngüsünün başına test aktiviteleri eklenir; sistem ve kabul testi gibi sonraki test seviyeleri de yine yapılır</li>
+<li>(d) Sola alma, erken test etme prensibiyle çelişir</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (c). Sola alma testi öne çeker; örneğin spesifikasyonların gözden geçirilmesi ve koddan önce yazılan testlerle. Ama yaşam döngüsünün sonraki aşamalarındaki testin ihmal edilmesi anlamına gelmez. (d) şıkkı ilişkiyi tersine çevirir, çünkü ders programı erken test etme prensibinin bazen sola alma olarak adlandırıldığını belirtir.</p>
+</div></details>
+</section>
+<section id="fl-2-1-6" class="level3">
+<h3>Geçmişe dönük öğeler ve süreç iyileştirme (FL-2.1.6 — K2)</h3>
+<p><strong>Geçmişe dönük öğeler (retrospective)</strong> genellikle bir döngünün ya da projenin sonunda, bir sürüm kilometre taşında ya da gerektiğinde ele alınır; zamanlaması ve düzenlenişi YGYD modeline bağlıdır. Yalnızca test uzmanları değil, örneğin geliştiriciler, mimarlar, ürün sahibi ve iş analistleri de olan katılımcılar bu toplantıda üç soruyu tartışır: hangi uygulamalar işe yaradı ve korunmalı, hangileri yaramadı ve daha iyi olabilir, iyileştirmeler nasıl hayata geçirilir ve başarılar nasıl sürdürülür. Sonuçlar kayda geçirilmelidir ve normalde test tamamlama raporunun (Bölüm 5) bir parçasıdır. Değeri, bir şikâyet listesi üretmekten daha geniştir. Geçmişe dönük öğeler test etkinliğini ve verimliliğini artırır, test çalışma ürünlerinin kalitesini güçlendirir, ekip içi öğrenmeyi ve iş birliğini destekler; ekiplerin test esasını ve geliştirme ve test etme uygulamalarını iyileştirmesine yardım eder.</p>
+<p>Test mühendisliği için geçmişe dönük öğeler <strong>sürekli iyileştirmenin (continuous improvement)</strong> ve kalitenin ana motorudur, çünkü orada dile getirilen soyut şikâyetler bir sonraki sprintte somut test iyileştirme aksiyonlarına dönüşür. Hata raporlarında geliştiricilerin ihtiyaç duyduğu ekran görüntüsü ya da kayıt gibi ayrıntılar sürekli eksik kalıyorsa, ekip bir hata raporlama kontrol listesi benimser. Manuel regresyon testi çok uzun sürüp sprint teslimlerini geciktiriyorsa, test senaryoları risk analizinden geçirilir; en kritik olanları önceliklendirilip hızla otomasyona taşınır. Gereksinim belgeleri test sırasında kural çatışmalarına yol açan belirsizliklerle doluysa, test uzmanları iş listesi olgunlaştırma toplantılarına en baştan katılmaya başlar (sola alma uygulamaya geçer). Testleri koşmak için gereken test verisini hazırlamak her sprintte ilerlemeyi tıkıyorsa, merkezî, hazır, sürümlenmiş ve yeniden kullanılabilir test verisi havuzları oluşturulur.</p>
+<p><em>Sınav odağı.</em> Bir soru geçmişe dönük öğelerin ana amacını sorabilir ya da toplantıda dile getirilen bir sorunu en mantıklı test iyileştirme aksiyonuyla eşleştirmenizi isteyebilir. Geçmişe dönük öğelerin özü, süreçten çıkarılan dersleri somut, ölçülebilir bir değişikliğe dönüştürmektir. Bu toplantıyı suçlu bulma, insanları yargılama ya da geç bulunan hatalar için bireysel performans puanlama toplantısı olarak sunan şıklara dikkat edin. Amaç insanları değil süreci iyileştirmektir.</p>
+<p><strong>Hemen Pekiştir</strong></p>
+<p><em>HP 2.1.6-a.</em> Çevik bir ekipte yapılan geçmişe dönük öğeler toplantısının ana ve birincil amacı nedir?</p>
+<div class="mc">
+<ul>
+<li>(a) Geç bulunan kritik hatalardan sorumlu kişileri ve geliştiricileri belirlemek</li>
+<li>(b) Ekibi ve çalışma biçimini sürekli iyileştirmek için neyin iyi gittiğini ve neyin gitmediğini analiz etmek</li>
+<li>(c) Ekip üyelerinin bireysel performansını puanlayıp insan kaynaklarına raporlamak</li>
+<li>(d) Müşteriden gelen yeni iş gereksinimlerinin teknik kod mimarisini resmî olarak onaylamak</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (b). Geçmişe dönük öğeler toplantısı ekibi suçlamanın ya da performans ölçmenin yeri değildir; ekibin sürecini incelediği ve daha etkili çalışmanın yollarını aradığı bir iyileştirme aracıdır.</p>
+</div></details>
+<p><em>HP 2.1.6-b.</em> Bir geçmişe dönük öğeler toplantısında ortak şikâyet şu: “Regresyon testlerimizi elle koşmak çok uzun sürüyor ve sürümleri tıkıyor.” Bu bulgu için en uygun somut test iyileştirmesi nedir?</p>
+<div class="mc">
+<ul>
+<li>(a) Mevcut test senaryolarını risk seviyesine göre süzüp önceliklendirmek ve kritik olanları hızla otomatikleştirmek</li>
+<li>(b) Konuyu sonraki projelerde yeniden tartışmak üzere süresiz olarak gündemden çıkarmak</li>
+<li>(c) Test ekibine, her sprintte bütün regresyon grubunu elle koşması için fazla mesai yaptırmak</li>
+<li>(d) Takvim gecikmelerinin bütün suçunu doğrudan test uzmanlarına yüklemek</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (a). Süreçteki bir darboğaz (uzun süren testler), riske dayalı önceliklendirme ve otomasyon gibi somut, mantıklı bir süreç değişikliğiyle çözülmelidir.</p>
+</div></details>
+<p><em>HP 2.1.6-c.</em> Hangi sonuç, bir geçmişe dönük öğeler toplantısının gerçek bir süreç iyileştirmesine yol açtığını en açık biçimde gösterir?</p>
+<div class="mc">
+<ul>
+<li>(a) Toplantının ayrıntılı tutanağı imzalanıp proje arşivinde saklanır</li>
+<li>(b) Ekip, geç bulunan hatalardan hangi kişinin sorumlu olduğu konusunda uzlaşır</li>
+<li>(c) Gelecekteki bütün projeler için tek bir sabit test süreci ilan edilir</li>
+<li>(d) Üzerinde anlaşılan bir iyileştirme takip edilir ve ekibin bir sonraki döngüde test etme biçimini değiştirir</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (d). Ders programı, önerilen iyileştirmelerin takip edilmesi gerektiğini vurgular; dolayısıyla bir geçmişe dönük öğeler toplantısı, bir ders çalışma biçiminde somut bir değişikliğe dönüştüğünde değer katar. Sonuçları kayda geçirmek beklenir, ama tutanak tek başına hiçbir şeyi değiştirmez; kişileri suçlamak ya da katı bir süreç dayatmak da amaç değildir.</p>
+</div></details>
+</section>
+</section>
+<section id="test-levels-and-test-types" class="level2">
+<h2>2.2 Test Seviyeleri ve Test Çeşitleri</h2>
+<section id="fl-2-2-1" class="level3">
+<h3>Beş test seviyesi (FL-2.2.1 — K2)</h3>
+<p>Bir <strong>test seviyesi (test level)</strong>, birlikte düzenlenip yönetilen ve yazılım geliştirme yaşam döngüsünün belirli bir aşamasına bağlı olan bir test aktiviteleri grubudur. Ders programı seviyeleri, test aktiviteleri örtüşmesin diye, kapsamlı olmayan bir özellikler listesiyle birbirinden ayırır; seviyeler ise zaman içinde örtüşebilir. Bir seviyeyi diğerinden ayırmak için beş özelliğe bakın: her seviyenin kendi test nesnesi (ne test edilir), kendi test hedefleri (amaç), dayandığı test esası (hangi belgelerden yazıldığı), beklenen tipik hatalar ve arızalar, yaklaşım ve ekip sorumlulukları (kimin yürüttüğü).</p>
+<p><strong>Bileşen testi (component testing; birim testi olarak da bilinir)</strong>, nesne olarak tek bir kod modülünü, fonksiyonu ya da birimi alır; odağı, o kod parçasının dış dünyadan tamamen yalıtılmış halde doğru çalışıp çalışmadığıdır. Genellikle geliştiriciler kendi geliştirme ortamlarında, çoğu zaman bir test kuluçkası ya da <strong>birim testi çerçevesiyle (unit test framework)</strong> yürütür. <strong>Bileşen entegrasyon testi (component integration testing)</strong>, bileşenler arasındaki iç arayüzleri ve bağlantıları nesne olarak alır; odağı, sistemin içindeki modüllerin doğru veriyi paylaşıp birbiriyle doğru konuşup konuşmadığıdır. Geliştiriciler ya da test uzmanları yürütür. <strong>Sistem testi (system testing)</strong>, entegre edilmiş ürünün tamamını nesne olarak alır; odağı, ürünün uçtan uca iş akışlarının, fonksiyonel kurallarının ve performans sınırlarının hedefleri karşılayıp karşılamadığıdır. Bağımsız bir test ekibi tarafından yürütülebilir; alt sistemlerin simülasyonları kullanılabilir. <strong>Sistem entegrasyon testi (system integration testing)</strong>, test edilen sistemi diğer sistemlere ve harici hizmetlere bağlayan arayüzleri, sahipleri kim olursa olsun, nesne olarak alır; odağı, bu arayüzlerden geçen verinin (örneğin bir ödeme altyapısıyla ya da ayrı bir kurum içi sistemle) hatasız çalışıp çalışmadığıdır. Uygun bir test ortamı gerektirir; bu ortamın tercihen operasyonel ortama benzemesi gerekir. <strong>Kabul testi (acceptance testing)</strong>, sistemin tamamını kullanıcının ya da müşterinin bakış açısından nesne olarak alır; odağı, ürünün iş ihtiyaçlarını karşılayıp karşılamadığı, canlıya alınmaya ve işletilmeye hazır olup olmadığıdır. İdeal olarak hedeflenen kullanıcılar yürütür.</p>
+<p>Bileşen entegrasyon testinde pratik sıralama büyük ölçüde entegrasyon stratejisine bağlıdır. Aşağıdan yukarıya (bottom-up) entegrasyon alt seviyedeki bileşenlerle başlar ve onları çağıran bileşenleri üstlerine ekler; yukarıdan aşağıya (top-down) entegrasyon üst seviyedeki bileşenlerle başlar ve tamamlanmamış alt bileşenlerin yerine taklit uygulamalar (stub) koyar; big-bang entegrasyon birçok bileşeni aynı anda bağlar. İlk iki strateji arayüz arızalarının yerini adım adım daraltır; big-bang entegrasyon ise bir arızanın kaynağını yalıtmayı zorlaştırabilir. <strong>Entegrasyon testi (integration testing)</strong> şemsiye terimdir; Şekil 2.1’deki klasik V modeli onu tek bir seviye olarak gösterir, bu ders programı ise onu bileşen entegrasyon testi ve sistem entegrasyon testi olarak ikiye ayırır.</p>
+<p><strong>Tablo 2.3 — Beş test seviyesi</strong></p>
+<div class="table-wrap">
+<table>
+<colgroup>
+<col style="width: 16%" />
+<col style="width: 27%" />
+<col style="width: 29%" />
+<col style="width: 27%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Test seviyesi</th>
+<th>Test nesnesi</th>
+<th>Odak</th>
+<th>Genellikle kim yapar</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Bileşen testi</td>
+<td>Yalıtılmış tek bir bileşen (birim)</td>
+<td>Bileşen tek başına doğru çalışıyor mu?</td>
+<td>Geliştiriciler, kendi geliştirme ortamlarında, çoğu zaman bir test kuluçkası ya da birim testi çerçevesiyle</td>
+</tr>
+<tr class="even">
+<td>Bileşen entegrasyon testi</td>
+<td>Bileşenler arasındaki arayüzler ve etkileşimler</td>
+<td>İç bileşenler doğru veri alışverişi yapıyor mu?</td>
+<td>Geliştiriciler ya da test uzmanları</td>
+</tr>
+<tr class="odd">
+<td>Sistem testi</td>
+<td>Entegre edilmiş sistemin tamamı</td>
+<td>Uçtan uca davranış ve fonksiyonel olmayan kalite karakteristikleri</td>
+<td>Çoğu zaman bağımsız bir test ekibi</td>
+</tr>
+<tr class="even">
+<td>Sistem entegrasyon testi</td>
+<td>Diğer sistemlere ve harici hizmetlere giden arayüzler</td>
+<td>Diğer sistemler ve hizmetlerle veri alışverişi çalışıyor mu?</td>
+<td>Test uzmanları, tercihen operasyonel ortama benzeyen bir ortamda</td>
+</tr>
+<tr class="odd">
+<td>Kabul testi</td>
+<td>Kullanıcının ya da müşterinin gözünden sistemin tamamı</td>
+<td>İş ihtiyaçlarını karşılıyor mu, devreye almaya hazır mı?</td>
+<td>İdeal olarak hedeflenen kullanıcılar; ayrıca müşteriler ve operatörler</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Şekil 2.4 aynı beş seviyeyi ders programının sunduğu sırayla listeliyor; bu bir büyüklük sıralaması değil, sunuş sırasıdır.</p>
+<figure>
+<img src="figures/fig_2_4_test_levels_scope.png" alt="Şekil 2.4 — Beş test seviyesi. Beş seviye ders programının sunduğu sırayla alt alta listelenir: bileşen testi (yalıtılmış tek bir bileşen), bileşen entegrasyon testi (iç bileşenler arasındaki arayüzler), sistem testi (sistemin tamamı, uçtan uca), sistem entegrasyon testi (diğer sistemlere ve harici hizmetlere giden arayüzler) ve kabul testi (paydaşın gözünden hazır olma)." /><figcaption>Şekil 2.4 — Beş test seviyesi.</figcaption>
+</figure>
+<p>Kabul testiyle ilgili sık gözden kaçan bir nokta: birincil vurgusu mümkün olduğunca çok yeni hata avlamak değildir. Bu seviyenin ana amacı, sistemin iş ihtiyaçlarını karşıladığını göstermek (sağlama) ve yönetime devreye almaya hazır olduğuna dair güven vermektir. Burada da hata bulunabilir, ama birincil hedef hata avlamak değildir. Kabul testinin kendisi de çeşitli biçimlere ayrılır: <strong>kullanıcı kabul testi (user acceptance testing, KKT)</strong>, <strong>operasyonel kabul testi (operational acceptance testing)</strong> (sistem yönetimi ve yedekleme testleri), <strong>sözleşmesel (contractual)</strong> ve <strong>düzenleyici kabul testi (regulatory acceptance testing)</strong>, <strong>alfa testi (alpha testing)</strong> ve <strong>beta testi (beta testing)</strong>.</p>
+<p><em>Uygulamada.</em> Bir yemek siparişi mobil uygulamasını ele alın. Yüzde 10’luk kurye bahşişini hesaplayan matematiksel kod fonksiyonunun doğru olduğunu kontrol etmek bileşen testidir. Kullanıcının sepetindeki ürünlerin (sepet modülü) ödeme sayfasına (ödeme modülü) tutarları bozulmadan taşındığını doğrulamak bileşen entegrasyon testidir. Uygulamayı açmaktan bir yemek aramaya, onu sepete eklemeye, adres seçmeye ve siparişi tamamlamaya kadar bütün akışı denemek sistem testidir. Ödeme adımında uygulamanın parayı tahsil etmek için harici bir ödeme altyapısına bağlandığını ya da siparişi bir API aracılığıyla restoranın kendi sipariş sistemine gönderdiğini doğrulamak sistem entegrasyon testidir. Uygulama mağazalarda herkese açılmadan hemen önce, gerçek kuryelerden ve sınırlı sayıda müşteriden oluşan 500 kişilik bir pilot grubun onu bir hafta boyunca gerçek hayat senaryolarıyla kullanıp geri bildirim vermesi ise kabul testidir (beta testi).</p>
+<p><em>Sınav odağı.</em> Bileşen entegrasyon testi ile sistem entegrasyon testi kolayca karıştırılır. Tek bir soru tuzaktan kaçınmanızı sağlar: test edilen arayüz test edilen sistemin içinde mi kalıyor, yoksa o sistemi başka bir sisteme mi bağlıyor? Arayüz sistemin kendi bileşenleri arasındaysa cevap bileşen entegrasyonudur; sistemi başka bir sisteme ya da harici bir hizmete bağlıyorsa, iki sistem de aynı kuruluşa ait olsa bile, cevap sistem entegrasyonudur.</p>
+<p><strong>Hemen Pekiştir</strong></p>
+<p><em>HP 2.2.1-a.</em> Bir bordro sisteminin geliştiricileri, yeni vergi hesaplama bileşenini mevcut maaş bordrosu bileşenine bağlıyor ve aralarında geçen veriyi test ediyor; en üst seviyedeki denetleyiciden başlıyor ve henüz bitmemiş alt seviye bileşenler için taklit uygulamalar kullanıyorlar. Bu hangi test seviyesidir?</p>
+<div class="mc">
+<ul>
+<li>(a) Bileşen testi</li>
+<li>(b) Sistem entegrasyon testi</li>
+<li>(c) Kabul testi</li>
+<li>(d) Bileşen entegrasyon testi</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (d). Testler aynı sistemin iki bileşeni arasındaki arayüzü hedefliyor; bu bileşen entegrasyon testidir. Taklit uygulamalarla yukarıdan aşağıya ilerleyen sıra, bu testin dayandığı entegrasyon stratejilerinden biridir. Bileşen testi tek bir bileşeni yalıtılmış halde test ederdi; sistem entegrasyon testi ise başka bir sisteme giden bir arayüzü test ederdi.</p>
+</div></details>
+<p><em>HP 2.2.1-b.</em> Kullanıcı kabul testinin, genel olarak da kabul testinin birincil vurgusu nedir?</p>
+<div class="mc">
+<ul>
+<li>(a) Sistem mimarisinin derinliklerindeki gizli kod hatalarını agresif biçimde avlamak</li>
+<li>(b) Paydaşlara ürünün iş ihtiyaçlarını karşıladığını, canlıya alınmaya ve devreye alınmaya hazır olduğunu göstermek</li>
+<li>(c) Yazılmış kod satırlarının iç döngü yapılarını teknik olarak kontrol etmek</li>
+<li>(d) Geliştiricilerin fonksiyon modüllerini dış dünyadan yalıtılmış halde tek başına denemek</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (b). Kabul testi hata bulmaktan çok, sistemin iş dünyasına hazır olduğunu gösteren bir sağlama ve güven oluşturma aşamasıdır.</p>
+</div></details>
+<p><em>HP 2.2.1-c.</em> Bir perakendecinin yeni çevrim içi mağaza sistemi her siparişi, başka bir kurum içi ekibin ayrıca geliştirip işlettiği şirketin kendi depo yönetim sistemine gönderiyor. Test uzmanları iki sistem arasında alınıp verilen sipariş verisini kontrol ediyor. Bu hangi test seviyesidir?</p>
+<div class="mc">
+<ul>
+<li>(a) Sistem entegrasyon testi</li>
+<li>(b) Bileşen entegrasyon testi</li>
+<li>(c) Bileşen testi</li>
+<li>(d) Sistem testi</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (a). Arayüz, test edilen sistemi başka bir sisteme bağlıyor; iki sistem de aynı kuruluşa ait olsa bile bu sistem entegrasyon testidir. Bileşen entegrasyon testi, çevrim içi mağaza sisteminin kendi içindeki bileşenler arasındaki arayüzleri kapsardı.</p>
+</div></details>
+<p><em>HP 2.2.1-d.</em> Ders programı bir test seviyesini diğerinden ayırmak için hangi özellikler kümesini kullanır?</p>
+<div class="mc">
+<ul>
+<li>(a) Kullanılan test aracı, test ekibinin büyüklüğü ve test koşumunun süresi</li>
+<li>(b) Test çeşidi, test tekniği ve ulaşılan kapsam</li>
+<li>(c) Test nesnesi, test hedefleri, test esası, tipik hatalar ve arızalar, yaklaşım ve sorumluluklar</li>
+<li>(d) Yaşam döngüsü modeli, sürüm tarihi ve test senaryosu sayısı</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (c). Bu beş özellik test seviyelerinin örtüşmesini önler, çünkü her seviyenin kendi nesnesi, hedefleri, esası, tipik hataları ve arızaları, yaklaşımı ve sorumlulukları vardır. (b) şıkkındaki test çeşitleri ve teknikleri her seviyede kullanılabilir; dolayısıyla bir seviyeyi diğerinden ayırmaz.</p>
+</div></details>
+</section>
+<section id="fl-2-2-2" class="level3">
+<h3>Dört test çeşidi (FL-2.2.2 — K2)</h3>
+<p>Test seviyeleri ne zaman ve ne genişlikte bir kapsamda test ettiğimiz sorusunu yanıtlarken, <strong>test çeşitleri (test type)</strong> test aktivitelerini kendilerine özgü hedeflerine göre gruplar. Dört temel test çeşidi vardır. <strong>Fonksiyonel test (functional testing)</strong> sistemin ne yaptığını inceler: yazılım kendisinden beklenen iş kurallarını, düğme davranışlarını ve fonksiyonel gereksinimleri yerine getiriyor mu? Ana hedefi <strong>fonksiyonel bütünlüğü (functional completeness)</strong>, <strong>fonksiyonel doğruluğu (functional correctness)</strong> ve <strong>fonksiyonel uygunluğu (functional appropriateness)</strong> kontrol etmektir. <strong>Fonksiyonel olmayan test (non-functional testing)</strong>, sistemin bu davranışları ne kadar iyi gerçekleştirdiğini ölçer: ISO/IEC 25010 gibi standartlarda sınıflandırılan <strong>kalite karakteristiklerini (quality characteristic)</strong> inceler. Bunlar arasında <strong>performans verimliliği (performance efficiency)</strong>, <strong>uyumluluk (compatibility)</strong>, <strong>kullanılabilirlik (usability)</strong> (etkileşim yeteneği, interaction capability, olarak da bilinir), <strong>güvenilirlik (reliability)</strong>, <strong>güvenlik (security)</strong>, <strong>sürdürülebilirlik (maintainability)</strong>, <strong>taşınabilirlik (portability)</strong> (esneklik, flexibility, olarak da bilinir) ve <strong>emniyet (safety)</strong> vardır. <strong>Kara kutu testi (black-box testing)</strong>, kaynak koda hiç bakmadan, yalnızca girdilerden ve çıktılardan, belirtilmiş iş davranışından ve gereksinimlerden yola çıkarak test senaryoları türetir. <strong>Beyaz kutu testi (white-box testing)</strong>, test senaryolarını sistemin iç yapısından kurar: kod, mimari, iş akışları ve veri akışları gibi.</p>
+<p>Çeşitler ve seviyelerle ilgili temel kural şudur: istisnasız her test çeşidi her test seviyesinde uygulanabilir. Bir test çeşidi tek bir seviyeye hapsolmaz. Örneğin bir fonksiyonun hızı bileşen seviyesinde ölçülebilir, fonksiyonel davranış da ta kabul seviyesinde kontrol edilebilir.</p>
+<p>İki çift iki farklı soru sorar: fonksiyonel mi fonksiyonel olmayan mı sorusu hangi kalitenin kontrol edildiğini, kara kutu mu beyaz kutu mu sorusu ise testlerin nereden türetildiğini sorar; bu yüzden bir test genellikle her çiftten birer çeşide aittir.</p>
+<p>Tablo 2.4 bu kuralı, her seviyede her çeşit için birer örnekle somutlaştırıyor. Ders programının belirttiği gibi odak seviyeden seviyeye değişir, ama dört çeşidin hiçbiri tek bir seviyeye ait değildir. Örneğin güvenlik yalnızca sistem seviyesinde değil, bileşen seviyesinde ve sistem entegrasyon seviyesinde de görünür.</p>
+<p><strong>Tablo 2.4 — Her test seviyesinde dört test çeşidi (örnekler)</strong></p>
+<div class="table-wrap">
+<table>
+<colgroup>
+<col style="width: 14%" />
+<col style="width: 42%" />
+<col style="width: 42%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Test seviyesi</th>
+<th>Fonksiyonel ve fonksiyonel olmayan</th>
+<th>Kara kutu ve beyaz kutu</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Bileşen</td>
+<td>Fonksiyonel: bir faiz fonksiyonu doğru tutarı döndürür. Fonksiyonel olmayan: bir doğrulama fonksiyonu bir enjeksiyon dizgesini reddeder (güvenlik).</td>
+<td>Kara kutu: fonksiyonun spesifikasyonundan. Beyaz kutu: kodundaki her dal kapsanır.</td>
+</tr>
+<tr class="even">
+<td>Bileşen entegrasyonu</td>
+<td>Fonksiyonel: sepet ödemeye doğru toplamı aktarır. Fonksiyonel olmayan: bağlantı en yoğun mesaj hacmiyle başa çıkar.</td>
+<td>Kara kutu: arayüz spesifikasyonundan. Beyaz kutu: modüller arasındaki çağrı yolları kapsanır.</td>
+</tr>
+<tr class="odd">
+<td>Sistem</td>
+<td>Fonksiyonel: bir sipariş uçtan uca verilebilir. Fonksiyonel olmayan: 5.000 eşzamanlı kullanıcıyla yanıt süreleri korunur.</td>
+<td>Kara kutu: kullanıcı hikayelerinden ve ekran tasarımlarından. Beyaz kutu: ana iş akışları kapsanır.</td>
+</tr>
+<tr class="even">
+<td>Sistem entegrasyonu</td>
+<td>Fonksiyonel: bir ödeme isteği bankanın hizmetine ulaşır ve geri döner. Fonksiyonel olmayan: bağlantı araya girmeye (dinlemeye) karşı dayanıklıdır (güvenlik).</td>
+<td>Kara kutu: harici API spesifikasyonundan. Beyaz kutu: sistemler arasındaki veri akışları kapsanır.</td>
+</tr>
+<tr class="odd">
+<td>Kabul</td>
+<td>Fonksiyonel: bir kullanıcı gerçek bir iş görevini tamamlar. Fonksiyonel olmayan: ekran okuyucu kullananlar siteyi kullanabilir (kullanılabilirlik).</td>
+<td>Kara kutu: iş senaryolarından. Beyaz kutu: gerçekleştirilen onay iş akışının her yolu kapsanır.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><em>Sınav odağı.</em> Buradaki soruları iki ayrım çözer. Birincisi: soru sistemin ne yaptığını ya da bir düğmenin doğru çalışıp çalışmadığını soruyorsa cevap fonksiyonel testtir; sistemin ne kadar hızlı, ne kadar güvenli ya da ne kadar kullanılabilir olduğunu ölçüyorsa cevap fonksiyonel olmayan testtir. İkincisi: bir çeşidi tek bir seviyeyle sınırlayan her şık (“fonksiyonel olmayan testler yalnızca sistem seviyesinde yapılabilir”) yanlıştır, çünkü bir fonksiyonun hızı kod (bileşen) seviyesinde bile ölçülebilir.</p>
+<p><strong>Hemen Pekiştir</strong></p>
+<p><em>HP 2.2.2-a.</em> Bir test ekibi, yeni bir bilet satış platformunun yanıt sürelerini 5.000 eşzamanlı kullanıcının yoğun talebi altında ölçüyor. Bu hangi test çeşididir?</p>
+<div class="mc">
+<ul>
+<li>(a) Fonksiyonel test</li>
+<li>(b) Fonksiyonel olmayan test</li>
+<li>(c) Beyaz kutu testi</li>
+<li>(d) Onaylama testi</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (b). Test sistemin ne yaptığını değil, yük altında ne kadar iyi çalıştığını (performans verimliliği) ölçüyor; bu yüzden fonksiyonel olmayan testtir. Beyaz kutu testi testleri iç yapıdan türetir; bu yük testi iç yapıyı kullanmıyor. Dört çeşit örtüştüğü için test muhtemelen aynı zamanda kara kutu testidir; onu fonksiyonel olmayan yapan, sistemin ne kadar iyi çalıştığını ölçmesidir.</p>
+</div></details>
+<p><em>HP 2.2.2-b.</em> Bir sınav ifadesi şöyle diyor: “Güvenlik ve performans gibi fonksiyonel olmayan özellikler ancak sistem testi seviyesine ulaşıldığında test edilebilir.” Bu iddia için ne doğrudur?</p>
+<div class="mc">
+<ul>
+<li>(a) Kesinlikle doğrudur, çünkü tek bir kod parçasının hızı ya da güvenliği hiçbir zaman ölçülemez</li>
+<li>(b) Yanlıştır; test çeşitleri seviyelere bağlı değildir ve her çeşit, bileşen dahil, her seviyede koşulabilir</li>
+<li>(c) Doğrudur, çünkü bütün fonksiyonel olmayan özellikler ancak kullanıcı kabulünde netleşir</li>
+<li>(d) Yanlıştır, çünkü fonksiyonel olmayan testler yalnızca kod seviyesinde beyaz kutu teknikleriyle yapılabilir</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (b). Çeşitler seviyelere sabitlenmemiştir. Bir geliştirici kodu yazarken bile o fonksiyonun RAM kullanımı (fonksiyonel olmayan bir özellik) test edilebilir.</p>
+</div></details>
+<p><em>HP 2.2.2-c.</em> Beyaz kutu testi testlerini hangi kaynaktan türetir?</p>
+<div class="mc">
+<ul>
+<li>(a) İç yapıya başvurmadan, gereksinim belgelerinde belirtilen davranıştan</li>
+<li>(b) Üretimde gözlemlenen kullanıcıların günlük çalışma alışkanlıklarından</li>
+<li>(c) Harici iş ortağı kuruluşlarla imzalanan arayüz anlaşmalarından</li>
+<li>(d) Test nesnesinin gerçekleştirilmesinden ya da iç yapısından; kod, mimari, iş akışları ve veri akışları gibi</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (d). Beyaz kutu testi yapıya dayalıdır ve altta yatan yapıyı kabul edilebilir bir seviyede kapsamayı hedefler. (a) şıkkı, spesifikasyonlardan çalışan kara kutu testini anlatır.</p>
+</div></details>
+</section>
+<section id="fl-2-2-3" class="level3">
+<h3>Onaylama testi ve regresyon testi (FL-2.2.3 — K2)</h3>
+<p>İki aktivite de sistemde bir değişiklikten sonra (örneğin bir hata düzeltildiğinde ya da yeni kod eklendiğinde) yapılır, ama sordukları sorular ve amaçları farklıdır. <strong>Onaylama testi (confirmation testing; re-testing olarak da bilinir)</strong>, bulunan asıl hatanın gerçekten düzeltilip düzeltilmediğini sorar. Kapsamı riske dayalıdır. Hata yüzünden daha önce başarısız olan her testi yeniden koşabilir; düzeltmeyi gerçekleştirmek için gereken değişiklikler için testler ekleyebilir. Zaman ya da para kısıtlıysa, arızayı yeniden oluşturan adımları tekrarlamak ve arızanın artık oluşmadığını kontrol etmekle sınırlı kalabilir.</p>
+<p>Terimlerle ilgili bir not: buradaki onaylama testi, Bölüm 1’deki doğrulamadan farklıdır. Doğrulama, ürünün spesifikasyona göre üretilip üretilmediğini kontrol eder; onaylama testi ise tek bir hatanın düzeltilip düzeltilmediğini kontrol eder. Sınavda terimin tam olarak hangisi olduğunu okuyun: onaylama testi düzeltilmiş tek bir hatayla, doğrulama ise bir spesifikasyona uygunlukla ilgilidir.</p>
+<p><strong>Regresyon testi (regression testing)</strong>, o düzeltmenin ya da kod değişikliğinin yan etkilerini arar: önceden çalışan ve değişiklik yüzünden artık bozulmuş olabilecek her şeyi. Temel sorusu şudur: arama modülündeki hatayı düzeltirken, önceden sorunsuz çalışan sepet ya da ödeme modülünü farkında olmadan bozduk mu? Regresyon testi, değişikliğin olumsuz sonuçlara yol açıp açmadığını anlamak için geçmişte başarıyla geçmiş eski test gruplarını yeniden koşar. Bu yan etkiler değişen bileşende, aynı sistemin diğer bileşenlerinde, hatta bağlı sistemlerde ortaya çıkabilir; ortamda bir değişiklikten sonra da regresyon testi gerekebilir. Onaylama testi ve regresyon testi, değişiklik yapılan her test seviyesinde gereklidir.</p>
+<p>Sistem büyüdükçe regresyon testinin kapsamı da çok büyüyebileceği için, her düzeltmede her testi ayrım gözetmeden koşmak mantıklı değildir. Bu yüzden regresyon koşumundan önce bir <strong>etki analizi (impact analysis)</strong> yapmak kritik bir iyi uygulamadır. Etki analizi, değişikliğin yazılımın hangi modülleriyle ilişkili olduğunu ve nerelere uzanabileceğini inceler; böylece optimize edilmiş, bütçeye uygun bir regresyon kapsamı belirlememizi sağlar. Regresyon testleri tekrar tekrar koşulduğu için test otomasyonuna güçlü bir adaydır ve otomasyon projenin erken aşamalarında başlamalıdır.</p>
+<p>Şekil 2.5, iki aktivitenin bir değişikliği genellikle hangi sırayla izlediğini gösteriyor. Onaylama testi yalnızca değişiklik bir hatayı düzelttiyse devreye girer. Regresyon testi ise her değişikliği izler; onaylama testinden zaten geçmiş bir düzeltme de buna dahildir. Regresyon testinin kapsamını etki analizi belirler.</p>
+<figure>
+<img src="figures/fig_2_5_confirmation_vs_regression.png" alt="Şekil 2.5 — Bir değişikliğin ardından ne gelir. Bir değişiklik yapılır: bir düzeltme ya da yeni bir özellik. Bir hata düzeltildiyse onaylama testi başarısız olan testleri yeniden koşar. Ardından regresyon testi gelir ve değişikliğin olumsuz etkilerini (değişen bileşende, diğer bileşenlerde ya da bağlı sistemlerde) bulmak için testleri yeniden koşar; kapsamını etki analizi belirler." /><figcaption>Şekil 2.5 — Bir değişikliğin ardından ne gelir.</figcaption>
+</figure>
+<p><em>Sınav odağı.</em> Bir aktivitenin onaylama mı regresyon mu olduğuna karar veren şey hiçbir zaman zamanlama değildir; yalnızca yanıtlanan sorudur. Test uzmanı geliştiricinin düzelttiği o belirli başarısız adımı deniyorsa, haftalar sonra bile olsa bu onaylama testidir. Test uzmanı, değişikliğin bir şeyi bozup bozmadığını görmek için daha önce geçmiş test gruplarını yeniden koşuyorsa, düzeltmeden beş dakika sonra bile olsa ve bu gruplar değişen bileşeni de içerse, bu regresyon testidir.</p>
+<p><strong>Hemen Pekiştir</strong></p>
+<p><em>HP 2.2.3-a.</em> Onaylama testinin ana amacı ve sorusu nedir?</p>
+<div class="mc">
+<ul>
+<li>(a) Daha önce bulunup raporlanan asıl hatanın gerçekten giderilip giderilmediği</li>
+<li>(b) Kod değişikliğinin sistemin ilgisiz bir fonksiyonunu farkında olmadan bozup bozmadığı</li>
+<li>(c) Sistemin harici hizmetlerle kurduğu veri alışverişi köprülerinin güvenliği</li>
+<li>(d) Sistemin ani kullanıcı yükü altındaki çökme sınırları</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (a). Onaylama testi asıl hatanın düzeltildiğini kontrol eder. Riske bağlı olarak, hata yüzünden başarısız olan bütün testleri yeniden koşabilir ve düzeltme için testler ekleyebilir; zaman kısıtlıysa yalnızca arızayı yeniden oluşturan adımları tekrarlayabilir.</p>
+</div></details>
+<p><em>HP 2.2.3-b.</em> Bir teslim tarihi hesaplamasındaki hata düzeltiliyor. Üç hafta sonra, iş yükü yüzünden test uzmanı yalnızca başta başarısız olan tek asıl senaryoyu yeniden koşacak zaman bulabiliyor; senaryo bu kez geçiyor. Bu hangi aktivitedir?</p>
+<div class="mc">
+<ul>
+<li>(a) Onaylama testi</li>
+<li>(b) Regresyon testi</li>
+<li>(c) Sistem entegrasyon testi</li>
+<li>(d) Bakım testi</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (a). Ne kadar zaman geçerse geçsin, amaç yalnızca başarısız olan asıl testi yeniden koşmaksa aktivite onaylama testidir.</p>
+</div></details>
+<p><em>HP 2.2.3-c.</em> Pınar bir regresyon testi koşmadan önce değişikliğin etki analizini yapıyor. Bu ona ne sağlar?</p>
+<div class="mc">
+<ul>
+<li>(a) Asıl hatanın kök nedenini; böylece onu kodda düzeltebilir</li>
+<li>(b) Bir sonraki döngünün gereksinimlerinin resmî onayını</li>
+<li>(c) Yazılımın hangi kısımlarının etkilenebileceğine dair bir görünüm; böylece mantıklı bir regresyon kapsamı belirleyebilir</li>
+<li>(d) Asıl hatanın düzeltildiğine dair kanıt</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (c). Etki analizi, yazılımın hangi kısımlarının bir değişiklikten etkilenebileceğini gösterir; bu da regresyon testinin kapsamını belirlemeye yardım eder. Kök neden bulmak hata ayıklama işidir; düzeltmenin işe yaradığını göstermek ise onaylama testinin görevidir.</p>
+</div></details>
+<p><em>HP 2.2.3-d.</em> Test ortamının veritabanı sunucusu uygulama kodunda hiçbir değişiklik yapılmadan yeni bir sürüme yükseltildikten on dakika sonra Tolga, ödeme ve faturalama özellikleri için daha önce geçmiş test gruplarını yeniden koşuyor. Tolga ne yapıyor?</p>
+<div class="mc">
+<ul>
+<li>(a) Onaylama testi</li>
+<li>(b) Bileşen entegrasyon testi</li>
+<li>(c) Kabul testi</li>
+<li>(d) Regresyon testi</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (d). Tolga, bir değişikliğin (burada ortamdaki bir değişikliğin) önceden çalışan özelliklerde olumsuz sonuçlara yol açmadığını kontrol ediyor; bu regresyon testidir. Hiçbir hata düzeltilmediği için onaylanacak bir şey yoktur; değişiklikten bu yana geçen kısa süre de önemli değildir; belirleyici olan, testlerin yanıtladığı sorudur.</p>
+</div></details>
+</section>
+</section>
+<section id="maintenance-testing-fl-2.3.1-k2" class="level2">
+<h2>2.3 Bakım Testleri (FL-2.3.1 — K2)</h2>
+<p><span id="fl-2-3-1"></span>Bir yazılım sistemi geliştirilip üretime alındıktan sonra da yaşamaya ve değişmeye devam eder. <strong>Bakım testinin (maintenance testing)</strong> kapsamı tipik olarak üç faktöre bağlıdır: değişikliğin ne kadar riskli olduğu, mevcut sistemin ne kadar büyük olduğu ve değişikliğin ne kadar büyük olduğu. Etki analizi, sistemin diğer alanlarındaki olası sonuçlarına bakarak bir değişikliğin yapılıp yapılmaması gerektiğine karar vermeye yardım etmek için değişiklik yapılmadan önce bile yapılabilir. Üretimdeki mevcut sistemlerin kararlılığını korumak için yürütülen bu operasyonel test aktivitelerine bakım testi denir. Onu üç kategori tetikler. Şekil 2.6, tipik olayları üç tetikleyicinin her birinin altında grupluyor.</p>
+<figure>
+<img src="figures/fig_2_6_maintenance_triggers.png" alt="Şekil 2.6 — Bakım testinin üç tetikleyicisi. Değişiklikler; planlı iyileştirmeleri (sürüm bazlı), düzeltici değişiklikleri ve acil düzeltmeleri kapsar. Operasyonel ortamın yükseltilmesi ya da taşınması; platform değişikliğini ve veri dönüşümünü ya da taşınmasını kapsar. Kullanımdan kaldırma; uzun süre saklama gerektiğinde veri arşivlemeyi ve arşivleme sonrasında arşivden geri yükleme ve erişimi kapsar." /><figcaption>Şekil 2.6 — Bakım testinin üç tetikleyicisi.</figcaption>
+</figure>
+<p><strong>Değişiklikler</strong>, canlı sisteme eklenen planlı iyileştirmeleri, düzeltici değişiklikleri ve acil düzeltmeleri (hot fix) kapsar. Böyle bir değişikliği test etmek, değişikliğin başarıyla gerçekleştirilip gerçekleştirilmediğini değerlendirir (düzeltici bir değişiklik ya da acil düzeltme için bu, düzeltmenin onaylama testini de içerir) ve genellikle sistemin büyük kısmını oluşturan dokunulmamış kısımlarda regresyon olup olmadığını kontrol eder. <strong>Operasyonel ortamın yükseltilmesi ya da taşınması</strong>, yazılımın kendisi değişmese bile sistemin üzerinde çalıştığı altyapının yenilenmesidir: örneğin uygulamayı yeni bir işletim sistemi sürümüne ya da yeni bir Java sürümüne taşımak, veritabanı altyapısını değiştirmek ya da verileri yeni bir sunucuya taşımak. Bu durumda test, sistemi yeni ortamında ve onunla birlikte değişen yazılımları kapsar; başka bir uygulamadan gelen veriler sisteme taşındığında da veri dönüşümünün kendisini kapsar (örneğin hiçbir verinin kaybolmadığını ya da bozulmadığını). <strong>Kullanımdan kaldırma (retirement; decommissioning olarak da bilinir)</strong>, bir yazılım sisteminin kullanım ömrünün sonuna gelip tamamen kapatılmasıdır. Bu tetikleyici şaşırtıcı gelebilir, çünkü kapatılan bir sistemin neden test edilmesi gerektiğini görmek zordur. Bir sistem üretimden kaldırıldığında bile geçmiş verilerinin uzun süre saklanması gerekebilir; örneğin düzenlemeler bunu gerektirdiği için. Bu durumda sürecin veri arşivlemeyi, geri yükleme ve geri alma prosedürlerini ve arşivlenmiş verilere erişimi (örneğin denetçiler tarafından) test etmesi gerekebilir.</p>
+<p><em>Uygulamada.</em> Büyük bir bankanın yirmi yıldır kullandığı bir kredi değerlendirme sistemini kullanımdan kaldırdığını düşünün. Finansal düzenlemeler gereği banka, bütün geçmiş müşteri kredi kayıtlarını önümüzdeki on yıl boyunca güvenle saklamak ve istendiğinde denetçilere sunmak zorundadır. Bu kullanımdan kaldırma projesinde test ekibi eski yazılımın düğmelerine tıklamaz; üç operasyonel şeyi test eder: üretilen veri arşivinin eksiksiz olduğunu ve bütün verileri doğru içerdiğini; olası bir felakette arşivden geri yükleme mekanizmasının sorunsuz çalıştığını; bir denetçi geldiğinde arşiv veritabanındaki sorgu ekranlarının gereken hızda sonuç döndürdüğünü. Bunların hepsi bakım testidir.</p>
+<p><em>Sınav odağı.</em> Bir soru size canlı bir sistemdeki operasyonel bir olayı (bir sunucu değişikliği, acil bir yama ya da sistemin kapatılması) verip bunun hangi bakım tetikleyicisi olduğunu ya da bu aşamada neyin test edilmesi gerektiğini sorabilir. Kilit tuzak, kullanımdan kaldırma aşamasıdır. “Kapatılan bir sistemde test biter” diye ezberlenmiş fikir yanlıştır; veri arşivlemeyi, veri bütünlüğünü ve geri yükleme prosedürlerini test etmekle ilgili şıkkı arayın.</p>
+<p><strong>Hemen Pekiştir</strong></p>
+<p><em>HP 2.3.1-a.</em> ISTQB® v4.0’a göre hangi şık bakım testinin üç tetikleyicisini doğru ve eksiksiz sıralar?</p>
+<div class="mc">
+<ul>
+<li>(a) Birim testleri, entegrasyon testleri, sistem testleri</li>
+<li>(b) Değişiklikler; operasyonel ortamın yükseltilmesi ya da taşınması; kullanımdan kaldırma</li>
+<li>(c) Fonksiyonel testler, fonksiyonel olmayan testler, yapısal testler</li>
+<li>(d) Onaylama testleri, regresyon testleri, kullanıcı kabul testleri</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (b). Bunlar, canlı bir sistemin operasyonel dünyasında bakım testini tetikleyen üç resmî kategoridir.</p>
+</div></details>
+<p><em>HP 2.3.1-b.</em> Bir e-ticaret kuruluşu, koda dokunmadan uygulamanın sunucularını yeni bir veritabanı mimarisine taşıyor ve bütün geçmiş müşteri verilerini yeni yapıya aktarıyor. Bu hangi bakım tetikleyicisinin altına girer?</p>
+<div class="mc">
+<ul>
+<li>(a) Değişiklikler</li>
+<li>(b) Kullanımdan kaldırma</li>
+<li>(c) Operasyonel ortamın yükseltilmesi ya da taşınması</li>
+<li>(d) Hiçbiri; kod değişmediği için bu bakım testi değildir</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (c). Platform, sunucu, işletim sistemi ya da veritabanı taşımaları ve veri dönüşümü “operasyonel ortamın yükseltilmesi ya da taşınması” altına girer.</p>
+</div></details>
+<p><em>HP 2.3.1-c.</em> Canlıdaki bir insan kaynakları platformu aniden çöküyor ve teknik ekip acil bir düzeltme uyguluyor. Ardından hangi test stratejisi gelmelidir?</p>
+<div class="mc">
+<ul>
+<li>(a) Sistem kapatılacağı için yalnızca kullanımdan kaldırma testleri</li>
+<li>(b) Kod değişmediği için yalnızca veri arşivleme ve geri yükleme testleri</li>
+<li>(c) Sistem zaten üretimde olduğu için hiçbir teste gerek yoktur</li>
+<li>(d) Düzeltme için onaylama testi ve etkilenen sistemin geri kalanı için kapsamı etki analiziyle belirlenen bir regresyon testi</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (d). Canlıdaki bir hata giderildiğinde (değişiklikler tetikleyicisi), önce yamanın çalıştığı onaylanır (onaylama), sonra sistemin geri kalanı etki analizine göre taranır (regresyon).</p>
+</div></details>
+</section>
+<section id="chapter-2-summary" class="level2">
+<h2>Bölüm 2 özeti</h2>
+<div class="table-wrap">
+<table>
+<colgroup>
+<col style="width: 16%" />
+<col style="width: 83%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Öğrenme hedefi</th>
+<th>Tek cümlelik özet</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>2.1.1 (K2)</td>
+<td>Seçilen YGYD; test aktivitelerinin kapsamını ve zamanlamasını, test dokümantasyonunun ayrıntısını, test tekniklerinin ve yaklaşımının seçimini, test otomasyonunun kapsamını ve test uzmanının rolünü etkiler.</td>
+</tr>
+<tr class="even">
+<td>2.1.2 (K1)</td>
+<td>Dört evrensel uygulama: her geliştirme aktivitesi için bir test aktivitesi, seviyelere ayrı hedefler, erken analiz ve tasarım, test uzmanının taslak aşamasında sürece katılması.</td>
+</tr>
+<tr class="odd">
+<td>2.1.3 (K1)</td>
+<td>TDD kod/birim seviyesinde çalışır; ATDD iş kabul kriterleriyle yönlendirilir; BDD genellikle Given/When/Then biçiminde doğal dilli senaryolar kullanır.</td>
+</tr>
+<tr class="even">
+<td>2.1.4 (K2)</td>
+<td>DevOps; hızlı geri bildirim, CI aracılığıyla sola alma, kararlı ortamlar, görünür fonksiyonel olmayan kalite, daha az tekrarlayan manuel test ve daha düşük regresyon riski sağlar; teslimat hattını, CI/CD araçlarını ve test otomasyonunu kurmak ve sürdürmek efor ister.</td>
+</tr>
+<tr class="odd">
+<td>2.1.5 (K2)</td>
+<td>Sola alma, sonraki testleri ihmal etmeden testi YGYD’de daha erken yapar (erken test etmenin bir diğer adı); başta efor ister ve sonrasında efor tasarrufu sağlaması beklenir.</td>
+</tr>
+<tr class="even">
+<td>2.1.6 (K2)</td>
+<td>Geçmişe dönük öğeler neyin korunacağını ve neyin iyileştirileceğini kayda geçirir; süreç sorunlarını takip edilen somut test iyileştirme aksiyonlarına dönüştürür.</td>
+</tr>
+<tr class="odd">
+<td>2.2.1 (K2)</td>
+<td>Beş test seviyesi; nesne, hedefler, test esası, tipik hata türleri ve rol sorumluluklarıyla birbirinden ayrılır.</td>
+</tr>
+<tr class="even">
+<td>2.2.2 (K2)</td>
+<td>Dört temel çeşit vardır (fonksiyonel, fonksiyonel olmayan, kara kutu, beyaz kutu) ve her çeşit her test seviyesinde uygulanabilir.</td>
+</tr>
+<tr class="odd">
+<td>2.2.3 (K2)</td>
+<td>Onaylama testi “Hata düzeldi mi?” diye sorar; regresyon testi “Değişiklik, çalışan bir şeyi bozdu mu?” diye sorar.</td>
+</tr>
+<tr class="even">
+<td>2.3.1 (K2)</td>
+<td>Üç bakım tetikleyicisi vardır (değişiklikler, yükseltme ya da taşıma, kullanımdan kaldırma); kapsam riske, sistemin ve değişikliğin büyüklüğüne bağlıdır; kullanımdan kaldırma veri arşivleme ve geri yükleme testleri gerektirebilir.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<section id="sık-karıştırılan-kritik-kavram-çiftleri-1" class="level3">
+<h3>Sık karıştırılan kritik kavram çiftleri</h3>
+<div class="table-wrap">
+<table>
+<colgroup>
+<col style="width: 14%" />
+<col style="width: 35%" />
+<col style="width: 14%" />
+<col style="width: 35%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Bu kavram</th>
+<th>şudur</th>
+<th>şu kavram değildir</th>
+<th>o da şudur</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Bileşen entegrasyon testi</td>
+<td>tek bir sistemin içindeki bileşenler arasındaki arayüzleri kontrol etmek</td>
+<td>Sistem entegrasyon testi</td>
+<td>sistemimiz ile diğer sistemler ya da harici hizmetler arasındaki arayüzleri, sahipleri kim olursa olsun, kontrol etmek</td>
+</tr>
+<tr class="even">
+<td>Onaylama testi</td>
+<td>asıl hatanın düzeltildiğini kontrol etmek; kapsamı riske göre belirlenir</td>
+<td>Regresyon testi</td>
+<td>değişikliğin, değişen kısımda ya da ötesinde olumsuz sonuçlara yol açıp açmadığını kontrol etmek</td>
+</tr>
+<tr class="odd">
+<td>TDD</td>
+<td>alt seviye teknik kod ve birim testleri üzerinden ilerleyen geliştirici seviyesinde bir döngü</td>
+<td>ATDD</td>
+<td>kullanıcı hikayelerinin kabul kriterleriyle yönlendirilen iş seviyesinde bir süreç</td>
+</tr>
+<tr class="even">
+<td>ATDD</td>
+<td>iş kabul kriterlerini karşılamaya odaklanan bir önce-test yapısı</td>
+<td>BDD</td>
+<td>ortak Given/When/Then kalıbıyla doğal dilde yazılmış sistem davranışları</td>
+</tr>
+<tr class="odd">
+<td>Test seviyesi</td>
+<td>“hangi aşamada ve hangi kapsamda” test ettiğimizin cevabı</td>
+<td>Test çeşidi</td>
+<td>“hangi hedefle” sorusunun cevabı: neyin kontrol edildiği (fonksiyonel ya da fonksiyonel olmayan) ve testlerin nereden geldiği (kara kutu ya da beyaz kutu)</td>
+</tr>
+<tr class="even">
+<td>Onaylama testi</td>
+<td>belirli bir hatanın düzeltildiğini kontrol etmek</td>
+<td>Doğrulama</td>
+<td>bir iş ürününün belirtilmiş gereksinimlerini karşıladığını kontrol etmek</td>
+</tr>
+<tr class="odd">
+<td>Bakım testi</td>
+<td>canlı bir sistemdeki altyapı ya da kod değişikliklerinin operasyonel kontrolü</td>
+<td>Sürdürülebilirlik testi</td>
+<td>yazılımın gelecekte ne kadar kolay değiştirilebileceğini ölçmek; fonksiyonel olmayan bir kalite</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="sınav-ipuçları-ve-yaygın-tuzaklar-bölüm-2" class="level3">
+<h3>Sınav ipuçları ve yaygın tuzaklar — Bölüm 2</h3>
+<p>Seviye sorularında arayüz bağlantısının nerede kurulduğuna odaklanın. Tek bir sistemin içindeki iki bileşen konuşuyorsa bileşen entegrasyonunu seçin; arayüz test edilen sistemi başka bir sisteme ya da harici bir hizmete bağlıyorsa, iki sistem de kendi kuruluşunuza ait olsa bile sistem entegrasyonunu seçin. Çeşit sorularında yazılıma sorulan temel soruya bakın: “İş kuralına göre doğru hesaplıyor mu?” fonksiyoneldir; “Hızlı mı, güvenli mi, ekran okuyucuyla uyumlu mu?” fonksiyonel olmayandır. Önce-test üçlüsünde test senaryolarının nereden beslendiğine bakın: geliştiricinin birim testi TDD’ye, analiz belgesindeki kabul kriterleri ATDD’ye, Given/When/Then senaryoları BDD’ye işaret eder.</p>
+<p>İki tuzağı bilmeye değer. Birincisi, onaylama ve regresyonun kelime oyunuyla yer değiştirmesidir. Testin ne zaman koşulduğuna bakıp zamanlama tuzağına düşmeyin; “Hangi testler koşuluyor?” sorusuna odaklanın. Başarısız olan asıl adım deneniyorsa onaylamadır; değişikliğin yan etkilerini aramak için geçmişte geçmiş testler yeniden koşuluyorsa regresyondur. İkincisi, otomasyonla ilgili abartılı ya da kusursuz iddialardır. “Otomasyon manuel testi gereksiz kıldı” ya da “CI hattında bütün testlerin geçmesi yüzde 100 ürün kalitesini garanti eder” gibi şıklar görürseniz eleyin. Otomasyon insan eliyle testin yerini tutmaz.</p>
+<p>Bakım sorularında senaryo bir sistemin kapatılıp kullanımdan kaldırılmasını anlatıyorsa, veri arşivlemeyi, geri yükleme ve geri almayı ve arşive erişimi test etmekle ilgili şıkkı arayın.</p>
+</section>
+</section>
+<section id="cumulative-retrieval" class="level2">
+<h2>Birikimli hatırlama</h2>
+<p>Bölüm 1’i bu bölümün merceğinden yeniden ziyaret edin:</p>
+<ul>
+<li><strong>R2-a.</strong> Yanlış bir YGYD seçiminin hataların geç keşfedilmesine yol açtığı bir senaryoda insan hatasını, hatayı ve arızayı adlandırın.</li>
+<li><strong>R2-b.</strong> “Bütün ekibin bir sprintte bir kalite boşluğunu yakalaması”nın tüm ekip yaklaşımını mı yoksa testin bağımsızlığını mı yansıttığına karar verin.</li>
+<li><strong>R2-c.</strong> “Her sprintte her regresyon testini koşamayız” kararının yedi prensipten hangisine dayandığını söyleyin.</li>
+</ul>
+<p>Bölüm 1’e geri bakmadan önce her birini hafızanızdan yanıtlamaya çalışın. Örnek cevaplar, Cevaplar ve Gerekçeler bölümünde <em>Birikimli hatırlama — örnek cevaplar</em> başlığı altındadır.</p>
+</section>
+<section id="chapter-exercises-1" class="level2">
+<h2>Bölüm alıştırmaları</h2>
+<p>Cevaplar, gerekçeler ve öğrenme hedefi kaynakları kitabın sonundaki “Cevaplar ve Gerekçeler” bölümündedir.</p>
+<p><em>PB-C2-001.</em> Çevik bir ekip her yeni kullanıcı hikayesinin iş kabul kriterlerini inceliyor ve bunlardan test senaryoları türetiyor. Bu test senaryoları henüz hiç kod yokken otomatikleştiriliyor ve yazılacak koda yön veriyor. Bu hangi önce-test yaklaşımıdır?</p>
+<div class="mc">
+<ul>
+<li>(a) Test güdümlü yazılım geliştirme (TDD)</li>
+<li>(b) Kabul testi güdümlü yazılım geliştirme (ATDD)</li>
+<li>(c) Davranış güdümlü yazılım geliştirme (BDD)</li>
+<li>(d) Keşif testi</li>
+</ul>
+</div>
+<p><em>PB-C2-002.</em> Canlı yayın yapan bir video servisi, yeni abonelik modülünü harici bir bankanın ödeme altyapısı API’sine ve küresel bir iş ortağının içerik kataloğu hizmetine bağlayarak test ediyor; bu köprülerden geçen veriyi kontrol ediyor. Ekip hangi test seviyesini uyguluyor?</p>
+<div class="mc">
+<ul>
+<li>(a) Bileşen entegrasyon testi</li>
+<li>(b) Sistem testi</li>
+<li>(c) Sistem entegrasyon testi</li>
+<li>(d) Kabul testi</li>
+</ul>
+</div>
+<p><em>PB-C2-003.</em> Bir web platformu hâlâ geliştirme aşamasında. Arama modülündeki kritik bir kod hatası düzeltildikten sonra bir test uzmanı, düzeltmenin gezinme ve ödeme gibi diğer temel modülleri farkında olmadan etkileyip bozmadığından emin olmak için daha önce geçmiş bütün test gruplarını yeniden koşuyor. Bu hangi aktivitedir?</p>
+<div class="mc">
+<ul>
+<li>(a) Onaylama testi</li>
+<li>(b) Regresyon testi</li>
+<li>(c) Bakım testi</li>
+<li>(d) Sistem entegrasyon testi</li>
+</ul>
+</div>
+<p><em>PB-C2-004.</em> Bir finans kuruluşu yirmi yıllık bir insan kaynakları yazılım sistemini kapatıp kullanımdan kaldırmaya karar veriyor. Düzenlemeler gereği güncel çalışan kayıtlarının önümüzdeki on yıl boyunca güvenli ve erişilebilir biçimde saklanması gerekiyor. Burada en uygun bakım testi aktivitesi hangisidir?</p>
+<div class="mc">
+<ul>
+<li>(a) Sistem kapatıldığı için veri arşivleme, bütünlük ve geri yükleme prosedürlerini test etmek</li>
+<li>(b) Eski sistemi üretimde yeni kullanıcılarla kapsamlı bir beta testinden geçirmek</li>
+<li>(c) Eski sistemin ani kullanıcı yükü altındaki çökme sınırlarını ölçmek</li>
+<li>(d) Arşivleme modülünün kaynak kodu üzerinde alt seviye bileşen (birim) testleri koşmak</li>
+</ul>
+</div>
+<p><em>PB-C2-005.</em> Çevik bir ekip, herkese açık web uygulamasının ekran okuyucu kullanan görme engelli kişiler tarafından sorunsuz kullanılabildiğini doğruluyor. Bu hangi temel test çeşididir?</p>
+<div class="mc">
+<ul>
+<li>(a) Fonksiyonel test</li>
+<li>(b) Beyaz kutu testi</li>
+<li>(c) Onaylama testi</li>
+<li>(d) Fonksiyonel olmayan test</li>
+</ul>
+</div>
+<p><em>PB-C2-006.</em> CI ve otomatik dağıtım hatlarıyla bir DevOps kültürünü benimsemek test mühendisliğine en açık hangi faydayı getirir?</p>
+<div class="mc">
+<ul>
+<li>(a) Otomatik altyapı sayesinde test ortamlarının çok daha kararlı, standart ve yeniden üretilebilir hale gelmesi</li>
+<li>(b) Test otomasyonu kodunun ve betiklerinin bir daha hiçbir güncelleme ya da bakım gerektirmemesi</li>
+<li>(c) Hatlar her şeyi taradığı için insan sezgisine dayalı keşif testinin tamamen gereksiz hale gelmesi</li>
+<li>(d) Otomasyon grubundaki bütün testlerin geçmesinin üründe sıfır hatayı garanti etmesi</li>
+</ul>
+</div>
+<p><em>PB-C2-007.</em> Bir geçmişe dönük öğeler toplantısında ekip, test aşamasında geç yakalanan kritik hataların çoğunun aslında kullanıcı hikayeleri ilk yazıldığında kâğıt üzerinde fark edilebileceği sonucuna varıyor. Hangi takip aksiyonu bu dersi test sürecine doğru biçimde uygular?</p>
+<div class="mc">
+<ul>
+<li>(a) Takvime her sürümden hemen önce zorunlu bir kod sağlamlaştırma sprinti eklemek</li>
+<li>(b) Bulguyu yalnızca toplantı tutanağına geçirip sonraki projeler için rafa kaldırmak</li>
+<li>(c) Kullanıcı hikayeleri ve kabul kriterleri henüz taslakken test uzmanlarını iş listesi olgunlaştırma gözden geçirmelerine dahil etmek</li>
+<li>(d) Geç bulunan bütün hatalar için kodu yazan geliştiricilere idari ceza puanı vermek</li>
+</ul>
+</div>
+<p><em>PB-C2-008.</em> Aynı uygulamanın iki kurum içi alt hizmeti, “alışveriş sepeti hizmeti” ve “fiyat hesaplama hizmeti”, arka planda veri alışverişi yapıyor. Test uzmanı bu iki iç yapı arasında aktarılan parametrelerin ve mesajların doğruluğuna odaklanıyor. Bu hangi test seviyesidir?</p>
+<div class="mc">
+<ul>
+<li>(a) Bileşen entegrasyon testi</li>
+<li>(b) Sistem entegrasyon testi</li>
+<li>(c) Sistem testi</li>
+<li>(d) Bileşen testi</li>
+</ul>
+</div>
+<p><em>PB-C2-009.</em> Sistemin faturalama yuvarlama mantığındaki matematiksel bir kod hatası geliştirici tarafından düzeltiliyor. Test uzmanı ardından yalnızca hatayı ilk ortaya çıkaran o belirli test senaryosunu yeniden koşuyor ve geçtiğini görüyor. Test uzmanı hangi aktiviteyi tamamlamıştır ve planlanması gereken ne kalmıştır?</p>
+<div class="mc">
+<ul>
+<li>(a) Regresyon testi tamamlandı; sistem tamamen doğrulandığı için başka teste gerek yok</li>
+<li>(b) Onaylama testi tamamlandı; yama çalıştığı için başka kontrole gerek yok</li>
+<li>(c) Regresyon testi tamamlandı; şimdi acilen bir onaylama testi planlanmalı</li>
+<li>(d) Onaylama testi tamamlandı; değişikliğin olumsuz sonuçlarını kontrol etmek için bir regresyon testi düşünülmeli</li>
+</ul>
+</div>
+</section>
+</section>
+
+<div class="pager"><a href="chapter-1.html"><span class="lbl">Önceki</span>Bölüm 1 — Yazılım Testinin Temelleri</a><a href="chapter-3.html" style="text-align:right"><span class="lbl">Sonraki</span>Bölüm 3 — Statik Testler</a></div>
+<footer class="site">© 2026 Kadir Çamoğlu · Kendi içeriğimiz CC BY-NC 4.0 lisanslıdır · ISTQB® ve CTFL®, International Software Testing Qualifications Board'un tescilli markalarıdır; bu rehber ISTQB® ya da Turkish Testing Board ile bağlantılı değildir, onlar tarafından onaylanmamıştır.</footer>
+</main>
+</div>
+<script>if (window.matchMedia('(min-width: 901px)').matches) document.getElementById('navd').open = true;</script>
+<script>(function(){function od(){var h=decodeURIComponent(location.hash.slice(1));if(!h)return;var e=document.getElementById(h);while(e){if(e.tagName==='DETAILS')e.open=true;e=e.parentElement;}}addEventListener('hashchange',od);od();})();</script>
+</body>
+</html>

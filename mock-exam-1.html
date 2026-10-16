@@ -1,0 +1,1440 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Deneme Sınavı 1 — 40 Soru, Gerekçeleriyle · ISTQB® CTFL® v4.0 Sınav Rehberi</title>
+<meta name="description" content="ISTQB® Sertifikalı Test Uzmanı Temel Seviye (CTFL®) v4.0 sınavı için ücretsiz, bağımsız Türkçe çalışma rehberi: 64 öğrenme hedefinin tamamı, çözümlü örnekler, kısa sorular ve iki dilli tam bir deneme sınavı.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="draft-banner" role="note"><strong>Herkese açık taslak — inceleniyor.</strong> Geri bildirim: <a href="mailto:kadir.camoglu@gmail.com">kadir.camoglu@gmail.com</a></div>
+<header class="topbar"><div class="inner"><a href="index.html">ISTQB® CTFL® v4.0 Sınav Rehberi</a><span class="meta"><span class="ind">Bağımsız · Gayriresmî çalışma rehberi · Herkese açık taslak · 2026-10 · </span><a href="all.html">Tam metin tek sayfada</a></span></div></header>
+<div class="layout">
+<nav class="side"><details id="navd"><summary>İçindekiler</summary><div class="navbody">
+<div class="group">Ön bölüm</div><ul>
+<li><a href="index.html">ISTQB® CTFL® v4.0 Sınav Rehberi: Sıfırdan Sınava Hazır Seviyeye</a>
+</li>
+<li><a href="copyright.html">Telif Hakkı ve Marka Bildirimi</a>
+</li>
+<li><a href="introduction.html">Giriş — Bu Kitap Hakkında</a>
+</li>
+<li><a href="how-to-use.html">Bu Kitap Nasıl Kullanılır</a>
+</li>
+<li><a href="the-exam.html">CTFL® Sınavı Nasıl İşler</a>
+</li>
+<li><a href="objective-map.html">Hedef Haritası</a>
+</li>
+<li><a href="study-roadmap.html">Çalışma Yol Haritası</a>
+</li>
+</ul>
+<div class="group">Bölümler</div><ul>
+<li><a href="chapter-1.html">Bölüm 1 — Yazılım Testinin Temelleri</a>
+</li>
+<li><a href="chapter-2.html">Bölüm 2 — Yazılım Geliştirme Yaşam Döngüsü Boyunca Test</a>
+</li>
+<li><a href="chapter-3.html">Bölüm 3 — Statik Testler</a>
+</li>
+<li><a href="chapter-4.html">Bölüm 4 — Test Analizi ve Tasarımı</a>
+</li>
+<li><a href="chapter-5.html">Bölüm 5 — Test Aktivitelerini Yönetme</a>
+</li>
+<li><a href="chapter-6.html">Bölüm 6 — Test Araçları</a>
+</li>
+</ul>
+<div class="group">Arka bölüm</div><ul>
+<li><a href="rationale.html">Cevaplar ve Gerekçeler</a>
+</li>
+<li><a href="glossary.html">Sözlük</a>
+</li>
+<li><a href="confused-pairs.html">Sık Karıştırılan Kavramlar — Ana Liste</a>
+</li>
+<li><a href="final-revision.html">Son Tekrar Planı</a>
+</li>
+<li class="current"><a href="mock-exam-1.html">Deneme Sınavı 1 — 40 Soru, Gerekçeleriyle</a>
+<ul class="sub"><li><a href="#part-1-questions">Kısım 1 — Sorular</a></li><li><a href="#part-2-answer-key-and-score-interpretation">Kısım 2 — Cevap Anahtarı ve Puan Yorumu</a></li><li><a href="#part-3-answers-explanations-and-references">Kısım 3 — Cevaplar, Açıklamalar ve Kaynaklar</a></li></ul>
+</li>
+<li><a href="further-resources.html">İleri Kaynaklar</a>
+</li>
+</ul>
+</div></details></nav>
+<main>
+<section id="mock-exam-1-40-questions-with-rationale" class="level1">
+<h1>Deneme Sınavı 1 — 40 Soru, Gerekçeleriyle</h1>
+<p>Bu deneme sınavı gerçek ISTQB® CTFL® v4.0 sınavının resmî yapısını birebir izler: bölüm dağılımı, bilişsel seviyeler ve süre resmî belgelerdeki değerlerle aynıdır. Buradaki soruların hiçbiri gerçek sınav içeriğini kopyalamaz; hepsi sınav hazırlığı için yazılmış özgün sorulardır.</p>
+<p>Sorular TTB sınavındaki soru kitapçığı gibi iki dillidir: her soruda önce İngilizce metin, hemen altında Türkçesi gelir. İngilizce metin bu kitabın İngilizce sürümündeki deneme sınavıyla birebir aynıdır. Türkçe metin kişi adlarını, durum ve olay adlarını ve ekran metinlerini İngilizcedeki gibi bırakır; böylece iki metni yan yana okurken aynı şeye baktığınızdan emin olursunuz.</p>
+<p><strong>Sınav kuralları (hatırlatma)</strong></p>
+<div class="table-wrap">
+<table>
+<colgroup>
+<col style="width: 28%" />
+<col style="width: 72%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Konu</th>
+<th>Değer</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Soru sayısı</td>
+<td>40 çoktan seçmeli: 38’i tek doğru cevaplı; 2’si (16 ve 32) beş şık arasında iki doğru cevabı olan “2 seçenek seçin” sorusu</td>
+</tr>
+<tr class="even">
+<td>Toplam puan</td>
+<td>40 (her soru 1 puan)</td>
+</tr>
+<tr class="odd">
+<td>Geçme notu</td>
+<td>26 puan (%65)</td>
+</tr>
+<tr class="even">
+<td>Süre</td>
+<td>60 dakika (ana dili Türkçe olan aday için TTB sınavında ek süre yok; %25 ek süre yalnızca sınav ana dilinizde değilse ve sağlayıcınız tanırsa; bkz. <em>CTFL® Sınavı Nasıl İşler</em>)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Bilişsel dağılım: K1 = 8, K2 = 24, K3 = 8. Bölüm dağılımı: Bölüm 1 → 8, Bölüm 2 → 6, Bölüm 3 → 4, Bölüm 4 → 11, Bölüm 5 → 9, Bölüm 6 → 2.</p>
+<p><strong>Nasıl kullanılır.</strong> İki yol var. Süreli mod: 60 dakikalık bir sayaç kurun (ana diliniz Türkçe değilse ve sınav sağlayıcınız %25 ek süre tanıyorsa 75), hiçbir şeye bakmadan 40 sorunun hepsini cevaplayın ve Kısım 2’deki cevap anahtarını ancak ondan sonra açın; bu, hazır olup olmadığınızı ölçer. İnceleme modu: soruları süre tutmadan bölüm bölüm çözün ve her birinden sonra Kısım 3’teki gerekçeyi okuyun; bu, “çeldiriciyi neden seçmemeliydim?” sezginizi güçlendirir. Hangi modu seçerseniz seçin, doğru cevapladığınız soruların gerekçelerini de okuyun; çünkü öğrenme orada olur.</p>
+<section id="part-1-questions" class="level2">
+<h2>Kısım 1 — Sorular</h2>
+<p><em>40 sorunun hepsini cevaplamadan Kısım 2’deki cevap anahtarına bakmayın.</em></p>
+<section id="bölüm-1-yazılım-testinin-temelleri-1" class="level3">
+<h3>Bölüm 1 — Yazılım Testinin Temelleri</h3>
+<div lang="en">
+<p><strong>Question 1.</strong> A product owner must decide whether a delayed feature can still go into the next release. She asks the testers for a summary of the defects found so far and the risks that remain. Which typical test objective does this request serve?</p>
+<div class="mc">
+<ul>
+<li>(a) Verifying that the test object complies with contractual and legal requirements</li>
+<li>(b) Providing information to stakeholders to allow them to make informed decisions</li>
+<li>(c) Validating whether the test object is complete and works as the stakeholders expect</li>
+<li>(d) Ensuring the required coverage of the test object</li>
+</ul>
+</div>
+</div>
+<p><strong>Soru 1.</strong> Bir ürün sahibi, gecikmiş bir özelliğin yine de bir sonraki sürüme girip giremeyeceğine karar vermek zorundadır. Test uzmanlarından şimdiye kadar bulunan hataların ve kalan risklerin bir özetini ister. Bu istek hangi tipik test hedefine hizmet eder?</p>
+<div class="mc">
+<ul>
+<li>(a) Test nesnesinin sözleşmeden doğan ve yasal gereksinimlere uygunluğunu doğrulamak</li>
+<li>(b) Paydaşlara bilinçli karar verebilmeleri için bilgi sağlamak</li>
+<li>(c) Test nesnesinin eksiksiz olduğunu ve paydaşların beklediği gibi çalıştığını sağlama yoluyla teyit etmek</li>
+<li>(d) Test nesnesinin gerekli kapsamını sağlamak</li>
+</ul>
+</div>
+<div lang="en">
+<p><strong>Question 2.</strong> A flight-booking company does not tell a new developer about its rule that all departure times are stored in Coordinated Universal Time (UTC). The developer assumes that the times are local and writes code that stores them without conversion. A week after release, a passenger’s boarding reminder arrives an hour after the flight has left. Which statement classifies what happened correctly?</p>
+<div class="mc">
+<ul>
+<li>(a) The missing briefing is the error, and the code that stores local times is the failure</li>
+<li>(b) The developer’s wrong assumption is the root cause, and the stored local times are the failure</li>
+<li>(c) The developer’s wrong assumption is the error, and the late boarding reminder is the failure</li>
+<li>(d) The code that stores local times is the root cause, and the missing briefing is the defect</li>
+</ul>
+</div>
+</div>
+<p><strong>Soru 2.</strong> Bir uçuş rezervasyon şirketi, yeni bir geliştiriciye bütün kalkış saatlerinin Eşgüdümlü Evrensel Zaman (UTC) olarak saklandığı kuralını söylemez. Geliştirici saatlerin yerel saat olduğunu varsayar ve onları dönüştürmeden saklayan kodu yazar. Sürümden bir hafta sonra bir yolcunun biniş hatırlatması, uçuş kalktıktan bir saat sonra gelir. Hangi ifade olanları doğru sınıflandırır?</p>
+<div class="mc">
+<ul>
+<li>(a) Eksik bilgilendirme insan hatasıdır, yerel saatleri saklayan kod ise arızadır</li>
+<li>(b) Geliştiricinin yanlış varsayımı kök nedendir, saklanan yerel saatler ise arızadır</li>
+<li>(c) Geliştiricinin yanlış varsayımı insan hatasıdır, geç gelen biniş hatırlatması ise arızadır</li>
+<li>(d) Yerel saatleri saklayan kod kök nedendir, eksik bilgilendirme ise hatadır</li>
+</ul>
+</div>
+<div lang="en">
+<p><strong>Question 3.</strong> In one release, a reviewer spots two contradictory rules in a user story before any code is written, and the product owner corrects the story in ten minutes. In the next release, a similar contradiction is missed. It is built into the design and the code, copied into the test cases, and found only in production, where fixing it takes changes to the story, the design, the code, and the tests, plus an emergency patch. Which testing principle does this comparison illustrate best?</p>
+<div class="mc">
+<ul>
+<li>(a) Defects cluster together</li>
+<li>(b) Testing shows the presence, not the absence, of defects</li>
+<li>(c) The absence-of-defects fallacy</li>
+<li>(d) Early testing saves time and money</li>
+</ul>
+</div>
+</div>
+<p><strong>Soru 3.</strong> Bir sürümde bir gözden geçirici, daha tek satır kod yazılmadan bir kullanıcı hikayesinde birbiriyle çelişen iki kural fark eder ve ürün sahibi hikayeyi on dakikada düzeltir. Bir sonraki sürümde benzer bir çelişki gözden kaçar. Çelişki tasarıma ve koda işlenir, test senaryolarına kopyalanır ve ancak canlı ortamda bulunur; orada düzeltmek hikayede, tasarımda, kodda ve testlerde değişiklik ile bir de acil yama gerektirir. Bu karşılaştırma en iyi hangi test prensibini örnekler?</p>
+<div class="mc">
+<ul>
+<li>(a) Hatalar yazılımın belli alanlarında yoğunlaşır</li>
+<li>(b) Testin amacı, yazılımda hataların olduğunu göstermektir; yazılımda hata kalmadığını ispatlamak değildir</li>
+<li>(c) Hatasızlık yanılgısı</li>
+<li>(d) Erken test, zaman ve para tasarrufu sağlar</li>
+</ul>
+</div>
+<div lang="en">
+<p><strong>Question 4.</strong> A tester takes the prioritised test conditions for a loyalty-points feature and turns them into test cases, identifying the coverage items each case must exercise. She also works out which data the cases will need and what the test environment must provide. Which test activity is she carrying out?</p>
+<div class="mc">
+<ul>
+<li>(a) Test analysis</li>
+<li>(b) Test implementation</li>
+<li>(c) Test planning</li>
+<li>(d) Test design</li>
+</ul>
+</div>
+</div>
+<p><strong>Soru 4.</strong> Bir test uzmanı, bir sadakat puanı özelliğinin önceliklendirilmiş test koşullarını alıp test senaryolarına dönüştürür ve her senaryonun çalıştırması gereken kapsam öğelerini belirler. Senaryoların hangi veriye ihtiyaç duyacağını ve test ortamının neler sağlaması gerektiğini de çıkarır. Hangi test aktivitesini yürütmektedir?</p>
+<div class="mc">
+<ul>
+<li>(a) Test analizi</li>
+<li>(b) Test uyarlama</li>
+<li>(c) Test planlama</li>
+<li>(d) Test tasarımı</li>
+</ul>
+</div>
+<div lang="en">
+<p><strong>Question 5.</strong> While deriving test conditions from a user story, a tester finds that two of its acceptance criteria contradict each other. The product owner cannot correct the story straight away, so the tester records the problem in a defect report. Which test activity produces this defect report as one of its work products?</p>
+<div class="mc">
+<ul>
+<li>(a) Test execution</li>
+<li>(b) Test analysis</li>
+<li>(c) Test design</li>
+<li>(d) Test completion</li>
+</ul>
+</div>
+</div>
+<p><strong>Soru 5.</strong> Bir kullanıcı hikayesinden test koşulları türetirken bir test uzmanı, hikayenin iki kabul kriterinin birbiriyle çeliştiğini fark eder. Ürün sahibi hikayeyi hemen düzeltemez; test uzmanı da sorunu bir hata raporuna kaydeder. Bu hata raporu hangi test aktivitesinin iş ürünlerinden biri olarak ortaya çıkar?</p>
+<div class="mc">
+<ul>
+<li>(a) Test koşumu</li>
+<li>(b) Test analizi</li>
+<li>(c) Test tasarımı</li>
+<li>(d) Test tamamlama</li>
+</ul>
+</div>
+<div lang="en">
+<p><strong>Question 6.</strong> An auditor asks the test manager to show that every requirement in the release is covered by at least one executed test. Which property of the testware makes this question efficient to answer?</p>
+<div class="mc">
+<ul>
+<li>(a) Traceability between the test basis and the test work products</li>
+<li>(b) The independence of the test team from the development team</li>
+<li>(c) A high level of test automation in the regression suite</li>
+<li>(d) Detailed entry criteria defined for each test level</li>
+</ul>
+</div>
+</div>
+<p><strong>Soru 6.</strong> Bir denetçi, test yöneticisinden sürümdeki her gereksinimin en az bir koşulmuş testle kapsandığını göstermesini ister. Test çalışma ürünlerinin hangi özelliği bu soruyu verimli biçimde cevaplamayı sağlar?</p>
+<div class="mc">
+<ul>
+<li>(a) Test esası ile test çalışma ürünleri arasındaki izlenebilirlik</li>
+<li>(b) Test ekibinin geliştirme ekibinden bağımsızlığı</li>
+<li>(c) Regresyon test grubundaki yüksek test otomasyonu düzeyi</li>
+<li>(d) Her test seviyesi için tanımlanmış ayrıntılı giriş kriterleri</li>
+</ul>
+</div>
+<div lang="en">
+<p><strong>Question 7.</strong> A department head asks an agile coach what her teams will gain by adopting the whole team approach. Which answer should the coach give?</p>
+<div class="mc">
+<ul>
+<li>(a) Each specialist can concentrate on their own tasks without taking part in other team activities</li>
+<li>(b) A high level of test independence is achieved, which suits safety-critical products best</li>
+<li>(c) The various skill sets within the team can be leveraged for the benefit of the project</li>
+<li>(d) Responsibility for quality moves from the developers to a dedicated quality team</li>
+</ul>
+</div>
+</div>
+<p><strong>Soru 7.</strong> Bir departman başkanı bir çevik koça, ekiplerinin tüm ekip yaklaşımını benimseyerek ne kazanacağını sorar. Koç hangi cevabı vermelidir?</p>
+<div class="mc">
+<ul>
+<li>(a) Her uzman, diğer ekip aktivitelerine katılmadan kendi görevlerine odaklanabilir</li>
+<li>(b) Yüksek düzeyde test bağımsızlığı sağlanır; bu da en çok emniyet açısından kritik ürünlere uyar</li>
+<li>(c) Ekip içindeki farklı beceri setlerinden projenin yararına yararlanılabilir</li>
+<li>(d) Kalite sorumluluğu geliştiricilerden ayrı bir kalite ekibine geçer</li>
+</ul>
+</div>
+<div lang="en">
+<p><strong>Question 8.</strong> A fintech company contracts an external test lab to test its mobile app. After two releases, the project manager lists four observations. Which observation describes a typical drawback of this high level of test independence?</p>
+<div class="mc">
+<ul>
+<li>(a) The lab’s testers challenged several assumptions in the specification, which delayed the sign-off of two user stories</li>
+<li>(b) The lab’s testers found failures that the developers had missed, because they did not share the developers’ assumptions</li>
+<li>(c) The lab’s testers learned about requirement changes late, because they were outside the team’s daily communication</li>
+<li>(d) The developers continued to test their own components before handing builds to the lab</li>
+</ul>
+</div>
+</div>
+<p><strong>Soru 8.</strong> Bir finansal teknoloji şirketi, mobil uygulamasını test etmesi için harici bir test laboratuvarıyla sözleşme yapar. İki sürümden sonra proje yöneticisi dört gözlem sıralar. Hangi gözlem, bu yüksek test bağımsızlığı düzeyinin tipik bir sakıncasını anlatır?</p>
+<div class="mc">
+<ul>
+<li>(a) Laboratuvarın test uzmanları spesifikasyondaki birkaç varsayımı sorguladı; bu da iki kullanıcı hikayesinin onayını geciktirdi</li>
+<li>(b) Laboratuvarın test uzmanları, geliştiricilerin varsayımlarını paylaşmadıkları için geliştiricilerin kaçırdığı arızaları buldu</li>
+<li>(c) Laboratuvarın test uzmanları, ekibin günlük iletişiminin dışında kaldıkları için gereksinim değişikliklerini geç öğrendi</li>
+<li>(d) Geliştiriciler, yapıları laboratuvara teslim etmeden önce kendi bileşenlerini test etmeye devam etti</li>
+</ul>
+</div>
+</section>
+<section id="bölüm-2-yazılım-geliştirme-yaşam-döngüsü-boyunca-test-1" class="level3">
+<h3>Bölüm 2 — Yazılım Geliştirme Yaşam Döngüsü Boyunca Test</h3>
+<div lang="en">
+<p><strong>Question 9.</strong> A project moves from a sequential development model to a two-week iterative one. What change should the team expect in testing?</p>
+<div class="mc">
+<ul>
+<li>(a) Test activities repeat in every iteration as new increments are delivered</li>
+<li>(b) Testing must wait until all iterations have produced a complete system</li>
+<li>(c) System testing becomes unnecessary because each increment is small</li>
+<li>(d) Test levels must be merged into one level to fit the iteration length</li>
+</ul>
+</div>
+</div>
+<p><strong>Soru 9.</strong> Bir proje, sıralı bir geliştirme modelinden iki haftalık döngüsel bir modele geçer. Ekip testte hangi değişikliği beklemelidir?</p>
+<div class="mc">
+<ul>
+<li>(a) Yeni artımlar teslim edildikçe test aktiviteleri her döngüde tekrarlanır</li>
+<li>(b) Test, bütün döngüler eksiksiz bir sistem üretene kadar beklemek zorundadır</li>
+<li>(c) Her artım küçük olduğu için sistem testi gereksiz hale gelir</li>
+<li>(d) Döngü süresine uyması için test seviyeleri tek bir seviyede birleştirilmelidir</li>
+</ul>
+</div>
+<div lang="en">
+<p><strong>Question 10.</strong> In a hybrid project, testers receive each user story only when it is marked “ready for test”, after the code is complete. As a result, defects in the stories themselves are found late. Which good testing practice, valid in every software development lifecycle, would address this most directly?</p>
+<div class="mc">
+<ul>
+<li>(a) Every test level is given objectives that do not overlap with those of the other levels</li>
+<li>(b) Test execution starts once the code is feature-complete</li>
+<li>(c) Testers are involved in reviewing work products as soon as drafts are available</li>
+<li>(d) Testers write the acceptance criteria on behalf of the business representatives</li>
+</ul>
+</div>
+</div>
+<p><strong>Soru 10.</strong> Hibrit bir projede test uzmanları her kullanıcı hikayesini ancak kod tamamlandıktan sonra, hikaye “teste hazır” olarak işaretlendiğinde alır. Bunun sonucunda hikayelerin kendisindeki hatalar geç bulunur. Her yazılım geliştirme yaşam döngüsünde geçerli olan hangi iyi test etme uygulaması bu sorunu en doğrudan çözer?</p>
+<div class="mc">
+<ul>
+<li>(a) Her test seviyesine, diğer seviyelerinkiyle örtüşmeyen hedefler verilir</li>
+<li>(b) Test koşumu, kodun bütün özellikleri tamamlandığında başlar</li>
+<li>(c) Test uzmanları, taslaklar hazır olur olmaz iş ürünlerinin gözden geçirilmesine dahil edilir</li>
+<li>(d) Test uzmanları kabul kriterlerini iş temsilcileri adına yazar</li>
+</ul>
+</div>
+<div lang="en">
+<p><strong>Question 11.</strong> Which statement about test-first approaches to development is correct?</p>
+<div class="mc">
+<ul>
+<li>(a) In ATDD, the tests are derived from the code once each component is complete</li>
+<li>(b) In TDD, ATDD, and BDD, the tests may persist as automated tests that protect the code during later changes and refactoring</li>
+<li>(c) In BDD, the test cases are written in a programming language so that only developers can read them</li>
+<li>(d) In TDD, business representatives write the tests from the acceptance criteria of user stories</li>
+</ul>
+</div>
+</div>
+<p><strong>Soru 11.</strong> Geliştirmeye yönelik önce-test yaklaşımları hakkında hangi ifade doğrudur?</p>
+<div class="mc">
+<ul>
+<li>(a) ATDD’de testler, her bileşen tamamlandığında koddan türetilir</li>
+<li>(b) TDD, ATDD ve BDD’de testler, sonraki değişiklikler ve yeniden düzenleme sırasında kodu koruyan otomatik testler olarak kalabilir</li>
+<li>(c) BDD’de test senaryoları, yalnızca geliştiriciler okuyabilsin diye bir programlama dilinde yazılır</li>
+<li>(d) TDD’de testleri iş temsilcileri, kullanıcı hikayelerinin kabul kriterlerinden yazar</li>
+</ul>
+</div>
+<div lang="en">
+<p><strong>Question 12.</strong> On a mobile-banking project, the team runs performance and security tests on each component as soon as it is built, instead of waiting until the complete system is available in a representative test environment. Which concept does this practice illustrate?</p>
+<div class="mc">
+<ul>
+<li>(a) Test-driven development</li>
+<li>(b) Confirmation testing</li>
+<li>(c) Risk-based testing</li>
+<li>(d) Shift left</li>
+</ul>
+</div>
+</div>
+<p><strong>Soru 12.</strong> Bir mobil bankacılık projesinde ekip, eksiksiz sistemin temsili bir test ortamında hazır olmasını beklemek yerine her bileşen üretilir üretilmez onun üzerinde performans ve güvenlik testleri koşar. Bu uygulama hangi kavramı örnekler?</p>
+<div class="mc">
+<ul>
+<li>(a) Test güdümlü yazılım geliştirme</li>
+<li>(b) Onaylama testi</li>
+<li>(c) Risk bazlı test</li>
+<li>(d) Sola alma</li>
+</ul>
+</div>
+<div lang="en">
+<p><strong>Question 13.</strong> Before a hospital’s new appointment system goes live, the IT operations staff test the backup and restore procedures, disaster recovery, and user-account management in a production-like environment. Their aim is to confirm that they can run the system in production, so that it can be declared ready for deployment. Which test level is this?</p>
+<div class="mc">
+<ul>
+<li>(a) Acceptance testing</li>
+<li>(b) System testing</li>
+<li>(c) System integration testing</li>
+<li>(d) Component integration testing</li>
+</ul>
+</div>
+</div>
+<p><strong>Soru 13.</strong> Bir hastanenin yeni randevu sistemi canlıya alınmadan önce, BT operasyon ekibi canlıya benzer bir ortamda yedekleme ve geri yükleme prosedürlerini, felaket kurtarmayı ve kullanıcı hesabı yönetimini test eder. Amaçları, sistemi canlı ortamda işletebileceklerini teyit etmek, böylece sistemin dağıtıma hazır ilan edilebilmesini sağlamaktır. Bu hangi test seviyesidir?</p>
+<div class="mc">
+<ul>
+<li>(a) Kabul testi</li>
+<li>(b) Sistem testi</li>
+<li>(c) Sistem entegrasyon testi</li>
+<li>(d) Bileşen entegrasyon testi</li>
+</ul>
+</div>
+<div lang="en">
+<p><strong>Question 14.</strong> A hotel-booking app showed the wrong number of nights for stays that crossed the end of a month. After the developer’s fix, the tester first repeats the test that revealed the failure, a stay from 30 April to 2 May, and checks the number of nights. She then re-runs the automated suites for payment, loyalty points, and cancellation, which the fix did not touch. What are these two activities, in order?</p>
+<div class="mc">
+<ul>
+<li>(a) Maintenance testing, then system testing</li>
+<li>(b) Confirmation testing, then regression testing</li>
+<li>(c) Regression testing, then confirmation testing</li>
+<li>(d) Re-testing, then maintenance testing</li>
+</ul>
+</div>
+</div>
+<p><strong>Soru 14.</strong> Bir otel rezervasyon uygulaması, ay sonunu aşan konaklamalarda gece sayısını yanlış gösteriyordu. Geliştiricinin düzeltmesinden sonra test uzmanı önce arızayı ortaya çıkaran testi, 30 Nisan’dan 2 Mayıs’a bir konaklamayı, tekrarlar ve gece sayısını kontrol eder. Sonra düzeltmenin dokunmadığı ödeme, sadakat puanı ve iptal için otomatik test gruplarını yeniden koşar. Sırasıyla bu iki aktivite nedir?</p>
+<div class="mc">
+<ul>
+<li>(a) Bakım testi, ardından sistem testi</li>
+<li>(b) Onaylama testi, ardından regresyon testi</li>
+<li>(c) Regresyon testi, ardından onaylama testi</li>
+<li>(d) Tekrar testi, ardından bakım testi</li>
+</ul>
+</div>
+</section>
+<section id="bölüm-3-statik-testler-1" class="level3">
+<h3>Bölüm 3 — Statik Testler</h3>
+<div lang="en">
+<p><strong>Question 15.</strong> A test manager wants to extend static testing beyond source code and requirement specifications. Which of the following could the team examine with static testing?</p>
+<div class="mc">
+<ul>
+<li>(a) The response times of the deployed checkout service under peak load</li>
+<li>(b) The memory consumption of the mobile app during a long user session</li>
+<li>(c) The behaviour of the payment screen when the network connection drops</li>
+<li>(d) The supplier contract and the test charters for the next release</li>
+</ul>
+</div>
+</div>
+<p><strong>Soru 15.</strong> Bir test yöneticisi statik testi kaynak kodun ve gereksinim spesifikasyonlarının ötesine taşımak istiyor. Ekip aşağıdakilerden hangisini statik testle inceleyebilir?</p>
+<div class="mc">
+<ul>
+<li>(a) Dağıtılmış ödeme hizmetinin yoğun yük altındaki yanıt süreleri</li>
+<li>(b) Mobil uygulamanın uzun bir kullanıcı oturumu boyunca bellek tüketimi</li>
+<li>(c) Ağ bağlantısı koptuğunda ödeme ekranının davranışı</li>
+<li>(d) Tedarikçi sözleşmesi ve bir sonraki sürümün test başlatma belgeleri</li>
+</ul>
+</div>
+<div lang="en">
+<p><strong>Question 16.</strong> Which TWO of the following statements correctly describe differences between static testing and dynamic testing? (Select TWO options.)</p>
+<div class="mc">
+<ul>
+<li>(a) Dynamic testing can be applied to non-executable work products, such as requirement specifications</li>
+<li>(b) Static testing can measure quality characteristics that do not depend on executing code, such as maintainability</li>
+<li>(c) Static testing is the better way to measure performance efficiency, such as response times under load</li>
+<li>(d) Dynamic testing finds gaps in test basis coverage, such as a missing test for an acceptance criterion, more easily than static testing</li>
+<li>(e) Static testing can more easily detect defects on code paths that are rarely executed or hard to reach with dynamic testing</li>
+</ul>
+</div>
+</div>
+<p><strong>Soru 16.</strong> Aşağıdaki ifadelerden HANGİ İKİSİ statik test ile dinamik test arasındaki farkları doğru anlatır? (2 seçenek seçin)</p>
+<div class="mc">
+<ul>
+<li>(a) Dinamik test, gereksinim spesifikasyonları gibi çalıştırılamayan iş ürünlerine uygulanabilir</li>
+<li>(b) Statik test, sürdürülebilirlik gibi kodun çalıştırılmasına bağlı olmayan kalite karakteristiklerini ölçebilir</li>
+<li>(c) Statik test, yük altındaki yanıt süreleri gibi performans verimliliğini ölçmenin daha iyi yoludur</li>
+<li>(d) Dinamik test, bir kabul kriteri için eksik bir test gibi test esası kapsamındaki boşlukları statik testten daha kolay bulur</li>
+<li>(e) Statik test, nadiren çalıştırılan ya da dinamik testle ulaşılması zor kod yollarındaki hataları daha kolay tespit edebilir</li>
+</ul>
+</div>
+<div lang="en">
+<p><strong>Question 17.</strong> In a review of a data-migration specification, the participants agree on eleven defects. Which review role is responsible for correcting these defects in the specification?</p>
+<div class="mc">
+<ul>
+<li>(a) The author</li>
+<li>(b) The review leader</li>
+<li>(c) The scribe</li>
+<li>(d) The moderator</li>
+</ul>
+</div>
+</div>
+<p><strong>Soru 17.</strong> Bir veri taşıma spesifikasyonunun gözden geçirmesinde katılımcılar on bir hata üzerinde uzlaşır. Spesifikasyondaki bu hataları düzeltmekten hangi gözden geçirme rolü sorumludur?</p>
+<div class="mc">
+<ul>
+<li>(a) Yazar</li>
+<li>(b) Gözden geçirme lideri</li>
+<li>(c) Katip</li>
+<li>(d) Moderatör</li>
+</ul>
+</div>
+<div lang="en">
+<p><strong>Question 18.</strong> For the design of its railway-signalling software, a team runs a review that follows the complete generic review process. The participants prepare individually, the author takes part but may not act as review leader or scribe, and metrics such as anomalies found per page and preparation time are collected to improve the organisation’s review process. The main aim is to find as many anomalies as possible. Which review type is this?</p>
+<div class="mc">
+<ul>
+<li>(a) Technical review</li>
+<li>(b) Inspection</li>
+<li>(c) Walkthrough</li>
+<li>(d) Informal review</li>
+</ul>
+</div>
+</div>
+<p><strong>Soru 18.</strong> Bir ekip, demiryolu sinyalizasyon yazılımının tasarımı için genel gözden geçirme sürecinin tamamını izleyen bir gözden geçirme yürütür. Katılımcılar bireysel olarak hazırlanır; yazar katılır ama gözden geçirme lideri ya da katip olamaz; kuruluşun gözden geçirme sürecini iyileştirmek için sayfa başına bulunan anomali ve hazırlık süresi gibi metrikler toplanır. Ana amaç olabildiğince çok anomali bulmaktır. Bu hangi gözden geçirme çeşididir?</p>
+<div class="mc">
+<ul>
+<li>(a) Teknik gözden geçirme</li>
+<li>(b) Teftiş</li>
+<li>(c) Üzerinden geçme</li>
+<li>(d) Gayri resmi gözden geçirme</li>
+</ul>
+</div>
+</section>
+<section id="bölüm-4-test-analizi-ve-tasarımı-1" class="level3">
+<h3>Bölüm 4 — Test Analizi ve Tasarımı</h3>
+<div lang="en">
+<p><strong>Question 19.</strong> A tester derives test cases from a state diagram in the specification, with no knowledge of the code. Another tester designs extra tests by analysing branch-coverage gaps in the source code. How are these two approaches classified?</p>
+<div class="mc">
+<ul>
+<li>(a) Both are white-box test techniques</li>
+<li>(b) The first is experience-based and the second is black-box</li>
+<li>(c) The first is black-box and the second is white-box</li>
+<li>(d) The first is white-box and the second is experience-based</li>
+</ul>
+</div>
+</div>
+<p><strong>Soru 19.</strong> Bir test uzmanı, kodu hiç bilmeden, spesifikasyondaki bir durum diyagramından test senaryoları türetir. Başka bir test uzmanı, kaynak koddaki dal kapsamı boşluklarını analiz ederek ek testler tasarlar. Bu iki yaklaşım nasıl sınıflandırılır?</p>
+<div class="mc">
+<ul>
+<li>(a) İkisi de beyaz kutu test tekniğidir</li>
+<li>(b) Birincisi tecrübeye dayalı, ikincisi kara kutudur</li>
+<li>(c) Birincisi kara kutu, ikincisi beyaz kutudur</li>
+<li>(d) Birincisi beyaz kutu, ikincisi tecrübeye dayalıdır</li>
+</ul>
+</div>
+<div lang="en">
+<p><strong>Question 20.</strong> An online ticket desk accepts 1 to 100 tickets per order. 1 to 9 tickets are charged at the standard price, 10 to 49 tickets get a 10 percent discount, and 50 to 100 tickets get a 20 percent discount. Quantities below 1 are rejected with an “order too small” error, and quantities above 100 are rejected with an “order limit exceeded” error. Using equivalence partitioning on the ticket quantity, how many equivalence partitions (valid and invalid) must be identified?</p>
+<div class="mc">
+<ul>
+<li>(a) 3</li>
+<li>(b) 4</li>
+<li>(c) 6</li>
+<li>(d) 5</li>
+</ul>
+</div>
+</div>
+<p><strong>Soru 20.</strong> Bir çevrim içi bilet gişesi sipariş başına 1 ile 100 arasında bilet kabul eder. 1–9 bilet standart fiyattan ücretlendirilir, 10–49 bilet %10 indirim alır, 50–100 bilet ise %20 indirim alır. 1’in altındaki miktarlar “sipariş çok küçük” hatasıyla, 100’ün üstündeki miktarlar ise “sipariş sınırı aşıldı” hatasıyla reddedilir. Bilet miktarına denklik paylarına ayırma uygulandığında kaç denklik payı (geçerli ve geçersiz) belirlenmelidir?</p>
+<div class="mc">
+<ul>
+<li>(a) 3</li>
+<li>(b) 4</li>
+<li>(c) 6</li>
+<li>(d) 5</li>
+</ul>
+</div>
+<div lang="en">
+<p><strong>Question 21.</strong> A registration form accepts passwords of 8 to 20 characters; lengths outside this range are rejected. Using 2-value boundary value analysis on the password length, how many distinct length values must be tested?</p>
+<div class="mc">
+<ul>
+<li>(a) 4</li>
+<li>(b) 2</li>
+<li>(c) 6</li>
+<li>(d) 8</li>
+</ul>
+</div>
+</div>
+<p><strong>Soru 21.</strong> Bir kayıt formu 8 ile 20 karakter arasındaki parolaları kabul eder; bu aralığın dışındaki uzunluklar reddedilir. Parola uzunluğuna 2 değerli sınır değer analizi uygulandığında kaç farklı uzunluk değeri test edilmelidir?</p>
+<div class="mc">
+<ul>
+<li>(a) 4</li>
+<li>(b) 2</li>
+<li>(c) 6</li>
+<li>(d) 8</li>
+</ul>
+</div>
+<div lang="en">
+<p><strong>Question 22.</strong> A car-rental price rule depends on three conditions: the driver’s age group (under 25, 25 to 69, or 70 and over), whether the customer holds a loyalty card (yes or no), and whether the car is collected at an airport (yes or no). The team builds an extended-entry decision table and wants the full table before removing or merging any column. How many columns must the full decision table contain?</p>
+<div class="mc">
+<ul>
+<li>(a) 7</li>
+<li>(b) 12</li>
+<li>(c) 8</li>
+<li>(d) 6</li>
+</ul>
+</div>
+</div>
+<p><strong>Soru 22.</strong> Bir araç kiralama fiyat kuralı üç koşula bağlıdır: sürücünün yaş grubu (25 yaş altı, 25–69 ya da 70 ve üstü), müşterinin sadakat kartı olup olmadığı (evet ya da hayır) ve aracın havalimanında teslim alınıp alınmadığı (evet ya da hayır). Ekip genişletilmiş girişli bir karar tablosu kurar ve herhangi bir sütunu çıkarmadan ya da birleştirmeden önce tam tabloyu istemektedir. Tam karar tablosu kaç sütun içermelidir?</p>
+<div class="mc">
+<ul>
+<li>(a) 7</li>
+<li>(b) 12</li>
+<li>(c) 8</li>
+<li>(d) 6</li>
+</ul>
+</div>
+<div lang="en">
+<p><strong>Question 23.</strong> A media player has only these state transitions, and no others:</p>
+<div class="table-wrap">
+<table>
+<thead>
+<tr class="header">
+<th>Source</th>
+<th>Event</th>
+<th>Target</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Idle</td>
+<td>start</td>
+<td>Playing</td>
+</tr>
+<tr class="even">
+<td>Playing</td>
+<td>pause</td>
+<td>Paused</td>
+</tr>
+<tr class="odd">
+<td>Paused</td>
+<td>resume</td>
+<td>Playing</td>
+</tr>
+<tr class="even">
+<td>Playing</td>
+<td>stop</td>
+<td>Stopped</td>
+</tr>
+<tr class="odd">
+<td>Paused</td>
+<td>stop</td>
+<td>Stopped</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>The player starts in the Idle state. According to the state transition model, which of the following event sequences is a valid test case?</p>
+<div class="mc">
+<ul>
+<li>(a) start, resume, stop</li>
+<li>(b) start, pause, pause, stop</li>
+<li>(c) start, pause, resume, stop</li>
+<li>(d) start, stop, resume</li>
+</ul>
+</div>
+</div>
+<p><strong>Soru 23.</strong> Bir medya oynatıcının yalnızca şu durum geçişleri vardır, başka geçişi yoktur:</p>
+<div class="table-wrap">
+<table>
+<thead>
+<tr class="header">
+<th>Kaynak durum</th>
+<th>Olay</th>
+<th>Hedef durum</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Idle</td>
+<td>start</td>
+<td>Playing</td>
+</tr>
+<tr class="even">
+<td>Playing</td>
+<td>pause</td>
+<td>Paused</td>
+</tr>
+<tr class="odd">
+<td>Paused</td>
+<td>resume</td>
+<td>Playing</td>
+</tr>
+<tr class="even">
+<td>Playing</td>
+<td>stop</td>
+<td>Stopped</td>
+</tr>
+<tr class="odd">
+<td>Paused</td>
+<td>stop</td>
+<td>Stopped</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Oynatıcı Idle durumunda başlar. Durum geçişi modeline göre aşağıdaki olay dizilerinden hangisi geçerli bir test senaryosudur?</p>
+<div class="mc">
+<ul>
+<li>(a) start, resume, stop</li>
+<li>(b) start, pause, pause, stop</li>
+<li>(c) start, pause, resume, stop</li>
+<li>(d) start, stop, resume</li>
+</ul>
+</div>
+<div lang="en">
+<p><strong>Question 24.</strong> After a regression run, the coverage report for a currency-conversion component shows 92 percent statement coverage. The only statements never executed are the three inside the block that handles an unavailable exchange-rate service. Which conclusion is correct?</p>
+<div class="mc">
+<ul>
+<li>(a) The three statements are dead code and can be removed, because the tests never reach them</li>
+<li>(b) Branch coverage of the component must also be 92 percent, because the two measures always move together</li>
+<li>(c) The error-handling block works correctly, because every test in the run passed</li>
+<li>(d) A defect in those three statements cannot have caused a failure in this run; a test that makes the exchange-rate service unavailable is needed to exercise them</li>
+</ul>
+</div>
+</div>
+<p><strong>Soru 24.</strong> Bir regresyon koşumundan sonra, bir döviz çevirme bileşeninin kapsam raporu %92 komut kapsama yüzdesi gösterir. Hiç çalıştırılmamış komutlar yalnızca, döviz kuru hizmetine ulaşılamadığı durumu ele alan bloğun içindeki üç komuttur. Hangi sonuç doğrudur?</p>
+<div class="mc">
+<ul>
+<li>(a) Üç komut ölü koddur ve kaldırılabilir, çünkü testler onlara hiç ulaşmıyor</li>
+<li>(b) Bileşenin dal kapsamı da %92 olmalıdır, çünkü iki ölçü her zaman birlikte hareket eder</li>
+<li>(c) Hata ele alma bloğu doğru çalışıyor, çünkü koşumdaki her test geçti</li>
+<li>(d) Bu üç komuttaki bir hata bu koşumda bir arızaya yol açmış olamaz; onları çalıştırmak için döviz kuru hizmetini ulaşılamaz kılan bir test gerekir</li>
+</ul>
+</div>
+<div lang="en">
+<p><strong>Question 25.</strong> Which of the following is a strength of white-box testing compared with black-box testing?</p>
+<div class="mc">
+<ul>
+<li>(a) It can detect that a specified requirement is entirely missing from the implementation</li>
+<li>(b) It can cover parts of the implementation the specification does not mention</li>
+<li>(c) It validates that the system meets the users’ business needs</li>
+<li>(d) It removes the need to update test cases when the code changes</li>
+</ul>
+</div>
+</div>
+<p><strong>Soru 25.</strong> Aşağıdakilerden hangisi beyaz kutu testinin kara kutu testine göre bir güçlü yanıdır?</p>
+<div class="mc">
+<ul>
+<li>(a) Belirtilmiş bir gereksinimin gerçekleştirimde tamamen eksik olduğunu tespit edebilir</li>
+<li>(b) Gerçekleştirimin spesifikasyonda hiç söz edilmeyen kısımlarını kapsayabilir</li>
+<li>(c) Sistemin kullanıcıların iş ihtiyaçlarını karşıladığını sağlar</li>
+<li>(d) Kod değiştiğinde test senaryolarını güncelleme ihtiyacını ortadan kaldırır</li>
+</ul>
+</div>
+<div lang="en">
+<p><strong>Question 26.</strong> A tester on a payroll system remembers that, in earlier releases, the application mishandled employees who joined in the middle of a month and employees with zero hours recorded. For a new overtime feature, she designs tests with a mid-month starter and with an employee who has recorded zero hours. Which technique is she using?</p>
+<div class="mc">
+<ul>
+<li>(a) Exploratory testing</li>
+<li>(b) Error guessing</li>
+<li>(c) Checklist-based testing</li>
+<li>(d) Boundary value analysis</li>
+</ul>
+</div>
+</div>
+<p><strong>Soru 26.</strong> Bir bordro sisteminde çalışan bir test uzmanı, önceki sürümlerde uygulamanın ay ortasında işe başlayan çalışanları ve sıfır saat kaydı olan çalışanları yanlış ele aldığını hatırlar. Yeni bir fazla mesai özelliği için ay ortasında işe başlayan bir çalışanla ve sıfır saat kaydetmiş bir çalışanla testler tasarlar. Hangi tekniği kullanmaktadır?</p>
+<div class="mc">
+<ul>
+<li>(a) Keşif testi</li>
+<li>(b) Hata tahminleme</li>
+<li>(c) Kontrol listesine dayalı test etme</li>
+<li>(d) Sınır değer analizi</li>
+</ul>
+</div>
+<div lang="en">
+<p><strong>Question 27.</strong> Which of the following is true about checklist-based testing?</p>
+<div class="mc">
+<ul>
+<li>(a) Checklists must contain detailed step-by-step instructions so any tester gets the same results</li>
+<li>(b) Checklist items should be removed from the list once the related tests have passed in a release</li>
+<li>(c) In the absence of detailed test cases, checklists can provide guidance and some consistency</li>
+<li>(d) Test checklists should be created by developers, since they know the application best</li>
+</ul>
+</div>
+</div>
+<p><strong>Soru 27.</strong> Kontrol listesine dayalı test etme hakkında aşağıdakilerden hangisi doğrudur?</p>
+<div class="mc">
+<ul>
+<li>(a) Kontrol listeleri, her test uzmanı aynı sonuçları alsın diye ayrıntılı adım adım talimatlar içermelidir</li>
+<li>(b) Kontrol listesi maddeleri, ilgili testler bir sürümde geçtiğinde listeden çıkarılmalıdır</li>
+<li>(c) Ayrıntılı test senaryoları olmadığında kontrol listeleri yol gösterebilir ve bir ölçüde tutarlılık sağlayabilir</li>
+<li>(d) Test kontrol listelerini, uygulamayı en iyi onlar bildiği için geliştiriciler oluşturmalıdır</li>
+</ul>
+</div>
+<div lang="en">
+<p><strong>Question 28.</strong> A user story about shipping fees has this acceptance criterion:</p>
+<div class="table-wrap">
+<table>
+<thead>
+<tr class="header">
+<th>Membership</th>
+<th>Order total</th>
+<th>Shipping fee</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Standard</td>
+<td>Below 50</td>
+<td>4.99</td>
+</tr>
+<tr class="even">
+<td>Standard</td>
+<td>50 or more</td>
+<td>0.00</td>
+</tr>
+<tr class="odd">
+<td>Gold</td>
+<td>Any amount</td>
+<td>0.00</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Which form of writing acceptance criteria does this illustrate?</p>
+<div class="mc">
+<ul>
+<li>(a) Scenario-oriented, because each row describes a concrete example</li>
+<li>(b) Structure-oriented, because the table follows the structure of the code</li>
+<li>(c) Rule-oriented, because a table mapping inputs to outputs is a rule-oriented form</li>
+<li>(d) None, because acceptance criteria must use the Given/When/Then format</li>
+</ul>
+</div>
+</div>
+<p><strong>Soru 28.</strong> Kargo ücretleriyle ilgili bir kullanıcı hikayesinin şu kabul kriteri vardır:</p>
+<div class="table-wrap">
+<table>
+<thead>
+<tr class="header">
+<th>Üyelik</th>
+<th>Sipariş toplamı</th>
+<th>Kargo ücreti</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Standard</td>
+<td>50’nin altında</td>
+<td>4,99</td>
+</tr>
+<tr class="even">
+<td>Standard</td>
+<td>50 ya da üstü</td>
+<td>0,00</td>
+</tr>
+<tr class="odd">
+<td>Gold</td>
+<td>Herhangi bir tutar</td>
+<td>0,00</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Bu, kabul kriteri yazmanın hangi biçimini örnekler?</p>
+<div class="mc">
+<ul>
+<li>(a) Senaryo odaklı, çünkü her satır somut bir örneği anlatır</li>
+<li>(b) Yapı odaklı, çünkü tablo kodun yapısını izler</li>
+<li>(c) Kural odaklı, çünkü girdileri çıktılara eşleyen bir tablo kural odaklı bir biçimdir</li>
+<li>(d) Hiçbiri, çünkü kabul kriterleri Given/When/Then biçimini kullanmak zorundadır</li>
+</ul>
+</div>
+<div lang="en">
+<p><strong>Question 29.</strong> A user story reads: “As a customer, I want free shipping on eligible orders.” The acceptance criterion reads: “Orders over 500 placed by members get free shipping.” Following ATDD, which test case is derived correctly from this acceptance criterion?</p>
+<div class="mc">
+<ul>
+<li>(a) Input: order total 520, customer is a member — Expected result: the shipping fee is zero</li>
+<li>(b) Input: order total 520, customer is a member — Expected result: the order is saved to the database</li>
+<li>(c) Input: order total 480, customer is not a member — Expected result: free shipping is given</li>
+<li>(d) Input: customer is a member — Expected result: free shipping is given on all orders</li>
+</ul>
+</div>
+</div>
+<p><strong>Soru 29.</strong> Bir kullanıcı hikayesi şöyledir: “Bir müşteri olarak, uygun siparişlerde ücretsiz kargo istiyorum.” Kabul kriteri şöyledir: “Üyelerin verdiği 500’ün üzerindeki siparişler ücretsiz kargo alır.” ATDD’ye göre bu kabul kriterinden hangi test senaryosu doğru türetilmiştir?</p>
+<div class="mc">
+<ul>
+<li>(a) Girdi: sipariş toplamı 520, müşteri üye — Beklenen sonuç: kargo ücreti sıfırdır</li>
+<li>(b) Girdi: sipariş toplamı 520, müşteri üye — Beklenen sonuç: sipariş veritabanına kaydedilir</li>
+<li>(c) Girdi: sipariş toplamı 480, müşteri üye değil — Beklenen sonuç: ücretsiz kargo verilir</li>
+<li>(d) Girdi: müşteri üye — Beklenen sonuç: bütün siparişlerde ücretsiz kargo verilir</li>
+</ul>
+</div>
+</section>
+<section id="bölüm-5-test-aktivitelerini-yönetme-1" class="level3">
+<h3>Bölüm 5 — Test Aktivitelerini Yönetme</h3>
+<div lang="en">
+<p><strong>Question 30.</strong> While planning system testing for a payroll release, a test manager writes two lists. List 1: “Test data for 500 employees is available, and the system test cases have been reviewed.” List 2: “Branch coverage of the tax module reaches 85 percent, and no critical defect remains open.” What are the two lists?</p>
+<div class="mc">
+<ul>
+<li>(a) List 1 is exit criteria, and list 2 is entry criteria</li>
+<li>(b) List 1 is entry criteria, and list 2 is exit criteria</li>
+<li>(c) Both lists are entry criteria, because both are written before testing starts</li>
+<li>(d) Both lists are acceptance criteria, because both describe conditions the release must meet</li>
+</ul>
+</div>
+</div>
+<p><strong>Soru 30.</strong> Bir bordro sürümü için sistem testini planlarken bir test yöneticisi iki liste yazar. Liste 1: “500 çalışanlık test verisi hazır ve sistem test senaryoları gözden geçirildi.” Liste 2: “Vergi modülünün dal kapsamı yüzde 85’e ulaşır ve açık kritik hata kalmaz.” Bu iki liste nedir?</p>
+<div class="mc">
+<ul>
+<li>(a) Liste 1 çıkış kriterleri, liste 2 giriş kriterleridir</li>
+<li>(b) Liste 1 giriş kriterleri, liste 2 çıkış kriterleridir</li>
+<li>(c) İki liste de giriş kriteridir, çünkü ikisi de test başlamadan önce yazılmıştır</li>
+<li>(d) İki liste de kabul kriteridir, çünkü ikisi de sürümün karşılaması gereken koşulları anlatır</li>
+</ul>
+</div>
+<div lang="en">
+<p><strong>Question 31.</strong> Two teams draw their test pyramids differently. One names the layers “unit tests”, “service tests”, and “UI tests”; the other names them “component tests”, “integration tests”, and “end-to-end tests”. Which statement about the test pyramid is correct?</p>
+<div class="mc">
+<ul>
+<li>(a) Only one of the teams can be right, because the model prescribes three layers with fixed names</li>
+<li>(b) The higher the layer, the higher the test isolation</li>
+<li>(c) The model shows which test technique to use in each layer</li>
+<li>(d) The number and naming of the layers can differ, so both drawings can be valid</li>
+</ul>
+</div>
+</div>
+<p><strong>Soru 31.</strong> İki ekip test piramitlerini farklı çiziyor. Biri katmanlara “unit tests”, “service tests” ve “UI tests” adını veriyor; diğeri “component tests”, “integration tests” ve “end-to-end tests” adını. Test piramidi hakkında hangi ifade doğrudur?</p>
+<div class="mc">
+<ul>
+<li>(a) Ekiplerden yalnızca biri haklı olabilir, çünkü model adları sabit üç katman öngörür</li>
+<li>(b) Katman ne kadar yüksekse test yalıtımı o kadar yüksektir</li>
+<li>(c) Model, her katmanda hangi test tekniğinin kullanılacağını gösterir</li>
+<li>(d) Katmanların sayısı ve adları farklı olabilir, bu yüzden iki çizim de geçerli olabilir</li>
+</ul>
+</div>
+<div lang="en">
+<p><strong>Question 32.</strong> A team maps the tests in its test strategy onto the testing quadrants. Which TWO of the following placements are correct? (Select TWO options.)</p>
+<div class="mc">
+<ul>
+<li>(a) Security tests of the login service, in Q4 (technology-facing, critique the product)</li>
+<li>(b) Usability tests with real users, in Q4 (technology-facing, critique the product)</li>
+<li>(c) Component integration tests in the CI pipeline, in Q3 (business-facing, critique the product)</li>
+<li>(d) User story tests agreed with the product owner, in Q2 (business-facing, support the team)</li>
+<li>(e) Exploratory testing sessions, in Q2 (business-facing, support the team)</li>
+</ul>
+</div>
+</div>
+<p><strong>Soru 32.</strong> Bir ekip, test stratejisindeki testleri test çeyreklerine yerleştiriyor. Aşağıdaki yerleştirmelerden HANGİ İKİSİ doğrudur? (2 seçenek seçin)</p>
+<div class="mc">
+<ul>
+<li>(a) Oturum açma hizmetinin güvenlik testleri, Q4’te (teknolojiye dönük, ürünü eleştirir)</li>
+<li>(b) Gerçek kullanıcılarla kullanılabilirlik testleri, Q4’te (teknolojiye dönük, ürünü eleştirir)</li>
+<li>(c) CI hattındaki bileşen entegrasyon testleri, Q3’te (işe dönük, ürünü eleştirir)</li>
+<li>(d) Ürün sahibiyle üzerinde uzlaşılan kullanıcı hikayesi testleri, Q2’de (işe dönük, ekibi destekler)</li>
+<li>(e) Keşif testi oturumları, Q2’de (işe dönük, ekibi destekler)</li>
+</ul>
+</div>
+<div lang="en">
+<p><strong>Question 33.</strong> A risk analysis rates a new payment-provider integration as a high product risk for the first peak sales weekend. In addition to its testing, the team prepares and rehearses a procedure for switching all payments back to the previous provider within 15 minutes if the integration fails in production. What does this procedure represent?</p>
+<div class="mc">
+<ul>
+<li>(a) Risk acceptance</li>
+<li>(b) Risk transfer</li>
+<li>(c) Risk mitigation by testing</li>
+<li>(d) A contingency plan</li>
+</ul>
+</div>
+</div>
+<p><strong>Soru 33.</strong> Bir risk analizi, yeni bir ödeme sağlayıcısı entegrasyonunu ilk yoğun satış hafta sonu için yüksek bir ürün riski olarak derecelendirir. Ekip, testlerine ek olarak, entegrasyon canlı ortamda başarısız olursa bütün ödemeleri 15 dakika içinde önceki sağlayıcıya geri döndürmek için bir prosedür hazırlar ve prova eder. Bu prosedür neyi temsil eder?</p>
+<div class="mc">
+<ul>
+<li>(a) Risk kabulü</li>
+<li>(b) Risk transferi</li>
+<li>(c) Test yoluyla risk azaltma</li>
+<li>(d) Bir acil durum planı</li>
+</ul>
+</div>
+<div lang="en">
+<p><strong>Question 34.</strong> On a previous similar project the ratio of development effort to test effort was 4:3. The new project’s development effort is estimated at 720 person-days. Using the ratio-based estimation technique, what is the estimated test effort for the new project?</p>
+<div class="mc">
+<ul>
+<li>(a) 180 person-days</li>
+<li>(b) 540 person-days</li>
+<li>(c) 960 person-days</li>
+<li>(d) 1,260 person-days</li>
+</ul>
+</div>
+</div>
+<p><strong>Soru 34.</strong> Benzer bir önceki projede geliştirme eforunun test eforuna oranı 4:3 idi. Yeni projenin geliştirme eforu 720 kişi-gün olarak tahmin ediliyor. Oranlara dayalı tahminleme tekniğiyle yeni projenin tahmini test eforu nedir?</p>
+<div class="mc">
+<ul>
+<li>(a) 180 kişi-gün</li>
+<li>(b) 540 kişi-gün</li>
+<li>(c) 960 kişi-gün</li>
+<li>(d) 1.260 kişi-gün</li>
+</ul>
+</div>
+<div lang="en">
+<p><strong>Question 35.</strong> A component has ten executable statements, S1 to S10. The team uses additional coverage prioritisation to order four test cases:</p>
+<div class="table-wrap">
+<table>
+<thead>
+<tr class="header">
+<th>Test case</th>
+<th>Statements exercised</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>TC1</td>
+<td>S1, S2, S3, S4, S5, S6</td>
+</tr>
+<tr class="even">
+<td>TC2</td>
+<td>S1, S2, S3, S4, S5</td>
+</tr>
+<tr class="odd">
+<td>TC3</td>
+<td>S7, S8, S9</td>
+</tr>
+<tr class="even">
+<td>TC4</td>
+<td>S6, S10</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Which execution order is correct?</p>
+<div class="mc">
+<ul>
+<li>(a) TC1, TC2, TC3, TC4</li>
+<li>(b) TC1, TC3, TC2, TC4</li>
+<li>(c) TC4, TC3, TC2, TC1</li>
+<li>(d) TC1, TC3, TC4, TC2</li>
+</ul>
+</div>
+</div>
+<p><strong>Soru 35.</strong> Bir bileşenin S1’den S10’a on çalıştırılabilir komutu vardır. Ekip dört test senaryosunu sıralamak için ek kapsam önceliklendirmesi kullanır:</p>
+<div class="table-wrap">
+<table>
+<thead>
+<tr class="header">
+<th>Test senaryosu</th>
+<th>Çalıştırılan komutlar</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>TC1</td>
+<td>S1, S2, S3, S4, S5, S6</td>
+</tr>
+<tr class="even">
+<td>TC2</td>
+<td>S1, S2, S3, S4, S5</td>
+</tr>
+<tr class="odd">
+<td>TC3</td>
+<td>S7, S8, S9</td>
+</tr>
+<tr class="even">
+<td>TC4</td>
+<td>S6, S10</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Hangi koşum sırası doğrudur?</p>
+<div class="mc">
+<ul>
+<li>(a) TC1, TC2, TC3, TC4</li>
+<li>(b) TC1, TC3, TC2, TC4</li>
+<li>(c) TC4, TC3, TC2, TC1</li>
+<li>(d) TC1, TC3, TC4, TC2</li>
+</ul>
+</div>
+<div lang="en">
+<p><strong>Question 36.</strong> Halfway through system testing, the weekly test progress report shows that 30 percent of the planned tests are blocked by an unstable test environment. What is the main purpose of reporting this in the test progress report?</p>
+<div class="mc">
+<ul>
+<li>(a) To give enough information for the test schedule, resources, or test plan to be adjusted</li>
+<li>(b) To record the lessons learned for future projects</li>
+<li>(c) To replace the defect reports for the environment problems</li>
+<li>(d) To document the final evaluation of product quality against the exit criteria</li>
+</ul>
+</div>
+</div>
+<p><strong>Soru 36.</strong> Sistem testinin yarısında haftalık test ilerleme raporu, planlanan testlerin yüzde 30’unun kararsız bir test ortamı yüzünden engellendiğini gösteriyor. Bunu test ilerleme raporunda bildirmenin ana amacı nedir?</p>
+<div class="mc">
+<ul>
+<li>(a) Test takviminin, kaynakların ya da test planının ayarlanabilmesi için yeterli bilgi vermek</li>
+<li>(b) Gelecek projeler için alınan dersleri kaydetmek</li>
+<li>(c) Ortam sorunlarına ait hata raporlarının yerini almak</li>
+<li>(d) Ürün kalitesinin çıkış kriterlerine göre son değerlendirmesini belgelemek</li>
+</ul>
+</div>
+<div lang="en">
+<p><strong>Question 37.</strong> A test completion report states: “The regression suite passed against the release candidate.” It names neither the build of the release candidate nor the version of the regression suite, and an auditor rejects the report as evidence. Which practice would have made the report acceptable?</p>
+<div class="mc">
+<ul>
+<li>(a) Increasing the level of test automation in the regression suite</li>
+<li>(b) Defining stricter exit criteria for system testing</li>
+<li>(c) Configuration management, so that each test item and testware version is uniquely identified and referenced unambiguously in test documentation</li>
+<li>(d) Writing more detailed defect reports with full version information</li>
+</ul>
+</div>
+</div>
+<p><strong>Soru 37.</strong> Bir test tamamlama raporu şunu söylüyor: “Regresyon test grubu sürüm adayına karşı geçti.” Rapor ne sürüm adayının yapısını ne de regresyon test grubunun sürümünü belirtiyor ve bir denetçi raporu kanıt olarak reddediyor. Hangi uygulama raporu kabul edilebilir kılardı?</p>
+<div class="mc">
+<ul>
+<li>(a) Regresyon test grubundaki test otomasyonu düzeyini artırmak</li>
+<li>(b) Sistem testi için daha sıkı çıkış kriterleri tanımlamak</li>
+<li>(c) Yapılandırma yönetimi; böylece her test öğesi ve test çalışma ürünü sürümü benzersiz biçimde tanımlanır ve test dokümantasyonunda açık biçimde referans verilir</li>
+<li>(d) Tam sürüm bilgisi içeren daha ayrıntılı hata raporları yazmak</li>
+</ul>
+</div>
+<div lang="en">
+<p><strong>Question 38.</strong> A tester drafts this defect report:</p>
+<ul>
+<li>ID: DR-2107 — Title: “Loyalty points not awarded on member orders”</li>
+<li>Date: 2026-06-08 — Author: J. Marsh</li>
+<li>Test object: checkout service v2.3 — Environment: staging, build 5511</li>
+<li>Test basis: requirement “Members earn one loyalty point for every full 10.00 of the order total.”</li>
+<li>Steps: 1. log in as a member — 2. add items totalling 527.40 — 3. complete the order — 4. open the order confirmation page</li>
+<li>Actual result: the confirmation page shows “Loyalty points earned: 0”</li>
+<li>Expected result: (not yet filled in)</li>
+<li>Severity: major — Priority: high</li>
+</ul>
+<p>Which entry should the tester write as the expected result?</p>
+<div class="mc">
+<ul>
+<li>(a) The order confirmation page shows “Loyalty points earned: 52”</li>
+<li>(b) The order confirmation page shows “Loyalty points earned: 53”</li>
+<li>(c) The order confirmation page shows the correct number of loyalty points for a member order</li>
+<li>(d) The loyalty-points calculation in the checkout service is corrected so that member orders earn points</li>
+</ul>
+</div>
+</div>
+<p><strong>Soru 38.</strong> Bir test uzmanı şu hata raporu taslağını yazıyor:</p>
+<ul>
+<li>Kimlik: DR-2107 — Başlık: “Loyalty points not awarded on member orders” (Üye siparişlerinde sadakat puanı verilmiyor)</li>
+<li>Tarih: 2026-06-08 — Yazan: J. Marsh</li>
+<li>Test nesnesi: checkout service v2.3 (ödeme hizmeti) — Ortam: staging, build 5511</li>
+<li>Test esası: gereksinim “Members earn one loyalty point for every full 10.00 of the order total.” (Üyeler, sipariş toplamının her tam 10,00’u için bir sadakat puanı kazanır.)</li>
+<li>Adımlar: 1. üye olarak oturum açın — 2. toplamı 527,40 olan ürünler ekleyin — 3. siparişi tamamlayın — 4. sipariş onay sayfasını açın</li>
+<li>Gerçekleşen sonuç: onay sayfası “Loyalty points earned: 0” gösteriyor</li>
+<li>Beklenen sonuç: (henüz doldurulmadı)</li>
+<li>Önem derecesi: büyük — Öncelik: yüksek</li>
+</ul>
+<p>Test uzmanı beklenen sonuç olarak hangi girdiyi yazmalıdır?</p>
+<div class="mc">
+<ul>
+<li>(a) Sipariş onay sayfası “Loyalty points earned: 52” gösterir</li>
+<li>(b) Sipariş onay sayfası “Loyalty points earned: 53” gösterir</li>
+<li>(c) Sipariş onay sayfası bir üye siparişi için doğru sadakat puanı sayısını gösterir</li>
+<li>(d) Ödeme hizmetindeki sadakat puanı hesaplaması, üye siparişleri puan kazanacak biçimde düzeltilir</li>
+</ul>
+</div>
+</section>
+<section id="bölüm-6-test-araçları-1" class="level3">
+<h3>Bölüm 6 — Test Araçları</h3>
+<div lang="en">
+<p><strong>Question 39.</strong> A team adopts a tool that runs its automated test suites on every commit, gathers the results, and measures how thoroughly the code has been exercised. Which test-tool category does this tool belong to?</p>
+<div class="mc">
+<ul>
+<li>(a) Test management tools</li>
+<li>(b) Test execution and test coverage tools</li>
+<li>(c) Static testing tools</li>
+<li>(d) Test design and implementation tools</li>
+</ul>
+</div>
+</div>
+<p><strong>Soru 39.</strong> Bir ekip, otomatik test gruplarını her commit’te koşan, sonuçları toplayan ve kodun ne kadar kapsamlı çalıştırıldığını ölçen bir araç benimsiyor. Bu araç hangi test aracı kategorisine girer?</p>
+<div class="mc">
+<ul>
+<li>(a) Test yönetimi araçları</li>
+<li>(b) Test koşumu ve kapsam araçları</li>
+<li>(c) Statik test araçları</li>
+<li>(d) Test tasarımı ve test uygulama araçları</li>
+</ul>
+</div>
+<div lang="en">
+<p><strong>Question 40.</strong> Six months after automating its regression suite through the user interface, a team finds that every screen change breaks dozens of scripts. Updating them now takes more effort than the team had planned for the whole automation project. Which risk of test automation has occurred?</p>
+<div class="mc">
+<ul>
+<li>(a) Dependency on a tool vendor that may go out of business or retire the tool</li>
+<li>(b) Using a test tool where manual testing would be more appropriate</li>
+<li>(c) Relying on the tool too much and ignoring the need for human critical thinking</li>
+<li>(d) Inaccurate estimation of the effort needed to maintain the test scripts</li>
+</ul>
+</div>
+<p><em>Solve all 40 questions under timed conditions before looking at the answer key that follows. Seeing the answers early destroys the measurement value of this mock exam.</em></p>
+</div>
+<p><strong>Soru 40.</strong> Regresyon test grubunu kullanıcı arayüzü üzerinden otomatikleştirdikten altı ay sonra bir ekip, her ekran değişikliğinin onlarca betiği bozduğunu fark ediyor. Betikleri güncellemek artık ekibin bütün otomasyon projesi için planladığından daha fazla efor alıyor. Test otomasyonunun hangi riski gerçekleşmiştir?</p>
+<div class="mc">
+<ul>
+<li>(a) İşini kapatabilecek ya da aracı kullanımdan kaldırabilecek bir araç tedarikçisine bağımlılık</li>
+<li>(b) Manuel testin daha uygun olacağı yerde bir test aracı kullanmak</li>
+<li>(c) Araca fazla güvenmek ve insanın eleştirel düşünmesine olan ihtiyacı göz ardı etmek</li>
+<li>(d) Test betiklerinin bakımı için gereken eforun yanlış tahmin edilmesi</li>
+</ul>
+</div>
+<p><em>Ardından gelen cevap anahtarına bakmadan önce 40 sorunun hepsini süreli koşullarda çözün. Cevapları erken görmek bu deneme sınavının ölçme değerini yok eder.</em></p>
+</section>
+</section>
+<section id="part-2-answer-key-and-score-interpretation" class="level2">
+<h2>Kısım 2 — Cevap Anahtarı ve Puan Yorumu</h2>
+<details class="ans fold"><summary>Cevap anahtarını ve puan yorumunu göster</summary>
+
+<section id="cevap-anahtarı" class="level3">
+<h3>Cevap anahtarı</h3>
+<div class="table-wrap">
+<table>
+<thead>
+<tr class="header">
+<th>S</th>
+<th>C</th>
+<th>S</th>
+<th>C</th>
+<th>S</th>
+<th>C</th>
+<th>S</th>
+<th>C</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>b</td>
+<td>11</td>
+<td>b</td>
+<td>21</td>
+<td>a</td>
+<td>31</td>
+<td>d</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>c</td>
+<td>12</td>
+<td>d</td>
+<td>22</td>
+<td>b</td>
+<td>32</td>
+<td>a, d</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>d</td>
+<td>13</td>
+<td>a</td>
+<td>23</td>
+<td>c</td>
+<td>33</td>
+<td>d</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>d</td>
+<td>14</td>
+<td>b</td>
+<td>24</td>
+<td>d</td>
+<td>34</td>
+<td>b</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>b</td>
+<td>15</td>
+<td>d</td>
+<td>25</td>
+<td>b</td>
+<td>35</td>
+<td>d</td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td>a</td>
+<td>16</td>
+<td>b, e</td>
+<td>26</td>
+<td>b</td>
+<td>36</td>
+<td>a</td>
+</tr>
+<tr class="odd">
+<td>7</td>
+<td>c</td>
+<td>17</td>
+<td>a</td>
+<td>27</td>
+<td>c</td>
+<td>37</td>
+<td>c</td>
+</tr>
+<tr class="even">
+<td>8</td>
+<td>c</td>
+<td>18</td>
+<td>b</td>
+<td>28</td>
+<td>c</td>
+<td>38</td>
+<td>a</td>
+</tr>
+<tr class="odd">
+<td>9</td>
+<td>a</td>
+<td>19</td>
+<td>c</td>
+<td>29</td>
+<td>a</td>
+<td>39</td>
+<td>b</td>
+</tr>
+<tr class="even">
+<td>10</td>
+<td>c</td>
+<td>20</td>
+<td>d</td>
+<td>30</td>
+<td>b</td>
+<td>40</td>
+<td>d</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>(S: soru, C: cevap.) 16. ve 32. sorular “2 seçenek seçin” sorularıdır; bu yüzden anahtar her biri için iki harf verir. Resmî sınav kurallarına göre her soru tam olarak bir puandır ve iki seçenekli bir soru da bunun istisnası değildir. Katı puanlayın: puanı ancak iki doğru şıkkı işaretlediyseniz ve başka hiçbir şıkkı işaretlemediyseniz alırsınız; iki doğrudan birini bulmak hiçbir puan getirmez.</p>
+</section>
+<section id="puanınız-ne-anlama-gelir" class="level3">
+<h3>Puanınız ne anlama gelir</h3>
+<div class="table-wrap">
+<table>
+<colgroup>
+<col style="width: 12%" />
+<col style="width: 87%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Puan</th>
+<th>Yorum</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>35–40</td>
+<td>Bu deneme sınavı için güçlü bir hazırlık işareti. Yine de sınava başvurmadan önce en az bir süreli deneme sınavıyla daha teyit edin.</td>
+</tr>
+<tr class="even">
+<td>30–34</td>
+<td>Bu deneme sınavında geçme çizgisinin üstündesiniz. Kaçırdığınız her soruyu inceleyin ve sınavdan önce o belirli eksikleri kapatın.</td>
+</tr>
+<tr class="odd">
+<td>26–29</td>
+<td>Geçme seviyesindesiniz, ama hiç güvenlik payınız yok. Kısım 3’ü dikkatle çalışın ve karar vermeden önce bir süreli deneme sınavı daha çözün.</td>
+</tr>
+<tr class="even">
+<td>26’nın altı</td>
+<td>Henüz hazır değilsiniz; bu da başlı başına değerli bir bilgidir. Puanların nerede kaybedildiğini bulmak için aşağıdaki bölüm karnesini kullanın ve önce o bölümleri çalışın.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Gerçek sınavda geçme notu 40 üzerinden 26’dır (%65). Bu aralıklarla ilgili tek çekince şu: hepsi ilk, dürüst ve süreli bir denemeyi varsayar. İnceleme modunda yapılan bir geçişten ya da aynı sorulara ikinci kez bakmaktan gelen bir puan hazır olmayı değil, aşinalığı ölçer.</p>
+</section>
+<section id="bölüm-karnesi" class="level3">
+<h3>Bölüm karnesi</h3>
+<p>Her bölümdeki doğru cevaplarınızı sayın ve toplamlarla karşılaştırın.</p>
+<div class="table-wrap">
+<table>
+<thead>
+<tr class="header">
+<th>Bölüm</th>
+<th>Sorular</th>
+<th>Alınabilecek puan</th>
+<th>Puanınız</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1 — Yazılım Testinin Temelleri</td>
+<td>1–8</td>
+<td>8</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>2 — Yazılım Geliştirme Yaşam Döngüsü Boyunca Test</td>
+<td>9–14</td>
+<td>6</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>3 — Statik Testler</td>
+<td>15–18</td>
+<td>4</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>4 — Test Analizi ve Tasarımı</td>
+<td>19–29</td>
+<td>11</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>5 — Test Aktivitelerini Yönetme</td>
+<td>30–38</td>
+<td>9</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>6 — Test Araçları</td>
+<td>39–40</td>
+<td>2</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Toplamınız ne olursa olsun, alınabilecek puanların yarısını ya da daha azını aldığınız bir bölüm bir çalışma önceliğidir.</p>
+</section>
+
+</details>
+</section>
+<section id="part-3-answers-explanations-and-references" class="level2">
+<h2>Kısım 3 — Cevaplar, Açıklamalar ve Kaynaklar</h2>
+<details class="ans fold"><summary>Cevapları, açıklamaları ve kaynakları göster</summary>
+
+<p>Her soru şık şık açıklanır. Açıklama en güçlü çeldiriciyi adlandırır, kilit noktayı söyler ve ders programındaki kaynağı verir. Açıklamalar soruyu ve şıkları tekrar etmez; soruya Kısım 1’den bakın. Her cevaptan sonraki <em>Tuzak</em> etiketi, sorunun en güçlü çeldiricisinin türünü söyler: <strong>kardeş kavram</strong> (doğru kavramla özellik paylaşan komşu bir kavram), <strong>doğru fikir, yanlış yer</strong> (başka bir aktiviteye, seviyeye ya da rapora ait doğru bir ifade), <strong>abartılmış ya da ters çevrilmiş iddia</strong> (fazla uzatılmış ya da tersine çevrilmiş doğru bir ifade) ya da <strong>hesap hatası</strong> (bir K3 tekniğini uygularken sık yapılan bir yanlış).</p>
+<section id="bölüm-1-yazılım-testinin-temelleri-2" class="level3">
+<h3>Bölüm 1 — Yazılım Testinin Temelleri</h3>
+<p><strong>Soru 1 — Doğru cevap: (b).</strong> <em>Tuzak: kardeş kavram · ÖH 1.1.1 (K1).</em> Ürün sahibi bir kararla karşı karşıya olan bir paydaştır ve bu kararı verebilmek için gereken bilgileri testten ister: bulunan hatalar ve kalan riskler. Paydaşlara bilinçli karar verebilmeleri için bilgi sağlamak, ders programının saydığı tipik test hedeflerinden biridir ve bu istek tam olarak ona hizmet eder. <em>(a)</em> sözleşmeden doğan ve yasal gereksinimlere uygunluk da geçerli bir hedeftir, ama senaryoda ne bir sözleşmeden ne bir yasadan ne de bir düzenleyici kurumdan söz ediliyor. <em>(c) Test nesnesinin paydaşların beklediği gibi çalıştığını sağlama</em> en güçlü çeldiricidir, çünkü senaryoda da bir paydaş var; ama sağlama ürünü paydaşların beklentilerine karşı kontrol eder. Ürün sahibi özelliğin beklentilerini karşılayıp karşılamadığını sormuyor; bir karara girdi istiyor. <em>(d)</em> gerekli kapsamı sağlamak, test nesnesinin ne kadar kapsamlı çalıştırıldığıyla ilgilidir; bir kararın nasıl bilgilendirildiğiyle değil. Kilit nokta: bir paydaş testten bir “devam mı, dur mu” seçimini destekleyecek bilgiler istediğinde hedef, bilinçli kararlar için bilgi sağlamaktır. Kaynak: Ders programı 1.1.1. Bu kitapta tekrar edin: <a href="chapter-1.html#fl-1-1-1">Tipik test hedefleri (Kesim 1.1)</a>.</p>
+<p><strong>Soru 2 — Doğru cevap: (c).</strong> <em>Tuzak: kardeş kavram · ÖH 1.2.3 (K2).</em> Zinciri sırasıyla okuyun. Kök neden, yanlışı olası kılan boşluktur: şirket yeni geliştiriciye UTC kuralını hiç söylememiştir. İnsan hatası, kişinin yanlış eylemidir: geliştiricinin saatlerin yerel olduğunu varsayması. Hata, bu insan hatasının bir iş ürününde bıraktığı kusurdur: saatleri dönüştürmeden saklayan kod. Arıza ise kullanıcıların çalışma anında yaşadığı şeydir: kalkıştan sonra gelen hatırlatma. (c) şıkkı insan hatasını ve arızayı doğru adlandırır. <em>(a)</em> eksik bilgilendirmeye insan hatası der, ama bu bir kişinin yanlış eylemi değil, insan hatasının arkasındaki örgütsel bir boşluktur; ayrıca koda arıza der, oysa koddaki bir kusur hatadır. <em>(b) Geliştiricinin yanlış varsayımı kök nedendir</em> en güçlü çeldiricidir, çünkü varsayım gerçekten zincirin başına yakın durur; ama o insan eyleminin kendisidir, yani insan hatasıdır. Kök neden, insan hatasının neden yaşandığının daha derindeki nedenidir: UTC kuralı hakkındaki eksik bilgilendirme. Bu şıkkın ikinci yarısı da bir hatayı arıza olarak adlandırır. <em>(d)</em> iki etiketi ters çevirir: kod hatadır, eksik bilgilendirme ise kök nedendir, hata değildir; çünkü hiçbir iş ürünündeki bir kusur değildir. Kilit nokta: her öğenin nerede durduğunu sorun; örgütteki bir boşluk kök nedendir, bir kişinin yanlış eylemi insan hatasıdır, bir iş ürünündeki kusur hatadır, çalışma anındaki yanlış davranış ise arızadır. Kaynak: Ders programı 1.2.3. Bu kitapta tekrar edin: <a href="chapter-1.html#fl-1-2-3">İnsan hataları, hatalar, arızalar ve kök nedenler (Kesim 1.2)</a>.</p>
+<p><strong>Soru 3 — Doğru cevap: (d).</strong> <em>Tuzak: kardeş kavram · ÖH 1.3.1 (K2).</em> “Erken test, zaman ve para tasarrufu sağlar” prensibi, erken giderilen bir hatanın ondan türetilen iş ürünlerinde yeni hatalara yol açmadığını söyler; bu da kalitenin maliyetini düşürür. İki sürüm iki yüzü de gösteriyor: gözden geçirmede yakalanan çelişki on dakikaya mal oldu, gözden kaçan ise tasarıma, koda ve testlere yayıldı ve acil bir yama gerektirdi. <em>(a) Hatalar yazılımın belli alanlarında yoğunlaşır</em> en güçlü çeldiricidir, çünkü iki çelişki de aynı tür iş ürününde, kullanıcı hikayelerinde duruyor ve bu bir yoğunlaşma gibi görünebilir; ama o prensip hataların nerede toplandığını açıklar, hata ne kadar geç bulunursa düzeltmenin maliyetinin neden o kadar arttığını değil. <em>(b)</em> testin neyi kanıtlayabileceğiyle ilgilidir; senaryoda hiçbir şey hataların yokluğunu kanıtlamaya dayanmıyor. <em>(c)</em> hatasızlık yanılgısı, doğrulanmış ama yine de kullanıcılarının ihtiyaçlarını karşılamayan bir sistemle ilgilidir; buradaki konu bu değil. Kilit nokta: bir senaryo aynı tür bir hatanın ucuz erken düzeltmesini pahalı geç düzeltmesiyle karşılaştırıyorsa prensip erken testtir. Kaynak: Ders programı 1.3. Bu kitapta tekrar edin: <a href="chapter-1.html#fl-1-3-1">Test Prensipleri (Kesim 1.3)</a>.</p>
+<p><strong>Soru 4 — Doğru cevap: (d).</strong> <em>Tuzak: doğru fikir, yanlış yer · ÖH 1.4.1 (K2).</em> Test tasarımı test koşullarını, çoğu zaman kapsam öğelerini belirleyerek, test senaryolarına ve diğer test çalışma ürünlerine dönüştürür; test verisi gereksinimlerini de tanımlar ve test ortamını tasarlar. Senaryodaki her görev buraya aittir; test tasarımı “nasıl test edilecek?” sorusuna cevap verir. <em>(a)</em> test analizi bir adım öncedir: test uzmanının zaten elinde olan test koşullarını türetir ve önceliklendirir. <em>(b) Test uyarlama</em> en güçlü çeldiricidir, çünkü senaryoda hem test verisi hem test ortamı geçiyor ve test verisinin oluşturulduğu, ortamın kurulduğu yer uyarlamadır. Ama test uzmanı yalnızca hangi verinin gerektiğini ve ortamın neler sağlaması gerektiğini çıkarıyor; veriyi oluşturmak ve ortamı kurmak daha sonra, uyarlamada gelir. <em>(c)</em> test planlama hedefleri ve yaklaşımı belirler, tek tek test senaryolarını değil. Kilit nokta: tanımlamak ve tasarlamak test tasarımına, oluşturmak ve kurmak test uyarlamaya aittir; bu yüzden seçmeden önce fiile bakın. Kaynak: Ders programı 1.4.1. Bu kitapta tekrar edin: <a href="chapter-1.html#fl-1-4-1">Test aktiviteleri (Kesim 1.4)</a>.</p>
+<p><strong>Soru 5 — Doğru cevap: (b).</strong> <em>Tuzak: doğru fikir, yanlış yer · ÖH 1.4.3 (K2).</em> Ders programı test analizi için iki tür iş ürünü sayar: önceliklendirilmiş test koşulları ve, doğrudan düzeltilmediklerinde, test esasındaki hatalara ilişkin hata raporları. Test uzmanı test koşulları türetiyor, yani test analizi yapıyor; çelişki de test esasında, kullanıcı hikayesinde duruyor. <em>(a) Test koşumu</em> en güçlü çeldiricidir, çünkü hata raporları test koşumunun en bilinen çıktısıdır; ama o raporlar testler koşulduğunda gözlenen arızaları anlatır. Burada hiçbir test koşulmadı; hata hikaye okunurken bulundu. <em>(c)</em> test tasarımı test senaryoları, test başlatma belgeleri, kapsam öğeleri ile test verisi ve ortam gereksinimleri üretir. <em>(d)</em> test tamamlama test tamamlama raporunu, alınan dersleri ve çözülmemiş hatalar için değişiklik taleplerini üretir. Kilit nokta: hata raporları yalnızca koşumun çıktısı değildir; hata test esasındaysa ve test koşulları türetilirken bulunduysa rapor bir test analizi iş ürünüdür. Kaynak: Ders programı 1.4.3. Bu kitapta tekrar edin: <a href="chapter-1.html#fl-1-4-3">Test çalışma ürünleri (Kesim 1.4)</a>.</p>
+<p><strong>Soru 6 — Doğru cevap: (a).</strong> <em>Tuzak: doğru fikir, yanlış yer · ÖH 1.4.4 (K2).</em> Test esası ile test çalışma ürünleri arasındaki izlenebilirliği sürdürmek, kapsamı gereksinimlere göre değerlendirilebilir kılar; böylece ekip bir denetçiye hangi gereksinimin hangi koşulmuş testle kapsandığını kanıtıyla gösterebilir. <em>(b)</em> bağımsızlık nesnelliği etkiler, kapsamı göstermeyi değil. <em>(c) Yüksek test otomasyonu</em> en güçlü çeldiricidir, çünkü otomasyon hızlı ve iyi belgelenmiş sonuçlar üretir; ama izlenebilirlik bağlantıları olmadan hiçbir araç belirli bir testin hangi gereksinimi kapsadığını söyleyemez. Denetçinin ihtiyaç duyduğu yetenek otomasyon değil, bağlantıdır. <em>(d)</em> giriş kriterleri testin ne zaman başlayabileceğini belirler, testlerle gereksinimler arasındaki bağı değil. Kilit nokta: bir soru kapsamın gereksinimler açısından nasıl gösterileceğini soruyorsa cevap izlenebilirlikten geçer. Kaynak: Ders programı 1.4.4. Bu kitapta tekrar edin: <a href="chapter-1.html#fl-1-4-4">İzlenebilirliğin değeri (Kesim 1.4)</a>.</p>
+<p><strong>Soru 7 — Doğru cevap: (c).</strong> <em>Tuzak: doğru fikir, yanlış yer · ÖH 1.5.2 (K1).</em> Ders programına göre tüm ekip yaklaşımı ekip dinamiklerini iyileştirir, iletişimi ve iş birliğini güçlendirir ve ekibin farklı becerilerinin projeye hizmet etmesini sağlayarak sinerji yaratır. (c) şıkkı bu avantajların sonuncusudur. <em>(a)</em> yaklaşımın tersini anlatır: bu yaklaşımda doğru bilgi ve becerilere sahip her ekip üyesi her görevi üstlenebilir. <em>(b) Yüksek düzeyde test bağımsızlığı</em> en güçlü çeldiricidir, çünkü bağımsızlık ders programında tüm ekip yaklaşımının hemen yanında ele alınan gerçek bir faydadır; ama ders programı emniyet açısından kritik bağlamların yüksek düzeyde bağımsızlık gerektirebileceğini ve tüm ekip yaklaşımının orada uygun olmayabileceğini belirtir. <em>(d)</em> tüm ekip yaklaşımında kaliteden herkes sorumludur; bu sorumluluğu ayrı bir kalite ekibine taşımak yaklaşımla çelişir. Kilit nokta: tüm ekip yaklaşımı ortak sorumluluk ve birleşen becerilerle ilgilidir; daha yakın iş birliği için bir miktar bağımsızlıktan vazgeçer. Kaynak: Ders programı 1.5.2. Bu kitapta tekrar edin: <a href="chapter-1.html#fl-1-5-2">Tüm ekip yaklaşımı (Kesim 1.5)</a>.</p>
+<p><strong>Soru 8 — Doğru cevap: (c).</strong> <em>Tuzak: abartılmış ya da ters çevrilmiş iddia · ÖH 1.5.3 (K2).</em> Bağımsız test uzmanları geliştirme ekibinden yalıtılmış kalabilir; bu da iş birliği eksikliğine ve iletişim sorunlarına yol açabilir. Test uzmanlarının ekibin günlük iletişiminin dışında kaldıkları için gereksinim değişikliklerini geç öğrenmesi tam olarak bu yalıtılmışlıktır. <em>(a) Bir onayı geciktiren varsayım sorgulamaları</em> en güçlü çeldiricidir, çünkü bir maliyeti, bir gecikmeyi bildirir; ama nedeni bağımsızlığın bir faydasıdır: bağımsız bir test uzmanı spesifikasyon sırasında yapılan varsayımları doğrulayabilir, sorgulayabilir ya da çürütebilir. Bu sorunları onaydan önce yakalamak bağımsızlığın amacıdır, sakıncası değil. <em>(b)</em> bağımsızlığın ana faydasıdır: farklı bir geçmiş ve farklı önyargılar sayesinde farklı türde arızaları fark etmek. <em>(d)</em> hiç de bir sakınca değildir; ders programı, geliştiricilerin kendi bileşenlerini, bağımsız bir ekibin de daha sonra test ettiği birkaç bağımsızlık düzeyini birleştirmeyi önerir. Kilit nokta: bir faydanın maliyetini gerçek bir sakıncadan ayırın; ders programının adını koyduğu sakıncalar yalıtılmışlık, iletişim sorunları, geliştiricilerin kaliteye ilişkin sorumluluk duygularını yitirmesi ve test uzmanlarının bir darboğaz olarak görülmesidir. Kaynak: Ders programı 1.5.3. Bu kitapta tekrar edin: <a href="chapter-1.html#fl-1-5-3">Testin bağımsızlığı (Kesim 1.5)</a>.</p>
+</section>
+<section id="bölüm-2-yazılım-geliştirme-yaşam-döngüsü-boyunca-test-2" class="level3">
+<h3>Bölüm 2 — Yazılım Geliştirme Yaşam Döngüsü Boyunca Test</h3>
+<p><strong>Soru 9 — Doğru cevap: (a).</strong> <em>Tuzak: abartılmış ya da ters çevrilmiş iddia · ÖH 2.1.1 (K2).</em> Döngüsel geliştirmede her artım kendi döngüsünde geliştirilir ve teslim edilir; bu yüzden test aktiviteleri her döngüde tekrarlanır. Her yeni artım daha önce geliştirileni etkileyebileceği için regresyon testinin önemi de artar. <em>(b)</em> ekibin arkada bıraktığı sıralı düşünme biçimidir. <em>(c)</em> küçük artımlar da eksiksiz bir sisteme entegre olur ve o sistemin kendi seviyesinde test edilmesi gerekir. <em>(d) Test seviyelerini tek bir seviyede birleştirmek</em> en güçlü çeldiricidir, çünkü kısa döngüler seviyeleri zaman içinde gerçekten sıkıştırır; ama sıkıştırmak birleştirmek değildir. Seviyeler tek bir döngüde örtüştüklerinde bile ayrı hedeflerini korur. Kilit nokta: döngülere geçmek test aktivitelerinin ne zaman ve ne sıklıkta yapıldığını değiştirir; test seviyelerini ortadan kaldırmaz ya da birleştirmez. Kaynak: Ders programı 2.1.1. Bu kitapta tekrar edin: <a href="chapter-2.html#fl-2-1-1">Yaşam döngüsü test sürecini nasıl biçimlendirir (Kesim 2.1)</a>.</p>
+<p><strong>Soru 10 — Doğru cevap: (c).</strong> <em>Tuzak: doğru fikir, yanlış yer · ÖH 2.1.2 (K1).</em> Her yazılım geliştirme yaşam döngüsünde (YGYD) geçerli olan iyi test etme uygulamalarından biri, hatalar daha erken tespit edilsin diye test uzmanlarının taslaklar hazır olur olmaz iş ürünlerinin gözden geçirilmesine dahil edilmesidir. Buradaki hikaye hatalarının geç bulunmasının nedeni tam olarak test uzmanlarının hikayeleri ancak kodlamadan sonra görmesidir. <em>(a) Test seviyeleri arasında örtüşmeyen hedefler</em> en güçlü çeldiricidir, çünkü aynı ders programı listesinden gerçek bir iyi uygulamadır; ama test seviyeleri arasındaki örtüşmeyi önlemeye hizmet eder, test uzmanlarının hikayeleri ilk ne zaman gördüğüne bir etkisi yoktur. <em>(b)</em> bir çare değil, mevcut sorunu anlatır; hataları geç bulduran şey, bütün özellikleri tamamlanmış kodu beklemektir. <em>(d)</em> kabul kriterleri iş temsilcileri adına değil, onlarla birlikte yazılır; bu da listelenen uygulamalardan biri değildir. Kilit nokta: her yaşam döngüsünde geçerli dört uygulamayı bilin ve senaryodaki belirtiyi onu gideren uygulamayla eşleyin. Kaynak: Ders programı 2.1.2. Bu kitapta tekrar edin: <a href="chapter-2.html#fl-2-1-2">Her yaşam döngüsü için iyi test etme uygulamaları (Kesim 2.1)</a>.</p>
+<p><strong>Soru 11 — Doğru cevap: (b).</strong> <em>Tuzak: kardeş kavram · ÖH 2.1.3 (K1).</em> Ders programı TDD, ATDD ve BDD’yi önce-test yaklaşımları olarak anlatır ve üçü için de testlerin, gelecekteki uyarlamalar ve yeniden düzenleme sırasında kod kalitesini güvenceye almak üzere otomatik testler olarak kalabileceğini ekler. <em>(a)</em> önce-test fikriyle çelişir: ATDD testlerini, uygulamanın ilgili kısmı geliştirilmeden önce kabul kriterlerinden türetir. <em>(c)</em> BDD istenen davranışı, paydaşların anlayabileceği sade bir doğal dil biçiminde, genellikle Given/When/Then ile ifade eder. <em>(d) TDD testlerini iş temsilcilerinin kabul kriterlerinden yazması</em> en güçlü çeldiricidir, çünkü içindeki her öğe gerçektir, ama yanlış yaklaşıma bağlanmıştır: testleri kabul kriterlerinden türetmek ATDD’dir; TDD ise kodlamayı geliştiricilerin önce yazdığı testlerle yönlendirir. Kilit nokta: her yaklaşımı testlerinin kaynağına bağlayın; TDD’yi geliştiricinin yazdığı testlere, ATDD’yi kabul kriterlerine, BDD’yi doğal dildeki davranışa. Üçünün de geride otomatik bir regresyon varlığı bırakabileceğini aklınızda tutun. Kaynak: Ders programı 2.1.3. Bu kitapta tekrar edin: <a href="chapter-2.html#fl-2-1-3">Önce test yaklaşımları: TDD, ATDD ve BDD (Kesim 2.1)</a>.</p>
+<p><strong>Soru 12 — Doğru cevap: (d).</strong> <em>Tuzak: kardeş kavram · ÖH 2.1.5 (K2).</em> Fonksiyonel olmayan testler geleneksel olarak geç, eksiksiz bir sistem ve temsili bir ortam varken koşulur. Bunları mümkün olduğunda bileşen testi seviyesinden itibaren yapmak, testi yaşam döngüsünde öne aldığı için ders programının saydığı sola alma uygulamalarından biridir. <em>(a) Test güdümlü yazılım geliştirme</em> en güçlü çeldiricidir, çünkü o da bileşen seviyesinde çalışır ve o da testi öne alır; ama TDD, testler kodlamayı yönlendirsin diye testleri koddan önce yazmak demektir. Burada bileşenler zaten geliştirilmiş; mesele fonksiyonel olmayan testin ne zaman başladığıdır. <em>(b)</em> onaylama testi belirli bir düzeltmenin işe yaradığını kontrol eder; ortada bir düzeltme yok. <em>(c)</em> risk bazlı test, testleri risk seviyesine göre seçer ve önceliklendirir; bankacılıkta performans ve güvenlik pekala yüksek riskler olabilir, ama senaryo riske göre önceliklendirmeyle değil zamanlamayla ilgilidir. Kilit nokta: bir test aktivitesi, sonraki testi bırakmadan, yaşam döngüsündeki geleneksel yerinden daha öne alınıyorsa kavram sola almadır. Kaynak: Ders programı 2.1.5. Bu kitapta tekrar edin: <a href="chapter-2.html#fl-2-1-5">Sola alma (Kesim 2.1)</a>.</p>
+<p><strong>Soru 13 — Doğru cevap: (a).</strong> <em>Tuzak: kardeş kavram · ÖH 2.2.1 (K2).</em> Kabul testi sağlamaya ve dağıtıma hazır olduğunu göstermeye odaklanır. Başlıca biçimlerinden biri operasyonel kabul testidir: sistemi işletecek kişiler yedekleme ve geri yükleme, felaket kurtarma ve kullanıcı yönetimi gibi görevleri kontrol eder. Senaryo hem testi yapan kişileri hem de amacı, dağıtıma hazır olmayı adlandırıyor. <em>(b) Sistem testi</em> en güçlü çeldiricidir, çünkü o da sistemin bütününü, fonksiyonel olmayan karakteristikler dahil, temsili bir ortamda test eder; ama odağı sistemin spesifikasyonlarına göre davranışı ve yetenekleridir. Buradaki belirleyici ipuçları operasyon ekibi ve canlıya alma kararıdır; ikisi de kabule işaret eder. <em>(c)</em> sistem entegrasyon testi diğer sistemlere ve harici hizmetlere olan arayüzlere odaklanır; senaryo bunlardan söz etmiyor. <em>(d)</em> bileşen entegrasyon testi iç bileşenler arasındaki arayüzleri kontrol eder ve genellikle geliştiriciler tarafından yapılır. Kilit nokta: seviyeyi kimin ve neden test ettiği belirliyorsa, sistemi canlı ortamda işletebileceklerini teyit eden operasyon ekibi kabul testi, operasyonel biçimiyle demektir. Kaynak: Ders programı 2.2.1. Bu kitapta tekrar edin: <a href="chapter-2.html#fl-2-2-1">Beş test seviyesi (Kesim 2.2)</a>.</p>
+<p><strong>Soru 14 — Doğru cevap: (b).</strong> <em>Tuzak: abartılmış ya da ters çevrilmiş iddia · ÖH 2.2.3 (K2).</em> Hatanın gerçekten düzeltildiğini kontrol etmek için arızayı ortaya çıkaran testi, 30 Nisan’dan 2 Mayıs’a konaklamayı, tekrarlamak onaylama testidir. Değişikliğin başka hiçbir şeyi bozmadığını kontrol etmek için düzeltmenin dokunmadığı ödeme, sadakat puanı ve iptal gruplarını yeniden koşmak regresyon testidir. Senaryodaki sıra buna uyuyor. <em>(a)</em> bakım testi bir bağlamı (kullanımdaki bir sistemde yapılan değişiklikler) adlandırır, ilk aktiviteyi değil; ikinci aktivite de eksiksiz bir sistem testi değildir. <em>(c) Regresyon testi, ardından onaylama testi</em> en güçlü çeldiricidir, çünkü tam olarak iki doğru kavramı içerir, ama ters sırada; çifti her adı amacına bağlamadan ezberleyenler buraya düşer. <em>(d)</em> tekrar testi onaylama testinin eş adıdır, bu yüzden ilk yarı kabul edilebilir görünür; ama ikinci aktivite bakım testi değildir. Kilit nokta: çifti amaca göre eşleyin; onaylama “hata gerçekten düzeltildi mi?” diye, regresyon “düzeltme başka bir şeyi bozdu mu?” diye sorar. Kaynak: Ders programı 2.2.3. Bu kitapta tekrar edin: <a href="chapter-2.html#fl-2-2-3">Onaylama testi ve regresyon testi (Kesim 2.2)</a>.</p>
+</section>
+<section id="bölüm-3-statik-testler-2" class="level3">
+<h3>Bölüm 3 — Statik Testler</h3>
+<p><strong>Soru 15 — Doğru cevap: (d).</strong> <em>Tuzak: kardeş kavram · ÖH 3.1.1 (K1).</em> Neredeyse her iş ürünü statik testle incelenebilir; ders programı örnekleri arasında test planları, test senaryoları, ürün iş listesi öğeleri, proje dokümantasyonu ve modellerin yanında sözleşmeleri ve test başlatma belgelerini de sayar. Bir sözleşme ve bir grup test başlatma belgesi okunup anlaşılabilir, dolayısıyla gözden geçirilebilir. <em>(a)</em> yanıt süreleri yalnızca dağıtılmış hizmet yük altında çalışırken vardır; onları ölçmek dinamik, fonksiyonel olmayan testtir. <em>(b)</em> bir oturum boyunca bellek tüketimi de uygulama çalıştırılarak gözlenir. <em>(c) Ağ koptuğunda ödeme ekranının davranışı</em> en güçlü çeldiricidir, çünkü bir gözden geçirici bu durum için tasarımı inceleyebilir; ama şık davranışı soruyor ve davranış ancak yazılım çalıştırılarak gözlenebilir. Kilit nokta: statik test okunabilen iş ürünlerini inceler; çalışma anındaki davranış, zamanlama ya da kaynak kullanımı olarak anlatılan her şey dinamik teste aittir. Kaynak: Ders programı 3.1.1. Bu kitapta tekrar edin: <a href="chapter-3.html#fl-3-1-1">Statik testin neleri inceleyebildiği (Kesim 3.1)</a>.</p>
+<p><strong>Soru 16 — Doğru cevaplar: (b) ve (e).</strong> <em>Tuzak: abartılmış ya da ters çevrilmiş iddia · ÖH 3.1.3 (K2).</em> Ders programının saydığı farklardan ikisi burada geçiyor. Statik test, kodun çalıştırılmasına bağlı olmayan kalite karakteristiklerini ölçebilir; ders programının örneği sürdürülebilirliktir, bu yüzden (b) doğrudur. Statik test, dinamik testin nadiren çalıştırdığı ya da güçlükle ulaşabildiği kod yollarındaki hataları da daha kolay yakalayabilir, bu yüzden (e) doğrudur. <em>(a)</em> bir farkı ters çevirir: statik test çalıştırılamayan iş ürünleri üzerinde çalışır, dinamik test ise yalnızca çalıştırılabilenler üzerinde. <em>(c) Performans verimliliğini ölçmenin daha iyi yolu olarak statik test</em> en güçlü çeldiricidir, çünkü ders programında (b) ifadesinin hemen yanında durur; ama örneği değiştirir: performans verimliliği kodun çalıştırılmasına bağlıdır, onu dinamik test ölçer. <em>(d)</em> de ters çevrilmiştir: test esası kapsamındaki boşluklar, statik testle bulunması daha kolay ve daha ucuz olan hatalar arasındadır; örneğin hangi kabul kriterlerinin hiç testi olmadığını gözden geçirerek. Kilit nokta: iki seçenekli bir soruda her şıkkı ders programındaki çiftlere karşı kendi başına değerlendirin; çalıştırılamayan iş ürünleri ve çalıştırma gerektirmeyen karakteristikler için statik, çalıştırılabilen iş ürünleri ve çalıştırma gerektiren karakteristikler için dinamik. Kaynak: Ders programı 3.1.3. Bu kitapta tekrar edin: <a href="chapter-3.html#fl-3-1-3">Statik test ile dinamik test arasındaki yapısal fark (Kesim 3.1)</a>.</p>
+<p><strong>Soru 17 — Doğru cevap: (a).</strong> <em>Tuzak: kardeş kavram · ÖH 3.2.3 (K1).</em> Ders programı yazarı, gözden geçirilen iş ürününü oluşturan ve düzelten kişi olarak tanımlar. Spesifikasyonda üzerinde uzlaşılan hataları düzeltmek bu yüzden yazarın sorumluluğudur. <em>(b) Gözden geçirme lideri</em> en güçlü çeldiricidir, çünkü gözden geçirme lideri gözden geçirmenin genel sorumluluğunu üstlenir, bu yüzden işi sonuna kadar götürmek onun görevi gibi görünebilir; ama bu sorumluluk kimin katılacağına karar vermeyi ve gözden geçirmenin zamanını ve yerini düzenlemeyi kapsar, iş ürününü değiştirmeyi değil. <em>(c)</em> katip anomalileri derler ve kararları kaydeder; bir hatayı kaydetmek onu düzeltmek değildir. <em>(d)</em> moderatör gözden geçirme toplantılarının etkili yürümesini ve herkesin rahatça konuşabilmesini sağlar; bu rol iş ürününü değiştirmeyi içermez. Kilit nokta: her rolü kendi fiiline bağlayın; yazar oluşturur ve düzeltir, gözden geçirme lideri düzenler, moderatör kolaylaştırır, katip kaydeder, gözden geçirici gözden geçirir, yönetici ise neyin gözden geçirileceğine karar verir ve kaynak sağlar. Kaynak: Ders programı 3.2.3. Bu kitapta tekrar edin: <a href="chapter-3.html#fl-3-2-3">Gözden geçirmelerdeki altı rol (Kesim 3.2)</a>.</p>
+<p><strong>Soru 18 — Doğru cevap: (b).</strong> <em>Tuzak: kardeş kavram · ÖH 3.2.4 (K2).</em> Teftiş en resmî gözden geçirme çeşididir. Genel gözden geçirme sürecinin tamamını izler, ana hedefi en fazla sayıda anomaliyi bulmaktır, ekip teftiş süreci dahil YGYD’yi iyileştirmek için metrik toplar ve yazar gözden geçirme lideri ya da katip olamaz. Bu özelliklerin her biri senaryoda geçiyor. <em>(a) Teknik gözden geçirme</em> en güçlü çeldiricidir, çünkü o da bireysel olarak hazırlanan nitelikli gözden geçiriciler kullanır; ama ana hedefleri teknik bir problem üzerinde uzlaşma sağlamak ve karar vermektir. En fazla anomaliyi bulma amacı, metrikler ve yazara getirilen kısıtlama daha sıkı olan çeşidi işaret eder. <em>(c)</em> üzerinden geçmeye yazar öncülük eder; bu senaryo bunu dışlıyor. <em>(d)</em> gayri resmi bir gözden geçirme tanımlı bir süreç izlemez; burada anlatılan eksiksiz sürecin tersidir. Kilit nokta: olabildiğince çok anomali bulma amacı, metriklerle ve kısıtlanmış bir yazar rolüyle birlikte, teftişi tanımlar. Kaynak: Ders programı 3.2.4. Bu kitapta tekrar edin: <a href="chapter-3.html#fl-3-2-4">Resmiyet derecesine göre dört gözden geçirme çeşidi (Kesim 3.2)</a>.</p>
+</section>
+<section id="bölüm-4-test-analizi-ve-tasarımı-2" class="level3">
+<h3>Bölüm 4 — Test Analizi ve Tasarımı</h3>
+<p><strong>Soru 19 — Doğru cevap: (c).</strong> <em>Tuzak: kardeş kavram · ÖH 4.1.1 (K2).</em> Sınıflandırma testlerin kaynağına bağlıdır. Birinci test uzmanı testleri koda bakmadan spesifikasyondan, bir durum diyagramından türetiyor; bu kara kutu çalışmasıdır. İkincisi testleri kodun yapısından, dal kapsamı boşluklarından türetiyor; bu beyaz kutu çalışmasıdır. <em>(a) İkisi de beyaz kutu</em> en güçlü çeldiricidir, çünkü teknik ve kesin olduğu için bir durum diyagramı iç yapı gibi görünebilir; ama diyagram spesifikasyona aittir. Önemli olan testlerin nereden geldiğidir, modelin ne kadar teknik göründüğü değil. <em>(b)</em> tecrübeye dayalı teknikler bilgiye ve sezgiye dayanır; iki test uzmanı da bunları kullanmıyor. <em>(d)</em> iki test uzmanını birden yanlış etiketler. Kilit nokta: kaynağa göre sınıflandırın; spesifikasyon kara kutu, kod yapısı beyaz kutu, test uzmanının tecrübesi tecrübeye dayalı demektir. Kaynak: Ders programı 4.1.1. Bu kitapta tekrar edin: <a href="chapter-4.html#fl-4-1-1">Test Tekniklerine Genel Bakış (Kesim 4.1)</a>.</p>
+<p><strong>Soru 20 — Doğru cevap: (d).</strong> <em>Tuzak: hesap hatası · ÖH 4.2.1 (K3).</em> Davranış üç geçerli aralıkta değişiyor: 1–9 standart, 10–49 küçük bir indirim, 50–100 daha büyük bir indirim; bu yüzden her aralık kendi payıdır. 1’in altı ve 100’ün üstü reddediliyor ve iki ayrı geçersiz pay oluşturuyor. Toplam beştir. Adım adım: fiyatlandırma davranışından geçerli payları sıralayın, üç; reddetme kuralından geçersiz payları ekleyin, biri 1’in altında biri 100’ün üstünde, iki; toplayın, 3 + 2 = 5. <em>(a) 3</em> en güçlü çeldiricidir, çünkü fiyat kademeleri problemin görünen yapısıdır; ama yalnızca geçerli kademeleri saymak, geçersiz girdilerin de pay oluşturduğunu unutmaktır. Bu, denklik paylarına ayırmada kolay yapılan bir kaymadır. <em>(b) 4</em> iki geçersiz aralığı birleştirmekten gelir; burada iki reddetme farklı ele alınıyor (1’in altında “sipariş çok küçük” hatası, 100’ün üstünde “sipariş sınırı aşıldı” hatası), dolayısıyla tek değil iki ayrı geçersiz paydır. <em>(c) 6</em> sınır değerleri pay olarak saymaktan gelir; sınırlar pay saymaya değil sınır değer analizine aittir. Kilit nokta: önce geçerli davranış sınıflarını sayın, sonra reddedilen her taraf için bir geçersiz pay ekleyin. Kaynak: Ders programı 4.2.1. Bu kitapta tekrar edin: <a href="chapter-4.html#fl-4-2-1">Denklik paylarına ayırma (Kesim 4.2)</a>.</p>
+<p><strong>Soru 21 — Doğru cevap: (a).</strong> <em>Tuzak: hesap hatası · ÖH 4.2.2 (K3).</em> 2 değerli varyant her sınırı komşu paydaki en yakın komşusuyla birlikte alır. Alt sınır 7 ve 8’i, üst sınır 20 ve 21’i verir: dört farklı değer. Pratik bir not: soru kökü, buradaki gibi, SDA varyantını belirtir; saymaya başlamadan önce o kelimeyi okuyun. <em>(b) 2</em> yalnızca sınırların kendisini test eder ve bir kaydırma hatalarını yakalayan komşuları atlar. <em>(c) 6</em> en güçlü çeldiricidir: 3 değerli SDA’yı yalnızca geçerli payın iki sınır değerine, 8 ve 20’ye, uyguladığınızda bunu elde edersiniz (7, 8, 9 ve 19, 20, 21). Bu iki varyanttan hiçbirine uymaz: 2 değerli SDA dört değer, tam 3 değerli SDA sekiz değer verir. <em>(d) 8</em> tam 3 değerli sayıdır. 3 değerli SDA’da dört sınır değerin her biri, 7, 8, 20 ve 21, iki komşusuyla birlikte alınır: {6, 7, 8}, {7, 8, 9}, {19, 20, 21}, {20, 21, 22}. Bu kümeler birlikte sekiz farklı değer içerir: 6, 7, 8, 9, 19, 20, 21, 22. Soru 2 değerli SDA’yı soruyor. Kilit nokta: saymadan önce varyantın altını çizin; aynı aralık 2 değerli SDA’da dört, 3 değerli SDA’da sekiz değer verir, çünkü geçersiz payların sınır değerleri de sayılır. Kaynak: Ders programı 4.2.2. Bu kitapta tekrar edin: <a href="chapter-4.html#fl-4-2-2">Sınır değer analizi (Kesim 4.2)</a>.</p>
+<p><strong>Soru 22 — Doğru cevap: (b).</strong> <em>Tuzak: hesap hatası · ÖH 4.2.3 (K3).</em> Tam bir karar tablosunda koşul değerlerinin her kombinasyonu için bir sütun vardır. Burada koşulların hepsi iki değerli değil: yaş grubunun üç değeri, sadakat kartının ve havalimanında teslim almanın ikişer değeri var. Bu, ders programının koşullar birden çok değer aldığında izin verdiği genişletilmiş girişli bir karar tablosudur. Adım adım: her koşulun değer sayısını sıralayın, 3, 2 ve 2; sonra bunları çarpın, 3 × 2 × 2 = 12. <em>(a) 7</em> değerleri çarpmak yerine toplar (3 + 2 + 2); oysa kombinasyonlar çarpılır. <em>(c) 8</em> en güçlü çeldiricidir, çünkü 2 üzeri 3 = 8, üç koşul için bilinen kuraldır; ama bu kural yalnızca her koşul mantıksal (doğru/yanlış) olduğunda geçerlidir, üç değerli bir koşul varken eksik sayar. <em>(d) 6</em> yaş gruplarını iki değerli koşullardan yalnızca biriyle çarpar ve üçüncü koşulu unutur. Kilit nokta: 2^n kuralı mantıksal koşullar için özel bir durumdur; genişletilmiş girişli bir tabloda her koşulun değer sayısını çarpın. Kaynak: Ders programı 4.2.3. Bu kitapta tekrar edin: <a href="chapter-4.html#fl-4-2-3">Karar tablosu testi (Kesim 4.2)</a>.</p>
+<p><strong>Soru 23 — Doğru cevap: (c).</strong> <em>Tuzak: hesap hatası · ÖH 4.2.4 (K3).</em> Diziyi tablo üzerinde, mevcut durumu izleyerek yürüyün. Idle’da başlayın: start oynatıcıyı Playing’e, pause Paused’a, resume yeniden Playing’e, stop Stopped’a götürür. Her adım tablonun tanımladığı bir geçişi kullanıyor, dolayısıyla dizi geçerlidir. <em>(a) start, resume, stop</em> başarısız olur: start’tan sonra oynatıcı Playing’dedir ve tablo Playing’den bir resume olayı tanımlamaz; dizi ikinci adımda kırılır. <em>(b) start, pause, pause, stop</em> en güçlü çeldiricidir, çünkü içindeki her olay adı tabloda vardır; ama ikinci pause, pause’un tanımlı olmadığı Paused durumundan denenir. Mevcut durumu izlemeden olay adlarını kontrol etmek, tam olarak bu şıkkın yakaladığı hatadır. <em>(d) start, stop, resume</em> başarısız olur: stop’tan sonra oynatıcı hiçbir geçişin olmadığı Stopped’dadır, bu yüzden son resume geçersizdir. Kilit nokta: durum geçişi sorularında olay adlarını eşlemeyin; mevcut durumu adım adım izleyin ve her geçişi o durumdan kontrol edin. Kaynak: Ders programı 4.2.4. Bu kitapta tekrar edin: <a href="chapter-4.html#fl-4-2-4">Durum geçişi testi (Kesim 4.2)</a>.</p>
+<p><strong>Soru 24 — Doğru cevap: (d).</strong> <em>Tuzak: abartılmış ya da ters çevrilmiş iddia · ÖH 4.3.1 (K2).</em> Komut kapsama yüzdesi, bir test koşumunun çalıştırdığı çalıştırılabilir komutları sayar. Bir komuttaki hata ancak o komut çalıştırıldığında arızaya yol açabilir; bu yüzden hiç çalışmamış üç komut, içlerinde ne olursa olsun, bu koşumda hiçbir arızaya yol açmış olamaz. Onları çalıştırmak için bir testin bloğa götüren koşulu oluşturması gerekir: ulaşılamayan bir döviz kuru hizmeti. <em>(a)</em> en güçlü çeldiricidir, çünkü komutlara gerçekten hiç ulaşılmadı; ama ulaşılabilirler, çünkü blok hizmete her ulaşılamadığında çalışır; koşum bu koşulu yalnızca hiç oluşturmadı. Çalıştırılmamış olmak ölü olmakla aynı şey değildir. <em>(b)</em> komut kapsama yüzdesi ve dal kapsamı farklı ölçülerdir: biri komutları, diğeri dalları sayar ve iki yüzdenin eşleşmesi gerekmez. <em>(c)</em> geçen testler, o testlerin çalıştırmadığı kod hakkında hiçbir şey söylemez. Kilit nokta: bir kapsam boşluğu size testlerin hangi kodu henüz çalıştırmadığını ve sırada hangi testin ekleneceğini söyler; o kodun çalışıp çalışmadığı hakkında hiçbir şey söylemez. Kaynak: Ders programı 4.3.1. Bu kitapta tekrar edin: <a href="chapter-4.html#fl-4-3-1">Komut testi (Kesim 4.3)</a>.</p>
+<p><strong>Soru 25 — Doğru cevap: (b).</strong> <em>Tuzak: abartılmış ya da ters çevrilmiş iddia · ÖH 4.3.3 (K2).</em> Beyaz kutu testi gerçekleştirimi tam olarak var olduğu haliyle çalıştırır; bu yüzden spesifikasyonun hiç söz etmediği davranışa ulaşabilir ve onu test edebilir. Bu, spesifikasyona dayalı hiçbir tekniğin göremeyeceği bir boşluktur, çünkü spesifikasyonda türetilecek bir şey yoktur. <em>(a) Bir gereksinimin gerçekleştirimde eksik olduğunu tespit etmek</em> en güçlü çeldiricidir, çünkü aynı fikir gibi görünür; ama onun ayna görüntüsüdür ve bir zayıflığı anlatır: bir gereksinim hiç gerçekleştirilmemişse beyaz kutu testlerinin çalıştıracağı bir kod yoktur, bu yüzden boşluğu tespit edemeyebilirler. Onu ortaya çıkarmaya spesifikasyona dayalı test daha uygundur. <em>(c)</em> sistemin kullanıcıların iş ihtiyaçlarını karşıladığını sağlamak, kabule odaklı ve işe dönük teste ait olan sağlamadır, yapısal bir teknik değildir. <em>(d)</em> doğrusu tersidir; yapısal testler kod değişikliklerinden genellikle daha az değil, daha çok etkilenir. Kilit nokta: beyaz kutu spesifikasyonun unuttuğu kodu görür; kara kutu kodun unuttuğu gereksinimleri görür; her biri diğerinin kör noktasını kapsar. Kaynak: Ders programı 4.3.3. Bu kitapta tekrar edin: <a href="chapter-4.html#fl-4-3-3">Beyaz kutu testinin değeri (Kesim 4.3)</a>.</p>
+<p><strong>Soru 26 — Doğru cevap: (b).</strong> <em>Tuzak: kardeş kavram · ÖH 4.4.1 (K2).</em> Hata tahminleme insan hatalarını, hataları ve arızaları test uzmanının bilgisinden yola çıkarak öngörür; ders programının saydığı kaynaklardan biri de uygulamanın geçmişte nasıl çalıştığıdır. Test uzmanı girdilerini uygulama daha önce onlarda arıza verdiği için seçiyor; bu da tekniğin tanımlayıcı özelliğidir. <em>(a)</em> keşif testi testleri aynı anda tasarlar, koşar ve değerlendirir; her sonuç bir sonrakini yönlendirir. Burada testler önceden, hatırlanandan seçiliyor. <em>(c)</em> kontrol listesine dayalı test etme hazırlanmış bir test koşulları listesinden çalışır; senaryoda böyle bir liste yok. <em>(d) Sınır değer analizi</em> en güçlü çeldiricidir, çünkü sıfır saat bir sınır değer gibi görünür; ama SDA değerlerini belirtilmiş payların kenarlarından türetir. Test uzmanı sıfır saati, belirtilmiş bir aralık orada bittiği için değil, daha önce arızaya yol açtığı için seçti. Kilit nokta: tecrübeye dayalı bir tekniği kaynağına göre sınıflandırın; geçmiş arızalar ve geliştiricilerin tipik yanlışları, bir girdi tesadüfen sınır gibi görünse bile hata tahminlemeye işaret eder. Kaynak: Ders programı 4.4.1. Bu kitapta tekrar edin: <a href="chapter-4.html#fl-4-4-1">Hata tahminleme (Kesim 4.4)</a>.</p>
+<p><strong>Soru 27 — Doğru cevap: (c).</strong> <em>Tuzak: abartılmış ya da ters çevrilmiş iddia · ÖH 4.4.3 (K2).</em> Ders programı, ayrıntılı test senaryoları olmadığında kontrol listesine dayalı test etmenin yol gösterebileceğini ve bir ölçüde tutarlılık sağlayabileceğini söyler. Bir kontrol listesi yapı verir, ama her maddenin nasıl kontrol edileceğinde test uzmanının muhakemesine yer bırakır. <em>(a) Kontrol listeleri ayrıntılı adım adım talimatlar içermelidir</em> en güçlü çeldiricidir, çünkü “tutarlılık” birebir aynı koşumu çağrıştırır; ama kontrol listesi maddeleri bilerek ayrıntılı betikler değildir. Neyin kontrol edileceğini hatırlatırlar; daha fazla ayrıntı eklemek onları test prosedürlerine çevirir ve esnekliklerini kaybettirir. <em>(b)</em> kontrol listeleri zaman içinde sürdürülür ve hata analizinden gelenlerle güncellenir; bir kez geçmek bir maddeyi çıkarmak için neden değildir. <em>(d)</em> kontrol listesine dayalı test etme tecrübeye dayalı bir tekniktir ve listeler genellikle test uzmanları tarafından kendi tecrübelerinden kurulur. Kilit nokta: üst düzey bir kontrol listesi, daha geniş kapsam sağlayabilen bir çeşitlilik için tekrarlanabilirlikten biraz vazgeçer; onu tamamen ayrıntılı hale getirirseniz bir kontrol listesi değil, bir prosedür yazmış olursunuz. Kaynak: Ders programı 4.4.3. Bu kitapta tekrar edin: <a href="chapter-4.html#fl-4-4-3">Kontrol listesine dayalı test etme (Kesim 4.4)</a>.</p>
+<p><strong>Soru 28 — Doğru cevap: (c).</strong> <em>Tuzak: kardeş kavram · ÖH 4.5.2 (K2).</em> Ders programı iki yaygın biçim sayar. Senaryo odaklı kriterler Given/When/Then gibi bir biçim kullanır. Kural odaklı kriterler madde işaretli bir doğrulama listesi ya da girdi-çıktı eşlemesinin tablo biçimi olarak yazılır; bu tablo tam olarak budur: her satır üyelik ve sipariş toplamını bir kargo ücretine eşler. <em>(a) Senaryo odaklı</em> en güçlü çeldiricidir, çünkü her satır küçük bir örnek gibi okunabilir; ama senaryo odaklı bir kriter bir ön koşulu, bir olayı ve bir beklenen sonucu anlatır. Girdi ve çıktılardan oluşan bir tablo kural belirtir ve ders programı onu kural odaklı olarak sınıflandırır. <em>(b)</em> yapı odaklı, kabul kriterlerinin bir biçimi değildir; beyaz kutu testinden bir kelime ödünç alır. <em>(d)</em> kriterler iyi tanımlanmış ve belirsizlikten uzak olduğu sürece ekipler başka biçimler de kullanabilir; Given/When/Then senaryo odaklı biçimin yalnızca bir örneğidir. Kilit nokta: madde işaretli bir kural listesi de girdi-çıktı eşlemelerinden oluşan bir tablo da kural odaklıdır; Given/When/Then ise senaryo odaklıdır. Kaynak: Ders programı 4.5.2. Bu kitapta tekrar edin: <a href="chapter-4.html#fl-4-5-2">Kabul kriterleri (Kesim 4.5)</a>.</p>
+<p><strong>Soru 29 — Doğru cevap: (a).</strong> <em>Tuzak: hesap hatası · ÖH 4.5.3 (K3).</em> Kabul kriterinin iki koşulu, sipariş toplamının 500’ün üzerinde olması ve müşterinin üye olması, ve vaat ettiği bir sonucu, ücretsiz kargo, vardır. Doğru test iki koşulu da kurar (toplam 520, üye) ve tam olarak vaat edilen sonucu doğrular (kargo ücreti sıfır). <em>(b)</em> siparişin veritabanına kaydedilmesini beklemek kabul kriterini değil, gerçekleştirimin bir yan etkisini kontrol eder. <em>(c)</em> toplam 480 ve müşteri üye değilken iki koşul da sağlanmaz; kriter ücretsiz kargo vaat etmez ve beklenen sonuç kuralla çelişir. <em>(d) Yalnızca üye, bütün siparişlerde ücretsiz kargo</em> en güçlü çeldiricidir, çünkü üyelik gerçekten koşullardan biridir; ama test sipariş toplamı koşulunu sessizce düşürür ve kuralı genişletir. Koşulları eksik kapsamak, kabul kriterlerinden test türetirken kolay yapılan bir hatadır. Kilit nokta: bir kabul kriterinden türetilen test, kriterdeki her koşulu çalıştırmalı ve vaat ettiği sonucu doğrulamalıdır; ne fazlası ne eksiği. Kaynak: Ders programı 4.5.3. Bu kitapta tekrar edin: <a href="chapter-4.html#fl-4-5-3">Kabul testi güdümlü yazılım geliştirme (Kesim 4.5)</a>.</p>
+</section>
+<section id="bölüm-5-test-aktivitelerini-yönetme-2" class="level3">
+<h3>Bölüm 5 — Test Aktivitelerini Yönetme</h3>
+<p><strong>Soru 30 — Doğru cevap: (b).</strong> <em>Tuzak: kardeş kavram · ÖH 5.1.3 (K2).</em> Giriş kriterleri bir aktiviteye başlamanın ön koşullarını tanımlar; tipik örnekleri test verisi gibi kaynakların ve gözden geçirilmiş test senaryoları gibi test çalışma ürünlerinin hazır olmasıdır. Çıkış kriterleri bir aktiviteyi tamamlanmış ilan etmek için neye ulaşılması gerektiğini tanımlar; tipik örnekleri ulaşılan kapsam ve çözülmemiş hata sayısı gibi titizlik ölçüleridir. Liste 1 başlayabilmekle, liste 2 durabilmekle ilgilidir. <em>(a)</em> iki listeyi ters çevirir. <em>(c) İki liste de giriş kriteridir</em> en güçlü çeldiricidir, çünkü iki liste de gerçekten planlama sırasında, test başlamadan önce yazılmıştır; ama bir kriterin türünü yazıldığı an değil, neyi yönettiği belirler. Liste 2, sistem testinin ne zaman bitebileceğini yönetiyor. <em>(d)</em> kabul kriterleri, bir kullanıcı hikayesinin ya da ürünün paydaşlarca kabul edilmesi için karşılaması gereken koşullardır; bir test seviyesini kontrol eden kapılar değildir. Kilit nokta: bir kriteri yazıldığı ana göre değil, kontrol ettiği ana göre sınıflandırın: bir aktivitenin başlangıcı mı, tamamlanması mı. Kaynak: Ders programı 5.1.3. Bu kitapta tekrar edin: <a href="chapter-5.html#fl-5-1-3">Giriş kriterlerini ve çıkış kriterlerini yönetme (Kesim 5.1)</a>.</p>
+<p><strong>Soru 31 — Doğru cevap: (d).</strong> <em>Tuzak: abartılmış ya da ters çevrilmiş iddia · ÖH 5.1.6 (K1).</em> Ders programı, test piramidindeki katmanların sayısının ve adlarının farklı olabileceğini söyler ve bu iki varyant da yaygındır: asıl modelde birim, servis ve kullanıcı arayüzü testleri; başka popüler bir modelde bileşen, entegrasyon ve uçtan uca testler. Değişmeyen şey biçimdir: altta çok sayıda küçük, hızlı test, üstte az sayıda yavaş, geniş test. <em>(a) Adları sabit üç katman</em> en güçlü çeldiricidir, çünkü asıl modelin gerçekten bu adlarla üç katmanı vardır; ama model birkaç sürümde kullanılır ve ders programı başka katman sayılarına ve adlarına izin verir. <em>(b)</em> kuralı ters çevirir: katman ne kadar yüksekse test yalıtımı o kadar düşüktür, çünkü üst seviye testler sistemin daha çok parçasına bağlıdır. <em>(c)</em> piramit, testlerin ayrıntı düzeyini göstererek test otomasyonunu ve test eforunun dağıtımını destekler; katmanlara test teknikleri atamaz. Kilit nokta: piramidi tek bir katman adı kümesiyle değil, biçimi ve eğilimiyle öğrenin: tabanda çok sayıda hızlı, yalıtılmış test, yukarıda daha az sayıda yavaş, entegre test. Kaynak: Ders programı 5.1.6. Bu kitapta tekrar edin: <a href="chapter-5.html#fl-5-1-6">Test piramidi (Kesim 5.1)</a>.</p>
+<p><strong>Soru 32 — Doğru cevaplar: (a) ve (d).</strong> <em>Tuzak: doğru fikir, yanlış yer · ÖH 5.1.7 (K2).</em> Q4, kullanılabilirlik testleri dışındaki duman testlerini ve fonksiyonel olmayan testleri içerir; güvenlik testleri oraya aittir ve (a) doğrudur. Q2 fonksiyonel testleri, örnekleri, kullanıcı hikayesi testlerini, kullanıcı deneyimi prototiplerini, API testlerini ve simülasyonları barındırır; bunlar geliştirmeyi iş tarafından yönlendirir, bu yüzden (d) doğrudur. <em>(b) Q4’te kullanılabilirlik testleri</em> en güçlü çeldiricidir, çünkü kullanılabilirlik fonksiyonel olmayan bir karakteristiktir ve fonksiyonel olmayan testler Q4’tedir; ama ders programı kullanılabilirliği açık bir istisna yapar: kullanılabilirlik testleri kullanıcıya dönüktür ve Q3’e aittir. <em>(c)</em> bileşen entegrasyon testleri teknolojiye dönüktür ve ekibi destekler; bu da onları Q3’e değil Q1’e yerleştirir. <em>(e)</em> keşif testi işe dönüktür, ama geliştirmeyi yönlendirmez, ürünü eleştirir; bu yüzden Q2’ye değil Q3’e aittir. Kilit nokta: her testi sırayla iki soruyla yerleştirin: kime dönük ve ekibi mi destekliyor yoksa ürünü mü eleştiriyor. Tek istisnayı, fonksiyonel olmayan gruptan ayrılıp Q3’e giden kullanılabilirliği aklınızda tutun. Kaynak: Ders programı 5.1.7. Bu kitapta tekrar edin: <a href="chapter-5.html#fl-5-1-7">Test çeyrekleri (Kesim 5.1)</a>.</p>
+<p><strong>Soru 33 — Doğru cevap: (d).</strong> <em>Tuzak: kardeş kavram · ÖH 5.2.4 (K2).</em> Bir ürün riski analiz edildikten sonra ders programı birkaç karşılık seçeneği sayar: test yoluyla risk azaltma, risk kabulü, risk transferi ve acil durum planı. Risk gerçekleşirse kullanılmaya hazır, önceden hazırlanmış bir geri dönüş yolu acil durum planıdır. Geri dönüş prosedürü bir arızayı daha az olası kılmaz; arıza olursa zararı sınırlar. <em>(a)</em> bir riski kabul etmek bilinçli olarak hiçbir şey yapmamaya karar vermek demektir; ekip ise açıkça harekete geçiyor. <em>(b)</em> risk transferi sonucu, örneğin bir sözleşme ya da sigorta yoluyla, üçüncü bir tarafa taşır; önceki sağlayıcıya geri dönmek sonucu şirkette tutar ve yalnızca hizmeti geri getirir. <em>(c) Test yoluyla risk azaltma</em> en güçlü çeldiricidir, çünkü ekip entegrasyonu da test ediyor ve azaltma en bilinen karşılıktır; ama test yoluyla azaltma, risk seviyesini tecrübeli test uzmanları, gözden geçirmeler ve uygun kapsam gibi aksiyonlarla düşürür. Sorudaki prosedür bir test aktivitesi değildir. Kilit nokta: aksiyonun ne yaptığını sorun: riski düşürüyor mu (azaltma), sonucunu başka birine mi taşıyor (transfer), bilinçli olarak onunla mı yaşıyor (kabul), yoksa gerçekleştiği an için bir geri dönüş yolu mu hazırlıyor (acil durum planı). Kaynak: Ders programı 5.2.4. Bu kitapta tekrar edin: <a href="chapter-5.html#fl-5-2-4">Risk bazlı test ve risk kontrolü (Kesim 5.2)</a>.</p>
+<p><strong>Soru 34 — Doğru cevap: (b).</strong> <em>Tuzak: hesap hatası · ÖH 5.1.4 (K3).</em> Benzer projede geliştirme eforunun test eforuna oranı 4:3 idi; yani test eforu geliştirme eforunun dörtte üçüdür: 720 × 3/4 = 540 kişi-gün. Adım adım: oranı yönü belli bir kesir olarak yazın, geliştirme:test = 4:3, yani test = geliştirme × 3/4; sonra çarpın, 720 × 3/4 = 540. <em>(a) 180</em> oranın yalnızca bir parçasıdır: 720 / 4 = 180, geliştirme eforunun bir parçasının büyüklüğüdür ve test tarafında bu parçalardan üç tane vardır. <em>(c) 960</em> en güçlü çeldiricidir, çünkü oran fikrini korur ama onu ters yönde uygular (720 × 4/3) ve testi geliştirmeden büyük yapar; bütün soru oranın yönünü okumaktır. <em>(d) 1.260</em> projenin toplam eforudur, geliştirme artı test (720 + 540); soru yalnızca test eforunu soruyor. Kilit nokta: hesaplamadan önce oranı kesir olarak yazın ve yönünü kontrol edin; geliştirme:test = 4:3, test = geliştirme × 3/4 demektir. Kaynak: Ders programı 5.1.4. Bu kitapta tekrar edin: <a href="chapter-5.html#fl-5-1-4">Tahminleme teknikleri (Kesim 5.1)</a>.</p>
+<p><strong>Soru 35 — Doğru cevap: (d).</strong> <em>Tuzak: hesap hatası · ÖH 5.1.5 (K3).</em> Ek kapsam önceliklendirmesinde önce en yüksek kapsamlı test senaryosu koşulur; sonraki her test senaryosu, henüz ulaşılmamış kapsama en çok katkı yapandır. Adım adım: TC1 altı komutu, yani en çoğunu çalıştırır; bu yüzden ilk koşulur. TC1’den sonra TC2 hiçbir şey eklemez (S1–S5 zaten kapsandı), TC3 üç komut ekler (S7, S8, S9), TC4 ise bir komut ekler (S10); bu yüzden TC3 ikinci koşulur. TC3’ten sonra TC4 hâlâ S10’u eklerken TC2 hâlâ hiçbir şey eklemez; bu yüzden TC4 üçüncü, TC2 son koşulur. <em>(a) TC1, TC2, TC3, TC4</em> en güçlü çeldiricidir, çünkü her test senaryosunun kendi toplamına göre (6, 5, 3, 2) sıralayan düz kapsama dayalı önceliklendirmeyi uygular; soru ise yalnızca henüz kapsanmamış olanı sayan ek varyantı adlandırıyor. <em>(b)</em> ikinci sıra için ek kuralı uygular, ama sonra asıl sıraya geri döner. <em>(c)</em> test senaryolarını en düşük kapsamdan yukarı doğru koşar; bu, kapsama dayalı her stratejinin tersidir. Kilit nokta: ek kapsam önceliklendirmesinde her seçimden sonra kalan her test senaryosunun ne eklediğini yeniden hesaplayın; yalnızca kapsanmış komutları tekrarlayan büyük bir test senaryosu sona düşer. Kaynak: Ders programı 5.1.5. Bu kitapta tekrar edin: <a href="chapter-5.html#fl-5-1-5">Test senaryosu önceliklendirme (Kesim 5.1)</a>.</p>
+<p><strong>Soru 36 — Doğru cevap: (a).</strong> <em>Tuzak: doğru fikir, yanlış yer · ÖH 5.3.2 (K2).</em> Test ilerleme raporları süregiden test kontrolünü destekler. Ders programına göre test plandan saptığında test takvimini, kaynakları ya da test planını değiştirmek için yeterli bilgi vermeleri gerekir; engeller ve onları aşma yolları da tipik içeriklerinin parçasıdır. Aşamanın ortasında engellenmiş bir ortam tam olarak böyle bir sapmadır. <em>(b)</em> alınan dersler, aktivite bittiğinde yazılan test tamamlama raporuna aittir. <em>(c)</em> bir ilerleme raporu testin durumunu özetler; yine de açılması gereken tek tek hata raporlarının yerini almaz. <em>(d) Ürün kalitesinin çıkış kriterlerine göre son değerlendirmesi</em> en güçlü çeldiricidir, çünkü bir ilerleme raporu da metrikler ve durum içerir; ama asıl plana ve onun çıkış kriterlerine göre değerlendirme, sonda hazırlanan test tamamlama raporunun içeriğidir. Kilit nokta: ilerleme raporu, test hâlâ sürerken birinin yön verebilmesi için vardır; tamamlama raporu ise test bittikten sonra değerlendirir ve ders çıkarır. Kaynak: Ders programı 5.3.2. Bu kitapta tekrar edin: <a href="chapter-5.html#fl-5-3-2">Test raporları: ilerleme ve tamamlama (Kesim 5.3)</a>.</p>
+<p><strong>Soru 37 — Doğru cevap: (c).</strong> <em>Tuzak: doğru fikir, yanlış yer · ÖH 5.4.1 (K2).</em> Testi desteklemek için yapılandırma yönetimi, test öğeleri dahil bütün yapılandırma öğelerinin benzersiz biçimde tanımlanmasını ve sürüm kontrolü altında tutulmasını, tanımlanmış bütün dokümantasyon ve yazılım öğelerine test çalışma ürünlerinde açık biçimde referans verilmesini sağlar. Bu disipline dayanan bir rapor yapının ve test grubu sürümünün tam adını verirdi ve denetçi iddiayı kontrol edebilirdi. <em>(a) Daha fazla test otomasyonu</em> en güçlü çeldiricidir, çünkü otomatik koşumlar çoğu zaman ayrıntılı kayıtlar üretir; ama hangi yapının ve hangi test grubu sürümünün koşulduğunu kaydetmeyen bir kayıtta aynı boşluk vardır. Eksik olan yetenek otomasyon değil, tanımlama ve referans vermedir. <em>(b)</em> çıkış kriterleri testin ne zaman durabileceğine karar verir; bir raporun atıf yaptığı sürümleri adlandırmasını sağlamaz. <em>(d)</em> hata raporları tek tek anomalileri anlatır ve geçen bir regresyon koşumu hiç hata raporu üretmeyebilir; bu yüzden neyin test edildiğini belgeleyemezler. Kilit nokta: kanıt, hangi sürümün test edildiğini kimse söyleyemediği için reddediliyorsa cevap yapılandırma yönetimidir: benzersiz tanımlama, sürüm kontrolü ve test çalışma ürünlerinde açık referanslar. Kaynak: Ders programı 5.4. Bu kitapta tekrar edin: <a href="chapter-5.html#fl-5-4-1">Yapılandırma Yönetimi (Kesim 5.4)</a>.</p>
+<p><strong>Soru 38 — Doğru cevap: (a).</strong> <em>Tuzak: hesap hatası · ÖH 5.5.1 (K3).</em> Beklenen sonuç test esasından türetilir ve gerçekleşen sonuçla karşılaştırılabilecek somut, gözlenebilir bir değer olarak yazılır. Gereksinim her tam 10,00 için bir puan veriyor: 527,40’lık bir siparişte 52 tam 10,00 birimi vardır (52 × 10,00 = 520,00); kalan 7,40 tam bir birim değildir. Bu yüzden sayfa 52 puan göstermelidir. <em>(b) 53</em> en güçlü çeldiricidir: 52,74’ü yukarı yuvarlar, ama “her tam 10,00” yalnızca tamamlanmış birimleri sayar. <em>(c)</em> doğru yöndedir, ama “doğru puan sayısı” yalnızca gereksinimi yeniden söyler; test uzmanının atladığı hesabı yapmadan kimse onu gerçekleşen “0” sonucuyla karşılaştıramaz. <em>(d)</em> sistemin göstermesi gereken davranışı değil, bir düzeltmeyi anlatır; hata raporu ne olması gerektiğini söyler ve çözümü hatayı giderecek kişiye bırakır. Kilit nokta: beklenen sonucu, test esasının bu girdiler için verdiği tam değer olarak yazın. Kaynak: Ders programı 5.5. Bu kitapta tekrar edin: <a href="chapter-5.html#fl-5-5-1">Profesyonel bir hata raporu hazırlamak (Kesim 5.5)</a>.</p>
+</section>
+<section id="bölüm-6-test-araçları-2" class="level3">
+<h3>Bölüm 6 — Test Araçları</h3>
+<p><strong>Soru 39 — Doğru cevap: (b).</strong> <em>Tuzak: kardeş kavram · ÖH 6.1.1 (K2).</em> Otomatik test gruplarını koşan ve kodun ne kadar kapsamlı çalıştırıldığını ölçen araçlar test koşumu ve kapsam araçları kategorisine girer. Her commit’te çalışmak ve sonuçları toplamak da aynı işin parçasıdır. <em>(a) Test yönetimi araçları</em> en güçlü çeldiricidir, çünkü sonuçları toplamak ve raporlamak yönetim gibi görünür; ama test yönetimi araçları test sürecini ve test çalışma ürünlerini, planları, ilerlemeyi ve hataları yönetir. Senaryodaki araç testleri koşar; raporlaması koşumun bir yan ürünüdür. <em>(c)</em> statik test araçları iş ürünlerini çalıştırmadan inceler; bu araç ise grupları koşar. <em>(d)</em> tasarım ve uygulama araçları test senaryolarını türetmeye ve hazırlamaya yardım eder; bu araç zaten var olan testleri koşar. Kilit nokta: bir aracı ana fiiline göre sınıflandırın; testleri koşuyor ve kapsamı ölçüyorsa, başka ne raporlarsa raporlasın, bir test koşumu ve kapsam aracıdır. Kaynak: Ders programı 6.1.1. Bu kitapta tekrar edin: <a href="chapter-6.html#fl-6-1-1">Test aracı çeşitleri ve testi nasıl destekledikleri (Kesim 6.1)</a>.</p>
+<p><strong>Soru 40 — Doğru cevap: (d).</strong> <em>Tuzak: doğru fikir, yanlış yer · ÖH 6.2.1 (K1).</em> Ders programının adını koyduğu test otomasyonu risklerinden biri, bir aracı kullanıma almanın, betiklerini çalışır tutmanın ve manuel süreci yeniden düzenlemenin zamanını, maliyetini ve eforunu olduğundan az tahmin etmektir. Ekip test grubunu kurmayı planladı, ama ekranlar değiştikçe onu çalışır tutmayı planlamadı; bakım eforu artık asıl plandan büyük. <em>(a)</em> senaryo tedarikçi hakkında hiçbir şey söylemiyor; betikler uygulama değiştiği için bozuluyor. <em>(b) Manuel testin daha uygun olacağı yerde bir araç kullanmak</em> en güçlü çeldiricidir, çünkü kırılgan betikler otomasyonu yanlış bir seçim gibi gösterebilir; ama regresyon testi otomasyonun tipik ve meşru bir kullanımıdır. Sorun otomatikleştirme kararı değil, planlanmamış bakımdır. <em>(c)</em> araca fazla güvenmek, ekibin araç sonuçlarına eleştirel düşünmeden güvenmesi olarak görünürdü; olan bu değil. Kilit nokta: otomasyon kalıcı bir bakım maliyeti getirir ve bu maliyeti olduğundan az tahmin etmek adı konmuş bir risktir; senaryodaki belirtiyi gerçekten gösterdiği riskle eşleyin. Kaynak: Ders programı 6.2.1. Bu kitapta tekrar edin: <a href="chapter-6.html#fl-6-2-1">Test otomasyonunun faydaları ve riskleri (Kesim 6.2)</a>.</p>
+</section>
+
+</details>
+</section>
+</section>
+
+<div class="pager"><a href="final-revision.html"><span class="lbl">Önceki</span>Son Tekrar Planı</a><a href="further-resources.html" style="text-align:right"><span class="lbl">Sonraki</span>İleri Kaynaklar</a></div>
+<footer class="site">© 2026 Kadir Çamoğlu · Kendi içeriğimiz CC BY-NC 4.0 lisanslıdır · ISTQB® ve CTFL®, International Software Testing Qualifications Board'un tescilli markalarıdır; bu rehber ISTQB® ya da Turkish Testing Board ile bağlantılı değildir, onlar tarafından onaylanmamıştır.</footer>
+</main>
+</div>
+<script>if (window.matchMedia('(min-width: 901px)').matches) document.getElementById('navd').open = true;</script>
+<script>(function(){function od(){var h=decodeURIComponent(location.hash.slice(1));if(!h)return;var e=document.getElementById(h);while(e){if(e.tagName==='DETAILS')e.open=true;e=e.parentElement;}}addEventListener('hashchange',od);od();})();</script>
+</body>
+</html>

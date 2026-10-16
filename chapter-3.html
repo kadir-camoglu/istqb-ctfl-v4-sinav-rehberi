@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bölüm 3 — Statik Testler · ISTQB® CTFL® v4.0 Sınav Rehberi</title>
+<meta name="description" content="ISTQB® Sertifikalı Test Uzmanı Temel Seviye (CTFL®) v4.0 sınavı için ücretsiz, bağımsız Türkçe çalışma rehberi: 64 öğrenme hedefinin tamamı, çözümlü örnekler, kısa sorular ve iki dilli tam bir deneme sınavı.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="draft-banner" role="note"><strong>Herkese açık taslak — inceleniyor.</strong> Geri bildirim: <a href="mailto:kadir.camoglu@gmail.com">kadir.camoglu@gmail.com</a></div>
+<header class="topbar"><div class="inner"><a href="index.html">ISTQB® CTFL® v4.0 Sınav Rehberi</a><span class="meta"><span class="ind">Bağımsız · Gayriresmî çalışma rehberi · Herkese açık taslak · 2026-10 · </span><a href="all.html">Tam metin tek sayfada</a></span></div></header>
+<div class="layout">
+<nav class="side"><details id="navd"><summary>İçindekiler</summary><div class="navbody">
+<div class="group">Ön bölüm</div><ul>
+<li><a href="index.html">ISTQB® CTFL® v4.0 Sınav Rehberi: Sıfırdan Sınava Hazır Seviyeye</a>
+</li>
+<li><a href="copyright.html">Telif Hakkı ve Marka Bildirimi</a>
+</li>
+<li><a href="introduction.html">Giriş — Bu Kitap Hakkında</a>
+</li>
+<li><a href="how-to-use.html">Bu Kitap Nasıl Kullanılır</a>
+</li>
+<li><a href="the-exam.html">CTFL® Sınavı Nasıl İşler</a>
+</li>
+<li><a href="objective-map.html">Hedef Haritası</a>
+</li>
+<li><a href="study-roadmap.html">Çalışma Yol Haritası</a>
+</li>
+</ul>
+<div class="group">Bölümler</div><ul>
+<li><a href="chapter-1.html">Bölüm 1 — Yazılım Testinin Temelleri</a>
+</li>
+<li><a href="chapter-2.html">Bölüm 2 — Yazılım Geliştirme Yaşam Döngüsü Boyunca Test</a>
+</li>
+<li class="current"><a href="chapter-3.html">Bölüm 3 — Statik Testler</a>
+<ul class="sub"><li><a href="#static-testing-basics">3.1 Statik Testin Temelleri</a></li><li><a href="#feedback-and-the-review-process">3.2 Geri Bildirim ve Gözden Geçirme Süreci</a></li><li><a href="#chapter-3-summary">Bölüm 3 özeti</a></li><li><a href="#cumulative-retrieval-1">Birikimli hatırlama</a></li><li><a href="#chapter-exercises-2">Bölüm alıştırmaları</a></li></ul>
+</li>
+<li><a href="chapter-4.html">Bölüm 4 — Test Analizi ve Tasarımı</a>
+</li>
+<li><a href="chapter-5.html">Bölüm 5 — Test Aktivitelerini Yönetme</a>
+</li>
+<li><a href="chapter-6.html">Bölüm 6 — Test Araçları</a>
+</li>
+</ul>
+<div class="group">Arka bölüm</div><ul>
+<li><a href="rationale.html">Cevaplar ve Gerekçeler</a>
+</li>
+<li><a href="glossary.html">Sözlük</a>
+</li>
+<li><a href="confused-pairs.html">Sık Karıştırılan Kavramlar — Ana Liste</a>
+</li>
+<li><a href="final-revision.html">Son Tekrar Planı</a>
+</li>
+<li><a href="mock-exam-1.html">Deneme Sınavı 1 — 40 Soru, Gerekçeleriyle</a>
+</li>
+<li><a href="further-resources.html">İleri Kaynaklar</a>
+</li>
+</ul>
+</div></details></nav>
+<main>
+<section id="chapter-3-static-testing" class="level1">
+<h1>Bölüm 3 — Statik Testler</h1>
+<p><strong>Öğrenme hedefleri:</strong> 8 · K1 4 / K2 4 / K3 0 · <strong>Bu bölümden sınav sorusu:</strong> 4</p>
+<p><strong>Anahtar kelimeler:</strong> anomali (anomaly), dinamik test (dynamic testing), resmi gözden geçirme (formal review), gayri resmi gözden geçirme (informal review), teftiş (inspection), gözden geçirme (review), statik analiz (static analysis), statik test (static testing), teknik gözden geçirme (technical review), üzerinden geçme (walkthrough)</p>
+<p>Bu bölüm, kırk sorunun dördüyle sınavda ağırlığı en düşük bölümlerden biridir. Bu dört sorudan ikisi 3.1.1, 3.2.1, 3.2.3 ve 3.2.5’ten gelen K1 sorularıdır. Biri, statik testin değeri ya da dinamik testle karşılaştırılması üzerine bir K2 sorusudur (3.1.2 veya 3.1.3); biri de gözden geçirme süreci ya da gözden geçirme çeşitleri üzerine bir K2 sorusudur (3.2.2 veya 3.2.4). İyi haber şu: bu sorular kısa ve iyi tanımlanmış listelere dayanır. Odaklı bir çalışmayla bu bölümü sınavda puan kazanmanın daha kolay fırsatlarından biri olarak görmek yerinde olur. Statik test, Bölüm 1’deki “erken test” prensibinin de çok doğrudan bir uygulamasıdır: sorunları daha kodlama başlamadan, dokümantasyon aşamasında, düzeltmenin en ucuz olduğu yerde yakalar.</p>
+<section id="static-testing-basics" class="level2">
+<h2>3.1 Statik Testin Temelleri</h2>
+<section id="fl-3-1-1" class="level3">
+<h3>Statik testin neleri inceleyebildiği (FL-3.1.1 — K1)</h3>
+<p><strong>Statik test (static testing)</strong>, incelenen yazılım ya da iş ürünü hiç çalıştırılmadan yapılan bir değerlendirmedir. İki kanaldan yürür. <strong>Gözden geçirmeler (review)</strong>, iş ürünlerinin test uzmanları, analistler ve geliştiriciler gibi kişiler tarafından okunup değerlendirilerek elle incelenmesidir. <strong>Statik analiz (static analysis)</strong> ise kod yapılarını ya da modelleri tarayan araçların yapısal hataları otomatik olarak denetlemesidir. Şekil 3.1, iki kanalın tek bir “statik test” başlığı altında nasıl yan yana durduğunu gösteriyor.</p>
+<p>Statik testin birkaç hedefi vardır. Kaliteyi iyileştirir ve hataları tespit eder. İş ürününün okunabilirliği, bütünlüğü, doğruluğu, test edilebilirliği ve tutarlılığı gibi niteliklerini de değerlendirir; doğrulamada da sağlamada da kullanılabilir. Örnek eşleme, iş birliğiyle kullanıcı hikayesi yazma ve iş listesi olgunlaştırma sırasında gözden geçirme tekniklerini test uzmanları, iş temsilcileri ve geliştiriciler birlikte uygular. Amaç, kullanıcı hikayelerinin eksiksiz ve anlaşılır olması, hazır olma tanımı (Definition of Ready, DoR) gibi kriterleri karşılayan test edilebilir kabul kriterleri içermesidir. Statik analiz çoğu zaman sürekli entegrasyon (continuous integration, CI) hatlarına yerleştirilir. En çok belirli kod hatalarını bulmak için kullanılır, ama sürdürülebilirliği ve güvenliği de değerlendirir; yazım denetleyicileri ve okunabilirlik araçları da birer statik analiz aracıdır.</p>
+<figure>
+<img src="figures/fig_3_1_static_testing_channels.png" alt="Şekil 3.1 — Statik testin iki kanalı. “Statik test: çalıştırmadan değerlendir” yazan üstteki kutu iki kutuya ayrılır. Soldaki “Gözden geçirmeler” kutusu, insanların iş ürününü okuyup değerlendirdiğini söyler. Sağdaki “Statik analiz” kutusu, araçların kod ya da modeller gibi yapısal bir iş ürününü denetlediğini söyler." /><figcaption>Şekil 3.1 — Statik testin iki kanalı.</figcaption>
+</figure>
+<p>Yazılım geliştirme yaşam döngüsünde üretilen iş ürünlerinin neredeyse hepsi statik testten geçirilebilir. Ders programı örnek olarak gereksinim spesifikasyonlarını, kaynak kodu, test planlarını, test senaryolarını, iş listesi öğelerini, test başlatma belgelerini, proje dokümantasyonunu, resmî sözleşmeleri ve modelleri sayar. Buradaki genel kural basittir: bir kişinin okuyup anlamlandırabildiği her iş ürünü gözden geçirilebilir. Ama bir statik analiz aracının bir iş ürünü üzerinde çalışabilmesi için o ürünün belirli bir yapısal biçimi ya da söz dizimi olmalıdır; bir kod bloğu, bir veritabanı şeması ya da bir mimari model gibi. Bu, ilk akla gelmeyen iş ürünlerini de kapsar; örneğin kod olarak altyapı (infrastructure-as-code, IaC) yapılandırma dosyalarını ya da bir projenin bütçe tablolarını.</p>
+<p>Statik test için uygun olmayan iş ürünleri, insanların yorumlamakta zorlandığı ve araçlarla analiz edilmemesi gereken ürünlerdir. Ders programındaki örnek, üçüncü taraf çalıştırılabilir koddur. Lisans koşulları gibi hukuki nedenlerle araçlarla analiz edilmemelidir; derlenmiş haliyle de bir kişinin onu okuyabilmesi pek mümkün değildir. Böyle iş ürünleri için seçenek dinamik test (dynamic testing) olarak kalır.</p>
+<p><em>Uygulamada.</em> Bir e-ticaret projesi canlıya çıkmadan önce statik gözden geçirme gündeminde analiz belgesi, sistem mimarisi diyagramı, test planı ve harici ödeme sağlayıcısıyla imzalanan resmî tedarikçi sözleşmesi var. Sözleşmeyi dikkatle okuyan bir test uzmanı, tedarikçinin taahhüt ettiği azami hizmet yanıt süresinin aylık ortalama olarak hesaplandığını fark ediyor; analiz belgesi ise bunun işlem başına mutlak bir sınır olması gerektiğini söylüyor. Hiçbir dinamik test koşumu belgeler arasındaki bu çelişkiyi yakalayamazdı; dikkatli bir insan gözden geçirmesi onu daha sözleşme aşamasındayken buldu.</p>
+<p><em>Sınav odağı.</em> Bir soru size farklı iş ürünleri verip hangisinin statik test için uygun olduğunu ya da olmadığını sorabilir. Analiz belgeleri, kod, test planları, hatta resmî sözleşmeler ve bütçe tabloları okunabilir oldukları için uygundur. Soru hangi iş ürününün statik test için uygun olmadığını soruyorsa, insanların yorumlayamadığı ve araçların analiz etmemesi gereken bir ürün arayın; üçüncü taraf çalıştırılabilir kod gibi.</p>
+<p><strong>Hemen Pekiştir</strong></p>
+<p><em>HP 3.1.1-a.</em> Statik test hangi iki kanal üzerinden yürütülür?</p>
+<div class="mc">
+<ul>
+<li>(a) Fonksiyonel test ve fonksiyonel olmayan test</li>
+<li>(b) Onaylama testi ve regresyon testi</li>
+<li>(c) Kara kutu teknikleri ve beyaz kutu teknikleri</li>
+<li>(d) Gözden geçirmeler (insanlar aracılığıyla) ve statik analiz (araçlar aracılığıyla)</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (d). Statik test, insanların yürüttüğü okuma ve değerlendirme (gözden geçirmeler) ile araçların kod ya da modeller üzerinde yaptığı otomatik taramalardan (statik analiz) oluşur.</p>
+</div></details>
+<p><em>HP 3.1.1-b.</em> Aşağıdaki iş ürünlerinden hangisi doğası gereği statik test için uygundur?</p>
+<div class="mc">
+<ul>
+<li>(a) Yalnızca canlı ortamda çalıştırılabilir hale getirilmiş ikili kod paketleri</li>
+<li>(b) Yalnızca otomasyon araçlarının çalıştırabildiği betik dosyaları</li>
+<li>(c) Tedarikçi sözleşmesi ya da test planı gibi okunabilir herhangi bir iş ürünü</li>
+<li>(d) Hiçbir belge, çünkü statik test yalnızca kaynak koda uygulanır</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (c). Bir kişinin okuyup yorumlayabildiği her iş ürünü, sözleşmeler ve bütçe planları da dahil, statik olarak gözden geçirilebilir.</p>
+</div></details>
+<p><em>HP 3.1.1-c.</em> Otomatik bir aracın bir iş ürünü üzerinde statik analiz yapabilmesi için o ürünün hangi temel özelliğe sahip olması gerekir?</p>
+<div class="mc">
+<ul>
+<li>(a) Aracın kurallara göre denetleyebileceği belirli bir söz dizimi ya da yapısal biçim (kod ya da mimari model gibi)</li>
+<li>(b) Çalıştırılabilir yazılıma derlenmiş olması</li>
+<li>(c) Kuruluşun dışındaki bir üçüncü tarafça sağlanmış olması</li>
+<li>(d) Biçimlendirilmemiş düz metinden ibaret olması</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (a). Statik analiz araçları kurallarla çalışır; bu yüzden girdileri kod, veritabanı şeması ya da UML modeli gibi yapısal bir biçimde olmalıdır.</p>
+</div></details>
+</section>
+<section id="fl-3-1-2" class="level3">
+<h3>Statik testin gerçek değeri (FL-3.1.2 — K2)</h3>
+<p>Statik test, yazılım projelerinde bir lüks değildir; bütçeyi ve kaliteyi koruyan temel uygulamalardan biridir. Hataları yazılım geliştirme yaşam döngüsünün en başında yakaladığı için onları en düşük maliyetle bulur. Analiz sırasında yakalanan bir mantık hatasını düzeltmek belgede tek cümlelik bir değişiklik ister. Aynı hatanın canlı ortama sızmasına izin vermek ise operasyonel krizlere, acil düzeltmelere ve şirketin itibarının zarar görmesine yol açar. Şekil 3.2, aynı hatayı düzeltmenin gerektirdiği eforun bir aşamadan diğerine nasıl büyüdüğünü gösteriyor.</p>
+<figure>
+<img src="figures/fig_3_2_cost_of_fixing.png" alt="Şekil 3.2 — Hata ne kadar erken bulunursa düzeltmesi o kadar ucuzdur. Yükselen dört çubuk, hata düzeltme maliyetinin gereksinim gözden geçirmesinden (bir cümleyi düzelt) tasarım gözden geçirmesine (bir diyagramı güncelle), dinamik sistem testine (kodu düzelt, yeniden test et, regresyon koş) ve canlı ortama (olayı yönet, acil düzeltme uygula) doğru arttığını gösterir." /><figcaption>Şekil 3.2 — Hata ne kadar erken bulunursa düzeltmesi o kadar ucuzdur.</figcaption>
+</figure>
+<p>Statik test, dinamik testin bulamadığı bazı hataları tespit eder; başka hata çeşitlerini de daha kolay ya da daha ucuza bulabilir. Ulaşılamayan kod ve istendiği gibi uygulanmamış tasarım örüntüleri birinci gruba örnektir; gereksinimlerdeki eksiklikler ikinci gruba. Analiz belgesindeki bir boşluk, dinamik bir teste tanımlanmış bir beklenen sonuç vermez; dikkatli bir okur ise eksik kuralı gerçekleştirmeden önce fark edebilir. Statik test, iş temsilcilerini, analistleri, geliştiricileri ve test uzmanlarını aynı iş ürünü üzerinde yapılandırılmış bir tartışmaya getirerek ortak anlayışı ve iletişimi de güçlendirir.</p>
+<p>Statik test, iş ürünlerinin kalitesini değerlendirmeye ve onlara güven oluşturmaya da yardımcı olur; paydaşların, belgelenmiş gereksinimlerin gerçek ihtiyaçlarını anlattığını teyit etmesini sağlar. Gözden geçirmeleri yapmak maliyetli olabilir. Yine de toplam proje maliyetleri genellikle gözden geçirme yapılmadığı duruma göre çok daha düşüktür, çünkü hataları sonradan düzeltmek için daha az zaman ve efor harcanır. Statik analiz de belirli kod hatalarını dinamik testten daha verimli bulur; bu da genellikle kodda daha az hata kalması ve geliştirmenin toplamda daha az efor istemesi demektir.</p>
+<p><em>Uygulamada.</em> Bir abonelik sisteminin analiz belgesini gözden geçirmekte olan bir test uzmanı şu boşluğu yakalıyor: “Kullanıcı hesabını 31 Ocak’ta açarsa sistem ‘aylık yenilemeyi’ Şubat’ın hangi gününde çalıştıracak?” Bu senaryonun kuralı belgede hiç yer almıyor. Kuralı kimse yazmadığı için geliştirici onu kendi varsayımına göre kodlayacak; dinamik test aşamasına gelindiğinde de doğru bir test tasarlanamayacak, çünkü beklenen sonuç bilinmiyor. Statik test bu eksik gereksinimi kâğıt üzerinde bulur. Dinamik test ancak sonucunu, daha sonra ve iş tarafının beklemediği bir yenileme tarihi olarak gösterebilirdi; o da bir test tesadüfen 31 Ocak’ta açılmış bir hesap kullanırsa.</p>
+<p><em>Sınav odağı.</em> Yaygın bir kalıp, hangi hata çeşitlerinin doğrudan statik testle tespit edilebileceğini sorar. Ulaşılamayan kod ve istendiği gibi uygulanmamış tasarım örüntüleri dinamik testle bulunamaz; çalıştırılamayan bir iş ürünündeki hata da, örneğin bir gereksinim belgesindeki boşluk, öyle. Gereksinimlerdeki eksiklikleri statik testle bulmak da çok daha kolay ve ucuzdur, çünkü dinamik test yalnızca onların sonuçlarını, daha sonra ve dolaylı olarak ortaya çıkarabilir. Yaygın bir tuzak, statik testi “sistem çökmesi ya da donan ekran gibi arızaları tetiklediği” için öven bir şıktır. Bu tür çalışma zamanı davranışları (arızalar) ancak yazılımı çalıştırarak, yani dinamik testle tetiklenebilir.</p>
+<p><strong>Hemen Pekiştir</strong></p>
+<p><em>HP 3.1.2-a.</em> Aşağıdaki hatalardan hangisini statik test bulabilir de dinamik test bulamaz?</p>
+<div class="mc">
+<ul>
+<li>(a) Sipariş sayfası normal kullanımda 40 saniyede yükleniyor</li>
+<li>(b) Boş bir form gönderildiğinde uygulama çöküyor</li>
+<li>(c) Fatura toplamı yazdırılırken yanlış yuvarlanıyor</li>
+<li>(d) Gereksinim spesifikasyonunun iki bölümü farklı azami sipariş değerleri belirtiyor</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (d). Çelişki çalıştırılamayan bir iş ürününde duruyor; bu yüzden onu yalnızca statik test bulabilir. (a), (b) ve (c) şıkları yazılım çalışırken ortaya çıkan arızalardır; onları dinamik test bulur.</p>
+</div></details>
+<p><em>HP 3.1.2-b.</em> Bir sınav ifadesi şöyle diyor: “Statik test aktiviteleri sistemde gizli arızaları tetikler ve hatalar bu arızalar analiz edilerek temizlenir.” Bu iddia için ne doğrudur?</p>
+<div class="mc">
+<ul>
+<li>(a) Doğrudur, çünkü statik analiz araçları arızaları görünür kılmak için kodu çalıştırır</li>
+<li>(b) Doğrudur, çünkü statik test her zaman dinamik testten sonra yapılır</li>
+<li>(c) Yanlıştır, çünkü statik test hataları yazılımı çalıştırmadan doğrudan bulur</li>
+<li>(d) Yanlıştır, çünkü statik test yazılım hatalarını hiç bulamaz</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (c). Arıza, yazılımın çalışırken gösterdiği yanlış davranıştır. Statik testte yazılım çalıştırılmaz, dolayısıyla hiçbir arıza tetiklenmez; statik test koddaki ya da belgedeki hatayı gözle ya da araçla doğrudan bulur.</p>
+</div></details>
+<p><em>HP 3.1.2-c.</em> Eksik bir doğrulama kuralı gereksinim gözden geçirmesi sırasında tek bir cümleyle düzeltilebilirdi. Bunun yerine sürümden sonra canlı ortamda bulunuyor. Düzeltme maliyetine en olası etkisi nedir?</p>
+<div class="mc">
+<ul>
+<li>(a) Aşağı yukarı aynı, çünkü kodun kendisindeki değişiklik hâlâ küçük</li>
+<li>(b) Daha düşük, çünkü kullanıcılar arızayı zaten tam olarak tarif etmiş</li>
+<li>(c) Çok daha yüksek, çünkü artık kod, testler ve canlı hizmet etkileniyor; acil bir düzeltme de gerekebilir</li>
+<li>(d) Yalnızca regresyon testlerinin otomatik olup olmamasına göre belirlenir</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (c). Bir hata ne kadar geç bulunursa, üzerine o kadar çok iş inşa edilmiş olur: kodun değişmesi, testlerin yeniden koşulması gerekir, canlı ortamda da bir olayın yönetilmesi gerekebilir. (a) ve (b) şıkları bu büyümeyi göz ardı eder; test otomasyonu (d) yeniden test eforunu azaltabilir, ama geç bir düzeltmenin diğer maliyetlerini ortadan kaldırmaz.</p>
+</div></details>
+</section>
+<section id="fl-3-1-3" class="level3">
+<h3>Statik test ile dinamik test arasındaki yapısal fark (FL-3.1.3 — K2)</h3>
+<p>Yazılım kalitesini güvence altına almak için bu iki yaklaşım birbirinin alternatifi değil, tamamlayıcısıdır. Aralarındaki en temel fark, bir hatayı nasıl yakaladıklarındadır. Statik test hataları doğrudan iş ürününün içinde bulur: gözden geçirici ya da statik analiz aracı, belgedeki çelişkili cümleyi ya da koddaki hatalı satırı doğrudan gösterir. <strong>Dinamik test</strong> hataları dolaylı olarak bulur: önce çalıştırılabilir kod üzerinde bir test senaryosu koşulur ve sistemin dış dünyaya gösterdiği bir arıza gözlemlenir; sonra geliştirici, ayrı bir geliştirme aktivitesi olan hata ayıklama ile arızayı analiz ederek ona yol açan hatayı bulur. Şekil 3.3 iki yolu yan yana koyuyor; böylece dinamik yoldaki ek adımların nereden geldiğini görebilirsiniz.</p>
+<figure>
+<img src="figures/fig_3_3_static_vs_dynamic.png" alt="Şekil 3.3 — Statik test hataya doğrudan ulaşır; dinamik test ona bir arıza üzerinden ulaşır. Yan yana iki dikey akış vardır. Statik test tarafında bir iş ürününü bir gözden geçirici ya da bir araç inceler ve hata doğrudan bulunur. Dinamik test tarafında çalıştırılabilir yazılım test koşumundan geçer, bir arıza gözlemlenir, ardından ayrı bir geliştirme aktivitesi olan hata ayıklama hatanın yerini bulur." /><figcaption>Şekil 3.3 — Statik test hataya doğrudan ulaşır; dinamik test ona bir arıza üzerinden ulaşır.</figcaption>
+</figure>
+<p>Uygulamada birkaç karşıtlık vardır. Statik testte yazılım hiçbir zaman çalıştırılmaz; dinamik testte her zaman çalıştırılır. Statik test eksik bir kuralı doğrudan bulabilir, çünkü okur belgedeki boşluğu fark eder. Dinamik test o boşluğun yalnızca sonucunu ortaya çıkarabilir; bunu da daha sonra ve ancak bir test tesadüfen belirtilmemiş davranışı çalıştırırsa yapar. Statik test, kodun çalıştırılmasına bağlı olmayan sürdürülebilirlik gibi kalite karakteristiklerini ölçebilir; dinamik test ise performans verimliliği gibi çalıştırmaya bağlı karakteristikleri ölçer. Statik test okunabilir belgelere ya da analiz edilebilir yapılara ihtiyaç duyar; dinamik test çalıştırılabilir bir test nesnesine ihtiyaç duyar. Tablo 3.1 bu karşıtlıkları hızlı tekrar için tek yerde topluyor.</p>
+<p><strong>Tablo 3.1 — Statik test ile dinamik testin karşılaştırması</strong></p>
+<div class="table-wrap">
+<table>
+<colgroup>
+<col style="width: 23%" />
+<col style="width: 38%" />
+<col style="width: 38%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Ölçüt</th>
+<th>Statik test</th>
+<th>Dinamik test</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Yazılımı çalıştırır mı?</td>
+<td>Hayır</td>
+<td>Evet</td>
+</tr>
+<tr class="even">
+<td>Hataya nasıl ulaşılır</td>
+<td>Doğrudan, iş ürününün içinde</td>
+<td>Dolaylı olarak: bir arıza gözlemlenir, ardından analiz hatanın yerini bulur</td>
+</tr>
+<tr class="odd">
+<td>Belgedeki eksik kural</td>
+<td>Doğrudan bulunur: okur boşluğu fark eder</td>
+<td>Yalnızca sonucu, daha sonra bir arıza olarak ortaya çıkabilir</td>
+</tr>
+<tr class="even">
+<td>Ölçülen kalite karakteristikleri</td>
+<td>Çalıştırmaya bağlı olmayanlar (ör. sürdürülebilirlik)</td>
+<td>Çalıştırmaya bağlı olanlar (ör. performans verimliliği)</td>
+</tr>
+<tr class="odd">
+<td>Neye ihtiyaç duyar</td>
+<td>Okunabilir belgeler ya da analiz edilebilir yapılar (kod, modeller)</td>
+<td>Çalıştırılabilir bir test nesnesi</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Ders programı, statik testle bulunması daha kolay ya da daha ucuz olan tipik hataları da sıralar. Birinci grup gereksinimlerdeki hatalardır: tutarsızlıklar, belirsizlikler, çelişkiler, eksiklikler, yanlışlıklar ve tekrarlar gibi. İkincisi tasarım hatalarıdır: verimsiz veritabanı yapıları ve zayıf modüler yapı gibi. Üçüncüsü bazı kodlama hatalarıdır: değeri tanımsız değişkenler, bildirilmemiş değişkenler, ulaşılamayan ya da yinelenmiş kod ve aşırı kod karmaşıklığı gibi. Dördüncüsü standartlardan sapmalardır: adlandırma kurallarına uyulmaması gibi.</p>
+<p>Beşincisi hatalı arayüz spesifikasyonlarıdır: parametrelerin sayısının, çeşidinin ya da sırasının uyuşmaması gibi. Altıncısı belirli güvenlik açıklarıdır: arabellek taşmaları gibi. Sonuncusu test esası kapsamındaki boşluklar ya da yanlışlıklardır: bir kabul kriteri için testlerin eksik olması gibi. Statik test, nadiren çalıştırılan ya da dinamik testle ulaşılması zor kod yollarındaki hataları da daha kolay bulabilir.</p>
+<p><em>Sınav odağı.</em> Sorular bu iki mekanizmanın karıştırılmasına dayanabilir. Tuzak şıklar görevlerin yerini değiştirebilir: dinamik testlerin analiz belgelerindeki boşlukları doğrudan giderdiğini ya da statik testin yazılımı çalıştırarak sistem performansının kararlılığını ölçtüğünü iddia edebilir. Akılda tutulacak tek cümle şu: statik test hatayı doğrudan yakalar; dinamik test önce bir arıza bulur.</p>
+<p><strong>Hemen Pekiştir</strong></p>
+<p><em>HP 3.1.3-a.</em> Statik ve dinamik testin koddaki bir hataya ulaşma biçimleri arasındaki en temel fark nedir?</p>
+<div class="mc">
+<ul>
+<li>(a) Statik test hataları doğrudan iş ürününde bulur; dinamik test önce çalışma zamanındaki bir arızayı gözlemler</li>
+<li>(b) Statik test önce sistemde bir arızayı tetikler; dinamik test hatayı doğrudan belgede bulur</li>
+<li>(c) İki yaklaşım da hatalara ancak yazılımı bir sunucuda çalıştırarak ulaşabilir</li>
+<li>(d) İki yaklaşımın hiçbiri yazılım kodunun çalıştırılmasına hiç ihtiyaç duymaz</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (a). Statik test doğrudan tespittir (çalıştırmadan); dinamik test ise sistemdeki bir sapmayı (arızayı) görüp ardından koda inmektir.</p>
+</div></details>
+<p><em>HP 3.1.3-b.</em> Dinamik testin çalışabilmesi için temelde neye ihtiyaç vardır?</p>
+<div class="mc">
+<ul>
+<li>(a) Yalnızca okunabilir bir analiz belgesine</li>
+<li>(b) Yalnızca bir gözden geçirme toplantısına ve katılımcılarına</li>
+<li>(c) Yalnızca bir statik analiz aracının kurulu olmasına</li>
+<li>(d) Çalıştırılabilir yazılım gibi çalıştırılabilir bir test nesnesine</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (d). Dinamik test, test nesnesinin kendisini çalıştırır; bu yüzden çalıştırılabilir yazılımın var olması gerekir.</p>
+</div></details>
+<p><em>HP 3.1.3-c.</em> Statik testin hangi hatayı dinamik testten daha kolay bulması olasıdır?</p>
+<div class="mc">
+<ul>
+<li>(a) İki kullanıcı aynı kaydı aynı anda kaydettiğinde donan bir ekran</li>
+<li>(b) Normal yük altında oluşturulması çok uzun süren bir rapor</li>
+<li>(c) Yalnızca nadir bir donanım arızasından sonra çalışan hata işleme kodundaki bir hata</li>
+<li>(d) Onay sayfasında yanlış para birimini gösteren bir etiket</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (c). Ders programı, statik testin nadiren çalıştırılan ya da dinamik testle ulaşılması zor kod yollarındaki hataları daha kolay bulabileceğini belirtir, çünkü gözden geçirici ya da araç kodu nadir arızayı tetiklemek zorunda kalmadan inceler. (a), (b) ve (d) şıkları yazılım çalışırken ortaya çıkan arızalardır; dinamik test onları kolayca bulur.</p>
+</div></details>
+</section>
+</section>
+<section id="feedback-and-the-review-process" class="level2">
+<h2>3.2 Geri Bildirim ve Gözden Geçirme Süreci</h2>
+<section id="fl-3-2-1" class="level3">
+<h3>Erken ve sık paydaş geri bildiriminin projeye değeri (FL-3.2.1 — K1)</h3>
+<p>Müşteriler, son kullanıcılar ve iş temsilcileri gibi paydaşlardan gelen erken ve sık geri bildirim, olası kalite sorunlarının erken iletilmesini sağlar. Paydaşlar YGYD boyunca sürece çok az katılırsa ürün onların ilk ya da güncel vizyonunu karşılamayabilir. İstediklerini teslim edememek pahalı yeniden çalışmaya, kaçırılan teslim tarihlerine, suçlama oyunlarına, hatta projenin tamamen başarısız olmasına yol açabilir.</p>
+<p>YGYD boyunca sık paydaş geri bildirimi dört yoldan yardımcı olur. Gereksinimlerle ilgili yanlış anlamaları önleyebilir. Gereksinimlerde yapılan değişikliklerin daha erken anlaşılıp uygulanmasını sağlar. Geliştirme ekibinin neyi inşa ettiğini daha iyi anlamasını sağlar. Ekibin, paydaşlara en çok değer katan ve belirlenen riskler üzerinde en olumlu etkiyi yapan özelliklere odaklanmasını da mümkün kılar.</p>
+<p>Gözden geçirmeler, iş ürünleri üzerine bu geri bildirimi toplamanın yapılandırılmış yollarından biridir.</p>
+<p><em>Sınav odağı.</em> Bu hedefe ait sorular, erken paydaş geri bildiriminin faydalarını tanımanızı isteyen hatırlama (K1) sorularıdır. Dikkat edilecek çeldirici, bütün paydaş geri bildirimini projenin sonundaki resmî aşama kapılarına ertelemenin işi hızlandırdığını iddia eden şıktır. Geç geri bildirim hız getirmez, pahalı yeniden çalışmaya yol açar.</p>
+<p><strong>Hemen Pekiştir</strong></p>
+<p><em>HP 3.2.1-a.</em> Erken ve sık paydaş geri bildirimi almanın en açık avantajı nedir?</p>
+<div class="mc">
+<ul>
+<li>(a) Gereksinimlerdeki kritik yanlış anlamaları başta, düzeltmeleri henüz ucuzken yakalamak</li>
+<li>(b) Zaman kazanmak için bütün onayları sondaki tek bir resmî onaya ertelemek</li>
+<li>(c) Paydaşların analiz aşamasına katılımını en aza indirmek</li>
+<li>(d) Projeden bütün analiz ve test dokümantasyonu standartlarını kaldırmak</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (a). Erken geri bildirim, yanlış anlamaları henüz kâğıt üzerindeyken ve düzeltmeleri ucuzken gün ışığına çıkarır.</p>
+</div></details>
+<p><em>HP 3.2.1-b.</em> Paydaş geri bildirimi yalnızca en sonda toplandığında en olası sonuç nedir?</p>
+<div class="mc">
+<ul>
+<li>(a) Daha az yeniden çalışma ve daha düşük maliyet</li>
+<li>(b) Pahalı yeniden çalışma ve kaçırılan teslim tarihleri</li>
+<li>(c) Paydaş katılımının kendiliğinden artması</li>
+<li>(d) Dokümantasyon ihtiyacının ortadan kalkması</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (b). Ders programı, paydaş katılımının çok az olmasının pahalı yeniden çalışmaya, kaçırılan teslim tarihlerine, suçlama oyunlarına, hatta projenin başarısız olmasına yol açabileceği uyarısını yapar.</p>
+</div></details>
+<p><em>HP 3.2.1-c.</em> Bir ürün sahibi, herhangi bir tasarım çalışması başlamadan önce taslak bir gereksinim spesifikasyonu hakkında paydaşların görüşünü almak istiyor. Hangi uygulama, bu geri bildirimi iş ürününün kendisi üzerinde toplamanın yapılandırılmış bir yolunu sunar?</p>
+<div class="mc">
+<ul>
+<li>(a) Taslak spesifikasyonun paydaşlarla birlikte gözden geçirilmesi</li>
+<li>(b) İlk çalıştırılabilir yapı üzerinde bir yük testi koşmak</li>
+<li>(c) Bütün yorumları sondaki kullanıcı kabul testi sırasında toplamak</li>
+<li>(d) Spesifikasyon üzerinde bir statik analiz aracı çalıştırmak</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (a). Bir gözden geçirme, paydaşları iş ürününe erkenden getirir ve geri bildirimlerine tanımlı bir yol açar. Yük testi (b) çalışan yazılım ister ve çok daha sonra gelir; (c) bu hedefin uyardığı geç geri bildirimdir; statik analiz aracı (d) ise yapıyı denetler, paydaşların neye ihtiyaç duyduğunu size söyleyemez.</p>
+</div></details>
+</section>
+<section id="fl-3-2-2" class="level3">
+<h3>Genel gözden geçirme sürecinin beş aktivitesi (FL-3.2.2 — K2)</h3>
+<p>Ders programı, ISO/IEC 20246 standardında tanımlanan ve beş aktiviteden oluşan genel bir <strong>gözden geçirme süreci (review process)</strong> anlatır. Bu, yapılandırılmış ama esnek bir çerçevedir: belirli bir gözden geçirme süreci ondan uyarlanır; gözden geçirme ne kadar resmîyse her aktivitedeki görevlerden o kadar fazlası gerekir. Büyük bir iş ürünü, sürecin birkaç kez yürütülmesini gerektirebilir; aksiyonları tamamlamak için bir takip gözden geçirmesi de gerekebilir. Sınav hem beş aktivitenin sırasını hem de her birinin içinde yapılan görevleri yoklar. Şekil 3.4 beş aktiviteyi olağan sıralarıyla gösteriyor.</p>
+<figure>
+<img src="figures/fig_3_4_review_process.png" alt="Şekil 3.4 — Genel gözden geçirme sürecinin beş aktivitesi. Soldan sağa oklarla bağlanan beş kutu: planlama, gözden geçirme başlangıcı, bireysel gözden geçirme, iletişim ve analiz, düzeltme ve raporlama." /><figcaption>Şekil 3.4 — Genel gözden geçirme sürecinin beş aktivitesi.</figcaption>
+</figure>
+<p><strong>Planlama</strong> gözden geçirmenin kapsamını tanımlar: amacını, gözden geçirilecek iş ürününü, değerlendirilecek kalite karakteristiklerini, odaklanılacak alanları, çıkış kriterlerini, standartlar gibi destekleyici bilgileri, eforu ve zaman dilimlerini. <strong>Gözden geçirme başlangıcı (review initiation)</strong>, ilgili herkesin ve her şeyin hazır olmasını sağlar. Her katılımcı iş ürününe erişebilir, kendisinden ne beklendiğini bilir ve işi yapmak için gereken her şeye sahiptir.</p>
+<p><strong>Bireysel gözden geçirme (individual review)</strong>, her gözden geçiricinin tek başına çalışarak, kontrol listesine dayalı ya da senaryoya dayalı gözden geçirme gibi bir ya da daha fazla gözden geçirme tekniği uygulayıp iş ürününün kalitesini değerlendirdiği aktivitedir. Her gözden geçirici belirlediği anomalileri, önerileri ve soruları kayda geçirir. <strong>Anomali (anomaly)</strong>, beklentiden sapan bir durumdur; bunun gerçek bir hata olup olmadığına bu aşamada karar verilmez.</p>
+<p><strong>İletişim ve analiz</strong>, kayda geçirilen anomalilerin analiz edilip tartışıldığı aktivitedir, çünkü bir anomali her zaman bir hata değildir. Katılımcılar her anomali için durumuna, sahibine ve gereken aksiyonlara karar verir. Bu genellikle bir gözden geçirme toplantısında yapılır; katılımcılar orada gözden geçirilen iş ürününün kalite seviyesine ve gereken takip aksiyonlarına da karar verir. <strong>Düzeltme ve raporlama</strong>, düzeltici aksiyonların takip edilebilmesi için her hata için bir hata raporunun oluşturulduğu ve yazarın iş ürününü düzelttiği aktivitedir. Çıkış kriterleri karşılandığında iş ürünü kabul edilir ve gözden geçirme sonuçları yayımlanır. Şekil 3.5, tek bir anomaliyi kayda geçirildiği andan ekibin onun hakkında verdiği karara kadar izliyor.</p>
+<figure>
+<img src="figures/fig_3_5_anomaly_disposition.png" alt="Şekil 3.5 — Her anomali bir hata değildir. “Anomali kaydedilir: bireysel gözden geçirmede” yazan kutu, “Durum iletişim ve analizde belirlenir” yazan bir karar baklavasına götürür. Baklava üç sonuca ayrılır: hata raporu açılıp yazarın düzelttiği bir hata; aksiyon atanan, açıklama gerektiren bir madde; ve maddenin kapatıldığı, aksiyon gerektirmeyen durum." /><figcaption>Şekil 3.5 — Her anomali bir hata değildir.</figcaption>
+</figure>
+<p><em>Sınav odağı.</em> Bu beş adımlı akış üzerine iki çeldirici kalıbı kurulur. Birinci tuzak: katılımcıların iş ürününe erişebilmesini sağlamak planlamaya değil, gözden geçirme başlangıcına aittir. İkinci tuzak: bir anomalinin resmî olarak “hata” haline geldiği nokta bireysel gözden geçirme değil, iletişim ve analizdir. Bu iki sınırı yakından izleyin.</p>
+<p><strong>Hemen Pekiştir</strong></p>
+<p><em>HP 3.2.2-a.</em> Hangi şık genel bir gözden geçirme sürecinin kronolojik sırasını doğru verir?</p>
+<div class="mc">
+<ul>
+<li>(a) Planlama, gözden geçirme başlangıcı, bireysel gözden geçirme, iletişim ve analiz, düzeltme ve raporlama</li>
+<li>(b) Planlama, bireysel gözden geçirme, gözden geçirme başlangıcı, iletişim ve analiz, düzeltme ve raporlama</li>
+<li>(c) Gözden geçirme başlangıcı, planlama, bireysel gözden geçirme, düzeltme ve raporlama, iletişim ve analiz</li>
+<li>(d) Planlama, gözden geçirme başlangıcı, iletişim ve analiz, bireysel gözden geçirme, düzeltme ve raporlama</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (a). Standart akış şöyledir: planla, ekibi başlat, bireysel olarak oku, ortak toplantıda tartış, en sonda düzelt ve kapat.</p>
+</div></details>
+<p><em>HP 3.2.2-b.</em> Şüpheli bir anomali, üzerinde uzlaşılmış resmî “hata” statüsünü hangi aktivitede kazanır?</p>
+<div class="mc">
+<ul>
+<li>(a) Bireysel gözden geçirme aşamasında</li>
+<li>(b) İletişim ve analiz aşamasında</li>
+<li>(c) Planlama aşamasında</li>
+<li>(d) Düzeltme ve raporlama aşamasında</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (b). Bireysel gözden geçirmede maddeler anomali olarak kayda geçirilir; iletişim ve analizde katılımcılar her birinin durumuna karar verir ve ancak o zaman bir madde hata olarak ele alınır.</p>
+</div></details>
+<p><em>HP 3.2.2-c.</em> İş ürününü ve destekleyici materyalleri katılımcılara dağıtmak gözden geçirme sürecinin hangi adımına aittir?</p>
+<div class="mc">
+<ul>
+<li>(a) Planlama</li>
+<li>(b) Gözden geçirme başlangıcı</li>
+<li>(c) Bireysel gözden geçirme</li>
+<li>(d) İletişim ve analiz</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (b). Her katılımcının materyale sahip olmasını ve rolünü anlamasını sağlamak planlamaya değil, gözden geçirme başlangıcına aittir.</p>
+</div></details>
+<p><em>HP 3.2.2-d.</em> Pınar, yaklaşan bir gözden geçirme için tasarım belgesini ve rolünü almış. Tek başına çalışarak belgeyi bir kontrol listesine göre okuyor ve bulduğu her olası sorunu, soruyu ve öneriyi kayda geçiriyor. Hangi gözden geçirme aktivitesini yürütüyor?</p>
+<div class="mc">
+<ul>
+<li>(a) Gözden geçirme başlangıcı</li>
+<li>(b) İletişim ve analiz</li>
+<li>(c) Düzeltme ve raporlama</li>
+<li>(d) Bireysel gözden geçirme</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (d). İş ürününü tek başına okuyup anomalileri, soruları ve önerileri kayda geçirmek bireysel gözden geçirmedir. Pınar materyali ve rolünü gözden geçirme başlangıcında (a) aldı; her maddenin hata olup olmadığına dair karar daha sonra, iletişim ve analizde (b) verilir; düzeltme ve raporlama (c) ise yalnızca teyit edilen hatalarla ilgilenir.</p>
+</div></details>
+</section>
+<section id="fl-3-2-3" class="level3">
+<h3>Gözden geçirmelerdeki altı rol (FL-3.2.3 — K1)</h3>
+<p>Gözden geçirmeler, açıkça tanımlanmış rollerdeki birkaç kişi tarafından yapılır. Roller iş unvanlarıyla karıştırılmamalıdır; aynı projede bir kişi birden fazla rol üstlenebilir. <strong>Yönetici (manager)</strong> neyin gözden geçirileceğini seçer ve bunun için gereken kişileri ve zamanı sağlar. <strong>Yazar (author)</strong>, gözden geçirilen iş ürününü (analiz belgesini ya da kodu) üreten ve ekibin teyit ettiği hataları düzelten kişidir. Kolaylaştırıcı (facilitator) olarak da bilinen <strong>moderatör (moderator)</strong>, gözden geçirme toplantılarının etkili yürümesini sağlar. Bu; anlaşmazlıklarda arabuluculuk yapmayı, zamanı yönetmeyi ve herkesin rahatça konuşabildiği bir ortam yaratmayı kapsar. Kaydedici (recorder) olarak da adlandırılan <strong>katip (scribe)</strong>, gözden geçiricilerin bildirdiği anomalileri bir araya toplar ve gözden geçirmeye ait bilgileri kayda geçirir; alınan kararlar, toplantı sırasında bulunan yeni anomaliler ve açık maddeler de buna dahildir. <strong>Gözden geçirici (reviewer)</strong> gözden geçirmeyi yapar. Gözden geçirici bir proje üyesi, bir konu uzmanı ya da başka bir paydaş olabilir. <strong>Gözden geçirme lideri (review leader)</strong> gözden geçirmenin genel sorumluluğunu üstlenir: kimin katılacağına karar verir, gözden geçirmenin zamanını ve yerini düzenler.</p>
+<p><em>Sınav odağı.</em> Gözden geçirme lideri ile moderatör arasındaki ince çizgi kolayca bulanıklaşır. Çizgiyi çekmek için şunu akılda tutun: toplantının dışında ve çevresinde kalan lojistik ve organizasyon işi (kimin katılacağı, ne zaman yapılacağı) gözden geçirme liderine aittir. Toplantı başladığı andan bittiği ana kadar içerideki iletişim dinamiğini ve yapıcı havayı yönetmek ise moderatörün sorumluluğudur.</p>
+<p><strong>Hemen Pekiştir</strong></p>
+<p><em>HP 3.2.3-a.</em> Resmî bir gözden geçirmeye hangi uzmanların davet edileceğine hangi rol karar verir ve takvimi ve lojistiği koordine eder?</p>
+<div class="mc">
+<ul>
+<li>(a) Moderatör</li>
+<li>(b) Katip</li>
+<li>(c) Gözden geçirme lideri</li>
+<li>(d) Yazar</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (c). Katılımcıları seçmek, gözden geçirmenin zamanını ve yerini organize etmek gözden geçirme liderinin sorumluluklarıdır.</p>
+</div></details>
+<p><em>HP 3.2.3-b.</em> Gözden geçirme toplantısı sırasında tartışılan anomalileri, alınan kararları ve açık maddeleri hangi rol kayda geçirir?</p>
+<div class="mc">
+<ul>
+<li>(a) Gözden geçirici</li>
+<li>(b) Yönetici</li>
+<li>(c) Katip</li>
+<li>(d) Moderatör</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (c). Anomalileri derlemek ve kararları, yeni anomalileri ve açık maddeleri kayda geçirmek katibin işidir.</p>
+</div></details>
+<p><em>HP 3.2.3-c.</em> Neyin gözden geçirileceğine hangi rol karar verir ve gereken kaynakları (personel ve zaman gibi) sağlar?</p>
+<div class="mc">
+<ul>
+<li>(a) Yazar</li>
+<li>(b) Yönetici</li>
+<li>(c) Gözden geçirici</li>
+<li>(d) Moderatör</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (b). Neyin inceleneceğine karar vermek ve kaynakları ayırmak yöneticinin işidir; yazar iş ürününü üretir ve teyit edilen hataları düzeltir.</p>
+</div></details>
+</section>
+<section id="fl-3-2-4" class="level3">
+<h3>Resmiyet derecesine göre dört gözden geçirme çeşidi (FL-3.2.4 — K2)</h3>
+<p>Ders programı, gayri resmi gözden geçirmelerden resmi gözden geçirmelere uzanan birçok gözden geçirme çeşidi olduğunu belirtir ve yaygın kullanılan dördünü anlatır. <strong>Resmi gözden geçirme (formal review)</strong> tanımlı bir süreci izler ve resmî olarak belgelenmiş bir çıktısı vardır; <strong>gayri resmi gözden geçirme (informal review)</strong> ise ikisini de yapmaz. Bir gözden geçirmenin ne kadar resmî olması gerektiği; kullanılan yaşam döngüsüne, geliştirme sürecinin olgunluğuna, iş ürününün ne kadar kritik ve karmaşık olduğuna, yasaların ya da düzenleyici kurumların ne istediğine ve bir denetim izine ihtiyaç olup olmadığına bağlıdır. Bir iş ürünü farklı çeşitlerde birkaç gözden geçirmeden de geçebilir; örneğin önce gayri resmi, sonra daha resmî biçimde. Çeşit seçimi hedeflere, proje ihtiyaçlarına, mevcut kaynaklara, iş ürününün çeşidine ve risklerine, iş alanına ve şirket kültürüne de bağlıdır. Bu hedefe ait bir soru bir gözden geçirmeyi anlatıp çeşidini adlandırmanızı isteyebilir. Şekil 3.6, yaygın kullanılan dört çeşidi daha az resmîden daha resmîye uzanan tek bir ölçeğe yerleştiriyor.</p>
+<figure>
+<img src="figures/fig_3_6_review_types_formality.png" alt="Şekil 3.6 — Resmiyet ölçeğinde dört gözden geçirme çeşidi. Yatay bir ok soldaki “Daha az resmi”den sağdaki “Daha resmi”ye uzanır. Oktan sırasıyla dört kutu sarkar: gayri resmi gözden geçirme (tanımlı süreç yok), üzerinden geçme (yazar öncülüğünde), teknik gözden geçirme (moderatör, uzmanlar) ve teftiş (en resmi, metrikler)." /><figcaption>Şekil 3.6 — Resmiyet ölçeğinde dört gözden geçirme çeşidi.</figcaption>
+</figure>
+<p>Gayri resmi gözden geçirme tanımlı bir süreç izlemez ve resmî olarak belgelenmiş bir çıktı gerektirmez; ana hedefi anomalileri tespit etmektir (örneğin bir meslektaşın iş ürününe göz attığı arkadaş kontrolü). <strong>Üzerinden geçme (walkthrough)</strong> yazarın öncülüğünde yürür. Birçok amaca hizmet edebilir: kaliteyi değerlendirmek ve iş ürününe güven oluşturmak, gözden geçiricileri eğitmek, uzlaşmaya varmak, yeni fikirler doğurmak, yazarları iyileşmeye teşvik etmek ve anomalileri fark etmek. Gözden geçiriciler iş ürününü üzerinden geçmeden önce kendi başlarına okuyabilir, ama bu zorunlu değildir. <strong>Teknik gözden geçirme (technical review)</strong>, teknik açıdan nitelikli gözden geçiricilerin yaptığı ve bir moderatörün yönettiği gözden geçirmedir. Hedefleri, teknik bir problem üzerinde uzlaşmaya varmak ve karar vermektir; ayrıca anomalileri fark etmek, kaliteyi değerlendirmek ve iş ürününe güven oluşturmak, yeni fikirler doğurmak ve yazarların gelişmesine yardımcı olmaktır. <strong>Teftiş (inspection)</strong> en resmî gözden geçirme çeşididir ve genel gözden geçirme sürecinin tamamını izler. Ana hedefi azami sayıda anomali bulmaktır. İkincil amaçları kaliteyi değerlendirmek, iş ürününe güven oluşturmak ve yazarların daha iyi hale gelmesine yardımcı olmaktır. Ekip metrikler toplar ve bunları YGYD’yi, teftiş sürecinin kendisi de dahil, iyileştirmek için kullanır. Teftişte yazar gözden geçirme lideri ya da katip olarak görev yapamaz. Tablo 3.2, dört çeşidi birbirinden ayırmaya yardımcı olan üç noktada yan yana koyuyor.</p>
+<p><strong>Tablo 3.2 — Dört gözden geçirme çeşidi: kim yönetir, ne kadar resmî, ana amaç ne</strong></p>
+<div class="table-wrap">
+<table>
+<colgroup>
+<col style="width: 18%" />
+<col style="width: 18%" />
+<col style="width: 28%" />
+<col style="width: 34%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Gözden geçirme çeşidi</th>
+<th>Kim yönetir</th>
+<th>Resmiyet</th>
+<th>Ana amaç</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Gayri resmi gözden geçirme</td>
+<td>Tanımlı değil</td>
+<td>Tanımlı süreç yok; resmî olarak belgelenmiş çıktı yok</td>
+<td>Anomalileri tespit etmek</td>
+</tr>
+<tr class="even">
+<td>Üzerinden geçme</td>
+<td>Yazar</td>
+<td>Bireysel hazırlık isteğe bağlı</td>
+<td>Birçok amaç; kaliteyi değerlendirmek, gözden geçiricileri eğitmek, uzlaşma sağlamak, yeni fikirler dahil</td>
+</tr>
+<tr class="odd">
+<td>Teknik gözden geçirme</td>
+<td>Bir moderatör; teknik açıdan nitelikli gözden geçiriciler</td>
+<td>Resmî</td>
+<td>Teknik bir problem üzerinde uzlaşma sağlamak ve karar vermek</td>
+</tr>
+<tr class="even">
+<td>Teftiş</td>
+<td>Belirtilmemiş; yazar gözden geçirme lideri ya da katip olamaz</td>
+<td>En resmî; genel sürecin tamamı; metrikler toplanır</td>
+<td>Azami sayıda anomali bulmak</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><em>Uygulamada.</em> Şirkete yeni katılan iki genç geliştiricinin projeye hızla uyum sağlamasına yardım etmek için kıdemli mimar, hazırladığı yeni veritabanı mimarisi diyagramını ekrana yansıtıyor. Belgeyi meslektaşlarına sayfa sayfa, bölüm bölüm anlatıyor ve sorularını yanıtlıyor. Bu oturumun ana amacı yeni mühendisleri teknik olarak eğitmek. Oturum, üzerinden geçmenin açık bir örneğidir, çünkü yazarın öncülüğünde yürüyor ve bir eğitim ve bilgi aktarımı görevi taşıyor.</p>
+<p><em>Sınav odağı.</em> Size bir toplantı düzeni anlatılır ve hangi çeşit olduğu sorulur. İpuçları açıktır: “tanımlı süreç yok” gayri resmi gözden geçirmeye işaret eder; “oturumu yazar yürütüyor” üzerinden geçmeye; “bir moderatörün yönettiği, teknik bir karara varmaya çalışan teknik açıdan nitelikli gözden geçiriciler” teknik gözden geçirmeye; “sürecin tamamı izleniyor, süreci iyileştirmek için metrikler toplanıyor ve yazar gözden geçirme lideri ya da katip olamıyor” ise teftişe.</p>
+<p><strong>Hemen Pekiştir</strong></p>
+<p><em>HP 3.2.4-a.</em> En resmî gözden geçirme çeşidi hangisidir ve yazar için getirdiği kısıt nedir?</p>
+<div class="mc">
+<ul>
+<li>(a) Gayri resmi gözden geçirme; yazar katılamaz</li>
+<li>(b) Üzerinden geçme; oturumu yazar yönetmek zorundadır</li>
+<li>(c) Teknik gözden geçirme; yalnızca yazar sunum yapabilir</li>
+<li>(d) Teftiş; yazar gözden geçirme lideri ya da katip olamaz</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (d). Teftiş en resmî çeşittir. Genel sürecin tamamını izler, metrik toplar ve yazarın gözden geçirme lideri ya da katip olarak görev yapmasına izin vermez.</p>
+</div></details>
+<p><em>HP 3.2.4-b.</em> Bir sistem analisti, yazdığı iş analizi belgesini bütün ekibe parça parça sunuyor ve temel amaçlardan biri ekipteki diğer kişileri eğitmek ve onlara bilgi aktarmak. Bu hangi gözden geçirme çeşididir?</p>
+<div class="mc">
+<ul>
+<li>(a) Teftiş</li>
+<li>(b) Teknik gözden geçirme</li>
+<li>(c) Üzerinden geçme</li>
+<li>(d) Gayri resmi gözden geçirme</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (c). “Yazarın bizzat yönetmesi” ve “eğitim / bilgi paylaşımı”, üzerinden geçmeye götüren en açık işaretlerdir.</p>
+</div></details>
+<p><em>HP 3.2.4-c.</em> Bir moderatörün yönettiği, teknik açıdan nitelikli gözden geçiricilerin yaptığı ve karmaşık bir teknik problem üzerinde uzlaşmaya varmayı ve mimari kararlar almayı amaçlayan gözden geçirme hangi çeşittir?</p>
+<div class="mc">
+<ul>
+<li>(a) Üzerinden geçme</li>
+<li>(b) Teknik gözden geçirme</li>
+<li>(c) Gayri resmi gözden geçirme</li>
+<li>(d) Teftiş</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (b). Moderatör yönetimi, teknik uzmanlar ve uzlaşma/karar amacı bir arada teknik gözden geçirmenin işaretidir.</p>
+</div></details>
+<p><em>HP 3.2.4-d.</em> Tanımlı bir süreci olmayan, resmî bir çıktı gerektirmeyen ve ana hedefi anomalileri tespit etmek olan (örneğin bir arkadaş kontrolü) gözden geçirme hangi çeşittir?</p>
+<div class="mc">
+<ul>
+<li>(a) Gayri resmi gözden geçirme</li>
+<li>(b) Teftiş</li>
+<li>(c) Teknik gözden geçirme</li>
+<li>(d) Üzerinden geçme</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (a). Tanımlı bir sürecin ve zorunlu bir resmî çıktının olmaması, ana hedefin de anomalileri tespit etmek olması gayri resmi gözden geçirmenin işaretidir.</p>
+</div></details>
+</section>
+<section id="fl-3-2-5" class="level3">
+<h3>Gözden geçirmeleri başarılı kılan faktörler (FL-3.2.5 — K1)</h3>
+<p>Bir gözden geçirmenin başarısı yalnızca teknik araçlara değil, büyük ölçüde organizasyonel ve kültürel koşullara bağlıdır. Oturumdan önce net hedefler ve ölçülebilir çıkış kriterleri belirlenmelidir. İş ürününe ve bağlama en uygun gözden geçirme çeşidi seçilmelidir. Katılımcılar odaklanabilsin diye iş ürünü tek büyük blok halinde değil, küçük ve yönetilebilir parçalar halinde sunulmalıdır. Gözden geçiricilere yeterli hazırlık süresi verilmeli, yönetim de süreci gerçek zaman ve kaynakla desteklemelidir. Gözden geçirme geri bildirimi paydaşlara ve yazarlara ulaşmalıdır ki hem ürünü hem de kendi aktivitelerini iyileştirebilsinler. Gözden geçirmeler kuruluşun öğrenme kültürünün bir parçası haline gelmeli, her katılımcı da rolünü yerine getirecek kadar eğitim almalıdır. Oturum sırasında profesyonel bir kolaylaştırma tonu yapıcı tutmalı ve geri bildirimin kişinin yeteneğine değil, iş ürününe odaklanmasını sağlamalıdır.</p>
+<p>Başarı faktörlerinden biri özel bir ilgiyi hak eder: ders programı, katılımcıların değerlendirilmesinin hiçbir zaman bir gözden geçirmenin hedefi olmaması gerektiğini belirtir. Dolayısıyla bulgular ve hata listeleri katılımcıların kişisel performansını ölçmek için kullanılmamalıdır. Kendi kodundaki hataları raporlamanın yıl sonu performans puanını düşüreceğini düşünen bir geliştirici toplantılarda susmayı ve hataları saklamayı seçer; o şirketteki gözden geçirme kültürü de sessizce çöker.</p>
+<p><em>Sınav odağı.</em> Başarı faktörleri sorulduğunda önce iki maddeyi arayın: birincisi, kaliteyi korumak için belgenin küçük parçalar halinde incelenmesi; ikincisi, katılımcıların performansını puanlamanın hiçbir zaman bir gözden geçirme amacı olamayacağı. Bu kuralı çiğneyen her şıkkı yanlış sayın.</p>
+<p><strong>Hemen Pekiştir</strong></p>
+<p><em>HP 3.2.5-a.</em> ISTQB®’ye göre aşağıdakilerden hangisi hiçbir zaman bir gözden geçirmenin hedefi olmamalıdır?</p>
+<div class="mc">
+<ul>
+<li>(a) İş ürünlerindeki kritik hataları erken yakalamak</li>
+<li>(b) Katılımcıların bireysel performansını değerlendirmek</li>
+<li>(c) Analiz belgesinin kalitesini değerlendirmek</li>
+<li>(d) Karmaşık iş kuralları üzerinde paydaşlar arasında uzlaşma sağlamak</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (b). Katılımcıların değerlendirilmesi hiçbir zaman bir gözden geçirmenin hedefi olmamalıdır; gözden geçirmeler iş ürününe odaklanır. (a), (c) ve (d) şıkları meşru gözden geçirme hedefleridir.</p>
+</div></details>
+<p><em>HP 3.2.5-b.</em> Aşağıdakilerden hangisi ders programının başarılı bir gözden geçirme için saydığı başarı faktörlerinden biridir?</p>
+<div class="mc">
+<ul>
+<li>(a) İş ürününü tek bir oturumda büyük bir blok halinde incelemek</li>
+<li>(b) Katılımcılara bireysel hazırlık için hiç zaman vermemek</li>
+<li>(c) Geri bildirimi yazarın kişiliğine yöneltmek</li>
+<li>(d) İş ürününü küçük parçalar halinde incelemek</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (d). Küçük parçalar halinde incelemek gözden geçiricilerin dikkatini yüksek tutar; (a), (b) ve (c) şıkları başarıyı doğrudan baltalar.</p>
+</div></details>
+<p><em>HP 3.2.5-c.</em> Gözden geçirme başarı faktörleri çoğunlukla ne tür koşullardır?</p>
+<div class="mc">
+<ul>
+<li>(a) Çoğunlukla net hedefler ve yönetim desteği gibi organizasyonel ve kültürel koşullar</li>
+<li>(b) Çoğunlukla teknik koşullar (kullanılan araç ve programlama dili)</li>
+<li>(c) Yalnızca finansal koşullar (bütçenin büyüklüğü)</li>
+<li>(d) Yalnızca hukuki koşullar (düzenleyici bir gereklilik)</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (a). Bir gözden geçirmenin başarısı teknik araçlardan çok organizasyonel ve insani koşullara bağlıdır.</p>
+</div></details>
+</section>
+</section>
+<section id="chapter-3-summary" class="level2">
+<h2>Bölüm 3 özeti</h2>
+<div class="table-wrap">
+<table>
+<colgroup>
+<col style="width: 16%" />
+<col style="width: 83%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Öğrenme hedefi</th>
+<th>Tek cümlelik özet</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>3.1.1 (K1)</td>
+<td>Okunup anlaşılabilen iş ürünlerinin neredeyse hepsi gözden geçirilebilir; statik analiz ise denetleyebileceği bir yapıya ihtiyaç duyar. İnsanların yorumlamakta zorlandığı ve araçlarla analiz edilmemesi gereken iş ürünleri, örneğin (hukuki nedenlerle) üçüncü taraf çalıştırılabilir kod, uygun değildir.</td>
+</tr>
+<tr class="even">
+<td>3.1.2 (K2)</td>
+<td>Statik test hataları erken, düzeltmeleri en ucuzken bulur. Dinamik testin bulamadığı bazı hataları (ulaşılamayan kod, çalıştırılamayan iş ürünlerindeki hatalar) bulur; gereksinim eksiklikleri gibi başkalarını da daha kolay ve ucuz bulur.</td>
+</tr>
+<tr class="odd">
+<td>3.1.3 (K2)</td>
+<td>Statik test hataları doğrudan iş ürününde tespit eder; dinamik test önce bir sistem arızasını tetikler, sonra nedeni hata ayıklamayla aranır.</td>
+</tr>
+<tr class="even">
+<td>3.2.1 (K1)</td>
+<td>Erken ve sık paydaş geri bildirimi olası kalite sorunlarını erken iletir, gereksinim yanlış anlamalarını önler, gereksinim değişikliklerinin daha erken anlaşılıp uygulanmasını sağlar ve ekibi en değerli özelliklere odaklar.</td>
+</tr>
+<tr class="odd">
+<td>3.2.2 (K2)</td>
+<td>Genel sürecin beş aktivitesi vardır: planlama, gözden geçirme başlangıcı, bireysel gözden geçirme, iletişim ve analiz, düzeltme ve raporlama.</td>
+</tr>
+<tr class="even">
+<td>3.2.3 (K1)</td>
+<td>Altı temel rol tanımlanır; gözden geçirme lideri toplantının dışındaki lojistiği, moderatör ise toplantının içindeki iletişimi yönetir.</td>
+</tr>
+<tr class="odd">
+<td>3.2.4 (K2)</td>
+<td>Resmiyete göre yaygın kullanılan dört çeşit: gayri resmi, üzerinden geçme (yazar öncülüğünde), teknik gözden geçirme (moderatör, teknik açıdan nitelikli gözden geçiriciler), teftiş (en resmî, metrikler, yazar lider ya da katip olamaz).</td>
+</tr>
+<tr class="even">
+<td>3.2.5 (K1)</td>
+<td>Başarı organizasyoneldir: belgeleri küçük parçalar halinde incelemek, adil bir hazırlık süresi ve hata listelerini hiçbir zaman kişisel performans aracı olarak kullanmamak.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<section id="sık-karıştırılan-kritik-kavram-çiftleri-2" class="level3">
+<h3>Sık karıştırılan kritik kavram çiftleri</h3>
+<div class="table-wrap">
+<table>
+<colgroup>
+<col style="width: 17%" />
+<col style="width: 32%" />
+<col style="width: 17%" />
+<col style="width: 32%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Bu kavram</th>
+<th>şudur</th>
+<th>şu kavram değildir</th>
+<th>o da şudur</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Anomali</td>
+<td>bireysel gözden geçirmede kayda geçirilen, beklentiden sapan bir durum</td>
+<td>Hata</td>
+<td>iş ürünündeki bir kusur; anomali iletişim ve analizde analiz edildiğinde teyit edilir</td>
+</tr>
+<tr class="even">
+<td>Gözden geçirme lideri</td>
+<td>genel sorumluluğu üstlenir: kim katılacak, ne zaman ve nerede</td>
+<td>Moderatör</td>
+<td>toplantının etkili yürümesini sağlar: arabuluculuk, zaman yönetimi, güvenli bir ortam</td>
+</tr>
+<tr class="odd">
+<td>Üzerinden geçme</td>
+<td>yazarın öncülüğünde; gözden geçiricileri eğitmek dahil birçok hedefi var</td>
+<td>Teknik gözden geçirme</td>
+<td>bir moderatörün öncülüğünde, teknik açıdan nitelikli gözden geçiricilerle; teknik bir problem üzerinde uzlaşma ve karar hedefler</td>
+</tr>
+<tr class="even">
+<td>Teknik gözden geçirme</td>
+<td>bir moderatörün yönettiği resmî bir gözden geçirme</td>
+<td>Teftiş</td>
+<td>en resmî çeşit: genel sürecin tamamı, metrikler toplanır, yazar gözden geçirme lideri ya da katip olamaz</td>
+</tr>
+<tr class="odd">
+<td>Gözden geçirme</td>
+<td>anomalileri bulmak ve kaliteyi değerlendirmek için iş ürünlerinin insanlar tarafından elle incelenmesi</td>
+<td>Statik analiz</td>
+<td>kaynak kodun ya da modellerin araçlarla otomatik denetimi</td>
+</tr>
+<tr class="even">
+<td>Planlama</td>
+<td>gözden geçirmenin kapsamını, amacını, çıkış kriterlerini, eforu ve zaman dilimlerini tanımlamak</td>
+<td>Gözden geçirme başlangıcı</td>
+<td>her katılımcının iş ürününe erişebilmesini ve rolünü anlamasını sağlamak</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="sınav-ipuçları-ve-yaygın-tuzaklar-bölüm-3" class="level3">
+<h3>Sınav ipuçları ve yaygın tuzaklar — Bölüm 3</h3>
+<p>Gözden geçirme çeşidi sorularında senaryodaki iki belirleyici bilgiye odaklanın: oturumu kim yönetiyor ve belirtilen amacı ne. Yöneten yazarsa cevap üzerinden geçmedir; bir moderatör teknik açıdan nitelikli gözden geçiricileri teknik bir karara yönlendiriyorsa cevap teknik gözden geçirmedir; metin sürecin tamamını, toplanan metrikleri ve yönetemeyen bir yazarı vurguluyorsa cevap teftiştir. Yalnızca amaca bakarak karar vermeyin, çünkü uzlaşma sağlamak ve yeni fikirler doğurmak hem üzerinden geçmeye hem de teknik gözden geçirmeye aittir. Önce gözden geçirmeyi kimin yönettiğini kontrol edin. Süreç sorularında beş aktivitenin sırasını bilin ve soruların yoklayabileceği iki sınırı aklınızda tutun: katılımcılar iş ürününe gözden geçirme başlangıcında erişir; her anomalinin durumuna iletişim ve analizde karar verilir.</p>
+<p>İki tuzağı bilmeye değer. Birincisi “gözden geçirmede daha az hata yapan geliştiriciler prim alacak” gibi şıklardır; “kişileri, çalışanları ya da katılımcıları bir performans ölçütüne göre puanlamak ya da değerlendirmek” ifadesini içeren her şık gözden geçirme başarı faktörlerine aykırıdır ve yanlıştır. İkincisi, statik testi dinamik testin işini yaparken gösteren şıklardır. Bir şık statik testin “yazılımı çalıştırarak sistem arızalarını ve çökmeleri tetiklediğini” iddia ediyorsa, bunun statik testin tanımıyla çeliştiğini hatırlayın ve onu baştan eleyin.</p>
+</section>
+</section>
+<section id="cumulative-retrieval-1" class="level2">
+<h2>Birikimli hatırlama</h2>
+<p>Önceki bölümleri bu bölümün merceğinden yeniden ziyaret edin:</p>
+<ul>
+<li><strong>R3-a.</strong> Bir gözden geçirmede yakalanan eksik bir gereksinimin insan hatası mı, hata mı, arıza mı olduğunu söyleyin (Bölüm 1).</li>
+<li><strong>R3-b.</strong> Gereksinimleri taslaklar ortaya çıkar çıkmaz gözden geçirmenin hem sola almayı hem de erken test etme prensibini nasıl yansıttığını açıklayın (Bölüm 2 ve 1).</li>
+<li><strong>R3-c.</strong> En katı resmiyeti gerektiren, emniyet açısından kritik bir bağlama hangi gözden geçirme çeşidinin en iyi uyduğunu söyleyin.</li>
+</ul>
+<p>Önceki bölümlere geri bakmadan önce her birini hafızanızdan yanıtlamaya çalışın. Örnek cevaplar, Cevaplar ve Gerekçeler bölümünde <em>Birikimli hatırlama — örnek cevaplar</em> başlığı altındadır.</p>
+</section>
+<section id="chapter-exercises-2" class="level2">
+<h2>Bölüm alıştırmaları</h2>
+<p>Cevaplar, gerekçeler ve öğrenme hedefi kaynakları kitabın sonundaki “Cevaplar ve Gerekçeler” bölümündedir.</p>
+<p><em>PB-C3-001.</em> Aşağıdaki yazılım iş ürünlerinden hangisi, doğası gereği statik test aktiviteleriyle incelenmeye en az uygun olanıdır?</p>
+<div class="mc">
+<ul>
+<li>(a) Sipariş hizmetinin veritabanı şeması</li>
+<li>(b) Yalnızca çalıştırılabilir kod olarak teslim edilen üçüncü taraf bir kütüphane</li>
+<li>(c) Bulut sunucularını kuran bir kod olarak altyapı (IaC) yapılandırma dosyası</li>
+<li>(d) Ödeme sürecinin bir durum modeli</li>
+</ul>
+</div>
+<p><em>PB-C3-002.</em> Statik ve dinamik testi karşılaştıran aşağıdaki ifadelerden hangisi doğrudur?</p>
+<div class="mc">
+<ul>
+<li>(a) Statik test, sistemde dışarıdan görülen bir arıza oluşturmaya gerek kalmadan koddaki ya da belgedeki hataları doğrudan tespit eder</li>
+<li>(b) Statik test aktiviteleri çalışma zamanında sistem arızalarını tetikler ve gizli kod hataları bu arızalar izlenerek bulunur</li>
+<li>(c) Dinamik test, kaynak kod bloklarını hiç çalıştırmadan hataları doğrudan belge üzerinde bulur</li>
+<li>(d) Statik test, sistemde canlı olarak çalıştırılan komutların ve fonksiyonların kapsamını ölçer</li>
+</ul>
+</div>
+<p><em>PB-C3-003.</em> Bir iş analizi belgesinin resmî gözden geçirme toplantısında bir katılımcı tartışmayı yapıcı ve profesyonel tutuyor, her uzmanın bulgularını rahatça dile getirmesini destekliyor ve görüş ayrılıkları kızıştığında tarafsız bir hakem olarak devreye girip ortamı kolaylaştırıyor. Bu katılımcı resmî gözden geçirme sürecinde hangi rolü yerine getiriyor?</p>
+<div class="mc">
+<ul>
+<li>(a) Gözden geçirme lideri</li>
+<li>(b) Katip</li>
+<li>(c) Moderatör</li>
+<li>(d) Yönetici</li>
+</ul>
+</div>
+<p><em>PB-C3-004.</em> Bir dizi kullanıcı hikayesini yazan ürün sahibi, geliştiriciler ve test uzmanlarıyla birlikte bu hikayelerin üzerinden adım adım geçtiği bir oturumu yönetiyor. Katılımcılardan önceden hazırlanmaları istenmemiş. Belirtilen amaçlar, hikayelerin kapsamı üzerinde uzlaşmak ve alternatif çözümler için fikir toplamak. Bu senaryo hangi gözden geçirme çeşidini anlatıyor?</p>
+<div class="mc">
+<ul>
+<li>(a) Gayri resmi gözden geçirme</li>
+<li>(b) Üzerinden geçme</li>
+<li>(c) Teknik gözden geçirme</li>
+<li>(d) Teftiş</li>
+</ul>
+</div>
+<p><em>PB-C3-005.</em> Gözden geçirme toplantısından sonra, düzeltici aksiyonlar takip edilebilsin diye teyit edilen her hata için bir hata raporu oluşturuluyor. Çıkış kriterleri karşılandığında iş ürünü kabul ediliyor ve gözden geçirme sonuçları yayımlanıyor. Gözden geçirme sürecinin hangi aktivitesi yürütülüyor?</p>
+<div class="mc">
+<ul>
+<li>(a) İletişim ve analiz</li>
+<li>(b) Gözden geçirme başlangıcı</li>
+<li>(c) Planlama</li>
+<li>(d) Düzeltme ve raporlama</li>
+</ul>
+</div>
+<p><em>PB-C3-006.</em> Bir e-ticaret platformunun gereksinim gözden geçirmesi sırasında bir test uzmanı, son kullanıcının içe aktarma dosyası boyut sınırını aşarsa sistemin hangi hata mesajını vermesi gerektiğinin analiz belgesinin hiçbir yerinde yazmadığını fark ediyor. Kural analizde düpedüz eksik bırakılmış. Bu eksik gereksinimin statik testle dinamik teste göre daha kolay ve ucuz bulunmasının temel nedeni nedir?</p>
+<div class="mc">
+<ul>
+<li>(a) Dinamik test araçları gereksinim belgelerindeki söz dizimi ve yazım hatalarını otomatik olarak ayrıştıramaz</li>
+<li>(b) Bu tür analiz hataları yalnızca kaynağı kapalı üçüncü taraf paketlerin içinde ortaya çıkabilir</li>
+<li>(c) Dinamik test aktiviteleri doğası gereği yalnızca hız ve güvenlik gibi fonksiyonel olmayan nitelikleri test etmek için tasarlanmıştır</li>
+<li>(d) Boşluk çalıştırılamayan bir belgede duruyor; bu yüzden bir gözden geçirici onu doğrudan görür, dinamik test ise yalnızca sonraki etkilerini görür</li>
+</ul>
+</div>
+</section>
+</section>
+
+<div class="pager"><a href="chapter-2.html"><span class="lbl">Önceki</span>Bölüm 2 — Yazılım Geliştirme Yaşam Döngüsü Boyunca Test</a><a href="chapter-4.html" style="text-align:right"><span class="lbl">Sonraki</span>Bölüm 4 — Test Analizi ve Tasarımı</a></div>
+<footer class="site">© 2026 Kadir Çamoğlu · Kendi içeriğimiz CC BY-NC 4.0 lisanslıdır · ISTQB® ve CTFL®, International Software Testing Qualifications Board'un tescilli markalarıdır; bu rehber ISTQB® ya da Turkish Testing Board ile bağlantılı değildir, onlar tarafından onaylanmamıştır.</footer>
+</main>
+</div>
+<script>if (window.matchMedia('(min-width: 901px)').matches) document.getElementById('navd').open = true;</script>
+<script>(function(){function od(){var h=decodeURIComponent(location.hash.slice(1));if(!h)return;var e=document.getElementById(h);while(e){if(e.tagName==='DETAILS')e.open=true;e=e.parentElement;}}addEventListener('hashchange',od);od();})();</script>
+</body>
+</html>

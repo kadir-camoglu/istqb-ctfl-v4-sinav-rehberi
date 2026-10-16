@@ -1,0 +1,1378 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bölüm 1 — Yazılım Testinin Temelleri · ISTQB® CTFL® v4.0 Sınav Rehberi</title>
+<meta name="description" content="ISTQB® Sertifikalı Test Uzmanı Temel Seviye (CTFL®) v4.0 sınavı için ücretsiz, bağımsız Türkçe çalışma rehberi: 64 öğrenme hedefinin tamamı, çözümlü örnekler, kısa sorular ve iki dilli tam bir deneme sınavı.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="draft-banner" role="note"><strong>Herkese açık taslak — inceleniyor.</strong> Geri bildirim: <a href="mailto:kadir.camoglu@gmail.com">kadir.camoglu@gmail.com</a></div>
+<header class="topbar"><div class="inner"><a href="index.html">ISTQB® CTFL® v4.0 Sınav Rehberi</a><span class="meta"><span class="ind">Bağımsız · Gayriresmî çalışma rehberi · Herkese açık taslak · 2026-10 · </span><a href="all.html">Tam metin tek sayfada</a></span></div></header>
+<div class="layout">
+<nav class="side"><details id="navd"><summary>İçindekiler</summary><div class="navbody">
+<div class="group">Ön bölüm</div><ul>
+<li><a href="index.html">ISTQB® CTFL® v4.0 Sınav Rehberi: Sıfırdan Sınava Hazır Seviyeye</a>
+</li>
+<li><a href="copyright.html">Telif Hakkı ve Marka Bildirimi</a>
+</li>
+<li><a href="introduction.html">Giriş — Bu Kitap Hakkında</a>
+</li>
+<li><a href="how-to-use.html">Bu Kitap Nasıl Kullanılır</a>
+</li>
+<li><a href="the-exam.html">CTFL® Sınavı Nasıl İşler</a>
+</li>
+<li><a href="objective-map.html">Hedef Haritası</a>
+</li>
+<li><a href="study-roadmap.html">Çalışma Yol Haritası</a>
+</li>
+</ul>
+<div class="group">Bölümler</div><ul>
+<li class="current"><a href="chapter-1.html">Bölüm 1 — Yazılım Testinin Temelleri</a>
+<ul class="sub"><li><a href="#what-is-testing">1.1 Yazılım Testi Nedir?</a></li><li><a href="#why-is-testing-necessary">1.2 Yazılım Testi Neden Gereklidir?</a></li><li><a href="#the-seven-testing-principles-fl-1.3.1-k2">1.3 Test Prensipleri (FL-1.3.1 — K2)</a></li><li><a href="#test-activities-testware-and-test-roles">1.4 Test Aktiviteleri, Test Çalışma Ürünleri ve Test Rolleri</a></li><li><a href="#essential-skills-and-good-practices-in-testing">1.5 Test Etme Sürecinde Gerekli Beceriler ve İyi Uygulamalar</a></li><li><a href="#chapter-1-summary">Bölüm 1 özeti</a></li><li><a href="#chapter-exercises">Bölüm alıştırmaları</a></li></ul>
+</li>
+<li><a href="chapter-2.html">Bölüm 2 — Yazılım Geliştirme Yaşam Döngüsü Boyunca Test</a>
+</li>
+<li><a href="chapter-3.html">Bölüm 3 — Statik Testler</a>
+</li>
+<li><a href="chapter-4.html">Bölüm 4 — Test Analizi ve Tasarımı</a>
+</li>
+<li><a href="chapter-5.html">Bölüm 5 — Test Aktivitelerini Yönetme</a>
+</li>
+<li><a href="chapter-6.html">Bölüm 6 — Test Araçları</a>
+</li>
+</ul>
+<div class="group">Arka bölüm</div><ul>
+<li><a href="rationale.html">Cevaplar ve Gerekçeler</a>
+</li>
+<li><a href="glossary.html">Sözlük</a>
+</li>
+<li><a href="confused-pairs.html">Sık Karıştırılan Kavramlar — Ana Liste</a>
+</li>
+<li><a href="final-revision.html">Son Tekrar Planı</a>
+</li>
+<li><a href="mock-exam-1.html">Deneme Sınavı 1 — 40 Soru, Gerekçeleriyle</a>
+</li>
+<li><a href="further-resources.html">İleri Kaynaklar</a>
+</li>
+</ul>
+</div></details></nav>
+<main>
+<section id="chapter-1-fundamentals-of-testing" class="level1">
+<h1>Bölüm 1 — Yazılım Testinin Temelleri</h1>
+<p><strong>Öğrenme hedefleri:</strong> 14 · K1 3 / K2 11 / K3 0 · <strong>Bu bölümden sınav sorusu:</strong> 8</p>
+<p><strong>Anahtar kelimeler:</strong> kapsam (coverage), hata ayıklama (debugging), hata (defect), insan hatası (error), arıza (failure), kalite (quality), kalite güvence (quality assurance), kök neden (root cause), test analizi (test analysis), test esası (test basis), test senaryosu (test case), test tamamlama (test completion), test koşulu (test condition), test kontrolü (test control), test verisi (test data), test tasarımı (test design), test koşumu (test execution), test uyarlama (test implementation), test gözetimi (test monitoring), test nesnesi (test object), test hedefi (test objective), test planlama (test planning), test prosedürü (test procedure), test süreci (test process), test sonucu (test result), test etme (testing), test çalışma ürünleri (testware), izlenebilirlik (traceability), sağlama (validation), doğrulama (verification)</p>
+<p>Bu bölüm kitabın omurgasıdır. Sonraki bütün bölümler burada kurduğunuz kelime dağarcığının üzerine oturur. Bu yüzden amaç problem çözmek değil, terimlere ve resmî listelerin ardındaki mantığa sağlam biçimde hâkim olmaktır. Bu bölümde K3 (uygulama seviyesi) öğrenme hedefi yok. Sınavın kırk sorusundan sekizi bu konulardan gelir. Bu sorular genellikle tanımları, iki resmî listeyi (yedi prensip ve yedi aktivite) ve birbirine komşu fikirler arasındaki ince çizgiyi yoklar; insan hatası, hata ve arıza arasındaki fark buna bir örnektir. Terimler zihninizde netleştiğinde bu sorular hızlanır. Birçoğu soru kökündeki tek bir kelimeye bağlıdır.</p>
+<section id="what-is-testing" class="level2">
+<h2>1.1 Yazılım Testi Nedir?</h2>
+<section id="test-yazılımı-çalıştırmaktan-ibaret-değildir" class="level3">
+<h3>Test, yazılımı çalıştırmaktan ibaret değildir</h3>
+<p>“Test” kelimesini ilk duyduklarında insanlar çoğu zaman yazılımı çalıştırıp ne olduğunu izleyen birini düşünür. Gerçek test bundan çok daha geniştir. İşi planlamayı, neyin test edileceğini analiz etmeyi, testleri tasarlamayı, hazırlamayı, sonuçları raporlamayı ve test nesnesinin kalitesini değerlendirmeyi kapsar. (Test edilen iş ürünü (work product) <strong>test nesnesi (test object)</strong> olarak adlandırılır.) Başka bir deyişle test süreci ortada tek satır kod yokken başlar ve koşum bittikten sonra da sürer.</p>
+<p>Yazılımı çalıştırarak yaptığınız kısma <strong>dinamik test (dynamic testing)</strong> denir. Yazılımı çalıştırmadan yaptığınız iş, örneğin bir gereksinim belgesini gözden geçirmek, <strong>statik test (static testing)</strong> kapsamındadır; Bölüm 3 bu konuyu ayrıntılı ele alır. Akılda tutulacak nokta şudur: test bir aktiviteler zinciridir ve yazılımı koşmak bu zincirin yalnızca bir halkasıdır. Şekil 1.1 bu aktivite zincirini ve statik testin zincirde nereye oturduğunu gösteriyor. Statik test, bu zincirin herhangi bir noktasındaki iş ürünlerine uygulanabilir.</p>
+<figure>
+<img src="figures/fig_1_1_testing_is_more_than_execution.png" alt="Şekil 1.1 — Test, test koşumundan ibaret değildir. Altı test aktivitesi soldan sağa dizilir: test planlama, test analizi, test tasarımı, test uyarlama, test koşumu (dinamik kısım) ve test tamamlama. Zincirin üstündeki statik test kutusu (gözden geçirmeler, statik analiz) kesik oklarla altı aktivitenin hepsine bağlanır ve “zincirin her noktasında uygulanabilir” diye etiketlenir; alttaki not, test gözetimi ve test kontrolünün baştan sona sürdüğünü söyler." /><figcaption>Şekil 1.1 — Test, test koşumundan ibaret değildir.</figcaption>
+</figure>
+<p>En başta sabitlenmeye değer bir terim çifti var, çünkü kitabın geri kalanı ona sürekli dayanır. <strong>Doğrulama (verification)</strong> “Ürünü doğru mu geliştiriyoruz?” diye sorar. Yazılımın belirtilmiş gereksinimleri karşılayıp karşılamadığını kontrol eder. <strong>Sağlama (validation)</strong> “Doğru ürünü mü geliştiriyoruz?” diye sorar. Yazılımın kullanıcıların ve paydaşların gerçek iş ihtiyaçlarını karşılayıp karşılamadığını kontrol eder. Test süreci ikisini de kapsar. Bir ürün bütün doğrulama adımlarından geçip yine de sağlamada başarısız olabilir. Örneğin bir bordro sistemi her tutarı tam da spesifikasyonun söylediği gibi hesaplayabilir. Ama spesifikasyon, çalışanların üçte birinin tabi olduğu yarı zamanlı sözleşmeleri hiç kapsamıyorsa, bütün testler geçerken sistem onu kullanan insanları yine de yarı yolda bırakır.</p>
+</section>
+<section id="fl-1-1-1" class="level3">
+<h3>Tipik test hedefleri (FL-1.1.1 — K1)</h3>
+<p>Ders programı (syllabus), test aktivitelerinin ardındaki dokuz gerekçeyi sıralar. Sınavda bunların her birini meşru bir <strong>test hedefi (test objective)</strong> olarak tanımanız gerekir:</p>
+<ul>
+<li>iş ürünlerini (gereksinimler, kullanıcı hikayeleri (user stories), tasarımlar, kod) değerlendirmek;</li>
+<li>arızaları tetiklemek, hataları bulup ortaya koymak;</li>
+<li>test nesnesinin gerekli kapsama ulaşmasını sağlamak;</li>
+<li>yazılım kalitesinin yetersiz kalması riskini düşürmek;</li>
+<li>belirtilmiş gereksinimlerin karşılanıp karşılanmadığını doğrulamak;</li>
+<li>test nesnesinin sözleşmeden, yasalardan ve düzenlemelerden doğan yükümlülükleri karşıladığını doğrulamak;</li>
+<li>paydaşlara bilinçli karar verebilmeleri için açık bilgi sağlamak;</li>
+<li>test nesnesinin kalitesine güven oluşturmak;</li>
+<li>test nesnesinin eksiksiz olduğunu ve paydaşların beklediği gibi davrandığını teyit etmek.</li>
+</ul>
+<p>Test hedefleri bağlama göre değişebilir: test edilen iş ürünü, test seviyesi, riskler, yazılım geliştirme yaşam döngüsü (YGYD; software development lifecycle, SDLC) ve pazara çıkış süresi gibi iş etkenleri bu bağlamın parçalarıdır. Yukarıda tanıtılan iki terime dikkat edin: beşinci ve altıncı hedefler doğrulama hedefleridir, dokuzuncu hedef ise bir sağlama hedefidir.</p>
+<p>Dokuz maddelik bir listeyi akılda tutmayı kolaylaştırmak için hedefleri dört temada toplayabilirsiniz. <em>Değerlendirme ve keşif</em>, iş ürünlerini değerlendirmeyi ve arızaları tetiklemeyi kapsar. <em>Uygunluk ve beklentiler</em>, belirtilmiş gereksinimleri doğrulamayı, yasal ve düzenleyici uygunluğu doğrulamayı ve paydaş beklentilerini karşılamayı kapsar. <em>Kapsam ve risk yönetimi</em>, gerekli <strong>kapsamı (coverage)</strong> sağlamayı ve riski azaltmayı kapsar. <em>Bilgi ve güven</em>, kararlar için bilgi sağlamayı ve kaliteye güven oluşturmayı kapsar.</p>
+<p><em>Uygulamada.</em> Bir sürüm kararının hemen öncesinde ürün sahibi test ekibine tek bir soru sorar: “Bu ürüne ne kadar güveniyoruz?” Ekip, güncel kapsam rakamları ve kalan risklerin analiziyle cevap verir. O anda, son test aktiviteleri yeni bir hata bulmamış olsa bile, test yedinci ve sekizinci hedefleri karşılıyordur: bilgi sağlıyor ve güven oluşturuyordur. Testin değeri yalnızca hata bulmaya bağlı değildir.</p>
+<p><em>Sınav odağı.</em> Yaygın bir kalıp size birbirine benzeyen birkaç şık verir ve gerçek bir test hedefi olanı seçmenizi ister. Başka bir disiplinin aktivitesini adlandıran şıklara dikkat edin: hataları düzeltmek hata ayıklamadır (bir geliştirme aktivitesi), süreci iyileştirerek hataları önlemek ise kalite güvencedir. Hiç hata kalmadığını ispatlamak ise, birinci prensibin göstereceği gibi, mantıken imkansızdır. Bir şıkkı seçmeden önce onun bir geliştirme ya da kalite güvence aktivitesi olmadığından emin olun.</p>
+<p><strong>Hemen Pekiştir</strong></p>
+<p><em>HP 1.1.1-a.</em> Aşağıdaki hedeflerden hangisi doğrulamayla değil sağlamayla ilgilidir?</p>
+<div class="mc">
+<ul>
+<li>(a) Belirtilmiş gereksinimlerin karşılanıp karşılanmadığını kontrol etmek</li>
+<li>(b) Test nesnesinin sözleşmeden doğan ve yasal gereksinimlere uygun olup olmadığını kontrol etmek</li>
+<li>(c) Test nesnesinin eksiksiz olduğunu ve paydaşların beklediği gibi çalıştığını kontrol etmek</li>
+<li>(d) Test nesnesinde gerekli kapsama ulaşılıp ulaşılmadığını kontrol etmek</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (c). “Doğru ürünü mü geliştiriyoruz?” sorusu sağlamadır. (a) ve (b) şıkları gereksinimlere uygunluğu kontrol eder, bu doğrulamadır; (d) bir kapsam hedefidir.</p>
+</div></details>
+<p><em>HP 1.1.1-b.</em> Aşağıdakilerden hangisi meşru bir test hedefi DEĞİLDİR?</p>
+<div class="mc">
+<ul>
+<li>(a) Test nesnesinin kalitesine güven oluşturmak</li>
+<li>(b) Paydaşlara kararları için bilgi sağlamak</li>
+<li>(c) Hatalara yol açan geliştirme sürecini iyileştirmek</li>
+<li>(d) Yazılım kalitesinin yetersiz kalması riskini azaltmak</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (c). Hataları önlemek için süreci iyileştirmek bir test hedefi değil, kalite güvencedir. Diğer üçü resmî listede yer alır.</p>
+</div></details>
+<p><em>HP 1.1.1-c.</em> Bir ekip, sürümden önce onaylanmış spesifikasyondaki her fonksiyonel gereksinimi teslim edilen yapıya (build) karşı kontrol ediyor. Ekip hangi tür test hedefinin peşindedir?</p>
+<div class="mc">
+<ul>
+<li>(a) Bir doğrulama hedefi, çünkü belirtilmiş gereksinimlere uygunluğu kontrol ediyor</li>
+<li>(b) Bir sağlama hedefi, çünkü kullanıcıların gerçek ihtiyaçlarını kontrol ediyor</li>
+<li>(c) Bir kalite güvence hedefi, çünkü geliştirme sürecini iyileştiriyor</li>
+<li>(d) Bir hata ayıklama hedefi, çünkü bulunan hataları gideriyor</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (a). Ürünü belirtilmiş olana karşı kontrol etmek “Ürünü doğru mu geliştiriyoruz?” sorusunu yanıtlar; bu doğrulamadır. Sağlama, ürünün paydaşların gerçek ihtiyaçlarını karşılayıp karşılamadığını sorardı; (c) ve (d) ise hiç test hedefi değildir.</p>
+</div></details>
+</section>
+<section id="fl-1-1-2" class="level3">
+<h3>Test etme ve hata ayıklama (FL-1.1.2 — K2)</h3>
+<p><strong>Test etme (testing)</strong> ve <strong>hata ayıklama (debugging)</strong>, iş bölümü net olan iki farklı aktivitedir. Test etme, yazılımı çalıştırarak arızaları tetikler (dinamik test) ya da bir iş ürünündeki hataları doğrudan bulur (statik test). Hata ayıklama ise bir geliştirme aktivitesidir: amacı bir arızanın nedenini bulmak, analiz etmek ve ortadan kaldırmaktır.</p>
+<p>İşin iyi yanı, amaçlarını ayırdığınızda bu ayrımı akılda tutmak kolaylaşır. Test etme, arızaların oluştuğunu gösterir ya da hataları doğrudan bulur. Hata ayıklama, bir arızanın nedenini bulur ve giderir. Birincisini test uzmanları (ve bütün ekip), ikincisini geliştiriciler yapar. Düzeltmeden sonra, düzeltmenin işe yarayıp yaramadığını görmek için asıl test yeniden koşulur; bu takip koşumu <strong>onaylama testi (confirmation testing)</strong> olarak adlandırılır ve Bölüm 2’de ele alınır. Tercihen ilk testi koşan kişi tarafından yapılır. Şekil 1.2, ilk başarısız testten onaylayan yeniden koşuma kadar bu döngüyü gösteriyor.</p>
+<figure>
+<img src="figures/fig_1_2_testing_debugging_confirmation.png" alt="Şekil 1.2 — Test etme, hata ayıklama ve onaylama testi. Akış, test uzmanının testi koşup bir arızayı raporlamasıyla başlar; geliştiricinin arızayı yeniden oluşturması, hatayı teşhis edip gidermesiyle sürer ve test uzmanının onaylama için asıl testi yeniden koşmasıyla biter." /><figcaption>Şekil 1.2 — Test etme, hata ayıklama ve onaylama testi.</figcaption>
+</figure>
+<p>Dinamik test bir arıza ortaya çıkardığında hata ayıklama genellikle üç adım izler: arızayı yeniden oluşturmak, onu teşhis etmek (arızaya yol açan hatayı bulmak) ve hatayı gidermek. Statik testte süreç daha basittir. Çalışan bir yazılım olmadığı için yeniden oluşturulacak bir arıza da yoktur; hata zaten belgede ya da kodda görünürdür, dolayısıyla buradaki hata ayıklama hatayı doğrudan düzeltmekten ibarettir.</p>
+<p><strong>Tablo 1.1 — Test etme ve hata ayıklama</strong></p>
+<div class="table-wrap">
+<table>
+<colgroup>
+<col style="width: 15%" />
+<col style="width: 42%" />
+<col style="width: 42%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Boyut</th>
+<th>Test etme</th>
+<th>Hata ayıklama</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Aktivitenin türü</td>
+<td>Bir test aktivitesi</td>
+<td>Bir geliştirme aktivitesi</td>
+</tr>
+<tr class="even">
+<td>Ana amaç</td>
+<td>Arızaları tetiklemek (dinamik test) ya da hataları doğrudan bulmak (statik test)</td>
+<td>Bir arızanın nedenini bulmak, analiz etmek ve ortadan kaldırmak</td>
+</tr>
+<tr class="odd">
+<td>Tipik adımlar</td>
+<td>Testleri koşmak, arızaları gözlemlemek ve raporlamak</td>
+<td>Arızayı yeniden oluşturmak, hatayı teşhis etmek ve gidermek; statik testten sonra yalnızca hatayı ortadan kaldırmak</td>
+</tr>
+<tr class="even">
+<td>Genellikle kim yapar</td>
+<td>Test uzmanları ve bütün ekip</td>
+<td>Geliştiriciler</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><em>Uygulamada.</em> Eve geliyorsunuz ve banyo tavanından su damladığını fark ediyorsunuz. Sızıntıyı görüp apartman yöneticisine bildirmek test etmedir: işi yalnızca sorunu görünür kılmak ve olanı kayda geçirmektir. Üst kattaki komşunuzun bir tesisatçı çağırması, tesisatçının tavanı inceleyip suyun nereden geldiğini bulması, patlak bir boru teşhis edip boruyu değiştirmesi hata ayıklamadır. Ardından, boruyu basınç altına sokmak için üst kattaki bütün muslukları bilerek açıp tavanınızın hâlâ damlayıp damlamadığına bakmak onaylama testidir.</p>
+<p><em>Sınav odağı.</em> Bir senaryo sorusu size bir olaylar dizisi verip aktiviteleri sırasıyla adlandırmanızı isteyebilir. Standart doğru akış şudur: test etme, sonra hata ayıklama, sonra onaylama testi. Cazip bir yanlış şık onaylama testinin yerine <strong>regresyon testi (regression testing)</strong> koyar. Bu fark önemlidir ve Bölüm 2 konuya geri döner; şimdilik şu ipucunu aklınızda tutun: onaylama testi asıl hatanın düzeltilip düzeltilmediğini kontrol eder, regresyon testi ise bir değişikliğin sistemin herhangi bir yerinde olumsuz sonuçlara yol açıp açmadığını kontrol eder.</p>
+<p><strong>Hemen Pekiştir</strong></p>
+<p><em>HP 1.1.2-a.</em> Bir geliştirici raporlanan bir arızayı yeniden oluşturuyor, koddaki hatayı teşhis ediyor ve düzeltiyor. Bu hangi aktivitedir?</p>
+<div class="mc">
+<ul>
+<li>(a) Test etme</li>
+<li>(b) Statik test</li>
+<li>(c) Hata ayıklama</li>
+<li>(d) Onaylama testi</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (c). Bir arızanın nedenini bulmak ve ortadan kaldırmak, bir geliştirme aktivitesi olan hata ayıklamadır. Test etme yalnızca arızayı görünür kılar; düzeltmeyi kontrol etmek onaylama testidir.</p>
+</div></details>
+<p><em>HP 1.1.2-b.</em> Test etme ile hata ayıklama arasındaki temel ayrım nedir?</p>
+<div class="mc">
+<ul>
+<li>(a) Test etme nedeni bulur; hata ayıklama arızayı gösterir</li>
+<li>(b) Test etme arızayı tetikler ya da gösterir; hata ayıklama nedeni bulur ve ortadan kaldırır</li>
+<li>(c) İkisi de yalnızca geliştiricinin sorumluluğudur</li>
+<li>(d) İkisi de yalnızca dinamik testte gerçekleşir</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (b). Test etme arızaları ortaya çıkarır (ya da hataları doğrudan bulur); hata ayıklama, nedeni bulan ve ortadan kaldıran geliştirme aktivitesidir.</p>
+</div></details>
+<p><em>HP 1.1.2-c.</em> Bir gereksinim spesifikasyonunun gözden geçirmesi sırasında Tolga iki iş kuralı arasında bir çelişki buluyor. Bu durumda hata ayıklama neyi kapsar?</p>
+<div class="mc">
+<ul>
+<li>(a) Arızayı teşhis etmeden önce bir test ortamında yeniden oluşturmayı</li>
+<li>(b) Hata ortadan kaldırılmadan önce onaylama testi koşmayı</li>
+<li>(c) Hatayı doğrudan ortadan kaldırmayı, çünkü yeniden oluşturulacak ya da teşhis edilecek bir arıza yoktur</li>
+<li>(d) Hiçbir şeyi, çünkü statik testle bulunan hataların düzeltilmesi gerekmez</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (c). Statik test hataları doğrudan bulur ve arızaya yol açamaz; bu yüzden hata ayıklama yalnızca hatayı ortadan kaldırmaktır. Yeniden oluşturma ve teşhis, dinamik testle bulunan arızalara aittir.</p>
+</div></details>
+</section>
+</section>
+<section id="why-is-testing-necessary" class="level2">
+<h2>1.2 Yazılım Testi Neden Gereklidir?</h2>
+<section id="fl-1-2-1" class="level3">
+<h3>Test etme başarıya nasıl katkı sağlar (FL-1.2.1 — K2)</h3>
+<p>Test etme, bir projenin başarısına birkaç somut yoldan katkı sağlar. Her birini belirsiz bir fayda olarak değil, ölçülebilir bir değer olarak görmek işe yarar. Hataları erken bulmak bunun en açık örneğidir: bir sorunu gereksinim belgesi henüz gözden geçirilirken yakalamak birkaç dakikalık bir düzeltmeye mal olur; aynı yanlış anlama üretimde ortaya çıkarsa kesintilere, acil düzeltmelere ve memnuniyetsiz kullanıcılara yol açabilir. Test etme kaliteyi de doğrudan değerlendirir. Yazılım geliştirme yaşam döngüsünün bütün iş ürünleri hakkında yönetime gerçek veri sağlar; böylece sürüm kararları kanıta dayanır. Test etmenin bulduğu hatalar daha sonra hata ayıklamayla ortadan kaldırılır; hata ayıklama bir test aktivitesi değildir, dolayısıyla test etme daha yüksek kaliteye dolaylı olarak katkı sağlar. Test etme yalnızca test uzmanlarının işi de değildir: herhangi bir paydaş, test becerilerini kullanarak projenin başarısına yardım edebilir. Test etme, son kullanıcının bakış açısını geliştirme boyunca masada tutar; bu da teslim edilen ürünün gerçek ihtiyaçları karşılama olasılığını artırır. Test kanıtının istendiği yerlerde de kuruluşun sözleşmeden, yasalardan ve düzenlemelerden doğan standartları karşılamasına yardım eder.</p>
+<p><em>Uygulamada.</em> Bir hastane randevu sistemi geliştirilirken gereksinimler, tek satır kod yazılmadan önce gözden geçirilir. Bir test uzmanı sorar: “Bir hasta aynı saat dilimi için iki farklı doktordan randevu almaya çalışırsa ne olur?” Bu durumun kuralı analiz belgesinde hiç yer almamıştır. Boşluğu kâğıt üzerinde yakalamak on dakikalık bir toplantıya mal olur; binlerce hastanın bunu üretimde keşfetmesine izin vermek ise operasyonel bir krize dönüşür.</p>
+<p><em>Sınav odağı.</em> Bu hedef, senaryo eşleştirme sorularıyla sınanabilir: size bir olay verilir ve bunun test etmenin gerçek bir katkısı olup olmadığı sorulur. Dikkat edilecek tuzak, test etmenin hataları kendisinin onardığı ya da kaliteyi doğrudan eklediği bir şıktır. Test etme kaliteye dolaylı katkı sağlar: hata ayıklamanın daha sonra ortadan kaldıracağı hataları bulur. Bir cevabı işaretlemeden önce, şıkkın bir kodlama ya da onarım görevini değil, test etmenin sağladığı bilgiyi, analizi ya da değerlendirmeyi anlattığından emin olun.</p>
+<p><strong>Hemen Pekiştir</strong></p>
+<p><em>HP 1.2.1-a.</em> Bir gereksinim belgesindeki muğlak bir kural, tek satır kod yazılmadan önce bir gözden geçirmede yakalanıp düzeltiliyor. Bu, test etmenin hangi katkısıdır?</p>
+<div class="mc">
+<ul>
+<li>(a) Hataları erken bulmak</li>
+<li>(b) Yasal ve sözleşmesel uygunluğu sağlamak</li>
+<li>(c) Son kullanıcının bakış açısını temsil etmek</li>
+<li>(d) Ürüne doğrudan kalite eklemek</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (a). Hata en ucuz aşamada, kodlamadan önce yakalandı. (d) yanlıştır, çünkü test etme kaliteyi doğrudan eklemez; daha sonra ortadan kaldırılan hataları bularak dolaylı katkı sağlar.</p>
+</div></details>
+<p><em>HP 1.2.1-b.</em> Aşağıdakilerden hangisi test etmenin gerçek bir katkısı DEĞİLDİR?</p>
+<div class="mc">
+<ul>
+<li>(a) Hataları erken ve ucuza bulmak</li>
+<li>(b) İş ürünlerinin kalitesini doğrudan değerlendirmek</li>
+<li>(c) Bulunan hataları onarmak</li>
+<li>(d) Düzenleyici uygunluk için kanıt sağlamak</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (c). Hataları onarmak, bir geliştirme aktivitesi olan hata ayıklamadır. Test etmenin sağladığı şey bilgi ve değerlendirmedir.</p>
+</div></details>
+<p><em>HP 1.2.1-c.</em> Bir düzenleyici kurum, yeni bir kredi sistemi canlıya alınmadan önce bir bankadan belgelenmiş test kanıtı istiyor ve ekip test raporlarını sunuyor. Bu, test etmenin hangi katkısını gösterir?</p>
+<div class="mc">
+<ul>
+<li>(a) Hataları erken, ortadan kaldırılmaları daha ucuzken bulmak</li>
+<li>(b) Kullanıcıları projede dolaylı olarak temsil etmek</li>
+<li>(c) Ürünün daha yüksek kaliteye ulaşması için hataları ortadan kaldırmak</li>
+<li>(d) Sözleşmeden, yasalardan ya da düzenlemelerden doğan gereksinimleri karşılamak</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (d). Sözleşmeler, yasalar ve düzenleyici kurumlar test isteyebilir; bunları karşılayan, ortaya çıkan test kanıtıdır. (c) şıkkı test etmeyi değil hata ayıklamayı anlatır.</p>
+</div></details>
+</section>
+<section id="fl-1-2-2" class="level3">
+<h3>Test etme ve kalite güvence (FL-1.2.2 — K1)</h3>
+<p>Günlük kullanımda “test” ile <strong>kalite güvence (quality assurance, QA)</strong> çoğu zaman aynı şeymiş gibi ele alınır. Yakından ilişkilidirler ama aynı şey değildirler. Test etme bir <strong>kalite kontrol (quality control)</strong> biçimidir: ürüne odaklıdır ve düzelticidir; var olan iş ürünlerindeki ya da koddaki hataları ortaya çıkarmaya çalışır. Kalite güvence ise sürece odaklıdır ve önleyicidir; daha baştan daha az hata çıkmasını sağlayacak standartları, süreçleri ve iyi uygulamaları kurar. Kalite güvence hem geliştirme hem test süreçlerine uygulanır ve projedeki herkesin sorumluluğudur. İyi bir sürecin doğru izlendiğinde iyi bir ürün ortaya çıkaracağı varsayımıyla çalışır.</p>
+<p>Başka bir deyişle test etme üretilmiş ürünü inceler, kalite güvence ise ürünün üretilme biçimini iyileştirir. İkisi birlikte çalışır ve birbirini besler. Örneğin test ekibinin bulduğu hatalarda tekrar eden bir örüntü, kalite güvencenin geliştirme sürecindeki zayıf bir noktayı görüp iyileştirmek için kullanabileceği değerli bir girdidir.</p>
+<p><strong>Tablo 1.2 — Test etme ve kalite güvence</strong></p>
+<div class="table-wrap">
+<table>
+<colgroup>
+<col style="width: 15%" />
+<col style="width: 42%" />
+<col style="width: 42%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Boyut</th>
+<th>Test etme (bir kalite kontrol biçimi)</th>
+<th>Kalite güvence (QA)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Odak</td>
+<td>Ürün</td>
+<td>Süreç</td>
+</tr>
+<tr class="even">
+<td>Nitelik</td>
+<td>Düzeltici: var olan iş ürünlerindeki hataları ortaya çıkarır</td>
+<td>Önleyici: daha az hata çıkması için süreçleri kurar ve iyileştirir</td>
+</tr>
+<tr class="odd">
+<td>Temel soru</td>
+<td>“Bu üründe hata var mı?”</td>
+<td>“İyi bir ürün ortaya çıkaran bir süreci mi izliyoruz?”</td>
+</tr>
+<tr class="even">
+<td>Test sonuçlarının kullanımı</td>
+<td>Hataları düzeltmek için</td>
+<td>Geliştirme ve test süreçlerinin ne kadar iyi işlediğine dair geri bildirim olarak</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><em>Sınav odağı.</em> Bu hedefteki sorular “ürün ve düzeltici” ile “süreç ve önleyici” ayrımına dayanır. Yanlış bir şık, süreç seviyesinde hata önlemeye yönelik bir aktiviteyi anlatıp ona test diyebilir ya da test aktivitesinin kendisinin gidip hataları onardığını iddia edebilir. Odağın ürün mü süreç mi olduğunu sorarak sınıflandırın.</p>
+<p><strong>Hemen Pekiştir</strong></p>
+<p><em>HP 1.2.2-a.</em> Üç projeden sonra bir ekip, geliştirme sürecinin hangi adımında hataların çoğunun ortaya çıktığını analiz ediyor ve o adımı değiştiriyor. Bu hangi aktivitedir?</p>
+<div class="mc">
+<ul>
+<li>(a) Test etme (bir kalite kontrol biçimi)</li>
+<li>(b) Kalite güvence (QA)</li>
+<li>(c) Onaylama testi</li>
+<li>(d) Hata ayıklama</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (b). Sürece odaklı, önleyici bir aktivite kalite güvencedir. Test etme ürüne odaklı ve düzelticidir.</p>
+</div></details>
+<p><em>HP 1.2.2-b.</em> Bir ekip, gelecekte daha az hata çıkması için kod gözden geçirme standartları ve süreç kontrol listeleri tanımlıyor. Bu hangi aktivitedir?</p>
+<div class="mc">
+<ul>
+<li>(a) Test etme (kalite kontrol)</li>
+<li>(b) Onaylama testi</li>
+<li>(c) Regresyon testi</li>
+<li>(d) Kalite güvence (QA)</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (d). Bu önleyici, süreç seviyesinde bir iştir; dolayısıyla kalite güvencedir.</p>
+</div></details>
+<p><em>HP 1.2.2-c.</em> Aşağıdaki ifadelerden hangisi kalite güvenceden ayrı olarak test etmeyi tanımlar?</p>
+<div class="mc">
+<ul>
+<li>(a) Sürece yönelik, önleyici bir yaklaşımdır</li>
+<li>(b) İyi bir sürecin doğru izlendiğinde iyi bir ürün ortaya çıkaracağı fikriyle çalışır</li>
+<li>(c) Ürüne yönelik, düzeltici bir yaklaşımdır</li>
+<li>(d) Başlıca projeler genelinde geliştirme standartlarını iyileştirerek çalışır</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (c). Test etme ürünü inceler ve hatalarını, düzeltilebilmeleri için ortaya çıkarır. (a), (b) ve (d) şıklarının hepsi kalite güvenceyi anlatır.</p>
+</div></details>
+</section>
+<section id="fl-1-2-3" class="level3">
+<h3>İnsan hataları, hatalar, arızalar ve kök nedenler (FL-1.2.3 — K2)</h3>
+<p>Bu, ders programındaki merkezî kavram zincirlerinden biridir ve sınavdan önce netleşmiş olması gerekir. Süreç doğrusal bir neden-sonuç ilişkisi izler. <strong>İnsan hatası (error; mistake olarak da bilinir)</strong>, bir kişinin yaptığı yanlış eylemdir; çoğu zaman zaman baskısı, karmaşıklık, yorgunluk ya da eğitim eksikliği altında ortaya çıkar. <strong>Hata (defect; fault ya da bug olarak da bilinir)</strong>, o insan hatasının bir iş ürünündeki somut sonucudur: bir gereksinim belgesinde, bir tasarımda, bir kod satırında ya da bir yapılandırma dosyasında kalan kusurdur. <strong>Arıza (failure)</strong>, koddaki bir hata çalıştırıldığında yazılımın gösterdiği yanlış davranıştır; hatanın dışarıdan görünür hale gelmesidir. Şekil 1.3, zinciri başlatan ve bu kesimin ilerisinde açıklanan kök neden de dahil olmak üzere zincirin tamamını gösteriyor.</p>
+<figure>
+<img src="figures/fig_1_3_root_cause_error_defect_failure.png" alt="Şekil 1.3 — Kök nedenden arızaya. Dört kutu oklarla birbirine bağlanır: kök neden (insan hatası neden oldu), insan hatası (kişinin yanlışı), hata (bir iş ürünündeki kusur) ve arıza (çalışma anındaki yanlış davranış). Hatadan arızaya giden adım “çalıştırılınca arızaya yol açabilir” diye işaretlenir; alttaki not, arızalara çevre koşullarının da yol açabileceğini ekler." /><figcaption>Şekil 1.3 — Kök nedenden arızaya.</figcaption>
+</figure>
+<p>Zincir her zaman baştan sona temiz biçimde ilerlemez. Bilinmeye değer iki istisnası vardır.</p>
+<p>Birincisi, her hata bir arızaya yol açmaz. Bazı hatalar seyrek çalışan ya da hiç çalışmayan kodda durur (bunlara bazen <em>uykudaki hata</em> denir). Yalnızca 29 Şubat’ta çalışan hatalı bir hesaplama içeren bir rezervasyon sistemi düşünün. Bu hata, üretimde onu tetikleyecek bir artık gün yaşanmadığı için, tek bir arızaya yol açmadan kodda üç yıl bekleyebilir. Hata gerçektir; yalnızca henüz bir arıza üretmemiştir.</p>
+<p>İkincisi, arızaların tek nedeni insan hataları ve hatalar değildir. Bir sistem bazen çevresi yüzünden arızalanabilir. Ders programı fiziksel bir örnek verir: radyasyon ya da elektromanyetik alanlar donanım yazılımında (firmware) hatalara neden olabilir ve arızalara yol açabilir. Kaynak, koddaki bir insan hatası değil, çevre koşullarıdır. (Bununla ilişkili ama ayrı bir durum, ortama eski veri yüklendiği için bir arıza raporlayan testtir. Kesin konuşmak gerekirse bu bir <strong>yanlış pozitif sonuçtur (false-positive result)</strong>: gerçek bir arıza değil, yanlış bir test sonucudur.)</p>
+<p>Bu zincirin en başında <strong>kök neden (root cause)</strong> durur: insan hatasına yol açan temel neden. Kök neden analizi, tipik olarak bir arıza meydana geldiğinde ya da bir hata bulunduğunda kök nedeni belirler. Kök nedeni ele almak, örneğin onu ortadan kaldırmak, tek bir hatayı düzeltmekten fazlasını yapar; benzer arızaların ya da hataların önlenmesi, en azından sıklıklarının azalması beklenir. Örneğin bir faturalama sisteminde kök neden, vergi kuralı değişikliklerinin ekiplere hiçbir gözden geçirme olmadan gayri resmî e-postalarla iletilmesi olabilir; insan hatası, geliştiricinin yuvarlama kuralını yanlış okumasıdır; hata, koda yazılan yanlış yuvarlama kuralıdır; arıza da müşterilerden her ay yanlış tutarın tahsil edilmesidir. Kodu düzeltmek o tek faturalama sorununu çözer. Kök nedeni ele almak ise, vergi kuralları için resmî ve gözden geçirilen bir değişiklik süreci kurarak, geliştiricinin bir sonraki kuralı da yanlış okuma olasılığını çok daha düşük hale getirir.</p>
+<p><strong>Tablo 1.3 — Bir faturalama sisteminde kök neden zinciri</strong></p>
+<div class="table-wrap">
+<table>
+<colgroup>
+<col style="width: 13%" />
+<col style="width: 36%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Zincirdeki adım</th>
+<th>Nedir</th>
+<th>Faturalama sistemi örneği</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Kök neden</td>
+<td>İnsan hatasının yaşanmasının altında yatan neden</td>
+<td>Vergi kuralı değişiklikleri ekiplere gözden geçirilmeden, gayri resmî e-postalarla ulaşıyor</td>
+</tr>
+<tr class="even">
+<td>İnsan hatası</td>
+<td>Bir kişinin yanlış eylemi</td>
+<td>Geliştirici e-postadaki yuvarlama kuralını yanlış okuyor</td>
+</tr>
+<tr class="odd">
+<td>Hata</td>
+<td>Bir iş ürününde kalan kusur</td>
+<td>Kod, vergi tutarını yarımı yukarı yuvarlamak yerine her zaman aşağı yuvarlıyor</td>
+</tr>
+<tr class="even">
+<td>Arıza</td>
+<td>Çalışma anında görülen yanlış davranış</td>
+<td>Müşterilerden her ay yanlış tutar tahsil ediliyor</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><em>Sınav odağı.</em> Senaryo soruları bir olaylar dizisi anlatıp hangi adımın insan hatası, hata, arıza ya da kök neden olduğunu sorabilir. Çapalarınızı keskin tutun: bir kişinin eylemi insan hatasıdır; bir belgede ya da kodda duran statik kusur hatadır; ekranda ya da çıktıda gözlemlediğiniz sistem sapması arızadır; insan hatasına yol açan temel neden (örneğin zaman baskısı, eksik eğitim ya da eksik bir gözden geçirme adımı) kök nedendir. Bunları, ortada bir hata olmadığı halde testin bir arıza raporladığı yanlış pozitif sonuçla karıştırmayın; Bölüm 5 hata yönetimi başlığı altında bu konuya döner.</p>
+<p><strong>Hemen Pekiştir</strong></p>
+<p><em>HP 1.2.3-a.</em> Bir geliştirici bir fiyat listesinden indirim oranını kopyalarken bir rakamı yanlış yazıyor ve böylece koda yanlış bir indirim oranı giriyor. Kod üretimde çalıştığında müşterilere hatalı tutarlar gösteriliyor. Bu zincirde müşterilere gösterilen hatalı tutarlar nedir?</p>
+<div class="mc">
+<ul>
+<li>(a) İnsan hatası</li>
+<li>(b) Hata</li>
+<li>(c) Arıza</li>
+<li>(d) Kök neden</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (c). Hatanın çalıştırılıp dışarıdan görünür hale gelmesi arızadır. Yazım kayması insan hatası, koddaki yanlış oran ise hatadır.</p>
+</div></details>
+<p><em>HP 1.2.3-b.</em> Hatalı bir hesaplama yalnızca 29 Şubat’ta çalışıyor ve üretimde artık gün yaşanmadığı için üç yıldır hiçbir arızaya yol açmamış. Bu hangi gerçeği gösterir?</p>
+<div class="mc">
+<ul>
+<li>(a) Her arıza bir hatadan kaynaklanır</li>
+<li>(b) Bir hata her zaman bir arızaya yol açmaz</li>
+<li>(c) Hatalar belli alanlarda yoğunlaşır</li>
+<li>(d) Test etme hataların yokluğunu ispatlar</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (b). Hiç çalıştırılmayan bir hata gerçektir ama tetiklenene kadar arıza üretmez.</p>
+</div></details>
+<p><em>HP 1.2.3-c.</em> Doğru yazılmış bir donanım yazılımı, güçlü bir elektromanyetik alan belleğini bozduğu için yanlış davranıyor. Bu hangi gerçeği gösterir?</p>
+<div class="mc">
+<ul>
+<li>(a) Arızalara yalnızca insan hataları ve hatalar değil, çevre koşulları da yol açabilir</li>
+<li>(b) Her hata bir arızaya yol açmak zorundadır</li>
+<li>(c) Kök neden her zaman bir kişidir</li>
+<li>(d) Statik test bu arızayı önlerdi</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (a). Arıza bir insan hatasından değil, bir çevre koşulundan başlıyor: kod doğru yazılmış olsa bile alan, donanım yazılımının belleğini bozuyor.</p>
+</div></details>
+<p><em>HP 1.2.3-d.</em> İşi çabuk bitirme baskısı altındaki bir ürün sahibi, azami kredi vadesini yanlış yazdığı bir kullanıcı hikayesi oluşturuyor. Geliştirici hikayeyi tam yazıldığı gibi gerçekleştiriyor. Üretimde bir başvuru sahibi, kredi verenin izin vermediği bir vadeyle kredi teklifi alıyor. Aşağıdakilerden hangisi bu zincirdeki hatadır?</p>
+<div class="mc">
+<ul>
+<li>(a) Ürün sahibi üzerindeki zaman baskısı</li>
+<li>(b) Ürün sahibinin vadeyi yazarken yaptığı kayma</li>
+<li>(c) Kullanıcı hikayesine yazılan yanlış azami vade</li>
+<li>(d) İzin verilmeyen bir vadeyle yapılan kredi teklifi</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (c). Hata bir iş ürünündeki kusurdur ve kullanıcı hikayesi bir iş ürünüdür. Kayma insan hatası, kredi teklifi arıza, zaman baskısı ise olası bir kök nedendir.</p>
+</div></details>
+</section>
+</section>
+<section id="the-seven-testing-principles-fl-1.3.1-k2" class="level2">
+<h2>1.3 Test Prensipleri (FL-1.3.1 — K2)</h2>
+<p><span id="fl-1-3-1"></span>Yedi test prensibi, bütün test aktivitelerinde geçerli olan genel yol göstericilerdir. Sınavda kısa bir iş senaryosunu okuyup hangi prensibe işaret ettiğini tanımanız beklenir. Aşağıda her prensibi, sade bir yeniden anlatımla ve onu ele veren senaryo türüyle birlikte bulacaksınız. Prensiplerin adları TTB ders programındaki adlardır (beşinci ve yedinci prensip hariç; aşağıdaki terim notuna bakın).</p>
+<p>Birinci prensip: <strong>Testin amacı, yazılımda hataların olduğunu göstermektir; yazılımda hata kalmadığını ispatlamak değildir (testing shows the presence, not the absence, of defects).</strong> Test etme hataların var olduğunu kanıtlayabilir, ama hiç hata kalmadığını hiçbir zaman kanıtlayamaz. Senaryodaki işaret, “2.000 testimizin hepsi geçti, demek ki yazılımımızda hata yok” gibi bir iddiadır; bu iddia mantıken geçersizdir.</p>
+<p>İkinci prensip: <strong>Yazılımı %100 test etmek imkansızdır (exhaustive testing is impossible).</strong> Önemsiz durumlar dışında olası her girdiyi denemek erişilemez bir hedeftir; bu yüzden eforu test teknikleri, test senaryosu önceliklendirme ve <strong>risk bazlı test (risk-based testing)</strong> odaklar. İşaret, hepsi denenemeyecek milyonlarca olası girdi kombinasyonundan söz eden bir senaryodur.</p>
+<p>Üçüncü prensip: <strong>Erken test, zaman ve para tasarrufu sağlar (early testing saves time and money).</strong> Bir hata ne kadar erken yakalanıp düzeltilirse projeye maliyeti o kadar düşük olur. Hataları erken bulmak için hem statik test hem dinamik test mümkün olduğunca erken başlamalıdır. İşaret, gereksinimler gözden geçirilirken (statik test) yakalanan ve sonradan yaşanacak bir krizi önleyen mantık hatasıdır.</p>
+<p>Dördüncü prensip: <strong>Hatalar yazılımın belli alanlarında yoğunlaşır (defects cluster together).</strong> Az sayıda bileşen genellikle bulunan hataların çoğunu barındırır ya da arızaların çoğundan sorumludur (bu, <strong>Pareto prensibinin (Pareto principle)</strong> bir örneğidir). İşaret, “geçen çeyrekteki kritik kesintilerin yüzde 80’i yalnızca ödeme modülünden geldi” gibi bir istatistiktir.</p>
+<p>Beşinci prensip: <strong>Testler yıpranır (tests wear out).</strong> Bu prensibin TTB ders programındaki adı “antibiyotik direnci”; ISTQB® v3.1’deki eski adı “pestisit paradoksu (pesticide paradox)”. Aynı testler hiç değiştirilmeden tekrar tekrar koşulursa yeni hataları bulmada giderek etkisizleşir; bu yüzden <strong>test gruplarının (test suite)</strong> gözden geçirilmesi ve güncellenmesi gerekir. Yine de bazı durumlarda aynı testleri tekrarlamanın faydalı bir sonucu olabilir; otomatik regresyon testinde olduğu gibi. v3.1’deki eski adı değil, güncel adı kullanın. İşaret, “regresyon test grubumuz altı aydır yeni bir hata bulmadı; onu tazelememiz gerekiyor” gibi bir senaryodur.</p>
+<p>Altıncı prensip: <strong>Yazılım testi, projenin bağlamına, koşullarına göre değişiklik gösterir (testing is context dependent).</strong> Her proje aynı biçimde test edilmez; bir tıbbi cihaz için yaklaşım, titizlik ve strateji bir mobil oyundakinden farklıdır. İşaret, aynı derinlikte test edilemeyecek kadar farklı iki sistemi karşılaştıran bir senaryodur.</p>
+<p>Yedinci prensip: <strong>Hatasızlık yanılgısı (absence-of-defects fallacy).</strong> Bu prensibin TTB ders programındaki adı “Yeni hata bulamıyoruz başarılı bir yazılım elde ettik yanılgısı”; ISTQB® v3.1’deki eski adı “absence-of-errors fallacy”. Belirtilmiş bütün gereksinimleri test etmek ve bulunan bütün hataları düzeltmek, sistemin başarılı olacağını garanti etmez. Sistem yine de kullanıcıların ihtiyaçlarını ve beklentilerini karşılamayabilir, müşterinin iş hedeflerine ulaşmasına yardım etmeyebilir ya da rakip sistemlerin gerisinde kalabilir. İşaret, “analiz belgesindeki her kural doğrulandı ve sistem kusursuz çalışıyor, ama kullanıcılar kafa karıştırıcı arayüz yüzünden sistemi bırakıyor” gibi bir senaryodur.</p>
+<p>Yedinci prensip biraz daha dikkati hak ediyor, çünkü daha önce çizilen doğrulama–sağlama çizgisine doğrudan bağlanır. Bir geliştirme ekibi, yazılı spesifikasyona göre teknik olarak kusursuz bir ürün üretebilir. Ama spesifikasyonun kendisi kullanıcının gerçek ihtiyacını en baştan kaçırmışsa, teslim edilen ürün işe yaramaz. Teknik doğrulama başarılı olmuş, sağlama başarısız olmuştur.</p>
+<blockquote>
+<p><strong>Terim notu: v3.1 → v4.0 ve TTB adları.</strong> İki prensibin adı ISTQB® v4.0 ile değişti; TTB ders programı ise bu iki prensibe kendi adlarını verir. Bu kitap aşağıdaki sağ sütundaki adları kullanır. Eski ya da farklı adlarla karşılaşırsanız (eski kaynaklarda, v3.1 örnek sorularında) aynı prensibi tanıyın:</p>
+<ul>
+<li>“pestisit paradoksu (pesticide paradox)”, v3.1 · TTB: “antibiyotik direnci” → <strong>testler yıpranır (tests wear out)</strong></li>
+<li>“absence-of-errors fallacy”, v3.1 · TTB: “Yeni hata bulamıyoruz başarılı bir yazılım elde ettik yanılgısı” → <strong>hatasızlık yanılgısı (absence-of-defects fallacy)</strong></li>
+</ul>
+</blockquote>
+<p><strong>Tablo 1.4 — Yedi test prensibi bir bakışta</strong></p>
+<div class="table-wrap">
+<table>
+<colgroup>
+<col style="width: 26%" />
+<col style="width: 36%" />
+<col style="width: 36%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Resmî ad</th>
+<th>Sade anlamı</th>
+<th>Sınav senaryolarında nasıl görünür</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Testin amacı, yazılımda hataların olduğunu göstermektir; yazılımda hata kalmadığını ispatlamak değildir</td>
+<td>Hataların var olduğu gösterilebilir, ama geçen bir koşum hiç hata kalmadığını kanıtlayamaz</td>
+<td>Biri, bütün testler geçtiği için yazılımda hata olmadığını iddia eder</td>
+</tr>
+<tr class="even">
+<td>Yazılımı %100 test etmek imkansızdır</td>
+<td>Önemsiz durumlar dışında tam kapsam erişilemezdir; bu yüzden efor tekniklerle, önceliklendirmeyle ve riskle odaklanır</td>
+<td>Hepsini denemek için fazlasıyla çok girdi kombinasyonu vardır</td>
+</tr>
+<tr class="odd">
+<td>Erken test, zaman ve para tasarrufu sağlar</td>
+<td>Erken giderilen hatalar sonraki iş ürünlerinde yeni hatalara yol açmaz</td>
+<td>Bir gereksinim gözden geçirmesi, tek satır kod yazılmadan bir mantık hatasını yakalar</td>
+</tr>
+<tr class="even">
+<td>Hatalar yazılımın belli alanlarında yoğunlaşır</td>
+<td>Birkaç bileşen genellikle hataların çoğunu barındırır ya da arızaların çoğuna yol açar</td>
+<td>Arızaların çoğunun izi bir ya da iki modüle çıkar</td>
+</tr>
+<tr class="odd">
+<td>Testler yıpranır</td>
+<td>Aynı testleri tekrarlamak, onları yeni hata bulmada daha az etkili kılar</td>
+<td>Değişmeyen bir regresyon test grubu aylardır yeni bir şey bulmamıştır</td>
+</tr>
+<tr class="even">
+<td>Yazılım testi, projenin bağlamına, koşullarına göre değişiklik gösterir</td>
+<td>Her bağlama uyan tek bir test yaklaşımı yoktur</td>
+<td>Çok farklı iki sistem aynı biçimde test edilemez</td>
+</tr>
+<tr class="odd">
+<td>Hatasızlık yanılgısı</td>
+<td>Doğrulama tek başına bir sistemi başarılı kılmaz; sağlama da gerekir</td>
+<td>Her gereksinim doğrulanmıştır, ama kullanıcılar ürünü reddeder</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><em>Uygulamada.</em> Dördüncü prensip, yani hataların yoğunlaşması, doğrudan stratejik değer taşır. Ekibin geçmiş hata istatistikleri arızaların çoğunun tek bir modülden (örneğin kargo entegrasyonundan) geldiğini gösteriyorsa, test yöneticisi riske dayalı bir test stratejisi (Bölüm 5) getirir ve o kümeye test eforundan daha büyük bir pay ayırır. Bu prensip yalnızca kuramsal bir gözlem değildir; bütçe ve kaynak yönetimi için bir girdidir.</p>
+<p><em>Sınav odağı.</em> Bu hedefteki soruların neredeyse hepsi size kısa bir iş senaryosu verip onu hangi prensibin açıkladığını sorar. Birinci ve yedinci prensip kolayca karıştırılır. Birincisi, testin neyi kanıtlayabileceğinin mantıksal ve matematiksel sınırıyla ilgilidir (hiç hata kalmadığını iddia edemezsiniz). Yedincisi ise iyice doğrulanmış, bulunan hataları düzeltilmiş ama kullanıcının dünyasında yine de başarısız olan bir sistemle ilgilidir (yanlış ürün üretilmiştir). Senaryo “her şey doğrulandı ve bütün hatalar temizlendi, ama kullanıcılar sistemi kullanamıyor ya da kullanmak istemiyor” diyorsa, yedinci prensibe işaret eder.</p>
+<p><strong>Hemen Pekiştir</strong></p>
+<p><em>HP 1.3.1-a.</em> “Regresyon test grubumuz altı aydır yeni bir hata bulmadı; adımlarını tazelememiz gerekiyor.” Bu ifade hangi prensibe işaret eder?</p>
+<div class="mc">
+<ul>
+<li>(a) Testler yıpranır</li>
+<li>(b) Yazılımı %100 test etmek imkansızdır</li>
+<li>(c) Hatasızlık yanılgısı</li>
+<li>(d) Testin amacı, yazılımda hataların olduğunu göstermektir; yazılımda hata kalmadığını ispatlamak değildir</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (a). Aynı testler tekrarlandıkça yeni hata bulma güçlerini yitirir; bu yüzden test gruplarının gözden geçirilip yenilenmesi gerekir.</p>
+</div></details>
+<p><em>HP 1.3.1-b.</em> “Bir kalp pilinin yazılımını bir mobil oyunla aynı derinlikte, titizlikte ve kurallarla test edemeyiz.” Bu ifade hangi prensibe dayanır?</p>
+<div class="mc">
+<ul>
+<li>(a) Yazılımı %100 test etmek imkansızdır</li>
+<li>(b) Testler yıpranır</li>
+<li>(c) Hatasızlık yanılgısı</li>
+<li>(d) Yazılım testi, projenin bağlamına, koşullarına göre değişiklik gösterir</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (d). Test etmenin tek bir evrensel yolu yoktur; yaklaşım projenin bağlamıyla değişir.</p>
+</div></details>
+<p><em>HP 1.3.1-c.</em> “Yazılımımızın milyonlarca olası girdi kombinasyonu var, hepsini deneyemeyiz; onun yerine riske göre önceliklendireceğiz.” Bu ifade hangi prensibi yansıtır?</p>
+<div class="mc">
+<ul>
+<li>(a) Yazılımı %100 test etmek imkansızdır</li>
+<li>(b) Hatalar yazılımın belli alanlarında yoğunlaşır</li>
+<li>(c) Testler yıpranır</li>
+<li>(d) Erken test, zaman ve para tasarrufu sağlar</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (a). Önemsiz durumlar dışında her şeyi test etmek mümkün değildir; bu yüzden onun yerine riske dayalı önceliklendirme kullanılır.</p>
+</div></details>
+<p><em>HP 1.3.1-d.</em> Son üç sürümün hata verileri, üretimdeki arızaların çoğunun sistemin kırk bileşeninden ikisinden geldiğini gösteriyor. Test yöneticisi bu iki bileşen için ek test eforu planlıyor. Bu kararı hangi prensip destekler?</p>
+<div class="mc">
+<ul>
+<li>(a) Testler yıpranır</li>
+<li>(b) Yazılımı %100 test etmek imkansızdır</li>
+<li>(c) Erken test, zaman ve para tasarrufu sağlar</li>
+<li>(d) Hatalar yazılımın belli alanlarında yoğunlaşır</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (d). Az sayıda bileşen genellikle hataların çoğunu barındırır ve gözlemlenen kümeler risk bazlı test için bir girdidir. (b) şıkkı eforun neden odaklanması gerektiğini açıklar, ama neden bu iki bileşene gittiğini açıklamaz.</p>
+</div></details>
+</section>
+<section id="test-activities-testware-and-test-roles" class="level2">
+<h2>1.4 Test Aktiviteleri, Test Çalışma Ürünleri ve Test Rolleri</h2>
+<section id="fl-1-4-1" class="level3">
+<h3>Test aktiviteleri (FL-1.4.1 — K2)</h3>
+<p>Bir <strong>test süreci (test process)</strong> genellikle yedi ana aktivite grubundan oluşur. Bu aktiviteler katı, doğrusal bir sıra izlemez; bir proje boyunca örtüşür, tekrarlanır, paralel yürür ve projenin bağlamına uyarlanır. Dört merkezî aktiviteyi birbirinden ayırmanın kolay bir yolu, her birinin yanıtladığı soruya bakmaktır: test analizi “Ne test edilecek?”, test tasarımı “Nasıl test edilecek?”, test uyarlama “Testleri koşmaya hazır mıyız?”, test koşumu ise “Yazılım beklendiği gibi davranıyor mu?” sorusunu yanıtlar. (İlk iki soru doğrudan ders programından gelir.) Şekil 1.4 yedi aktivitenin hepsini birlikte gösteriyor: altısı olağan mantıksal sıralarıyla, test gözetimi ve test kontrolü de onların yanı sıra yürüyerek.</p>
+<figure>
+<img src="figures/fig_1_4_seven_test_activities.png" alt="Şekil 1.4 — Yedi test aktivitesi. Altı kutu olağan mantıksal sıralarıyla görünür: test planlama, test analizi (“ne test edilecek?”), test tasarımı (“nasıl test edilecek?”), test uyarlama (“koşuma hazırlan”), test koşumu (“koş ve karşılaştır”) ve test tamamlama (“kapat, arşivle, ders çıkar”). Onları çevreleyen kesik çerçeve, test gözetimi ve test kontrolünün bütün aktivitelerle birlikte sürekli yürüdüğünü ve aktivitelerin çoğu zaman döngüsel ya da paralel yürüdüğünü belirtir." /><figcaption>Şekil 1.4 — Yedi test aktivitesi.</figcaption>
+</figure>
+<ul>
+<li><strong>Test planlama (test planning)</strong>, test hedeflerini tanımlar ve projenin zaman, bütçe ve kaynak kısıtları içinde bu hedeflere ulaşmak için genel yaklaşımı belirler. Bölüm 5 bu konuyu derinlemesine ele alır.</li>
+<li><strong>Test gözetimi (test monitoring) ve test kontrolü (test control)</strong> proje boyunca sürekli yürür. Gözetim bütün test aktivitelerini sürekli izler ve gerçekleşen ilerlemeyi planla karşılaştırır; kontrol ise süreç hedeflerinden saptığında onu yeniden rayına oturtmak için gereken düzeltici aksiyonları alır.</li>
+<li><strong>Test analizi (test analysis)</strong> “Ne test edilecek?” sorusunu yanıtlar. Burada test esası analiz edilir. (<strong>Test esası (test basis)</strong>, bir testin dayandığı bütün bilgilerdir: gereksinimler, kullanıcı hikayeleri, mimari tasarımlar ya da kod gibi.) Test analizi test edilebilir özellikleri belirler, <strong>test koşullarını (test condition)</strong> (testlerin kapsaması gereken test edilebilir yönleri) türetir ve bunları ilgili risklere göre önceliklendirir. Ayrıca test esasını ve test nesnesini, içerebilecekleri belirsizlik, boşluk ve çelişki gibi hataları bulmak ve test edilebilirliklerini değerlendirmek için de inceler. Test analizini çoğu zaman test teknikleri (Bölüm 4) destekler.</li>
+<li><strong>Test tasarımı (test design)</strong> “Nasıl test edilecek?” sorusunu yanıtlar. Test koşullarını <strong>test senaryolarına (test case)</strong> ve test başlatma belgeleri (test charter) gibi diğer test çalışma ürünlerine dönüştürür; bunu yaparken çoğu zaman test tekniklerinin yardımıyla kapsam öğelerini (coverage item) belirler. Ayrıca <strong>test verisi (test data)</strong> gereksinimlerini tanımlar, <strong>test ortamını (test environment)</strong> tasarlar ve gerekecek altyapıyla araçları belirler.</li>
+<li><strong>Test uyarlama (test implementation)</strong>, testleri koşmak için teknik olarak gereken her şeyi kurar: adımlarıyla birlikte <strong>test prosedürlerini (test procedure)</strong> yazmak, otomasyon betiklerini kodlamak, test senaryolarını test gruplarında toplamak, gerçek test verisini üretmek, test koşumu çizelgesini oluşturmak ve test ortamını kurup hazır olduğunu doğrulamak.</li>
+<li><strong>Test koşumu (test execution)</strong>, hazırlanan testleri çizelgeye ve önceliğe göre koşar. Gerçekleşen sonuçları tasarımdan gelen beklenen sonuçlarla karşılaştırır, çıktıları kayıtlara geçirir ve her anomaliyi (anomaly) analiz eder. Anomaliler, olası nedenlerini belirlemek için analiz edilir ve ardından gözlemlenen arızalara dayanarak raporlanır. Raporlanan bir anomalinin gerçek bir hata mı, yanlış pozitif bir sonuç mu, yoksa bir değişiklik talebi (change request) mi olduğuna daha sonra hata yönetiminde (Bölüm 5) karar verilir.</li>
+<li><strong>Test tamamlama (test completion)</strong>, proje kilometre taşlarında gerçekleşir (örneğin bir sürüm, bir döngünün sonu ya da bir test seviyesinin tamamlanması). Açık hatalar ürün iş listesi öğelerine ya da değişiklik taleplerine dönüşür; değerli test çalışma ürünleri arşivlenir ya da devredilir; test ortamı üzerinde anlaşılmış bir duruma getirilerek kapatılır; gelecekteki iyileştirmeler için alınan dersler (lessons learned) toplanır; bir test tamamlama raporu oluşturulup paydaşlara iletilir.</li>
+</ul>
+<p><em>Sınav odağı.</em> Bu konudan iki yaygın soru kalıbı çıkar. Birincisi size belirli bir görev verir ve hangi aktiviteye ait olduğunu sorar. Test tasarımı ile test uyarlama kolayca karıştırılır: test tasarımı yalnızca ne tür veriye ihtiyaç olduğuna “karar verir” ve ortamı “tasarlar”; o veriyi “üretmek” ya da ortamı “kurmak” ise test uyarlamadır. İkinci kalıp, aktivitelerin sabit bir sıra izlemediğini, projeye göre döngüsel ve esnek biçimde yürüdüğünü bildiğinizi yoklar.</p>
+<p><strong>Hemen Pekiştir</strong></p>
+<p><em>HP 1.4.1-a.</em> Bir test uzmanı testleri çizelgeye göre koşuyor, gerçekleşen sonuçları beklenen sonuçlarla karşılaştırıyor ve çıktıları kaydediyor. Bu hangi aktivitedir?</p>
+<div class="mc">
+<ul>
+<li>(a) Test analizi</li>
+<li>(b) Test tasarımı</li>
+<li>(c) Test koşumu</li>
+<li>(d) Test planlama</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (c). Testleri koşmak, sonuçları karşılaştırmak ve çıktıları kaydetmek test koşumudur.</p>
+</div></details>
+<p><em>HP 1.4.1-b.</em> Test gözetimi ve test kontrolü ne zaman yapılır?</p>
+<div class="mc">
+<ul>
+<li>(a) Yalnızca test koşumu sırasında</li>
+<li>(b) Yalnızca bir kez, projenin sonunda</li>
+<li>(c) Sürekli olarak, bütün aktivitelerle birlikte</li>
+<li>(d) Yalnızca planlama tamamlandıktan sonra</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (c). Gözetim ilerlemeyi planla karşılaştırır, kontrol düzeltici aksiyon alır; ikisi de süreç boyunca yürür.</p>
+</div></details>
+<p><em>HP 1.4.1-c.</em> Melis yeni bir özelliğin kullanıcı hikayelerini inceliyor, hangi özelliklerin test edilebileceğini belirliyor ve bunlar için test koşullarını tanımlayıp önceliklendiriyor. Melis hangi test aktivitesini yürütüyor?</p>
+<div class="mc">
+<ul>
+<li>(a) Test planlama</li>
+<li>(b) Test analizi</li>
+<li>(c) Test tasarımı</li>
+<li>(d) Test uyarlama</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (b). Test edilebilir özellikleri belirlemek ve test koşullarını tanımlayıp önceliklendirmek için test esasını analiz etmek test analizidir. Test tasarımı bu koşulları test senaryolarına dönüştürürdü.</p>
+</div></details>
+</section>
+<section id="fl-1-4-2" class="level3">
+<h3>Bağlam faktörleri (FL-1.4.2 — K2)</h3>
+<p>Test süreci her projeye uyan tek bedenlik bir kalıp değildir. Projenin ve kuruluşun bağlamı onu biçimlendirir; sınav da bu faktörlerin süreci doğrudan nasıl etkilediğini açıklayabilmenizi bekler. Ders programı bağlam faktörlerini kategorilerde toplar: paydaşlar, ekip üyeleri, iş alanı, teknik faktörler, proje kısıtları, organizasyonel faktörler, kullanılan yazılım geliştirme yaşam döngüsü ve mevcut araçlar. Bunlar test stratejisi, kullanılan teknikler, otomasyon derecesi, kapsam seviyesi, test çalışma ürünlerinin ayrıntı düzeyi ve testin nasıl raporlanacağı gibi kararları biçimlendirir.</p>
+<p>Aşağıdaki senaryolar aynı fikri iş başında gösteriyor. Emniyet (safety) açısından kritik ya da düzenlemeye tabi alanlar çok daha fazla dokümantasyon, sıkı izlenebilirlik, yüksek test bağımsızlığı ve çok daha katı kapsam gereksinimleri ister. Kısa döngülerle çalışan çevik bir yaşam döngüsü daha hafif dokümantasyona, sürekli regresyon testine ve otomasyona çok daha fazla dayanmaya yol açar. Sıkışık bir takvim ya da sınırlı bir bütçe, riske dayalı önceliklendirmeyi ağırlaştırır, kapsamı daraltır ve açık risklerle sürüme çıkma kararlarını zorunlu kılar. Değişen ya da belirsiz gereksinimler daha sık gözden geçirme, sürekli yeniden planlama ve test senaryolarının düzenli bakımını getirir. Ekibin becerileri ve araçların varlığı ise sürecin ne kadarının otomatikleştirilebileceğini ve hangi seviyelerin ve tekniklerin uygulanabilir olduğunu doğrudan belirler.</p>
+<p><strong>Tablo 1.5 — Bağlam faktörleri testi nasıl etkiler</strong></p>
+<div class="table-wrap">
+<table>
+<colgroup>
+<col style="width: 23%" />
+<col style="width: 32%" />
+<col style="width: 44%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Bağlam faktörü</th>
+<th>Örnek durum</th>
+<th>Teste tipik etkisi</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>İş alanı</td>
+<td>Emniyet açısından kritik ya da düzenlemeye tabi bir ürün</td>
+<td>Daha fazla dokümantasyon, sıkı izlenebilirlik, daha yüksek bağımsızlık ve daha katı kapsam</td>
+</tr>
+<tr class="even">
+<td>Yazılım geliştirme yaşam döngüsü</td>
+<td>Kısa döngülerle çalışan çevik bir ekip</td>
+<td>Daha hafif dokümantasyon, sürekli regresyon testi ve daha fazla otomasyon</td>
+</tr>
+<tr class="odd">
+<td>Proje kısıtları</td>
+<td>Sıkışık bir takvim ya da sınırlı bir bütçe</td>
+<td>Daha ağır riske dayalı önceliklendirme, daha dar kapsam ve açık risklerle verilen sürüm kararları</td>
+</tr>
+<tr class="even">
+<td>Paydaşlar</td>
+<td>Değişen ya da belirsiz gereksinimler</td>
+<td>Daha sık gözden geçirme, yeniden planlama ve test senaryolarının düzenli bakımı</td>
+</tr>
+<tr class="odd">
+<td>Ekip üyeleri ve araçlar</td>
+<td>Mevcut beceriler ve araçlar</td>
+<td>Ne kadarının otomatikleştirilebileceği ve hangi test seviyelerinin ve tekniklerinin uygulanabilir olduğu</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><em>Uygulamada.</em> Aynı şirkette iki ekip yan yana oturuyor olabilir. Birincisi şirketin iç raporlama panosunu hafif ve esnek keşif oturumlarıyla test ederken, yandaki masadaki ekip düzenlemeye tabi bir ödeme altyapısını, her düzenlemeden her test adımına kadar uzanan resmî izlenebilirlik kurallarıyla test eder. İki ekipten biri diğerinden daha iyi ya da daha kötü test etmiyor; her biri kendi bağlamı için doğru cevabı üretiyor. Altıncı prensip, yani yazılım testinin projenin bağlamına göre değişiklik göstermesi, iş başında budur.</p>
+<p><em>Sınav odağı.</em> Bir soru size belirli bir bağlam verip (örneğin emniyet açısından kritik bir tıbbi cihaz projesi ya da çok sıkışık bir teslim takvimi) test sürecinin buna nasıl yanıt vermesi gerektiğini sorabilir. Temel fikir açıktır: bağlam süreci doğrudan biçimlendirir. Daha fazla düzenleme daha fazla dokümantasyon ve izlenebilirlik getirir; daha az zaman riske dayalı önceliklendirmeyi zorunlu kılar. Olağan tuzak, tek ve sabit bir süreci her proje için evrensel olarak doğru sayan şıktır, çünkü bu altıncı prensiple çelişir. Önce senaryodaki ana bağlam faktörünü teşhis edin, sonra doğrudan ondan doğan etkiyi arayın.</p>
+<p><strong>Hemen Pekiştir</strong></p>
+<p><em>HP 1.4.2-a.</em> Kısa döngülerle çalışan çevik bir ekipte test süreci üzerindeki en olası etki nedir?</p>
+<div class="mc">
+<ul>
+<li>(a) Daha ağır dokümantasyon ve daha az otomasyon</li>
+<li>(b) Her proje için aynı tek süreç</li>
+<li>(c) İzlenebilirliğin tamamen kaldırılması</li>
+<li>(d) Sürekli regresyon testi ve otomasyona daha fazla dayanma</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (d). Kısa döngüler daha hafif dokümantasyon, sürekli regresyon ve daha yoğun otomasyon getirir. (b) şıkkı altıncı prensiple çelişir.</p>
+</div></details>
+<p><em>HP 1.4.2-b.</em> Gereksinimlerin sık değiştiği bir projede teste tipik etki nedir?</p>
+<div class="mc">
+<ul>
+<li>(a) Testleri bir kez yazıp dondurmak</li>
+<li>(b) Daha sık gözden geçirme, yeniden planlama ve test bakımı</li>
+<li>(c) İzlenebilirliği kaldırmak</li>
+<li>(d) Otomasyondan tamamen vazgeçmek</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (b). Değişen gereksinimler daha sık gözden geçirme, yeniden planlama ve süregelen test bakımı gerektirir.</p>
+</div></details>
+<p><em>HP 1.4.2-c.</em> Bir projenin kayamayacak bir çıkış tarihi ve azaltılmış bir test bütçesi var. Test süreci üzerindeki en olası etki nedir?</p>
+<div class="mc">
+<ul>
+<li>(a) Daha güçlü riske dayalı önceliklendirme ve daha dar bir test kapsamı</li>
+<li>(b) Kısa süreyi telafi etmek için her girdi kombinasyonunu test etmek</li>
+<li>(c) Her test senaryosu için daha resmî dokümantasyon</li>
+<li>(d) Aynı kapsamı korumak ve yalnızca daha hızlı çalışmak</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (a). Zaman ve bütçe proje kısıtlarıdır; sıkı kısıtlar ekibi önce en yüksek riskleri test etmeye ve kapsamı daraltmaya iter. (b) şıkkı yazılımı %100 test etmenin imkansız olduğu prensibiyle çelişir.</p>
+</div></details>
+</section>
+<section id="fl-1-4-3" class="level3">
+<h3>Test çalışma ürünleri (FL-1.4.3 — K2)</h3>
+<p>Her test aktivitesi kendi çıktılarını üretir; bunlara <strong>test çalışma ürünleri (testware)</strong> denir. (Test çalışma ürünleri, test sürecinin kendisinin ürettiği bütün belgeler, veriler, betikler, kayıtlar ve raporlama bileşenleridir.) Bir soru, bir çıktıyı onu üreten aktiviteyle eşleştirmenizi isteyebilir; bu yüzden eşlemeyi öğrenmeye değer.</p>
+<p>Test planlama; <strong>test planını (test plan)</strong>, çizelgeleri, bir <strong>risk kaydını (risk register)</strong>, <strong>giriş kriterlerini (entry criteria)</strong> ve <strong>çıkış kriterlerini (exit criteria)</strong> üretir. Test gözetimi ve test kontrolü; <strong>test ilerleme raporlarını (test progress report)</strong>, belgelenmiş kontrol direktiflerini (control directives) ve risklere ilişkin bilgileri üretir. Test analizi; önceliklendirilmiş test koşullarını ve test esasında bulunan boşluklara ilişkin <strong>hata raporlarını (defect report)</strong> üretir. Test tasarımı; test senaryolarını ve test başlatma belgelerini, bunların hedeflediği kapsam öğelerini, test verisi ve test ortamı gereksinimlerini verir. Test uyarlama bunları koşmaya hazır malzemeye dönüştürür: prosedürler, otomasyon betikleri, gruplanmış test grupları, gerçek veri, koşum çizelgesi ve taklit uygulamalar (stub), sürücüler (driver), simülatörler (simulator) ve servis sanallaştırmaları (service virtualization) gibi ortam bileşenleri. Test koşumu; <strong>test kayıtlarını (test log)</strong>, geçti/kaldı sonuçlarını ve anomalilerden türetilen hata raporlarını üretir. Test tamamlama; <strong>test tamamlama raporunu (test completion report)</strong>, çözülmemiş hatalar için değişiklik taleplerini ya da ürün iş listesi öğelerini, arşivlenmiş test çalışma ürünlerini ve alınan dersleri üretir.</p>
+<p><strong>Tablo 1.6 — Test aktiviteleri, yanıtladıkları sorular ve tipik test çalışma ürünleri</strong></p>
+<div class="table-wrap">
+<table>
+<colgroup>
+<col style="width: 23%" />
+<col style="width: 32%" />
+<col style="width: 44%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Test aktivitesi</th>
+<th>Yanıtladığı soru</th>
+<th>Tipik test çalışma ürünleri</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Test planlama</td>
+<td>Nasıl, neyle ve ne zaman test edeceğiz?</td>
+<td>Test planı, test zaman çizelgesi, risk kaydı, giriş kriterleri ve çıkış kriterleri</td>
+</tr>
+<tr class="even">
+<td>Test gözetimi ve test kontrolü</td>
+<td>Plana göre yolunda mıyız?</td>
+<td>Test ilerleme raporları, belgelenmiş kontrol direktifleri, risklere ilişkin bilgiler</td>
+</tr>
+<tr class="odd">
+<td>Test analizi</td>
+<td>Ne test edilecek?</td>
+<td>Önceliklendirilmiş test koşulları; test esasına ilişkin hata raporları</td>
+</tr>
+<tr class="even">
+<td>Test tasarımı</td>
+<td>Nasıl test edilecek?</td>
+<td>Test senaryoları (önceliklendirilmiş), kapsam öğeleri, test başlatma belgeleri, test ortamı ve test verisi gereksinimleri</td>
+</tr>
+<tr class="odd">
+<td>Test uyarlama</td>
+<td>Testleri koşmaya hazır mıyız?</td>
+<td>Test prosedürleri, manuel ve otomatik betikler, test grupları, veriler, koşum çizelgesi ve ortam bileşenleri (taklit uygulamalar, sürücüler, simülatörler, servis sanallaştırmaları)</td>
+</tr>
+<tr class="even">
+<td>Test koşumu</td>
+<td>Yazılım beklendiği gibi davranıyor mu?</td>
+<td>Test kayıtları, hata raporları</td>
+</tr>
+<tr class="odd">
+<td>Test tamamlama</td>
+<td>İşi düzgün kapatabilir miyiz?</td>
+<td>Test tamamlama raporu, iyileştirme için aksiyon öğeleri, belgelenmiş alınan dersler, değişiklik talepleri ya da ürün iş listesi öğeleri</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Bu eşlemedeki kilit ayrıntı, yaygın bir karışıklığı çözer: test tasarımı test verisi gereksinimlerini tanımlar, test uyarlama ise o veriyi veritabanında ya da sistemde oluşturur. Aynısı ortam için de geçerlidir: ortam test tasarımında tasarlanır, test uyarlamada kurulur ve doğrulanır.</p>
+<p><em>Sınav odağı.</em> Bu hedef doğrudan bir eşleştirme sorusu olarak çıkabilir: size belirli bir iş ürünü (örneğin bir otomasyon betiği ya da bir test ilerleme raporu) verilir ve onu hangi aktivitenin ürettiği sorulur. Her aktivite kendi çıktısının sahibidir; öğrenilecek eşleme Tablo 1.6’dır. Tasarım–uyarlama ayrımını yakından izleyin (tasarım veriyi belirler, uyarlama onu üretir). Seçmeden önce, çıktının “Ne test edilecek?”, “Nasıl test edilecek?” ya da “Testleri koşmaya hazır mıyız?” sorularından hangisini yanıtladığını kendinize sorun.</p>
+<p><strong>Hemen Pekiştir</strong></p>
+<p><em>HP 1.4.3-a.</em> Otomasyon betikleri ve gerçek test verisi hangi aktivitenin tipik çıktılarıdır?</p>
+<div class="mc">
+<ul>
+<li>(a) Test tasarımı</li>
+<li>(b) Test uyarlama</li>
+<li>(c) Test analizi</li>
+<li>(d) Test planlama</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (b). Betikleri yazmak ve veriyi oluşturmak test uyarlamadır; test tasarımı yalnızca test verisi gereksinimlerini tanımlar.</p>
+</div></details>
+<p><em>HP 1.4.3-b.</em> Test ortamı için hangi ayrım doğrudur?</p>
+<div class="mc">
+<ul>
+<li>(a) Ortam test tasarımında tasarlanır, test uyarlamada kurulur ve doğrulanır</li>
+<li>(b) Ortamı tasarlamak da kurmak da test uyarlamaya aittir</li>
+<li>(c) Ortam test planlamada tasarlanır, test koşumunda kurulur</li>
+<li>(d) Ortamı tasarlamak da kurmak da test tasarımına aittir</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (a). Test tasarımı ortamı tasarlar; test uyarlama onu kurar ve doğrular. Aynı ayrım test verisi için de geçerlidir.</p>
+</div></details>
+<p><em>HP 1.4.3-c.</em> Testlerin koşulabilmesi için hazırlanan taklit uygulamalar (stub), sürücüler (driver) ve servis sanallaştırmaları hangi aktivitenin tipik iş ürünleridir?</p>
+<div class="mc">
+<ul>
+<li>(a) Test tasarımı</li>
+<li>(b) Test analizi</li>
+<li>(c) Test koşumu</li>
+<li>(d) Test uyarlama</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (d). Bunlar test ortamı öğeleridir ve test uyarlama her şeyi koşuma hazırlarken onları üretir. Test tasarımı yalnızca test ortamı gereksinimlerini tanımlar; test koşumu ise ortamı kurmaz, kullanır.</p>
+</div></details>
+</section>
+<section id="fl-1-4-4" class="level3">
+<h3>İzlenebilirliğin değeri (FL-1.4.4 — K2)</h3>
+<p><strong>İzlenebilirlik (traceability)</strong>, test esası öğeleri, onlara bağlı test çalışma ürünleri (test koşulları, riskler ve test senaryoları gibi), test sonuçları ve hatalar arasındaki ilişkileri sürdürmek demektir. Ders programı onu önce test gözetimi ve test kontrolüne bağlar: bu bağlantılar olmadan ilerleme test esasına göre ölçülemez.</p>
+<p>Değeri pratiktir. Kapsam değerlendirmesini destekler; örneğin test senaryolarını gereksinimlere izlemek, hangi gereksinimlerin kapsandığını, hangilerinin kapsanmadığını gösterir. <strong>Test sonuçlarını (test result)</strong> risklere izlemek, test nesnesindeki kalan riskin seviyesini gösterir. Değişikliklerin etkisini belirlemeyi mümkün kılar, denetimleri kolaylaştırır ve BT yönetişim kriterlerini karşılamaya yardım eder. Her test esası öğesinin durumunu içerdiği için test ilerleme raporlarını ve test tamamlama raporlarını daha anlaşılır hale getirir. Böylece paydaşlar ürün kalitesini, süreç yeterliliğini ve projenin iş hedeflerine ne kadar yaklaştığını değerlendirebilir.</p>
+<p><em>Uygulamada.</em> Bir iş analisti tek bir kuralı değiştiriyor: asgari parola uzunluğu 8 karakterden 12 karaktere çıkıyor. İzlenebilirlik sürdürüldüğü için test uzmanı bütün projeyi elle taramaz. İzlenebilirlik bilgisi üzerinde yapılan bir sorgu, o gereksinime bağlı tam üç test senaryosunu ve bir otomasyon betiğini döndürür; yalnızca bunlar güncellenir. İzlenebilirlik olmasaydı aynı değişiklik yavaş ve belirsiz bir aramayı başlatırdı ve genellikle bir şey gözden kaçardı.</p>
+<p><em>Sınav odağı.</em> Olağan soru bir durum anlatır ve izlenebilirliğin hangi faydasını gösterdiğini sorar ya da bir listeden gerçek bir faydayı seçmenizi ister. Kilit fikir şudur: izlenebilirlik gereksinimleri, test koşullarını, test senaryolarını, sonuçları ve hataları birbirine bağlar; bu bağlantı da kapsam değerlendirmesini, kalan risk değerlendirmesini, etki analizini, denetimleri ve anlaşılır raporlamayı mümkün kılar. İzlenebilirliğin yapamayacağı bir şeyi vaat eden şıkka dikkat edin; gereksinim değişikliklerini önlemek ya da hataların yokluğunu kanıtlamak gibi. Şıkkın iş ürünleri arasındaki bir ilişkiyi bulmayı ya da göstermeyi anlattığından emin olun, çünkü izlenebilirliğin sağladığı şey budur.</p>
+<p><strong>Hemen Pekiştir</strong></p>
+<p><em>HP 1.4.4-a.</em> Bir gereksinim değiştiğinde etkilenen test senaryolarını anında bulabilmek, izlenebilirliğin hangi faydasına örnektir?</p>
+<div class="mc">
+<ul>
+<li>(a) Kapsam değerlendirmesi</li>
+<li>(b) Etki analizi</li>
+<li>(c) Gereksinim değişikliklerini önlemek</li>
+<li>(d) Hataların yokluğunu kanıtlamak</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (b). Bir değişiklikten etkilenen testleri hızla bulmak etki analizidir. (c) ve (d) izlenebilirliğin yapamayacağı şeylerdir.</p>
+</div></details>
+<p><em>HP 1.4.4-b.</em> Aşağıdakilerden hangisi izlenebilirliğin SAĞLAYAMAYACAĞI bir şeydir?</p>
+<div class="mc">
+<ul>
+<li>(a) Kapsam değerlendirmesi</li>
+<li>(b) Etki analizi</li>
+<li>(c) Kalan risk seviyesini değerlendirmek</li>
+<li>(d) Gereksinim değişikliklerini önlemek</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (d). İzlenebilirlik ilişkileri gösterir; değişiklikleri önlemez ya da hataların yokluğunu kanıtlamaz.</p>
+</div></details>
+<p><em>HP 1.4.4-c.</em> Bir çıkış gözden geçirmesinden önce test yöneticisi, hangi gereksinimlere henüz hiçbir test senaryosunun bağlanmadığını soruyor. İzlenebilirlik sürdürüldüğü için ekip hemen cevap veriyor. Bu, izlenebilirliğin hangi faydasını gösterir?</p>
+<div class="mc">
+<ul>
+<li>(a) Kapsam değerlendirmesi</li>
+<li>(b) Değişikliklerin etki analizi</li>
+<li>(c) Daha hızlı test koşumu</li>
+<li>(d) Hiç hata kalmadığının kanıtı</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (a). Test senaryolarını gereksinimlere izlemek, hangi gereksinimlerin kapsandığını ve hangilerinin kapsanmadığını gösterir. Etki analizi (b) bir değişiklikten yola çıkar; bu senaryo bir değişiklikten söz etmiyor.</p>
+</div></details>
+</section>
+<section id="fl-1-4-5" class="level3">
+<h3>Test etmede roller (FL-1.4.5 — K2)</h3>
+<p>Ders programı test aktiviteleri için iki temel rol tanımlar. Bunlar iş unvanı değil, üstlenilen sorumlulukları ifade eden rollerdir; dolayısıyla bir kişi bir projede iki rolü aynı anda üstlenebilir. Her rolün hangi aktiviteleri üstleneceği; projenin ve ürünün bağlamına, kişilerin becerilerine ve kuruluşa bağlıdır. Örneğin çevik yazılım geliştirmede bazı test yönetimi görevlerini çevik ekibin kendisi üstlenebilirken, birkaç ekibe ya da bütün kuruluşa yayılan görevler geliştirme ekibi dışındaki test yöneticileri tarafından yürütülebilir. Test yönetimi rolünü başkalarının yanı sıra bir ekip lideri, bir <strong>test yöneticisi (test manager)</strong> ya da bir geliştirme yöneticisi üstlenebilir. <strong>Test yönetimi rolü (test management role)</strong> test sürecine baştan sona liderlik etmeye, onu planlamaya ve yönlendirmeye odaklanır; test planlamayı, test gözetimi ve test kontrolünü ve test tamamlamayı kapsar. <strong>Test etme rolü (testing role)</strong> ise doğrudan teknik ve mühendislik işine odaklanır; test analizini, test tasarımını, test uyarlamayı ve test koşumunu kapsar.</p>
+<p><strong>Tablo 1.7 — Test etmede iki rol</strong></p>
+<div class="table-wrap">
+<table>
+<colgroup>
+<col style="width: 26%" />
+<col style="width: 36%" />
+<col style="width: 36%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Boyut</th>
+<th>Test yönetimi rolü</th>
+<th>Test etme rolü</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Genel sorumluluk</td>
+<td>Test süreci, test ekibi ve test aktivitelerinin liderliği</td>
+<td>Test etmenin mühendislik (teknik) yanı</td>
+</tr>
+<tr class="even">
+<td>Ana aktiviteler</td>
+<td>Test planlama, test gözetimi ve test kontrolü, test tamamlama</td>
+<td>Test analizi, test tasarımı, test uyarlama, test koşumu</td>
+</tr>
+<tr class="odd">
+<td>Çıktı örnekleri</td>
+<td>Test planı, test ilerleme raporları, test tamamlama raporu</td>
+<td>Test koşulları, test senaryoları, test prosedürleri, test kayıtları, hata raporları</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><em>Sınav odağı.</em> Soru kalıbı, belirli bir test görevini bu iki rolden biriyle eşleştirmenizi ister. Akılda tutulacak ayrım şudur: stratejik kararlar veren, bütçe yöneten ya da süreci yönlendiren üst düzey aktiviteler (planlama, gözetim ve kontrol, tamamlama) test yönetimi rolüne aittir; analitik, senaryo yazan, uygulamalı mühendislik aktiviteleri ise test etme rolüne aittir.</p>
+<p><strong>Hemen Pekiştir</strong></p>
+<p><em>HP 1.4.5-a.</em> Bir kişi test planını hazırlıyor, ilerlemeyi bu plana göre gözetiyor ve kontrol ediyor, test tamamlama raporunu yazıyor. Bu kişi hangi rolü üstleniyor?</p>
+<div class="mc">
+<ul>
+<li>(a) Test etme rolü</li>
+<li>(b) Geliştirici rolü</li>
+<li>(c) Kalite güvence rolü</li>
+<li>(d) Test yönetimi rolü</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (d). Süreci yönlendiren aktiviteler (planlama, gözetim ve kontrol, tamamlama) test yönetimi rolüne aittir.</p>
+</div></details>
+<p><em>HP 1.4.5-b.</em> ISTQB®’ye göre test rolleriyle ilgili hangi ifade doğrudur?</p>
+<div class="mc">
+<ul>
+<li>(a) Bir kişi iki rolü aynı anda üstlenemez</li>
+<li>(b) Roller sabit iş unvanlarıdır</li>
+<li>(c) Bir kişi iki rolü de üstlenebilir ve çevik ekiplerde bazı test yönetimi görevlerini ekibin kendisi üstlenebilir</li>
+<li>(d) Test etme rolü süreci yönetir, test yönetimi rolü kod yazar</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (c). Bunlar unvan değil roldür; bir kişi ikisini de üstlenebilir ve çevik yazılım geliştirmede bazı test yönetimi görevlerini ekip üstlenebilir.</p>
+</div></details>
+<p><em>HP 1.4.5-c.</em> Küçük bir projede Deniz haftanın başında test planını yazıyor. Aynı haftanın ilerleyen günlerinde test senaryoları tasarlıyor ve onları koşuyor. Hangi ifade doğrudur?</p>
+<div class="mc">
+<ul>
+<li>(a) Planı yazdığı için yalnızca test yönetimi rolünü üstleniyor</li>
+<li>(b) Planlarken test yönetimi rolünü, test tasarlayıp koşarken test etme rolünü üstleniyor</li>
+<li>(c) Test senaryolarını tasarlamak ve koşmak test yönetimi rolüne aittir</li>
+<li>(d) Bir kişinin aynı projede iki rolü üstlenmesine izin verilmez</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (b). Roller kişiyi değil yapılan işi izler. Planlama test yönetimi rolüne, test tasarımı ve test koşumu ise test etme rolüne aittir; bir kişi ikisini de üstlenebilir.</p>
+</div></details>
+</section>
+</section>
+<section id="essential-skills-and-good-practices-in-testing" class="level2">
+<h2>1.5 Test Etme Sürecinde Gerekli Beceriler ve İyi Uygulamalar</h2>
+<section id="fl-1-5-1" class="level3">
+<h3>Test etme için gereken genel beceriler (FL-1.5.1 — K2)</h3>
+<p>Başarılı bir test uzmanı (tester), hem teknik hem insani güçlü yanları kapsayan dengeli bir beceri setine ihtiyaç duyar. Test bilgisi, yani test tekniklerine, yöntemlerine ve standartlarına hâkimiyet, test etmenin etkinliğini artırır. Titizlik, dikkat, merak, ayrıntıya özen ve yöntemli çalışma; bir test uzmanının kolayca gözden kaçan küçük tutarsızlıkları ya da kayıt ayrıntılarını fark etmesini sağlar; bunlar büyük bir sistem sorununun erken işareti olabilir. İyi iletişim becerileri, etkin dinleme ve ekip oyuncusu olmak; kritik hataları, geliştirme ekibinin savunmaya geçmeden duyabileceği yapıcı ve profesyonel bir biçimde raporlamayı mümkün kılar. Analitik düşünme, eleştirel düşünme ve yaratıcılık; bir test uzmanının karmaşık iş kurallarını küçük parçalara ayırmasına, varsayımları sorgulamasına ve bir kullanıcının karşılaşabileceği alışılmadık arıza biçimlerini hayal etmesine yardım eder. Teknik bilgi; otomasyon araçlarının, veritabanı sorgularının, entegrasyon altyapısının ve test ortamlarının verimli kullanılmasını destekler. Alan bilgisi ise bir test uzmanının kullanıcıların gerçek iş ihtiyaçlarını anlamasını sağlar; örneğin bir bankacılık projesindeki test uzmanı, bir sistem çıktısına bir bakışta “yanlış” diyebilecek kadar faiz hesaplamalarını, kredi limitlerini ya da havale kurallarını bilmelidir.</p>
+<p>Bu işin psikolojik bir yanı da vardır. Test uzmanları çoğu zaman kötü haberi getiren kişilerdir, çünkü hataları ve arızaları raporlamak işlerinin görünür bir parçasıdır. Sonuçları raporlamak, ürünün yazarına kendi çalışmasının eleştirisi gibi gelebilir; <strong>doğrulama yanlılığı (confirmation bias)</strong> da insanların mevcut inançlarına uymayan bilgiyi kabul etmesini zorlaştırabilir. Bu yüzden hatalar ve arızalar, kişilere değil iş ürününe odaklanarak, yapıcı biçimde raporlanmalıdır. Test uzmanları kendi testlerini değerlendirirken aynı yanlılıktan muaf değildir.</p>
+<p><em>Uygulamada.</em> Aynı sistem çökmesi için açılmış iki hata raporunu karşılaştırın. Birinci test uzmanı yalnızca “kod yine çöktü” yazıyor. Bu ton geliştirici tarafında savunmacı bir tepkiyi tetikler ve iş birliğine zarar verir. İkinci test uzmanı ise “4.2 yapısı, ödeme akışının 3. adımında 500 sunucu hatası döndürüyor; yeniden oluşturma adımları ve kayıtlar ekte” yazıyor. Bu rapor, suçu bir kişiye yüklemek yerine odağı iş ürününe çeker. Asıl kazancı da ekipler arasındaki profesyonel güveni koruması ve herkesin aynı soruna sürtüşme olmadan birlikte bakabilmesini sağlamasıdır.</p>
+<p><em>Sınav odağı.</em> Bu hedef, bir test uzmanının davranışını verip hangi beceriyi gösterdiğini soran eşleştirme sorularıyla sınanır. Doğrulama yanlılığı da karşınıza çıkabilir; ders programı onu insanların kötü haberi nasıl karşıladığıyla ilişkilendirir, iletişim becerilerinin önemli olmasının nedeni de budur. Bir şıkkı seçmeden önce test uzmanının teknik bilgisini (ne bildiğini) iletişiminden ve davranışından (nasıl hareket ettiğinden) kesin biçimde ayırın.</p>
+<p><strong>Hemen Pekiştir</strong></p>
+<p><em>HP 1.5.1-a.</em> Bir geliştirici, kodunun doğru olduğundan emin olduğu için iyi belgelenmiş bir hata raporunu reddediyor. Ders programında adı geçen hangi faktör bu tepkiyi en iyi açıklar?</p>
+<div class="mc">
+<ul>
+<li>(a) Alan bilgisi eksikliği</li>
+<li>(b) Doğrulama yanlılığı</li>
+<li>(c) Hatasızlık yanılgısı</li>
+<li>(d) Yetersiz test bağımsızlığı</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (b). Doğrulama yanlılığı, kişinin zaten inandığı şeye uymayan bilgiyi kabul etmesini zorlaştırır. Ders programının iletişim becerilerini vurgulamasının nedeni de budur: test sonuçları yazara eleştiri gibi gelebilir. (a) ve (d) şıkları tepkiyi açıklamaz; (c) ise kullanıcıların ihtiyaçlarını karşılamakla ilgili bir test prensibidir.</p>
+</div></details>
+<p><em>HP 1.5.1-b.</em> Bir bankacılık projesindeki test uzmanı, bir faiz hesaplamasının sonucunun yanlış olduğunu bir bakışta görüyor. Bu hangi beceriyi gösterir?</p>
+<div class="mc">
+<ul>
+<li>(a) Alan bilgisi</li>
+<li>(b) İletişim becerileri</li>
+<li>(c) Teknik bilgi</li>
+<li>(d) Titizlik</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (a). Kullanıcının gerçek ihtiyaçlarını ve iş kurallarını bilmek alan bilgisidir.</p>
+</div></details>
+<p><em>HP 1.5.1-c.</em> Pınar “kodun yine bozuldu” yazmak yerine bir hatayı yapı numarası, yeniden oluşturma adımları ve ilgili kayıtlarla raporluyor. Raporu geliştiriciyi değil iş ürününü anlatıyor. Pınar hangi beceriyi gösteriyor?</p>
+<div class="mc">
+<ul>
+<li>(a) Alan bilgisi</li>
+<li>(b) Teknik bilgi</li>
+<li>(c) Titizlik ve merak</li>
+<li>(d) İyi iletişim becerileri</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (d). Hataları, iş ürününe odaklanan yapıcı ve olgusal bir biçimde raporlamak bir iletişim becerisidir. Geliştiricinin savunmaya geçmesini önler ve raporun anlaşılmasına yardım eder.</p>
+</div></details>
+</section>
+<section id="fl-1-5-2" class="level3">
+<h3>Tüm ekip yaklaşımı (FL-1.5.2 — K1)</h3>
+<p>Ekstrem programlamadan (extreme programming) gelen <strong>tüm ekip yaklaşımı (whole team approach)</strong>, kalitenin yalnızca test uzmanlarının işi değil, projedeki herkesin ortak sorumluluğu olduğunu savunur. Doğru bilgi ve beceriye sahip her ekip üyesi her görevi üstlenebilir. Ekip üyeleri fiziksel ya da sanal aynı çalışma alanını paylaşır, çünkü aynı yerde bulunmak iletişimi ve etkileşimi kolaylaştırır. Test uzmanları, hedeflenen kalite seviyelerine ulaşabilmek için ekibin diğer üyeleriyle yakından çalışır. Örneğin iş temsilcilerinin uygun kabul testleri oluşturmasına yardım eder, geliştiricilerle de test stratejisi ve test otomasyonu yaklaşımları üzerinde uzlaşırlar. Böylece test uzmanları test bilgisini ekibin geri kalanına aktarır ve ürünün nasıl geliştirildiğini etkiler. Başlıca faydaları; ekip dinamiklerini iyileştirmesi, ekip içi iletişimi ve iş birliğini güçlendirmesi, analist, geliştirici ve tasarımcı gibi rollerin güçlü yanlarını proje için gerçek bir sinerjide birleştirmesidir. Ancak yaklaşım her zaman uygun değildir: örneğin emniyet açısından kritik bir bağlamda bunun yerine yüksek bir test bağımsızlığı gerekebilir.</p>
+<p>Gündelik bir karşılaştırma bunu iyi özetler. İyi bir restoranda hijyen ve gıda güvenliği, tabağı masaya ulaşmadan hemen önce kontrol eden tek bir müfettişin işi olamaz. Şef, aşçılar, garsonlar ve bulaşıkçılar bu hijyen zincirini mutfakta birlikte korumak zorundadır, çünkü herhangi bir aşamada bulaşan bir bakteri son tabağın kalitesini bozar. Yazılım da böyledir: ekibin geri kalanının en baştan ürüne katmadığı bir kaliteyi, bir test uzmanı en sonda ve yalnızca ürünü inceleyerek ekleyemez.</p>
+<p><em>Sınav odağı.</em> Bu hedef doğrudan bir hatırlama sorusudur. Tüm ekip yaklaşımının tanımını ya da getirdiği faydaları seçmenizi ister. Temel odak, kalitenin kolektif bir sorumluluk olması ve ekipteki disiplinlerin sinerjisinin önem taşımasıdır. Dikkat edilecek tuzak, kalite sorumluluğunu “yalnızca bağımsız bir test ekibine” ya da “ayrı bir kalite güvence departmanına” veren şıktır; bu tanım gereği tüm ekip felsefesiyle çelişir. Kaliteyi tek bir role kilitleyen her şıkkı eleyin.</p>
+<p><strong>Hemen Pekiştir</strong></p>
+<p><em>HP 1.5.2-a.</em> Aşağıdakilerden hangisi tüm ekip yaklaşımının bir faydasıdır?</p>
+<div class="mc">
+<ul>
+<li>(a) Kalite sorumluluğunu yalnızca bağımsız test ekibine verir</li>
+<li>(b) Geliştiricileri bütün test aktivitelerinden muaf tutar</li>
+<li>(c) Ayrı bir kalite güvence departmanı gerektirir</li>
+<li>(d) İletişimi ve iş birliğini güçlendirir ve sinerji yaratır</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (d). Yaklaşım ekip dinamiklerini, iletişimi ve farklı becerilerin sinerjisini güçlendirir. Diğerleri yaklaşımla çelişir.</p>
+</div></details>
+<p><em>HP 1.5.2-b.</em> Tüm ekip yaklaşımında kalite kimin sorumluluğudur?</p>
+<div class="mc">
+<ul>
+<li>(a) Yalnızca test uzmanlarının</li>
+<li>(b) Yalnızca ayrı bir kalite güvence departmanının</li>
+<li>(c) Bütün ekibin</li>
+<li>(d) Yalnızca ürün sahibinin</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (c). Kalite, doğru bilgi ve beceriye sahip her üyenin paylaştığı, bütün ekibin sorumluluğudur.</p>
+</div></details>
+<p><em>HP 1.5.2-c.</em> Aşağıdakilerden hangisi tüm ekip yaklaşımıyla çelişir?</p>
+<div class="mc">
+<ul>
+<li>(a) Kalite her döngünün sonunda yalnızca test uzmanları tarafından kontrol edilir</li>
+<li>(b) Doğru bilgi ve becerilere sahip üyeler, iş unvanları ne olursa olsun her görevi üstlenebilir</li>
+<li>(c) Test uzmanları, iyi kabul testleri yazabilmeleri için iş temsilcileriyle birlikte çalışır</li>
+<li>(d) Ekip üyeleri fiziksel ya da sanal aynı çalışma alanını paylaşır</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (a). Tüm ekip yaklaşımında herkes kaliteden sorumludur; kaliteyi en sonda test uzmanlarına bırakmak bu fikirle çelişir. (b), (c) ve (d) şıklarının hepsi yaklaşımın parçasıdır.</p>
+</div></details>
+</section>
+<section id="fl-1-5-3" class="level3">
+<h3>Testin bağımsızlığı (FL-1.5.3 — K2)</h3>
+<p>Testte bağımsızlık, ya hep ya hiç türünden ikili bir fikir değildir. Projenin ve kuruluşun yapısına göre en düşükten en yükseğe uzanan bir yelpazedir. En düşük seviyede, bağımsızlık yokken, yazar kendi işini test eder. Bunun üstünde, biraz bağımsızlıkla, yazarın aynı ekipteki meslektaşları test eder. Daha yukarıda, yüksek bağımsızlıkla, yazarın ekibi dışından ama kuruluşun içinden test uzmanları test eder. En üstte, çok yüksek bağımsızlıkla, testi kuruluşun dışından test uzmanları yürütür. Şekil 1.5 bu dört seviyeyi tek bir ölçek üzerine yerleştiriyor.</p>
+<figure>
+<img src="figures/fig_1_5_independence_spectrum.png" alt="Şekil 1.5 — Bağımsızlık yelpazesi. Bir ok, bağımsızlık yokluğundan çok yüksek bağımsızlığa uzanır ve dört seviyeyi işaretler: yazar kendi işini test eder (bağımsızlık yok), aynı ekipten meslektaşlar test eder (biraz bağımsızlık), yazarın ekibi dışından ama aynı organizasyondan test uzmanları test eder (yüksek bağımsızlık) ve organizasyon dışından test uzmanları test eder (çok yüksek bağımsızlık)." /><figcaption>Şekil 1.5 — Bağımsızlık yelpazesi.</figcaption>
+</figure>
+<p><strong>Testin bağımsızlığını (independence of testing)</strong> artırmak bir projeye gerçek bir güç katabilir. Bağımsız test uzmanları, projenin geçmişteki baskılarından ve kodlama varsayımlarından uzak oldukları için geliştiricilerin gözünden kaçan arıza türlerini yakalar; paydaşların ya da analistlerin spesifikasyon ve gerçekleştirme sırasında sorgulamadan kabul ettiği iş mantığı varsayımlarını sorgulayabilirler. Yine de bağımsızlık, tanışıklığın yerini tutmaz: geliştiriciler kendi kodlarındaki birçok hatayı verimli biçimde bulabilir.</p>
+<p>Daha yüksek bağımsızlık yönetimsel sakıncalar da getirir. Bağımsız bir test ekibi gerçek geliştirme ekibinden fazla yalıtılabilir; bu da zayıf iş birliğine, iletişim kopukluklarına ya da geliştiricilerle hasmane bir ilişkiye yol açabilir. Arkalarında güçlü bir bağımsız test ekibi olduğunu bilen geliştiriciler “test ekibi nasılsa her şeyi yakalar” rahatlığına kapılıp kalitenin kendi sorumlulukları olduğu duygusunu yitirebilir. Bağımsız bir test ekibi ayrıca projenin sonunda bir darboğaz gibi görülebilir ve geciken sürümlerin günah keçisi yapılabilir.</p>
+<p><strong>Tablo 1.8 — Testin bağımsızlığının faydaları ve sakıncaları</strong></p>
+<div class="table-wrap">
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Daha fazla bağımsızlığın faydaları</th>
+<th>Daha fazla bağımsızlığın sakıncaları</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Bağımsız test uzmanlarının geçmişleri, teknik bakış açıları ve yanlılıkları geliştiricilerinkinden farklı olduğu için farklı türde arızaları ve hataları fark etmeleri olasıdır</td>
+<td>Bağımsız test uzmanları geliştirme ekibinden yalıtılabilir; bu da zayıf iş birliğine, iletişim sorunlarına ya da hasmane bir ilişkiye yol açabilir</td>
+</tr>
+<tr class="even">
+<td>Bağımsız test uzmanları, paydaşların spesifikasyon ve gerçekleştirme sırasında yaptığı varsayımları doğrulayabilir, sorgulayabilir ya da çürütebilir</td>
+<td>Geliştiriciler kaliteye ilişkin sorumluluk duygularını yitirebilir</td>
+</tr>
+<tr class="odd">
+<td>(ders programı yalnızca iki fayda sayar)</td>
+<td>Bağımsız test uzmanları bir darboğaz olarak görülebilir ve geciken sürümler için suçlanabilir</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Çoğu proje için genellikle en iyisi birkaç bağımsızlık seviyesini birleştirmektir: örneğin bileşen testini (component testing) ve bileşen entegrasyon testini (component integration testing) geliştiriciler, sistem testini (system testing) ve sistem entegrasyon testini (system integration testing) bir test ekibi, kabul testini (acceptance testing) ise iş temsilcileri yapar.</p>
+<p><em>Sınav odağı.</em> Bir soru, bir kuruluşun test yapısındaki bağımsızlık seviyesini değiştirdiğini belirtip (örneğin testi dışarıdaki bir şirkete vermek ya da test uzmanını çevik ekibin içine yerleştirmek) bu değişikliğin proje için faydasını ya da sakıncasını seçmenizi isteyebilir. Soru kökünü kelime kelime okuyun, çünkü soru bir sakınca sorarken yanlış bir şık doğru bir “fayda” cümlesini şıklar arasına koyabilir. Bir ifade teknik olarak doğru olsa bile, sorunun istediği yönle (avantaj mı, dezavantaj mı) örtüştüğünden emin olun.</p>
+<p><strong>Hemen Pekiştir</strong></p>
+<p><em>HP 1.5.3-a.</em> Bağımsızlık yelpazesinde en yüksek bağımsızlık seviyesi hangisidir?</p>
+<div class="mc">
+<ul>
+<li>(a) Yazarların kendi işlerini test etmesi</li>
+<li>(b) Geliştirme ekibi içindeki meslektaşların test etmesi</li>
+<li>(c) Aynı kuruluş içindeki bağımsız bir test ekibinin test etmesi</li>
+<li>(d) Kuruluş dışından test uzmanlarının test etmesi</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (d). Bağımsızlık, yazarların kendi işlerini test etmesinden (en düşük) kuruluş dışındaki test uzmanlarına (en yüksek) doğru artar.</p>
+</div></details>
+<p><em>HP 1.5.3-b.</em> Aşağıdakilerden hangisi test bağımsızlığını artırmanın bir faydasıdır?</p>
+<div class="mc">
+<ul>
+<li>(a) Taze bir geçmiş ve daha az varsayımla farklı türde arızaları görmek</li>
+<li>(b) Geliştirme ekibinden yalıtılmak ve iletişim boşlukları</li>
+<li>(c) Sürüm gecikmelerinin günah keçisi yapılmak</li>
+<li>(d) Geliştiricilerin kaliteye ilişkin sorumluluk duygusunu yitirmesi</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (a). Bağımsız bir bakış açısı farklı arızaları görmeye ve varsayımları sorgulamaya yardım eder; (b), (c) ve (d) sakıncalardır.</p>
+</div></details>
+<p><em>HP 1.5.3-c.</em> Testin bağımsızlığıyla ilgili hangi ifade doğrudur?</p>
+<div class="mc">
+<ul>
+<li>(a) Bağımsızlık tanışıklığın yerini tutar, bu yüzden geliştiriciler kendi kodlarını test etmemelidir</li>
+<li>(b) Çoğu proje için genellikle en iyisi birkaç bağımsızlık seviyesini birleştirmektir</li>
+<li>(c) Kuruluş dışından test uzmanları her zaman geliştiricilerden daha fazla hata bulur</li>
+<li>(d) Bağımsızlık ikilidir: test ya bağımsızdır ya değildir</li>
+</ul>
+</div>
+<details class="ans"><summary>Cevabı göster</summary><div class="answer">
+<p>Cevap: (b). Tipik bir karışımda bileşenleri geliştiriciler, sistemi bir test ekibi test eder, kabul testini de iş temsilcileri yürütür. (a) yanlıştır, çünkü geliştiriciler kendi kodlarındaki birçok hatayı verimli biçimde bulabilir.</p>
+</div></details>
+</section>
+</section>
+<section id="chapter-1-summary" class="level2">
+<h2>Bölüm 1 özeti</h2>
+<div class="table-wrap">
+<table>
+<colgroup>
+<col style="width: 16%" />
+<col style="width: 83%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Öğrenme hedefi</th>
+<th>Tek cümlelik özet</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1.1.1 (K1)</td>
+<td>Ders programı bağlama göre değişen dokuz tipik test hedefi sayar; doğrulama ve sağlama bunların arasındadır.</td>
+</tr>
+<tr class="even">
+<td>1.1.2 (K2)</td>
+<td>Dinamik test arızaları tetikler, statik test hataları doğrudan bulur; hata ayıklama hataları bulup giderir; onaylama testi düzeltmeyi kontrol eder.</td>
+</tr>
+<tr class="odd">
+<td>1.2.1 (K2)</td>
+<td>Test etme; erken hata tespiti, kalite değerlendirmesi, son kullanıcıyı temsil etme ve yasal uygunluk kanıtı yoluyla katkı sağlar.</td>
+</tr>
+<tr class="even">
+<td>1.2.2 (K1)</td>
+<td>Test etme ürüne odaklı ve düzelticidir; kalite güvence sürece odaklı ve önleyicidir.</td>
+</tr>
+<tr class="odd">
+<td>1.2.3 (K2)</td>
+<td>Zincir kök nedenden insan hatasına, hatadan arızaya ilerler; ama her hata arızaya yol açmaz ve arızalara çevre koşulları da yol açabilir.</td>
+</tr>
+<tr class="even">
+<td>1.3.1 (K2)</td>
+<td>Yedi prensip bütün test etme için genel yol göstericilerdir; birincisi (hataların varlığı, yokluğu değil) ile yedincisi (hatasızlık yanılgısı) kolayca karıştırılır.</td>
+</tr>
+<tr class="odd">
+<td>1.4.1 (K2)</td>
+<td>Test sürecinde esnek ve döngüsel yedi aktivite vardır: planlama, gözetim ve kontrol, analiz, tasarım, uyarlama, koşum ve tamamlama.</td>
+</tr>
+<tr class="even">
+<td>1.4.2 (K2)</td>
+<td>Bağlam faktörleri (düzenleme, bütçe, yöntem, ekip becerisi) test sürecini doğrudan biçimlendirir.</td>
+</tr>
+<tr class="odd">
+<td>1.4.3 (K2)</td>
+<td>Her aktivite kendi test çalışma ürünlerini üretir; tasarım veri gereksinimini belirler, uyarlama veriyi üretir.</td>
+</tr>
+<tr class="even">
+<td>1.4.4 (K2)</td>
+<td>İzlenebilirlik; test gözetimi ve test kontrolünü, kapsam değerlendirmesini, kalan risk değerlendirmesini, etki analizini, denetimleri ve anlaşılır raporlamayı destekler.</td>
+</tr>
+<tr class="odd">
+<td>1.4.5 (K2)</td>
+<td>Test yönetimi rolü stratejiyi ve süreci yönlendirir; test etme rolü analiz, tasarım, uyarlama ve koşum mühendisliğini yapar.</td>
+</tr>
+<tr class="even">
+<td>1.5.1 (K2)</td>
+<td>Bir test uzmanının genel becerileri; teknik bilgi ve alan bilgisini merak, titizlik, eleştirel düşünme ve güçlü iletişimle birleştirir.</td>
+</tr>
+<tr class="odd">
+<td>1.5.2 (K1)</td>
+<td>Tüm ekip yaklaşımında kalite bütün ekibin ortak sorumluluğudur; bu da güçlü iletişim ve sinerji getirir.</td>
+</tr>
+<tr class="even">
+<td>1.5.3 (K2)</td>
+<td>Test bağımsızlığı esnek, dört seviyeli bir yelpazedir; taze bakış açısı gibi gerçek faydaları ve yalıtılma gibi sakıncaları vardır.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<section id="sık-karıştırılan-kritik-kavram-çiftleri" class="level3">
+<h3>Sık karıştırılan kritik kavram çiftleri</h3>
+<div class="table-wrap">
+<table>
+<colgroup>
+<col style="width: 14%" />
+<col style="width: 35%" />
+<col style="width: 14%" />
+<col style="width: 35%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Bu kavram</th>
+<th>şudur</th>
+<th>şu kavram değildir</th>
+<th>o da şudur</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Test etme</td>
+<td>arızaları tetiklemek (dinamik test) ya da hataları doğrudan bulmak (statik test)</td>
+<td>Hata ayıklama</td>
+<td>bir arızaya yol açan hataları bulan, analiz eden ve ortadan kaldıran geliştirme aktivitesi</td>
+</tr>
+<tr class="even">
+<td>Test etme / kalite kontrol</td>
+<td>ürüne odaklı ve düzeltici: hataları, düzeltilebilmeleri için ortaya çıkarır</td>
+<td>Kalite güvence (QA)</td>
+<td>sürece odaklı ve önleyici: daha az hata çıkması için süreçleri iyileştirir</td>
+</tr>
+<tr class="odd">
+<td>İnsan hatası</td>
+<td>bir kişinin yanlış eylemi</td>
+<td>Hata</td>
+<td>o eylemin bir belgede ya da kodda bıraktığı statik kusur</td>
+</tr>
+<tr class="even">
+<td>Hata</td>
+<td>kodda bekleyen statik bir kusur</td>
+<td>Arıza</td>
+<td>hata çalıştırıldığında sistemin gösterdiği yanlış davranış</td>
+</tr>
+<tr class="odd">
+<td>Doğrulama</td>
+<td>ürünü doğru geliştirmek, spesifikasyona göre</td>
+<td>Sağlama</td>
+<td>doğru ürünü geliştirmek, kullanıcının gerçek ihtiyaçlarına göre</td>
+</tr>
+<tr class="even">
+<td>Test analizi</td>
+<td>test esasından test koşulları türetmek (ne test edilecek)</td>
+<td>Test tasarımı</td>
+<td>koşulları somut test senaryolarına dönüştürmek (nasıl test edilecek)</td>
+</tr>
+<tr class="odd">
+<td>Test tasarımı</td>
+<td>test verisi gereksinimlerini tanımlamak ve ortamı tasarlamak</td>
+<td>Test uyarlama</td>
+<td>o veriyi üretmek, ortamı kurmak ve doğrulamak</td>
+</tr>
+<tr class="even">
+<td>Test gözetimi</td>
+<td>ilerlemeyi planla karşılaştırarak izlemek ve metrik toplamak</td>
+<td>Test kontrolü</td>
+<td>ilerleme plandan saptığında düzeltici aksiyon almak</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="sınav-ipuçları-ve-yaygın-tuzaklar-bölüm-1" class="level3">
+<h3>Sınav ipuçları ve yaygın tuzaklar — Bölüm 1</h3>
+<p>Bölüm 1 sorularından biri soru kökündeki tek bir anahtar kelimeye bağlı olabilir; bu yüzden yavaşlayın ve o kelimeleri yakalayın. Kök “düzeltmeden sonra aynı test adımı aynı girdiyle yeniden koşuluyor” diyorsa hedef onaylama testidir. “İnsan hatasına yol açan temel neden” soruluyorsa kök nedeni arıyorsunuz demektir.</p>
+<p>Senaryo akışı sorularında, şıklara bakmadan önce olayları kendiniz etiketleyin: bir kişinin eyleminin yanına “insan hatası”, kodda kalan statik kusurun yanına “hata”, sistemin gösterdiği sapmanın yanına “arıza” yazın. Etiketledikten sonra çeldiricileri elemek kolaylaşır. Prensip sorularında senaryonun özünü tek bir prensiple eşleştirin.</p>
+<p>İki tuzağı bilmeye değer. Birincisi, test etmenin yaptığı işi abartan şıklardır. Test etme hataları kendisi onarmaz, bir projeye tek başına kalite enjekte edemez ve hiç hata kalmadığını hiçbir zaman kanıtlayamaz. Bir şık test etmeye “onaran” ya da “hatasızlığın kesin kanıtı” rolü veriyorsa yanlıştır. İkincisi, komşu aktivitelerin çıktılarını yer değiştiren şıklardır. Test senaryosu test tasarımının çıktısıdır; o senaryoları otomasyon koduna dönüştürmek ya da verilerini üretmek test uyarlamadır. Karar vermeden önce çıktının bir şeyin ne ya da nasıl yapılacağını mı anlattığını, yoksa sistemi koşuma tamamen hazır mı hale getirdiğini kendinize sorun.</p>
+<p>Zaman yönetimi için <em>CTFL® Sınavı Nasıl İşler</em> bölümündeki tempoyu izleyin: bir hatırlama sorusu için yaklaşık bir dakika. Dikkatli okumaya rağmen iki şık arasında kalırsanız, önce mantıken imkansız olan iki şıkkı eleyin, sonra son ikisini ayıran tek kelimelik nüansa odaklanın.</p>
+</section>
+</section>
+<section id="chapter-exercises" class="level2">
+<h2>Bölüm alıştırmaları</h2>
+<p>Cevaplar, gerekçeler ve öğrenme hedefi kaynakları kitabın sonundaki “Cevaplar ve Gerekçeler” bölümündedir.</p>
+<p><em>PB-C1-001.</em> Bir sürüm kararından önce bir yönlendirme kurulu, test ekibinden test etmenin sağlayabileceği meşru bir sonucu belirtmesini istiyor. Ekip hangi sonucu söylemelidir?</p>
+<div class="mc">
+<ul>
+<li>(a) Test koşumu sırasında bulunan hataları onarmak</li>
+<li>(b) Test nesnesinde hiç hata olmadığını kanıtlamak</li>
+<li>(c) Test nesnesinin kalitesine güven oluşturmak</li>
+<li>(d) Hatalara yol açan yazılım geliştirme sürecini iyileştirmek</li>
+</ul>
+</div>
+<p><em>PB-C1-002.</em> Bir test uzmanı bir test koşuyor ve uygulama ekranında yanlış bir para birimi simgesi gözlemliyor. Ardından bir geliştirici arızayı kendi ortamında yeniden oluşturuyor, biçimlendirme fonksiyonunda yanlış bir yerel ayar (locale) parametresi buluyor ve düzeltiyor. Test uzmanı asıl testi yeniden koştuğunda test artık geçiyor. Hangi aktiviteler sırasıyla anlatılmıştır?</p>
+<div class="mc">
+<ul>
+<li>(a) Test etme, sonra hata ayıklama, sonra onaylama testi</li>
+<li>(b) Hata ayıklama, sonra test etme, sonra regresyon testi</li>
+<li>(c) Test etme, sonra kök neden analizi, sonra sağlama</li>
+<li>(d) Statik test, sonra hata ayıklama, sonra dinamik test</li>
+</ul>
+</div>
+<p><em>PB-C1-003.</em> Yeni bir sürüm hazırlanan 1.200 test senaryosunun hepsinden geçti, belirtilmiş her teknik gereksinim doğrulandı ve bilinen bütün hatalar düzeltildi. Yayından kısa süre sonra kullanıcılar, iş akışının gerçek çalışma pratikleriyle örtüşmediğini söyleyerek ürünü kullanmayı bıraktı. Bunu en iyi hangi prensip açıklar?</p>
+<div class="mc">
+<ul>
+<li>(a) Testler yıpranır</li>
+<li>(b) Hatasızlık yanılgısı</li>
+<li>(c) Hatalar yazılımın belli alanlarında yoğunlaşır</li>
+<li>(d) Testin amacı, yazılımda hataların olduğunu göstermektir; yazılımda hata kalmadığını ispatlamak değildir</li>
+</ul>
+</div>
+<p><em>PB-C1-004.</em> Aşağıdaki iş ürünlerinden hangisi test uyarlamanın tipik bir çıktısıdır?</p>
+<div class="mc">
+<ul>
+<li>(a) Önceliklendirilmiş test koşulları</li>
+<li>(b) Test senaryoları</li>
+<li>(c) Otomasyon betikleri</li>
+<li>(d) Test tamamlama raporu</li>
+</ul>
+</div>
+<p><em>PB-C1-005.</em> Bir yazılım şirketi sistem testini geliştirme ekiplerinden alıp kuruluş içinde tamamen bağımsız bir test departmanına taşıyor. Aşağıdakilerden hangisi bu değişikliğin olası bir sakıncasıdır?</p>
+<div class="mc">
+<ul>
+<li>(a) Test uzmanlarının, geliştiricilerin gözünden kaçan farklı türde arızaları fark edememesi</li>
+<li>(b) Geliştiricilerin yazılım kalitesine ilişkin kişisel sorumluluk duygularını yitirmesi</li>
+<li>(c) Analizdeki iş mantığı varsayımlarının artık sorgulanamaması</li>
+<li>(d) Birim testlerinin artık geliştiriciler tarafından koşulmaması</li>
+</ul>
+</div>
+<p><em>PB-C1-006.</em> Bir kuruluşta şu aktiviteler yürütülüyor: (1) bir sürüm adayına karşı hazırlanan test senaryolarını koşmak; (2) taslak gereksinim belgelerini gözden geçirmek; (3) sistem testi sırasında bulunan hataları kaydetmek; (4) tanımlı geliştirme süreçlerinin projeler genelinde doğru izlenip izlenmediğini kontrol etmek. Hangi aktivite kalite kontrole (test etme) değil kalite güvenceye (QA) aittir?</p>
+<div class="mc">
+<ul>
+<li>(a) Aktivite 1</li>
+<li>(b) Aktivite 2</li>
+<li>(c) Aktivite 3</li>
+<li>(d) Aktivite 4</li>
+</ul>
+</div>
+<p><em>PB-C1-007.</em> Bir faturalama krizini analiz eden bir ekip şu zinciri buluyor: bir iş analisti yeni bir vergi düzenlemesini yanlış anlamış ve analiz belgesine yanlış bir kural yazmış; geliştirici kuralı yazıldığı gibi koda uygulamış; sistem yanlış bir vergi oranı hesaplamış; üretimdeki birçok müşteriden fazla tahsilat yapılmış. Bu zincirdeki hangi öğe insan hatasıdır?</p>
+<div class="mc">
+<ul>
+<li>(a) Analistin vergi düzenlemesini yanlış anlaması</li>
+<li>(b) Analiz belgesine yazılan yanlış kural</li>
+<li>(c) Koddaki yanlış vergi oranı</li>
+<li>(d) Fazla tahsilat yapılan müşteri faturaları</li>
+</ul>
+</div>
+<p><em>PB-C1-008.</em> Resmî bir sözleşmeyi imzalamadan hemen önce bir proje sponsoru, test yöneticisinden “sistemde kesinlikle hiç hata kalmadığını kanıtlayacak” kadar kapsamlı bir test yapılmasını istiyor. Bu isteğin neden mantıksal ve matematiksel olarak karşılanamayacağını hangi prensip açıklar?</p>
+<div class="mc">
+<ul>
+<li>(a) Hatalar yazılımın belli alanlarında yoğunlaşır</li>
+<li>(b) Testler yıpranır</li>
+<li>(c) Hatasızlık yanılgısı</li>
+<li>(d) Testin amacı, yazılımda hataların olduğunu göstermektir; yazılımda hata kalmadığını ispatlamak değildir</li>
+</ul>
+</div>
+<p><em>PB-C1-009.</em> Bir ekip, sıkı tıbbi cihaz düzenlemelerine tabi, yazılımla kontrol edilen bir infüzyon pompasını test etmek üzere. Önceki projeleri hafif bir iç pazarlama panosuydu. Bu bağlam değişikliği göz önüne alındığında test sürecindeki hangi değişiklik en olasıdır?</p>
+<div class="mc">
+<ul>
+<li>(a) Çok daha ayrıntılı test dokümantasyonu ve gereksinimlere sıkı izlenebilirlik üretmek</li>
+<li>(b) İletişimi hızlandırmak için test bağımsızlığını en aza indirmek</li>
+<li>(c) İşte daha hızlı ilerlemek için gözden geçirme sayısını azaltmak</li>
+<li>(d) Test sürecini önceki projedeki haliyle aynen korumak</li>
+</ul>
+</div>
+<p><em>PB-C1-010.</em> Bir sürümün sonunda bir test yöneticisi, yeniden kullanılabilecek test çalışma ürünlerini arşivliyor ve test ortamını üzerinde anlaşılmış bir duruma getirerek kapatıyor. Aşağıdaki iş ürünlerinden hangisi onun yürüttüğü aktivitenin tipik bir çıktısıdır?</p>
+<div class="mc">
+<ul>
+<li>(a) Test kayıtları</li>
+<li>(b) Test prosedürleri</li>
+<li>(c) Önceliklendirilmiş test koşulları</li>
+<li>(d) Açık kalan hatalar için değişiklik talepleri ya da ürün iş listesi öğeleri</li>
+</ul>
+</div>
+<p><em>PB-C1-011.</em> Melis bir sonraki sürüm için test kapsamını, çizelgeyi ve çıkış kriterlerini tanımlıyor. Deniz iş gereksinimlerinden test koşulları türetiyor ve onları kapsayacak test senaryoları tasarlıyor. ISTQB® ders programında anlatılan test etme rolleri dikkate alındığında, hangi şık her kişiyi doğru rolle eşleştirir?</p>
+<div class="mc">
+<ul>
+<li>(a) Melis test etme rolünü, Deniz test yönetimi rolünü üstleniyor</li>
+<li>(b) Melis test yönetimi rolünü, Deniz test etme rolünü üstleniyor</li>
+<li>(c) İkisi de test yönetimi rolünü üstleniyor, çünkü planlama da tasarım da test koşumundan önce gerçekleşir</li>
+<li>(d) İkisi de test etme rolünü üstleniyor, çünkü hiçbiri test koşmuyor</li>
+</ul>
+</div>
+<p><em>PB-C1-012.</em> Pınar bir finansal raporu kontrol ederken bir sütun toplamının satırların toplamından bir kuruş farklı olduğunu fark ediyor. Farkı hangi hesaplama adımının ürettiğini tam olarak gösterebilene kadar kayıtları ve verileri incelemeyi sürdürüyor, sonra durumu raporluyor. Bu davranış en iyi hangi genel beceriyi gösterir?</p>
+<div class="mc">
+<ul>
+<li>(a) Alan bilgisi</li>
+<li>(b) İletişim becerileri</li>
+<li>(c) Titizlik, dikkat ve ayrıntıya özen</li>
+<li>(d) Teknik bilgi</li>
+</ul>
+</div>
+</section>
+</section>
+
+<div class="pager"><a href="study-roadmap.html"><span class="lbl">Önceki</span>Çalışma Yol Haritası</a><a href="chapter-2.html" style="text-align:right"><span class="lbl">Sonraki</span>Bölüm 2 — Yazılım Geliştirme Yaşam Döngüsü Boyunca Test</a></div>
+<footer class="site">© 2026 Kadir Çamoğlu · Kendi içeriğimiz CC BY-NC 4.0 lisanslıdır · ISTQB® ve CTFL®, International Software Testing Qualifications Board'un tescilli markalarıdır; bu rehber ISTQB® ya da Turkish Testing Board ile bağlantılı değildir, onlar tarafından onaylanmamıştır.</footer>
+</main>
+</div>
+<script>if (window.matchMedia('(min-width: 901px)').matches) document.getElementById('navd').open = true;</script>
+<script>(function(){function od(){var h=decodeURIComponent(location.hash.slice(1));if(!h)return;var e=document.getElementById(h);while(e){if(e.tagName==='DETAILS')e.open=true;e=e.parentElement;}}addEventListener('hashchange',od);od();})();</script>
+</body>
+</html>
